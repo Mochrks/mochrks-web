@@ -1,0 +1,85 @@
+/* navbar */
+
+.nav{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px 8%;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+
+.nav .logo{
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+}
+.nav ul{
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.nav ul.slide{
+    opacity: 97%;
+    transform: translateX(0);
+}
+
+/* button contact */
+.nav ul li a.contact{
+    display: inline;
+    list-style: none;
+    width: 20%;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+    border: 2px solid white;
+    padding: 7px 12px;
+    
+    background-color: #fff;
+    transition: 0.5s;
+}
+
+.nav ul li a.contact:hover{
+    color: white;
+    background-color: transparent;
+   
+}
+.nav ul li{
+    display: inline-block;
+    position: relative;
+}
+
+.nav ul li a{
+    text-decoration: none;
+    color :white;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.nav ul li a:hover{
+   
+    color :#77faed;
+   
+}
+.nav ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;  
+    background: #1BAFB3;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.nav ul li:hover::after{
+   width: 100%;
+}
+
+
+
