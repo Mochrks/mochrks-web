@@ -51,11 +51,10 @@ export function Contact() {
               </LabelInputContainer>
               <LabelInputContainer className="mb-4">
                 <Label htmlFor="message">Message</Label>
-                <textarea
+                <Input
                   id="message"
                   placeholder="Type your message here"
                   className="input-class"
-                  rows={4}
                 />
               </LabelInputContainer>
               <button

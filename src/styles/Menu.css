@@ -1,0 +1,63 @@
+/* styles */
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro-2');
+@import url('https://db.onlinewebfonts.com/c/fc650de7c3b3af62825a0e743b69425f?family=Helvetica+Neue+LT+W05+55+Roman');
+
+
+.menu {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  background-color: black;
+  animation: fadeInAnimation ease-in 0.09s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation: fadeOutAnimation ease-in 0.09s;
+}
+
+.menu ul{
+  height: 100vh;
+  padding: auto;
+  margin: auto;
+  padding-top: 8rem;
+  justify-content: center;
+  align-items: center;
+ /* background-color: aqua; */
+}
+.menu li{
+  /* background-color: blue; */
+  margin: auto;
+  justify-content: center;
+  align-items: center;  
+  font-family: 'Helvetica Neue LT W05 55 Roman', sans-serif;
+  padding: 5px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.menu li:hover{
+  color: #A5F3FC;
+}
+
+@keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+@keyframes fadeOutAnimation {
+            100% {
+                opacity: 1;
+            }
+
+            0% {
+                opacity: 0;
+            }
+        }

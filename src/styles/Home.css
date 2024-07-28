@@ -1,22 +1,15 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  
-} */
 
 /* styled css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro-2');
+@import url('https://db.onlinewebfonts.com/c/fc650de7c3b3af62825a0e743b69425f?family=Helvetica+Neue+LT+W05+55+Roman');
 
-*{
-  margin: 0;
+body{
+  overflow-x:hidden; margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   
-}
-body{
-   overflow-x:hidden;
 }
 
 html{
@@ -26,26 +19,52 @@ html{
 .hero{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(34, 34, 35, 0.3),rgba(0, 0, 0, 0.3));
+    background-image: linear-gradient(rgba(15, 18, 21, 0.362),rgb(15, 18, 21));
     position:relative;
     padding: 0 5%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    
+    align-items: center;   
     
 }
 
-.back-video{
-    position: absolute;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+.hero video{
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
+.hero .grid-animation{
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+ 
+}
+
+.hero #content{
+  font-family: 'Helvetica Neue LT W05 55 Roman', sans-serif;
+
+}
+
+.MainContent {
+  background-color: rgb(15,18,21);
+  position: relative;
+  height: 100%;
+}
+
+.text-spaced {
+  letter-spacing: 0.02em;
+  line-height: 1.5; 
+  font-weight: 900;
+  display: inline-block; /* Penting untuk transformasi */
+ 
+}
 
 
 .about {
