@@ -1,6 +1,7 @@
 import React from "react";
 import { Vortex } from "../ui/vortex";
 import { TypewriterEffect } from "../ui/typewriter-effect";
+import ShimmerButton from "@/components/magicui/shimmer-button";
 export function WDYWTDN() {
   const words = [
     {
@@ -28,10 +29,11 @@ export function WDYWTDN() {
   ];
   return (
     <div className="w-full mx-auto rounded-md  h-[30rem] overflow-hidden  ">
-      <Vortex
+      {/* <Vortex
         backgroundColor="rgba(0, 0, 0, 0.5)"
         className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
-      >
+      > */}
+      <div className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full">
         <TypewriterEffect words={words} />
 
         <p className="text-white text-sm md:text-2xl max-w-xl mt-6 text-center">
@@ -39,17 +41,23 @@ export function WDYWTDN() {
           diverse projects.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
-            Article
-          </button>
-          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
-            Design
-          </button>
-          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
-            Project
-          </button>
+          <ShimmerButton className="shadow-2xl">
+            <span className="whitespace-pre-wrap text-end text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+              Article
+            </span>
+          </ShimmerButton>
+          <ShimmerButton className="shadow-2xl">
+            <span className="whitespace-pre-wrap text-end text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+              Design
+            </span>
+          </ShimmerButton>
+          <ShimmerButton className="shadow-2xl">
+            <span className="whitespace-pre-wrap text-end text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+              Project
+            </span>
+          </ShimmerButton>
         </div>
-      </Vortex>
+      </div>
     </div>
   );
 }

@@ -23,12 +23,19 @@ import {
   textVariantFromTop,
   textVariantFromLeft,
 } from "@/utils/motion.js";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 export default function index() {
   const words = [
     "Software Developer",
     "Graphic Designer",
     "UI/UX Designer",
     "Photographer",
+  ];
+  const mochrks = [
+    {
+      text: "Mochrks",
+      className: "text-slate-100",
+    },
   ];
 
   return (
@@ -57,6 +64,10 @@ export default function index() {
             <br />I invite you to explore my site to be better, <br />
             I am a <FlipWords words={words} /> <br />
             Enjoy My Work
+            <br />
+            <div id="signature">
+              <TypewriterEffectSmooth words={mochrks} />
+            </div>
           </motion.div>
         </div>
       </motion.div>
@@ -144,7 +155,7 @@ export default function index() {
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
         >
-          <div className="w-full h-full pt-10 mt-20 ">
+          <div className="w-full h-full pt-[6rem] mt-20 ">
             <WordFadeIn words="My Photography" />
             <div className="container pt-10 ">
               <Expandable className="w-full min-w-72 storybook-fix" />
@@ -154,9 +165,17 @@ export default function index() {
         </motion.section>
 
         {/* section What do you want to do now? */}
-        {/* <div className="w-full h-full ">
-        <WDYWTDN />
-      </div> */}
+        <motion.section
+          id="photography"
+          variants={textVariantFromButtom(0.12)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          <div className="w-full h-full">
+            <WDYWTDN />
+          </div>
+        </motion.section>
 
         {/* section form contact */}
         <motion.section

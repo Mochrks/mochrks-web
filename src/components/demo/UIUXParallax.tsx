@@ -7,96 +7,82 @@ export function UIUXParallax() {
 }
 export const products = [
   {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+    title: "WUI/UX Web Product Cars",
+    link: "https://www.behance.net/gallery/153162683/Landing-Page-Web-Product-Cars?tracking_source=search_projects|mochrks&l=34",
+    thumbnail: "../../../src/assets/img/web1.jpg",
   },
   {
-    title: "Cursor",
-    link: "https://cursor.so",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+    title: "UI/UX - Web Smart Robotics",
+    link: "https://www.behance.net/gallery/153270749/Landing-Page-Web-Technology?tracking_source=search_projects|mochrks&l=28",
+    thumbnail: "../../../src/assets/img/web2.jpg",
   },
   {
-    title: "Rogue",
-    link: "https://userogue.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
+    title: "UI/UX - Web UI Drone Product",
+    link: "https://www.behance.net/gallery/153267011/Landing-Page-Web-Drone-Product?tracking_source=search_projects|mochrks&l=29",
+    thumbnail: "../../../src/assets/img/web3.jpg",
   },
 
   {
-    title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+    title: "UI/UX - Web UI Headphones",
+    link: "https://www.behance.net/gallery/162600473/Landing-Page-Web-Headphones-product?tracking_source=search_projects|mochrks&l=13",
+    thumbnail: "../../../src/assets/img/web4.jpg",
   },
   {
-    title: "Editrix AI",
-    link: "https://editrix.ai",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+    title: "UI/UX - Web Store I Phone Product",
+    link: "https://www.behance.net/gallery/153180469/Landing-Page-Web-Phone-store?tracking_source=search_projects|mochrks&l=31",
+    thumbnail: "../../../src/assets/img/web5.jpg",
   },
   {
-    title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
+    title: "UI/UX - Web Ui Juice Product",
+    link: "https://www.behance.net/gallery/153921575/Landing-Page-Web-Drinks-Product?tracking_source=search_projects|mochrks&l=15",
+    thumbnail: "../../../src/assets/img/web6.jpg",
   },
 
   {
-    title: "Algochurn",
-    link: "https://algochurn.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+    title: "UI/UX - Web Ui Product Watch",
+    link: "https://www.behance.net/gallery/153967587/Landing-Page-Web-Watch-Products",
+    thumbnail: "../../../src/assets/img/web7.jpg",
   },
   {
-    title: "Aceternity UI",
+    title: "UI/UX - Web Ui Tshirt Batik",
     link: "https://ui.aceternity.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+    thumbnail: "../../../src/assets/img/web8.jpg",
   },
   {
-    title: "Tailwind Master Kit",
-    link: "https://tailwindmasterkit.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+    title: "UI/UX - Web Smart Robotics",
+    link: "https://www.behance.net/gallery/153270749/Landing-Page-Web-Technology?tracking_source=search_projects|mochrks&l=28",
+    thumbnail: "../../../src/assets/img/web2.jpg",
   },
   {
-    title: "SmartBridge",
-    link: "https://smartbridgetech.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
-  },
-  {
-    title: "Renderwork Studio",
-    link: "https://renderwork.studio",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+    title: "UI/UX - Web UI Drone Product",
+    link: "https://www.behance.net/gallery/153267011/Landing-Page-Web-Drone-Product?tracking_source=search_projects|mochrks&l=29",
+    thumbnail: "../../../src/assets/img/web3.jpg",
   },
 
   {
-    title: "Creme Digital",
-    link: "https://cremedigital.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+    title: "UI/UX - Web UI Headphones",
+    link: "https://www.behance.net/gallery/162600473/Landing-Page-Web-Headphones-product?tracking_source=search_projects|mochrks&l=13",
+    thumbnail: "../../../src/assets/img/web4.jpg",
   },
   {
-    title: "Golden Bells Academy",
-    link: "https://goldenbellsacademy.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+    title: "UI/UX - Web Store I Phone Product",
+    link: "https://www.behance.net/gallery/153180469/Landing-Page-Web-Phone-store?tracking_source=search_projects|mochrks&l=31",
+    thumbnail: "../../../src/assets/img/web5.jpg",
   },
   {
-    title: "Invoker Labs",
-    link: "https://invoker.lol",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+    title: "UI/UX - Web Ui Juice Product",
+    link: "https://www.behance.net/gallery/153921575/Landing-Page-Web-Drinks-Product?tracking_source=search_projects|mochrks&l=15",
+    thumbnail: "../../../src/assets/img/web6.jpg",
+  },
+
+  {
+    title: "UI/UX - Web Ui Product Watch",
+    link: "https://www.behance.net/gallery/153967587/Landing-Page-Web-Watch-Products",
+    thumbnail: "../../../src/assets/img/web7.jpg",
   },
   {
-    title: "E Free Invoice",
-    link: "https://efreeinvoice.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+    title: "UI/UX - Web Ui Tshirt Batik",
+    link: "https://ui.aceternity.com",
+    thumbnail: "../../../src/assets/img/web8.jpg",
   },
 ];
