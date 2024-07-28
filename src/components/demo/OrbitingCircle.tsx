@@ -1,6 +1,6 @@
 import OrbitingCircles from "@/components/magicui/orbiting-circles";
 import React from "react";
-export function OrbitingCirclesDemo() {
+export function OrbitingCircle() {
   return (
     <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">
       <span className="md:w-[300px] lg:w-[600px] pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-slate-600 to-white bg-clip-text text-center text-4xl md:text-5xl lg:text-7xl  font-semibold leading-none text-transparent dark:from-white dark:to-black">

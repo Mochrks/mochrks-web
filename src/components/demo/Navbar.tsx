@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import "../../styles/Navbar.css";
 import Menu from "./Menu";
+
 export default function Navbar() {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
     setIsActive(!isActive);
   };
+
+  const handleMenuItemClick = () => {
+    setIsActive(false);
+  };
+
   return (
     <>
       <div className="nav">
@@ -24,7 +30,7 @@ export default function Navbar() {
         </div>
 
         <div
-          className={`container ${isActive ? "active" : ""} `}
+          className={`container ${isActive ? "active" : ""}`}
           onClick={handleClick}
         >
           <svg
@@ -70,7 +76,7 @@ export default function Navbar() {
             </g>
           </svg>
         </div>
-        {isActive ? <Menu /> : null}
+        {isActive ? <Menu onMenuItemClick={handleMenuItemClick} /> : null}
       </div>
     </>
   );

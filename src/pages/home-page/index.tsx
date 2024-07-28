@@ -14,6 +14,15 @@ import { Contact } from "@/components/demo/Contact";
 import { SeeMyPhotography } from "@/components/demo/SeeMyPhotography";
 import { FlipWords } from "@/components/ui/flip-words";
 
+import { motion } from "framer-motion";
+import {
+  textVariantFromButtom,
+  fadeIn,
+  fadeInOpacity,
+  staggerContainer,
+  textVariantFromTop,
+  textVariantFromLeft,
+} from "@/utils/motion.js";
 export default function index() {
   const words = [
     "Software Developer",
@@ -24,58 +33,125 @@ export default function index() {
 
   return (
     <>
-      {/* hero */}
-      <div className="hero">
+      {/* navbar */}
+      <div>
         <Navbar />
+      </div>
+      {/* hero */}
+      <motion.div
+        variants={staggerContainer(0.3, 1)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className="hero"
+      >
         <video autoPlay loop muted playsInline>
           <source src="../../src/assets/video/Video.mp4" type="video/mp4" />
         </video>{" "}
         <div id="content">
-          <div className="text-start text-2xl md:text-4xl lg:text-6xl  z-20 mx-auto text-cyan-200 dark:text-white-400 text-spaced">
+          <motion.div
+            variants={textVariantFromButtom(0.9)}
+            className="text-start text-2xl md:text-4xl lg:text-6xl  z-20 mx-auto text-cyan-200 dark:text-white-400 text-spaced
+          "
+          >
             <br />I invite you to explore my site to be better, <br />
             I am a <FlipWords words={words} /> <br />
             Enjoy My Work
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* main section */}
-      <div className="MainContent">
+      <motion.div
+        variants={staggerContainer(0.3, 1)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className="MainContent"
+      >
         {/* section UI/UX and recent project */}
-        <div className="w-full h-full uiux-section">
-          <UIUXParallax />
-        </div>
+        <motion.section
+          id="uiux"
+          variants={textVariantFromTop(1.6)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          <div className="w-full h-full uiux-section">
+            <UIUXParallax />
+          </div>
+        </motion.section>
 
         {/*  section Skill */}
-        <div className="w-full h-full">
-          <Skill />
-        </div>
+        <motion.section
+          id="skill"
+          variants={textVariantFromLeft(0.12)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.45 }}
+        >
+          <div className="w-full h-full">
+            <Skill />
+          </div>
+        </motion.section>
 
         {/* section about and education */}
-        <div className="w-full h-full p-10 about">
-          <About />
-        </div>
+        <motion.section
+          id="about"
+          variants={textVariantFromButtom(0.12)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          <div className="w-full h-full p-10 about">
+            <About />
+          </div>
+        </motion.section>
 
         {/* section experience */}
-        <div className="w-full h-full pt-[200px]">
-          <WordFadeIn words="Experience" />
-          <Experience />
-        </div>
+        <motion.section
+          id="experience"
+          variants={textVariantFromButtom(0.12)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          <div className="w-full h-full pt-[200px]">
+            <WordFadeIn words="Experience" />
+            <Experience />
+          </div>
+        </motion.section>
 
         {/* section recent projects */}
-        <div className="w-full h-full pt-[100px]">
-          <WordFadeIn words="Recent Projects" />
-          <RecentProject />
-        </div>
+        <motion.section
+          id="projects"
+          variants={textVariantFromButtom(0.12)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          <div className="w-full h-full pt-[100px]">
+            <WordFadeIn words="Recent Projects" />
+            <RecentProject />
+          </div>
+        </motion.section>
 
         {/* section my photography  */}
-        <div className="w-full h-full pt-10 mt-20 ">
-          <WordFadeIn words="My Photography" />
-          <div className="container pt-10 ">
-            <Expandable className="w-full min-w-72 storybook-fix" />
-            <SeeMyPhotography />
+        <motion.section
+          id="photography"
+          variants={textVariantFromButtom(0.12)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          <div className="w-full h-full pt-10 mt-20 ">
+            <WordFadeIn words="My Photography" />
+            <div className="container pt-10 ">
+              <Expandable className="w-full min-w-72 storybook-fix" />
+              <SeeMyPhotography />
+            </div>
           </div>
-        </div>
+        </motion.section>
 
         {/* section What do you want to do now? */}
         {/* <div className="w-full h-full ">
@@ -83,15 +159,23 @@ export default function index() {
       </div> */}
 
         {/* section form contact */}
-        <div className="w-full h-full pt-10  mb-10 pb-10">
-          <Contact />
-        </div>
+        <motion.section
+          id="contact"
+          variants={textVariantFromLeft(0.12)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          <div className="w-full h-full pt-10  mb-10 pb-10">
+            <Contact />
+          </div>
+        </motion.section>
 
         {/* section for connection and footer */}
         <div className="w-full h-full p-10 bg-slate-50">
           <Footer />
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
