@@ -124,7 +124,7 @@ export default function Footer() {
 
         <div id="go-top">
           <a className="p-5 smoothscroll" title="Back to Top" href="#">
-            <FiArrowUp className="w-8 h-8 dark:text-neutral-200 text-slate-100" />
+            <FiArrowUp className="w-8 h-8 text-center justify-center dark:text-neutral-200 text-slate-100" />
           </a>
         </div>
       </footer>

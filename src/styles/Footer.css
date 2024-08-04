@@ -37,7 +37,7 @@ footer  img {
 /* Go To Top Button */
 #go-top {
    position: absolute;
-   top: -24px;
+   top: -26px;
    left: 50%;
    margin-left: -30px;
 }
@@ -64,4 +64,6 @@ footer  img {
 
 #go-top a:hover {
    background-color: #038290;
+   text-align: center;
+
 }

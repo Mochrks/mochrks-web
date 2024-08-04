@@ -1,8 +1,16 @@
 import React from "react";
 import "../../styles/Menu.css";
 import { MenuFeatures } from "./MenuFeatures";
+import { useNavigate } from "react-router-dom";
 
 export default function Menu({ onMenuItemClick }) {
+  const navigate = useNavigate();
+  const handleArticle = () => {
+    navigate("/article");
+  };
+  const handlePhotography = () => {
+    navigate("/photography");
+  };
   return (
     <>
       <div className="menu">
@@ -28,12 +36,12 @@ export default function Menu({ onMenuItemClick }) {
             </a>
           </li>
           <li>
-            <a href="#photography" onClick={onMenuItemClick}>
+            <a onClick={handlePhotography} className="cursor-pointer">
               PHOTOGRAPHY
             </a>
           </li>
           <li>
-            <a href="#" onClick={onMenuItemClick}>
+            <a onClick={handleArticle} className="cursor-pointer">
               ARTICLE
             </a>
           </li>

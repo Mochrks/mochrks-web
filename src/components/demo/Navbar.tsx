@@ -35,8 +35,8 @@ export default function Navbar() {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="10 10 200 200"
-            className={"w-full h-full fill-primary"}
+            viewBox="0 0 200 200"
+            className={"w-full h-full fill-primary "}
           >
             <g stroke-width="6.5" stroke-linecap="round">
               <path
@@ -76,6 +76,7 @@ export default function Navbar() {
             </g>
           </svg>
         </div>
+
         {isActive ? <Menu onMenuItemClick={handleMenuItemClick} /> : null}
       </div>
     </>

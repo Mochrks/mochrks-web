@@ -1,5 +1,5 @@
-/* navbar */
-
+/* navbar */ 
+ 
 .nav{
     display: flex;
     width: 100%;
@@ -7,6 +7,7 @@
     top: 0;
     left: 0;
     padding: 10px 5%;
+    padding-top: 20px;
     justify-content: space-between;
     align-items: center;
    
@@ -18,18 +19,19 @@
     cursor: pointer;
     /* background-color: aqua; */
     flex-grow: 1; 
-    z-index: 32;
+    z-index: 2;
    
 }
 
 .nav .container {
   width: 100px;
-  height: 100px;
+  height: 50px;
   cursor: pointer;
   display: flex;
   z-index: 32;
   /* background-color: brown; */
 }
+
 
 
 svg {

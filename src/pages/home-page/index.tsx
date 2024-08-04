@@ -24,6 +24,7 @@ import {
   textVariantFromLeft,
 } from "@/utils/motion.js";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
+
 export default function index() {
   const words = [
     "Software Developer",
@@ -88,7 +89,7 @@ export default function index() {
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
         >
-          <div className="w-full h-full uiux-section">
+          <div className="w-full h-full ">
             <UIUXParallax />
           </div>
         </motion.section>
@@ -101,7 +102,7 @@ export default function index() {
           whileInView="show"
           viewport={{ once: false, amount: 0.45 }}
         >
-          <div className="w-full h-full">
+          <div className="w-full h-full ">
             <Skill />
           </div>
         </motion.section>

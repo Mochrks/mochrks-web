@@ -2,7 +2,14 @@ import React from "react";
 import { Vortex } from "../ui/vortex";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 import ShimmerButton from "@/components/magicui/shimmer-button";
+import { useNavigate } from "react-router-dom";
 export function WDYWTDN() {
+  const navigate = useNavigate();
+
+  const handleArticle = () => {
+    navigate("/article");
+  };
+
   const words = [
     {
       text: "What ",
@@ -41,7 +48,7 @@ export function WDYWTDN() {
           diverse projects.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-          <ShimmerButton className="shadow-2xl">
+          <ShimmerButton className="shadow-2xl" onClick={handleArticle}>
             <span className="whitespace-pre-wrap text-end text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
               Article
             </span>

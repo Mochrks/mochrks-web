@@ -23,7 +23,8 @@ html{
     padding: 0 5%;
     display: flex;
     align-items: center;   
-    
+
+ 
 }
 
 .hero video{
@@ -48,7 +49,7 @@ html{
 
 .hero #content{
   font-family: 'Helvetica Neue LT W05 55 Roman', sans-serif;
-
+ 
 }
 .hero #content #signature{
   font-family: 'Danila', sans-serif;
