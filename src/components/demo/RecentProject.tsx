@@ -57,7 +57,7 @@ export function RecentProject() {
                 </ul>
               </div>
               <img
-                src="/src/assets/img/web2.jpg"
+                src="/img/web2.jpg"
                 width={500}
                 height={400}
                 alt="linear demo image"
@@ -101,7 +101,7 @@ export function RecentProject() {
                 </ul>
               </div>
               <img
-                src="/src/assets/img/web3.jpg"
+                src="/img/web3.jpg"
                 width={500}
                 height={400}
                 alt="linear demo image"
