@@ -113,11 +113,7 @@ export default function Footer() {
               </h4>
             </div>
             <div className="ml-4">
-              <img
-                src="../../../src/assets/img/favicon.png"
-                alt="logo"
-                className="w-12 h-12 "
-              />
+              <img src="/img/logo.png" alt="logo" className="w-12 h-12 " />
             </div>
           </div>
         </div>
