@@ -1,58 +1,72 @@
-"use client";
-import React from "react";
+("use client");
+import React, { useState } from "react";
 // import { calsans } from "@/fonts/calsans";
 // import Image from "next/image";
-import { twMerge } from "tailwind-merge";
+// import { twMerge } from "tailwind-merge";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { Button } from "@/components/ui/button";
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { StarsBackground } from "@/components/ui/stars-background";
+import Particles from "@/components/magicui/particles";
 
 export default function index() {
+  const [color, setColor] = useState("#ffffff");
   return (
     <>
-      <div className="container pt-20 mt-10 mb-20 text-center ">
-        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          My Article
-        </h1>
-      </div>
-      <TracingBeam className="px-6">
-        <div className="max-w-2xl mx-auto antialiased pt-4 relative">
-          {dummyContent.map((item, index) => (
-            <div key={`content-${index}`} className="mb-10">
-              <p className="text-xl mb-4">{item.title}</p>
-
-              <div className="flex space-x-2 mb-4">
-                {Array.isArray(item.badge) &&
-                  item.badge.map((badge, badgeIndex) => (
-                    <span
-                      key={`badge-${badgeIndex}`}
-                      className="bg-orange-700 text-white rounded-full text-sm px-4 py-1"
-                    >
-                      {badge}
-                    </span>
-                  ))}
-              </div>
-
-              <div className="text-sm prose prose-sm dark:prose-invert">
-                {item?.image && (
-                  <img
-                    src={item.image}
-                    alt="blog thumbnail"
-                    height="1000"
-                    width="1000"
-                    className="rounded-lg mb-10 object-cover"
-                  />
-                )}
-                {item.description}
-              </div>
-              <div className="text-center pt-5">
-                <a href={item.link}>
-                  <Button>Read More &rarr; </Button>
-                </a>
-              </div>
-            </div>
-          ))}
+      <div className="relative w-full h-full overflow-hidden">
+        <Particles
+          className="absolute inset-0"
+          quantity={300}
+          ease={80}
+          color={color}
+          refresh
+        />
+        <ShootingStars />
+        <div className="container pt-20 mt-10 mb-20 text-center ">
+          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+            My Article
+          </h1>
         </div>
-      </TracingBeam>
+        <TracingBeam className="px-6 ">
+          <div className="max-w-2xl mx-auto antialiased pt-4 relative  ml-5">
+            {dummyContent.map((item, index) => (
+              <div key={`content-${index}`} className="mb-10">
+                <p className="text-2xl mb-4 font-extrabold">{item.title}</p>
+
+                <div className="flex space-x-2 mb-4">
+                  {Array.isArray(item.badge) &&
+                    item.badge.map((badge, badgeIndex) => (
+                      <span
+                        key={`badge-${badgeIndex}`}
+                        className="bg-orange-700 text-white rounded-full text-sm px-4 py-1"
+                      >
+                        {badge}
+                      </span>
+                    ))}
+                </div>
+
+                <div className="text-sm prose prose-sm dark:prose-invert">
+                  {item?.image && (
+                    <img
+                      src={item.image}
+                      alt="blog thumbnail"
+                      height="1000"
+                      width="1000"
+                      className="rounded-lg mb-10 object-cover"
+                    />
+                  )}
+                  {item.description}
+                </div>
+                <div className="text-center pt-5">
+                  <a href={item.link}>
+                    <Button>Read More &rarr; </Button>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </TracingBeam>
+      </div>
     </>
   );
 }

@@ -1,5 +1,4 @@
-"use client";
-
+import React from "react";
 import { useMemo } from "react";
 import { motion, Variants } from "framer-motion";
 
