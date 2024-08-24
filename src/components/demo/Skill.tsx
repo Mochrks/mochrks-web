@@ -8,13 +8,7 @@ export function Skill() {
     <>
       {" "}
       <div className="h-[30rem] rounded-md flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-        <ShimmerButton className="shadow-2xl">
-          <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-            See More &rarr;
-          </span>
-        </ShimmerButton>
-
-        <div className="pt-[100px]">
+        <div className="pt-10">
           <InfiniteMovingCards items={stack} direction="right" speed="slow" />
         </div>
       </div>

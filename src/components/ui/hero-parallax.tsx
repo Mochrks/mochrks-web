@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import {
   motion,
@@ -57,7 +56,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-full py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]  "
+      className="h-full py-[100px] overflow-hidden  antialiased relative flex flex-col self-auto [perspective:600px] [transform-style:preserve-3d]  "
     >
       <Header />
       <motion.div

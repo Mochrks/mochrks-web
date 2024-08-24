@@ -1,24 +1,25 @@
-"use client";
 import React from "react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
-
 import { OrbitingCircle } from "./OrbitingCircle";
+import useBreakpoints from "../../hooks/useBreakpoints";
 
 export function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted");
   };
+
+  const { isMd } = useBreakpoints();
   return (
     <>
       <div className="container mx-auto p-4">
         <div className="flex flex-col md:flex-row items-start justify-center gap-4  p-4">
           <div className="flex justify-center w-full md:w-auto ">
-            <OrbitingCircle />
+            {isMd && <OrbitingCircle />}
           </div>
-          <div className="max-w-md w-full h-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+          <div className="max-w-md w-full h-full mx-auto rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
             <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
               Contact me
             </h2>

@@ -17,8 +17,12 @@ export default function Navbar() {
     <>
       <div className="nav">
         <div className="logo">
-          <img className="inline w-12 h-12" src="/img/logo.png" alt="Logo" />
-          <h2 className="text-white ml-2 my-auto text-md font-semibold tracking-tight first:mt-0">
+          <img
+            className="inline w-[4rem] h-[4rem]"
+            src="/img/logo.png"
+            alt="Logo"
+          />
+          <h2 className="text-white ml-2 my-auto text-xl font-semibold tracking-tight first:mt-0">
             Hello
             <br />
             World.
@@ -26,7 +30,9 @@ export default function Navbar() {
         </div>
 
         <div
-          className={`container ${isActive ? "active" : ""}`}
+          className={`container w-[8rem] h-[5rem] sm:w-[8rem]  ${
+            isActive ? "active" : ""
+          }`}
           onClick={handleClick}
         >
           <svg
@@ -34,7 +40,7 @@ export default function Navbar() {
             viewBox="0 0 200 200"
             className={"w-full h-full fill-primary "}
           >
-            <g stroke-width="6.5" stroke-linecap="round">
+            <g stroke-width="8.5" stroke-linecap="round">
               <path
                 d="M72 82.286h28.75"
                 fill="#009100"

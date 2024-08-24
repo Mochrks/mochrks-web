@@ -37,9 +37,11 @@ footer  img {
 /* Go To Top Button */
 #go-top {
    position: absolute;
-   top: -26px;
+   top: -40px;
    left: 50%;
+   bottom: 20px;
    margin-left: -30px;
+   margin-bottom: 20px;
 }
 
 #go-top a {

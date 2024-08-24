@@ -45,6 +45,7 @@ export default function index() {
       <div>
         <Navbar />
       </div>
+
       {/* hero */}
       <motion.div
         variants={staggerContainer(0.3, 1)}
@@ -55,11 +56,11 @@ export default function index() {
       >
         <video autoPlay loop muted playsInline>
           <source src="/video/Video.mp4" type="video/mp4" />
-        </video>{" "}
+        </video>
         <div id="content">
           <motion.div
             variants={textVariantFromButtom(0.9)}
-            className="text-start text-2xl md:text-4xl lg:text-6xl  z-20 mx-auto text-cyan-200 dark:text-white-400 text-spaced
+            className="text-start text-2xl md:text-4xl lg:text-6xl z-20 mx-auto text-cyan-200 dark:text-white-400 text-spaced
           "
           >
             <br />I invite you to explore my site to be better, <br />
@@ -102,7 +103,7 @@ export default function index() {
           whileInView="show"
           viewport={{ once: false, amount: 0.45 }}
         >
-          <div className="w-full h-full ">
+          <div className="w-full h-full">
             <Skill />
           </div>
         </motion.section>
@@ -115,7 +116,7 @@ export default function index() {
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
         >
-          <div className="w-full h-full p-10 about">
+          <div className="w-full h-full">
             <About />
           </div>
         </motion.section>
@@ -128,7 +129,7 @@ export default function index() {
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
         >
-          <div className="w-full h-full pt-[200px]">
+          <div className="w-full h-full pt-20">
             <WordFadeIn words="Experience" />
             <Experience />
           </div>

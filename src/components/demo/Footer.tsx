@@ -11,7 +11,11 @@ import {
 } from "react-icons/fa";
 import { FiArrowUp } from "react-icons/fi";
 import "../../styles/Footer.css";
+import useBreakpoints from "../../hooks/useBreakpoints";
+
 export default function Footer() {
+  const { isLg } = useBreakpoints();
+
   return (
     <>
       <div className="flex items-center justify-center py-10 my-10">
@@ -106,21 +110,23 @@ export default function Footer() {
 
       <footer className="flex ">
         <div className="container flex items-center justify-center ">
-          <div className="flex flex-row items-center">
-            <div className="flex-grow text-center sm:text-left">
-              <h4 className="scroll-m-20 text-xl font-semibold tracking-tight text-slate-700">
-                &copy; Design by Mochrks
-              </h4>
+          {isLg && (
+            <div className="flex flex-row items-center">
+              <div className="flex-grow text-center sm:text-left">
+                <h4 className="scroll-m-20 text-md   font-semibold tracking-tight text-slate-700">
+                  &copy; Design by Mochrks
+                </h4>
+              </div>
+              <div className="ml-4">
+                <img src="/img/logo.png" alt="logo" className="w-12 h-12 " />
+              </div>
             </div>
-            <div className="ml-4">
-              <img src="/img/logo.png" alt="logo" className="w-12 h-12 " />
-            </div>
-          </div>
+          )}
         </div>
 
         <div id="go-top">
-          <a className="p-5 smoothscroll" title="Back to Top" href="#">
-            <FiArrowUp className="w-8 h-8 text-center justify-center dark:text-neutral-200 text-slate-100" />
+          <a className="p-4 smoothscroll" title="Back to Top" href="#">
+            <FiArrowUp className="w-7 h-7 text-center justify-center dark:text-neutral-200 text-slate-100" />
           </a>
         </div>
       </footer>
