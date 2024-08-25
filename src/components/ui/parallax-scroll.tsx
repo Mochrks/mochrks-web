@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import Particles from "@/components/magicui/particles";
+
 export const ParallaxScroll = ({
   images,
   className,
@@ -33,18 +34,17 @@ export const ParallaxScroll = ({
 
   return (
     <>
+      <div className="relative  w-full">
+        <BGContent />
+      </div>
       <div className="relative w-full h-full overflow-hidden">
-        <div className="container text-center pt-10 mt-20">
-          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-            My Photography
-          </h1>
-        </div>
+        <div className="container text-center pt-10 mt-20"></div>
         <div
           className={cn("h-full items-start overflow-y-auto w-full", className)}
           ref={gridRef}
         >
           <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start  max-w-5xl mx-auto gap-10 py-40 px-10"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start  max-w-7xl mx-auto gap-10 py-40 px-10"
             ref={gridRef}
           >
             <div className="grid gap-10">
@@ -55,7 +55,7 @@ export const ParallaxScroll = ({
                 >
                   <img
                     src={el}
-                    className="h-80 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0 z-50"
+                    className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0 z-50"
                     height="400"
                     width="400"
                     alt="thumbnail"
@@ -68,7 +68,7 @@ export const ParallaxScroll = ({
                 <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
                   <img
                     src={el}
-                    className="h-80 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
+                    className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
                     height="400"
                     width="400"
                     alt="thumbnail"
@@ -81,7 +81,7 @@ export const ParallaxScroll = ({
                 <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
                   <img
                     src={el}
-                    className="h-80 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
+                    className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
                     height="400"
                     width="400"
                     alt="thumbnail"
@@ -101,5 +101,36 @@ export const ParallaxScroll = ({
         <ShootingStars />
       </div>
     </>
+  );
+};
+const BGContent = () => {
+  return (
+    <div
+      className="grid grid-cols-1 h-[40rem] w-full relative border rounded-md"
+      style={{
+        backgroundImage: `url(https://mochrks.github.io/img/ig10.jpg)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <Noise />
+      <h1 className="text-white text-center text-6xl md:text-7xl lg:text-9xl mt-40 font-extrabold tracking-tight  z-10">
+        My Photography
+      </h1>
+      <div className="inset-0 absolute bg-grid-black/[0.1] dark:bg-grid-white/[0.1]" />
+    </div>
+  );
+};
+
+const Noise = () => {
+  return (
+    <div
+      className="absolute inset-0 w-full h-[36rem] scale-[1.2] transform opacity-10 [mask-image:radial-gradient(#fff,transparent,75%)]"
+      style={{
+        backgroundImage: "url(/noise.webp)",
+        backgroundSize: "40%",
+      }}
+    ></div>
   );
 };
