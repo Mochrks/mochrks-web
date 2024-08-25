@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/Home.css";
+
 import Navbar from "@/components/demo/Navbar";
 import { Experience } from "@/components/demo/Experience";
 import Expandable from "@/components/animata/corousel/expandable";
@@ -13,6 +14,7 @@ import { RecentProject } from "@/components/demo/RecentProject";
 import { Contact } from "@/components/demo/Contact";
 import { SeeMyPhotography } from "@/components/demo/SeeMyPhotography";
 import { FlipWords } from "@/components/ui/flip-words";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 
 import { motion } from "framer-motion";
 import {
@@ -23,7 +25,6 @@ import {
   textVariantFromTop,
   textVariantFromLeft,
 } from "@/utils/motion.js";
-import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 
 export default function index() {
   const words = [

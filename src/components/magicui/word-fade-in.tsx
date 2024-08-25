@@ -1,8 +1,6 @@
-"use client";
-
-import { motion, Variants } from "framer-motion";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { motion, Variants } from "framer-motion";
 
 interface WordFadeInProps {
   words: string;

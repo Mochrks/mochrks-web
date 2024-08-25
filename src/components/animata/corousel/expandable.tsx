@@ -1,8 +1,7 @@
+import React from "react";
 import { HTMLAttributes, useEffect, useState } from "react";
-
 import WaveReveal from "@/components/animata/text/wave-reveal";
 import { cn } from "@/lib/utils";
-import React from "react";
 
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
   item: { image: string; title: string };

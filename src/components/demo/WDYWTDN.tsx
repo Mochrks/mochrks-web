@@ -10,6 +10,13 @@ export function WDYWTDN() {
     navigate("/article");
   };
 
+  const handleProject = () => {
+    navigate("/project");
+  };
+  const handleDesign = () => {
+    navigate("/design");
+  };
+
   const words = [
     {
       text: "What ",
@@ -43,7 +50,7 @@ export function WDYWTDN() {
       <div className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full">
         <TypewriterEffect words={words} />
 
-        <p className="text-white text-sm md:text-2xl max-w-xl mt-6 text-center">
+        <p className="text-white text-base md:text-2xl max-w-xl mt-6 text-center">
           Discover a world of my portfolio, featuring articles, designs, and
           diverse projects.
         </p>
@@ -53,12 +60,12 @@ export function WDYWTDN() {
               Article
             </span>
           </ShimmerButton>
-          <ShimmerButton className="shadow-2xl">
+          <ShimmerButton className="shadow-2xl" onClick={handleDesign}>
             <span className="whitespace-pre-wrap text-end text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
               Design
             </span>
           </ShimmerButton>
-          <ShimmerButton className="shadow-2xl">
+          <ShimmerButton className="shadow-2xl" onClick={handleProject}>
             <span className="whitespace-pre-wrap text-end text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
               Project
             </span>

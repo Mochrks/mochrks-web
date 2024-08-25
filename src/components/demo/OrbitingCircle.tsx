@@ -1,5 +1,5 @@
-import OrbitingCircles from "@/components/magicui/orbiting-circles";
 import React from "react";
+import OrbitingCircles from "@/components/magicui/orbiting-circles";
 export function OrbitingCircle() {
   return (
     <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">

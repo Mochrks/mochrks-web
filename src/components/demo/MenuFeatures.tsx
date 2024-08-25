@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";

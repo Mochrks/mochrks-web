@@ -39,12 +39,12 @@ export const products = [
 
   {
     title: "UI/UX - Web Ui Product Watch",
-    link: "https://www.behance.net/gallery/153967587/Landing-Page-Web-Watch-Products",
+    link: "https://www.behance.net/gallery/153967587/Landing-Page-Web-Watch-Products?tracking_source=search_projects|mochrks&l=14",
     thumbnail: "/img/web7.jpg",
   },
   {
     title: "UI/UX - Web Ui Tshirt Batik",
-    link: "https://ui.aceternity.com",
+    link: "https://www.behance.net/gallery/162641181/Landing-Page-Web-Batik-Shirts?tracking_source=search_projects|mochrks&l=12",
     thumbnail: "/img/web8.jpg",
   },
   {
@@ -76,12 +76,12 @@ export const products = [
 
   {
     title: "UI/UX - Web Ui Product Watch",
-    link: "https://www.behance.net/gallery/153967587/Landing-Page-Web-Watch-Products",
+    link: "https://www.behance.net/gallery/153967587/Landing-Page-Web-Watch-Products?tracking_source=search_projects|mochrks&l=14",
     thumbnail: "/img/web7.jpg",
   },
   {
     title: "UI/UX - Web Ui Tshirt Batik",
-    link: "https://ui.aceternity.com",
+    link: "https://www.behance.net/gallery/162641181/Landing-Page-Web-Batik-Shirts?tracking_source=search_projects|mochrks&l=12",
     thumbnail: "/img/web8.jpg",
   },
 ];

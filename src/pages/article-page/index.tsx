@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import Particles from "@/components/magicui/particles";
+import { ExpandArticle } from "@/components/demo/ExpandArticle";
 
 export default function index() {
   const [color, setColor] = useState("#ffffff");
@@ -28,10 +29,12 @@ export default function index() {
           </h1>
         </div>
         <TracingBeam className="px-6 ">
-          <div className="max-w-2xl mx-auto antialiased pt-4 relative  ml-5">
+          <div className="max-w-7xl mx-auto antialiased pt-4 relative  ml-5">
             {dummyContent.map((item, index) => (
               <div key={`content-${index}`} className="mb-10">
-                <p className="text-2xl mb-4 font-extrabold">{item.title}</p>
+                <p className="text-3xl mb-4 font-extrabold text-white">
+                  {item.title}
+                </p>
 
                 <div className="flex space-x-2 mb-4">
                   {Array.isArray(item.badge) &&
@@ -47,15 +50,19 @@ export default function index() {
 
                 <div className="text-sm prose prose-sm dark:prose-invert">
                   {item?.image && (
-                    <img
-                      src={item.image}
-                      alt="blog thumbnail"
-                      height="1000"
-                      width="1000"
-                      className="rounded-lg mb-10 object-cover"
-                    />
+                    <a href={item.link}>
+                      <img
+                        src={item.image}
+                        alt="blog thumbnail"
+                        height="1000"
+                        width="1000"
+                        className="rounded-lg mb-10 object-cover cursor-pointer"
+                      />
+                    </a>
                   )}
-                  {item.description}
+                  <p className="text-base md:text-xl mb-4 ">
+                    {item.description}
+                  </p>
                 </div>
                 <div className="text-center pt-5">
                   <a href={item.link}>
@@ -64,6 +71,9 @@ export default function index() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="py-10">
+            <ExpandArticle />
           </div>
         </TracingBeam>
       </div>
@@ -83,13 +93,6 @@ const dummyContent = [
           aplikasi yang kami buat, yaitu “My Pets”, sebuah aplikasi berbasis
           mobile. Proyek ini tidak saya lakukan sendirian, saya berkolaborasi
           dengan rekan saya, Sony Santana.
-        </p>
-        <p>
-          Dalam artikel ini, saya akan memperkenalkan langkah-langkah yang kami
-          ambil dalam merancang pengalaman pengguna (UI/UX) aplikasi My Pets.
-          Aplikasi ini bertujuan untuk membantu pemilik hewan peliharaan dalam
-          merawat dan memonitor kebutuhan serta kesehatan hewan peliharaan
-          mereka dengan lebih baik.
         </p>
       </>
     ),

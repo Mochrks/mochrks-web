@@ -11,6 +11,16 @@ export default function Menu({ onMenuItemClick }) {
   const handlePhotography = () => {
     navigate("/photography");
   };
+
+  const handleProject = () => {
+    navigate("/project");
+  };
+  const handleDesign = () => {
+    navigate("/design");
+  };
+  const handleUIUX = () => {
+    navigate("/ui-ux-design");
+  };
   return (
     <>
       <div className="menu">
@@ -21,17 +31,17 @@ export default function Menu({ onMenuItemClick }) {
             </a>
           </li>
           <li>
-            <a href="#projects" onClick={onMenuItemClick}>
+            <a onClick={handleProject} className="cursor-pointer">
               PROJECT
             </a>
           </li>
           <li>
-            <a href="#" onClick={onMenuItemClick}>
+            <a onClick={handleDesign} className="cursor-pointer">
               DESIGN
             </a>
           </li>
           <li>
-            <a href="#uiux" onClick={onMenuItemClick}>
+            <a onClick={handleUIUX} className="cursor-pointer">
               UI/UX
             </a>
           </li>

@@ -23,7 +23,7 @@ export default function Footer() {
           <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight dark:text-neutral-200 text-slate-700">
             Connect With Me
           </h3>
-          <p className="max-w-full text-base md:text-lg mt-8 dark:text-neutral-200 text-slate-700">
+          <p className="max-w-full text-base md:text-xl mt-8 dark:text-neutral-200 text-slate-700">
             <span>
               Find me online on most digital platforms
               <span className="font-bold"> @mochrks</span>, or by clicking the
@@ -107,13 +107,20 @@ export default function Footer() {
           </ul>
         </div>
       </div>
+      {isLg ? null : (
+        <div className="text-center">
+          <h4 className="text-md  tracking-tight text-slate-700">
+            &copy; Design by Mochrks
+          </h4>
+        </div>
+      )}
 
       <footer className="flex ">
         <div className="container flex items-center justify-center ">
           {isLg && (
             <div className="flex flex-row items-center">
               <div className="flex-grow text-center sm:text-left">
-                <h4 className="scroll-m-20 text-md   font-semibold tracking-tight text-slate-700">
+                <h4 className="scroll-m-20 text-lg   font-semibold tracking-tight text-slate-700">
                   &copy; Design by Mochrks
                 </h4>
               </div>

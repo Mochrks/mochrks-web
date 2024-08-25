@@ -20,10 +20,10 @@ export function Contact() {
             {isMd && <OrbitingCircle />}
           </div>
           <div className="max-w-md w-full h-full mx-auto rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
-            <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
+            <h2 className="font-bold text-2xl text-neutral-800 dark:text-neutral-200 py-4">
               Contact me
             </h2>
-            <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
+            <p className="text-neutral-600 text-base md:text-md max-w-sm mt-2 dark:text-neutral-300">
               Feel free to reach out to me for any inquiries or collaboration
               opportunities.
             </p>
