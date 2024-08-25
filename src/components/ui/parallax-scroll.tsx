@@ -106,7 +106,7 @@ export const ParallaxScroll = ({
 const BGContent = () => {
   return (
     <div
-      className="grid grid-cols-1 h-[40rem] w-full relative border rounded-md"
+      className="grid grid-cols-1 h-[40rem] w-full relative border rounded-md overflow-hidden"
       style={{
         backgroundImage: `url(https://mochrks.github.io/img/ig10.jpg)`,
         backgroundSize: "cover",

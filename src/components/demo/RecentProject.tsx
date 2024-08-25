@@ -44,7 +44,7 @@ export function RecentProject() {
                 </p>
               </div>
               <img
-                src="/img/web3.jpg"
+                src="/img/web3.webp"
                 width={500}
                 height={400}
                 alt="linear demo image"

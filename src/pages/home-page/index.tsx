@@ -56,7 +56,7 @@ export default function index() {
         className="hero"
       >
         <video autoPlay loop muted playsInline>
-          <source src="/video/Video.mp4" type="video/mp4" />
+          <source src="/video/Videos.mp4" type="video/mp4" />
         </video>
         <div id="content">
           <motion.div
