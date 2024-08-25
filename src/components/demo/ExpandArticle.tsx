@@ -123,16 +123,16 @@ export function ExpandArticle() {
         ) : null}
       </AnimatePresence>
 
-      <div className="">
-        <hr className="my-2" style={{ border: "1px solid " }}></hr>
+      <div className="px-3">
+        <hr className="my-2 " style={{ border: "1px solid " }}></hr>
       </div>
 
       <div className="mt-10">
-        <p className="text-base md:text-xl  text-white  font-bold mb-5 p-2">
+        <p className="text-lg md:text-xl  text-white font-bold mb-5 p-2 pl-4">
           More From Moch. Rizki Kurniawan
         </p>
       </div>
-      <ul className="max-w-5xl mx-auto w-full gap-4 ">
+      <ul className="max-w-4xl mx-auto w-full gap-4 ">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
