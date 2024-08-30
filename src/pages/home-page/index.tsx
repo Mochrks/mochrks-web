@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import "../../styles/Home.css";
 
 import Navbar from "@/components/demo/Navbar";
@@ -15,7 +15,7 @@ import { Contact } from "@/components/demo/Contact";
 import { SeeMyPhotography } from "@/components/demo/SeeMyPhotography";
 import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
-
+import Loading from "@/components/demo/Loading";
 import { motion } from "framer-motion";
 import {
   textVariantFromButtom,
@@ -25,6 +25,10 @@ import {
   textVariantFromTop,
   textVariantFromLeft,
 } from "@/utils/motion.js";
+import LazyHero from "@/components/demo/LazyHero";
+
+
+const LazyVideo = lazy(() => import("@/components/demo/LazyVideo"));
 
 export default function index() {
   const [loading, setLoading] = useState(true);
@@ -69,9 +73,9 @@ export default function index() {
         viewport={{ once: false, amount: 0.25 }}
         className="hero"
       >
-        <video autoPlay loop muted playsInline>
-          <source src="/video/Videos.mp4" type="video/mp4" />
-        </video>
+        <Suspense fallback={<LazyHero />}>
+          <LazyVideo />
+        </Suspense>
         <div id="content">
           <motion.div
             variants={textVariantFromButtom(0.9)}
@@ -216,21 +220,3 @@ export default function index() {
   );
 }
 
-export const Loading = () => {
-  return (
-    <div className="w-full h-screen flex items-center justify-center ">
-      {/* <div className="lds-roller">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div> */}
-
-      <span className="loader"></span>
-    </div>
-  );
-};

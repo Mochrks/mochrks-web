@@ -18,11 +18,11 @@ export default function Navbar() {
       <div className="nav">
         <div className="logo">
           <img
-            className="inline w-[4rem] h-[4rem]"
+            className="inline w-[3rem] h-[3rem]"
             src="/img/logo.png"
             alt="Logo"
           />
-          <h2 className="text-white ml-2 my-auto text-xl font-semibold tracking-tight first:mt-0">
+          <h2 className="text-white ml-2 my-auto text-md font-semibold tracking-tight first:mt-0">
             Hello
             <br />
             World.
@@ -30,9 +30,8 @@ export default function Navbar() {
         </div>
 
         <div
-          className={`container w-[8rem] h-[5rem] sm:w-[8rem]  ${
-            isActive ? "active" : ""
-          }`}
+          className={`container w-[7rem] h-[5rem] sm:w-[8rem]  ${isActive ? "active" : ""
+            }`}
           onClick={handleClick}
         >
           <svg

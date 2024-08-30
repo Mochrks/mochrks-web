@@ -24,7 +24,7 @@ export default function Menu({ onMenuItemClick }) {
   return (
     <>
       <div className="menu">
-        <ul className="list-none text-4xl md:text-6xl lg:text-7xl 2xl:text-8xl  px-5 md:px-14 2xl:px-[100px] pt-[8rem] 4xl:pt-[15rem] ">
+        <ul className="list-none text-4xl md:text-6xl lg:text-6xl xl:text-6xl 2xl:text-[80px] px-5 md:px-14 2xl:px-[100px] pt-[8rem] 4xl:pt-[15rem] ">
           <li>
             <a href="#about" onClick={onMenuItemClick}>
               ABOUT

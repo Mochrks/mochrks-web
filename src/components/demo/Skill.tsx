@@ -40,7 +40,7 @@ const Logos = {
         viewBox="-24 0 304 304"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         preserveAspectRatio="xMidYMid"
         className={"h-[40px] fill-primary"}
       >
@@ -225,7 +225,7 @@ const Logos = {
         viewBox="-4 0 264 264"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         preserveAspectRatio="xMidYMid"
         className={"h-[40px] fill-primary"}
       >
@@ -287,7 +287,7 @@ const Logos = {
         viewBox="-4 0 264 264"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         preserveAspectRatio="xMidYMid"
         className={"h-[40px] fill-primary"}
       >
@@ -306,7 +306,7 @@ const Logos = {
         viewBox="0 -26 256 256"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         preserveAspectRatio="xMidYMid"
         className={"h-[40px] fill-primary"}
       >
