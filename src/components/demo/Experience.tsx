@@ -83,7 +83,7 @@ const Feature = ({
   return (
     <div
       className={cn(
-        "flex flex-col lg:border-r  py-12 relative group/feature dark:border-neutral-800",
+        "flex flex-col lg:border-r  py-12 relative group/feature dark:border-neutral-800 cursor-pointer",
         (index === 0 || index === 4) && "lg:border-l dark:border-neutral-500",
         index < 4 && "lg:border-b dark:border-neutral-500"
       )}
@@ -94,7 +94,7 @@ const Feature = ({
       {index >= 4 && (
         <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-gray-600 dark:from-slate-100 to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-10 text-slate-100 dark:text-gray-600">
+      <div className="mb-4 relative z-10 px-10 text-slate-100 dark:text-gray-600 ">
         <img src={icon} alt={title} className="w-10 h-10" />
       </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">

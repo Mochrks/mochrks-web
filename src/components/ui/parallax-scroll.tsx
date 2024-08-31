@@ -38,7 +38,7 @@ export const ParallaxScroll = ({
         <BGContent />
       </div>
       <div className="relative w-full h-full overflow-hidden">
-        <div className="container text-center pt-10 mt-20"></div>
+        <div className="container text-center mt-10"></div>
         <div
           className={cn("h-full items-start overflow-y-auto w-full", className)}
           ref={gridRef}
@@ -93,7 +93,7 @@ export const ParallaxScroll = ({
         </div>{" "}
         <Particles
           className="absolute inset-0"
-          quantity={300}
+          quantity={200}
           ease={80}
           color={color}
           refresh
@@ -106,7 +106,7 @@ export const ParallaxScroll = ({
 const BGContent = () => {
   return (
     <div
-      className="grid grid-cols-1 h-[40rem] w-full relative border rounded-md overflow-hidden"
+      className="grid grid-cols-1 h-full w-full relative border rounded-md overflow-hidden"
       style={{
         backgroundImage: `url(https://mochrks.github.io/img/ig10.jpg)`,
         backgroundSize: "cover",
@@ -115,7 +115,7 @@ const BGContent = () => {
       }}
     >
       <Noise />
-      <h1 className="text-white text-center text-6xl md:text-7xl lg:text-9xl mt-40 font-extrabold tracking-tight  z-10">
+      <h1 className="text-white text-center text-6xl md:text-7xl lg:text-9xl mt-40 font-extrabold tracking-tight  pb-10 z-10">
         My Photography
       </h1>
       <div className="inset-0 absolute bg-grid-black/[0.1] dark:bg-grid-white/[0.1]" />
