@@ -89,13 +89,13 @@ export function WDYWTDN() {
           <Card className="w-[350px] bg-black bg-black:hover hover:bg-zinc-950 cursor-pointer" onClick={handleArticle}>
             <CardHeader>
               <CardTitle>Article</CardTitle>
-              <CardDescription>See more</CardDescription>
+              <CardDescription>Load more</CardDescription>
             </CardHeader>
           </Card>
           <Card className="w-[350px]  bg-black bg-black:hover hover:bg-zinc-950 cursor-pointer" onClick={handleDesign}>
             <CardHeader>
               <CardTitle> Design</CardTitle>
-              <CardDescription>Look more my design</CardDescription>
+              <CardDescription>See all my design</CardDescription>
             </CardHeader>
           </Card>
           <Card className="w-[350px]  bg-black bg-black:hover hover:bg-zinc-950 cursor-pointer" onClick={handleProject}>
