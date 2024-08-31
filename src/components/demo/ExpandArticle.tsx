@@ -1,6 +1,7 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import { Button } from "../ui/button";
 
 export function ExpandArticle() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -165,12 +166,6 @@ export function ExpandArticle() {
                 </motion.p>
               </div>
             </div>
-            <motion.button
-              layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-sm font-bold bg-gray-100 hover:bg-gray-800 hover:text-white text-black mt-4 md:mt-0"
-            >
-              {card.ctaText}
-            </motion.button>
           </motion.div>
         ))}
       </ul>

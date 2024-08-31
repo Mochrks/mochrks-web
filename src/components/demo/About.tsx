@@ -13,7 +13,7 @@ export default function About() {
         </div>
 
         <div className="mt-20 mb-20">
-          <p className="max-w-full text-base text-white md:text-xl lg:text-2xl  ">
+          <p className="max-w-full text-base md:text-xl lg:text-2xl  text-white ">
             I'm Moch. Rizki Kurniawan as a software developer with a special
             interest in full-stack development and UI/UX design. I blend
             creativity with technical skills in all my projects. With a strong

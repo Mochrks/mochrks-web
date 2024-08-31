@@ -8,7 +8,7 @@ export default function useBreakpoints() {
     lg: "(min-width: 1024px)",
     xl: "(min-width: 1280px)",
     "2xl": "(min-width: 1536px)",
-  };
+  }; 
 
   const [isSm, setIsSm] = useState<boolean>(
     window.matchMedia(breakpoints.sm).matches

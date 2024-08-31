@@ -79,7 +79,7 @@ export default function index() {
         <div id="content">
           <motion.div
             variants={textVariantFromButtom(0.9)}
-            className="text-start text-2xl md:text-4xl lg:text-6xl z-20 mx-auto text-cyan-200 dark:text-white-400 text-spaced
+            className="text-start text-3xl md:text-4xl lg:text-6xl z-20 mx-auto text-cyan-200 dark:text-white-400 text-spaced
           "
           >
             <br />I invite you to explore my site to be better, <br />
