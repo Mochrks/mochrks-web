@@ -1,9 +1,9 @@
 import React from "react";
-
+import { video } from "@/assets/index";
 const LazyVideo: React.FC = () => {
   return (
     <video autoPlay loop muted playsInline>
-      <source src="/video/Videos.mp4" type="video/mp4" />
+      <source src={video} type="video/mp4" />
     </video>
   );
 };

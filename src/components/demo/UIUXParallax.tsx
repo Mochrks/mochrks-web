@@ -1,6 +1,6 @@
 import React from "react";
 import { HeroParallax } from "../ui/hero-parallax";
-
+import { web1, web2, web3, web4, web5, web6, web7, web8 } from "@/assets/index";
 export function UIUXParallax() {
   return <HeroParallax products={products} />;
 }

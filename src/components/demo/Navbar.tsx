@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/Navbar.css";
 import Menu from "./Menu";
-
+import { logo } from "@/assets/index";
 export default function Navbar() {
   const [isActive, setIsActive] = useState(false);
 
@@ -19,7 +19,7 @@ export default function Navbar() {
         <div className="logo">
           <img
             className="inline w-[3rem] h-[3rem]"
-            src="/img/logo.png"
+            src={logo}
             alt="Logo"
           />
           <h2 className="text-white ml-2 my-auto text-md font-semibold tracking-tight first:mt-0">
