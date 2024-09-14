@@ -25,7 +25,7 @@ import {
   textVariantFromTop,
   textVariantFromLeft,
 } from "@/utils/motion.js";
-import LazyHero from "@/components/demo/LazyHero";
+
 
 
 const LazyVideo = lazy(() => import("@/components/demo/LazyVideo"));
@@ -61,19 +61,19 @@ export default function index() {
   return (
     <>
       {/* navbar */}
-      <div>
+      <header>
         <Navbar />
-      </div>
+      </header>
 
       {/* hero */}
-      <motion.div
+      <motion.main
         variants={staggerContainer(0.3, 1)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
         className="hero"
       >
-        <Suspense fallback={<LazyHero />}>
+        <Suspense >
           <LazyVideo />
         </Suspense>
         <div id="content">
@@ -91,18 +91,19 @@ export default function index() {
             </div>
           </motion.div>
         </div>
-      </motion.div>
+      </motion.main >
 
       {/* main section */}
-      <motion.div
+      < motion.div
         variants={staggerContainer(0.3, 1)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+        viewport={{ once: false, amount: 0.25 }
+        }
         className="MainContent"
       >
         {/* section UI/UX and recent project */}
-        <motion.section
+        < motion.section
           id="uiux"
           variants={textVariantFromTop(1.6)}
           initial="hidden"
@@ -112,10 +113,10 @@ export default function index() {
           <div className="w-full h-full ">
             <UIUXParallax />
           </div>
-        </motion.section>
+        </motion.section >
 
         {/*  section Skill */}
-        <motion.section
+        < motion.section
           id="skill"
           variants={textVariantFromLeft(0.12)}
           initial="hidden"
@@ -125,10 +126,10 @@ export default function index() {
           <div className="w-full h-full">
             <Skill />
           </div>
-        </motion.section>
+        </motion.section >
 
         {/* section about and education */}
-        <motion.section
+        < motion.section
           id="about"
           variants={textVariantFromButtom(0.12)}
           initial="hidden"
@@ -138,10 +139,10 @@ export default function index() {
           <div className="w-full h-full">
             <About />
           </div>
-        </motion.section>
+        </motion.section >
 
         {/* section experience */}
-        <motion.section
+        < motion.section
           id="experience"
           variants={textVariantFromButtom(0.12)}
           initial="hidden"
@@ -152,10 +153,10 @@ export default function index() {
             <WordFadeIn words="Experience" />
             <Experience />
           </div>
-        </motion.section>
+        </motion.section >
 
         {/* section recent projects */}
-        <motion.section
+        < motion.section
           id="projects"
           variants={textVariantFromButtom(0.12)}
           initial="hidden"
@@ -166,10 +167,10 @@ export default function index() {
             <WordFadeIn words="Recent Projects" />
             <RecentProject />
           </div>
-        </motion.section>
+        </motion.section >
 
         {/* section my photography  */}
-        <motion.section
+        < motion.section
           id="photography"
           variants={textVariantFromButtom(0.12)}
           initial="hidden"
@@ -183,10 +184,10 @@ export default function index() {
               <SeeMyPhotography />
             </div>
           </div>
-        </motion.section>
+        </motion.section >
 
         {/* section What do you want to do now? */}
-        <motion.section
+        < motion.section
           id="photography"
           variants={textVariantFromButtom(0.12)}
           initial="hidden"
@@ -196,10 +197,10 @@ export default function index() {
           <div className="w-full h-full">
             <WDYWTDN />
           </div>
-        </motion.section>
+        </motion.section >
 
         {/* section form contact */}
-        <motion.section
+        < motion.section
           id="contact"
           variants={textVariantFromLeft(0.12)}
           initial="hidden"
@@ -209,13 +210,13 @@ export default function index() {
           <div className="w-full h-full pt-10  mb-10 pb-10">
             <Contact />
           </div>
-        </motion.section>
+        </motion.section >
 
         {/* section for connection and footer */}
-        <div className="w-full h-full p-10 bg-slate-50">
+        < div className="w-full h-full p-10 bg-slate-50" >
           <Footer />
-        </div>
-      </motion.div>
+        </div >
+      </motion.div >
     </>
   );
 }

@@ -56,6 +56,7 @@ export function Contact() {
                   id="message"
                   placeholder="Type your message here"
                   className="input-class"
+
                 />
               </LabelInputContainer>
               <button

@@ -7,7 +7,7 @@ import Particles from "@/components/magicui/particles";
 import { WobbleCard } from "@/components/ui/wobble-card";
 import { FaGithub, FaMedium } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
+import { web3 } from "@/assets";
 export function RecentProject() {
   const [color, setColor] = useState("#ffffff");
   const navigate = useNavigate();
@@ -44,7 +44,7 @@ export function RecentProject() {
                 </p>
               </div>
               <img
-                src="/img/web3.webp"
+                src={web3}
                 width={500}
                 height={400}
                 alt="linear demo image"

@@ -12,7 +12,7 @@ import {
 import { FiArrowUp } from "react-icons/fi";
 import "../../styles/Footer.css";
 import useBreakpoints from "../../hooks/useBreakpoints";
-
+import { favicon } from "@/assets";
 export default function Footer() {
   const { isLg } = useBreakpoints();
 
@@ -125,7 +125,7 @@ export default function Footer() {
                 </h4>
               </div>
               <div className="ml-4">
-                <img src="/img/logo.png" alt="logo" className="w-12 h-12 " />
+                <img src={favicon} alt="logo" className="w-12 h-12 " />
               </div>
             </div>
           )}
