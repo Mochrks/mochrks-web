@@ -55,7 +55,7 @@ export function Experience() {
       title: "Cimahi Creative Association(CCA)",
       description: "3D Modeler",
       datePeriode: "Jun 2016 - Sep 2016 · 4 bln",
-      icon: "https://yt3.googleusercontent.com/ytc/AIdro_kQtlYDCVKlIHT4f5XKN2Vp71FDNPLeyxl1L_xgl8RwRA=s900-c-k-c0x00ffffff-no-rj",
+      icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-Hi5Ohe7HkTCit3jrCFXQ8YXmlvMkecHvwqNjuxSj-QCymVCywrAIxSyPjw_pDguoovr02RiAcaieZ4b6xUbsaCnGTn_HncJWtMM55bIpxCv5SIVSrjtclVIvD7LftEybD3f7COor4jg/s1600/cca%255B1%255D.png",
     },
   ];
   return (
