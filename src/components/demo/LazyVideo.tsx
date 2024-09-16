@@ -11,7 +11,7 @@ const LazyVideo: React.FC = () => {
   const startFadeOutHero = () => {
     setTimeout(() => {
       setIsHeroVisible(false);
-    }, 6000);
+    }, 2000);
   };
 
   useEffect(() => {
@@ -41,10 +41,12 @@ const LazyVideo: React.FC = () => {
       {!isHeroVisible && (
         <video
           autoPlay
+          preload="none"
           loop
           muted
           playsInline
           onCanPlay={() => setIsVideoReady(true)}
+          data-video-manager-ignore
           className="w-full h-full"
         >
           <source src={video} type="video/mp4" />

@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import ShineBorder from "@/components/magicui/shine-border";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { useEffect, useState } from "react";
-import Particles from "@/components/magicui/particles";
+
 import { WobbleCard } from "@/components/ui/wobble-card";
 import { FaGithub, FaMedium } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -19,13 +19,7 @@ export function RecentProject() {
   return (
     <>
       <div className="relative flex w-full h-full flex-col items-center overflow-hidden justify-center gap-10 pt-20 pb-20 ">
-        <Particles
-          className="absolute inset-0"
-          quantity={400}
-          ease={80}
-          color={color}
-          refresh
-        />
+
 
         <div className="container flex items-center justify-center ">
           <ShineBorder

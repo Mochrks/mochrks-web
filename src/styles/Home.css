@@ -1,8 +1,31 @@
 
-/* styled css */
+/* home */
+
+
+/* @import url('https://fonts.cdnfonts.com/css/danila'); */
+/* @import url('https://db.onlinewebfonts.com/c/fc650de7c3b3af62825a0e743b69425f?family=Helvetica+Neue+LT+W05+55+Roman'); */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://db.onlinewebfonts.com/c/fc650de7c3b3af62825a0e743b69425f?family=Helvetica+Neue+LT+W05+55+Roman');
-@import url('https://fonts.cdnfonts.com/css/danila');
+
+
+@font-face {
+    font-family: 'Danila';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Danila'), url('../assets/fonts/danila/danilla.woff') format('woff');
+}
+
+
+
+@font-face {
+  font-family: 'Helvetica Neue LT W05 55 Roman';
+  src: url('../assets/fonts/helvetica-roman/Web/fc650de7c3b3af62825a0e743b69425f.woff2') format('woff2'),
+       url('../assets/fonts/helvetica-roman/Web/fc650de7c3b3af62825a0e743b69425f.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+
+
 body{
   overflow-x:hidden; margin: 0;
   padding: 0;
@@ -65,7 +88,7 @@ html{
   letter-spacing: 0.02em;
   line-height: 1.5; 
   font-weight: 900;
-  display: inline-block; /* Penting untuk transformasi */
+  display: inline-block;
  
 }
 

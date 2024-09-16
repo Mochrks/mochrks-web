@@ -1,8 +1,5 @@
-("use client");
+"use client";
 import React, { useState } from "react";
-// import { calsans } from "@/fonts/calsans";
-// import Image from "next/image";
-// import { twMerge } from "tailwind-merge";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { Button } from "@/components/ui/button";
 import { ShootingStars } from "@/components/ui/shooting-stars";

@@ -98,7 +98,7 @@ export function ExpandArticle() {
 
 
                 </div>
-                <div className="pt-4 relative px-4 ">
+                <div className="pt-4 pb-10 relative px-4 ">
                   <motion.div
                     layout
                     initial={{ opacity: 0 }}
@@ -109,17 +109,18 @@ export function ExpandArticle() {
                     {typeof active.content === "function"
                       ? active.content()
                       : active.content}
+
+
                   </motion.div>
-                  <div className="mt-5 items-center mx-auto">
-                    <motion.a
-                      layoutId={`button-${active.title}-${id}`}
-                      href={active.ctaLink}
-                      target="_blank"
-                      className="px-4 py-3 text-sm rounded-sm font-bold text-center  bg-gray-800 text-white"
-                    >
-                      {active.ctaText}
-                    </motion.a>
-                  </div>
+                  <motion.a
+                    layoutId={`button-${active.title}-${id}`}
+                    href={active.ctaLink}
+                    target="_blank"
+                    className="px-4 py-3 text-sm rounded-sm font-bold text-center  bg-gray-800 text-white"
+                  >
+                    {active.ctaText}
+                  </motion.a>
+
 
                 </div>
 

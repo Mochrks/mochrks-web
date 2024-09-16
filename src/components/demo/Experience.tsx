@@ -23,7 +23,7 @@ export function Experience() {
       title: "Arutala Lab",
       description: "Bootcamp Participant",
       datePeriode: "Okt 2023 - Des 2023 · 3 bln",
-      icon: "https://lh5.googleusercontent.com/proxy/rOnq93TRAzejnbvoxoRDSp2v6efNHwi7Zb6FlD1SQjcDjyglQmJ5IDhH_TLiYeWZjnC90tz-sIwjs35OcJ7KxEjjeS-2eWCwQF_KS2y6uhdVrLCMGsUT17lIHc2LXLP5LJsAYavOL_tdZkIAJYJFOR-ue5MLdrw",
+      icon: "https://media.licdn.com/dms/image/v2/C560BAQGIDmJrVr9lIQ/company-logo_200_200/company-logo_200_200/0/1675394886122?e=2147483647&v=beta&t=YP3L151vo3SxvCwAc9u48ukyH4DYSxdmzzBJJBQ0m98",
     },
     {
       title: "Universitas Jenderal Achmad Yani",
