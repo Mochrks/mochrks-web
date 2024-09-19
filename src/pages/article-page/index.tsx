@@ -20,11 +20,11 @@ export default function index() {
           refresh
         />
         <ShootingStars />
-        <div className="container pt-20 mt-10 mb-20 text-center ">
+        <header className="container pt-20 mt-10 mb-20 text-center ">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
             My Article
           </h1>
-        </div>
+        </header>
         <TracingBeam className="px-6 ">
           <div className="max-w-7xl mx-auto antialiased pt-4 relative  ml-5">
             {dummyContent.map((item, index) => (
@@ -33,19 +33,19 @@ export default function index() {
                   {item.title}
                 </p>
 
-                <div className="flex space-x-2 mb-4">
+                <div className="flex space-x-2 mb-4 ">
                   {Array.isArray(item.badge) &&
                     item.badge.map((badge, badgeIndex) => (
-                      <span
+                      <div
                         key={`badge-${badgeIndex}`}
-                        className="bg-orange-700 text-white rounded-full text-sm px-4 py-1"
+                        className="bg-orange-700 text-white rounded-full text-sm px-4 py-1 flex-wrap text-wrap"
                       >
                         {badge}
-                      </span>
+                      </div>
                     ))}
                 </div>
 
-                <div className="text-sm prose prose-sm dark:prose-invert">
+                <article className="text-sm prose prose-sm dark:prose-invert">
                   {item?.image && (
                     <a href={item.link}>
                       <img
@@ -60,7 +60,7 @@ export default function index() {
                   <p className="text-base md:text-xl mb-4 ">
                     {item.description}
                   </p>
-                </div>
+                </article>
                 <div className="text-center pt-5">
                   <a href={item.link}>
                     <Button>Read More &rarr; </Button>
@@ -114,7 +114,7 @@ const dummyContent = [
         </p>
       </>
     ),
-    badge: ["Order Store", "Fullstack", "Mongodb & Postgresql"],
+    badge: ["Order", "Fullstack", "Mongodb ", " Postgresql",],
     image:
       "https://miro.medium.com/v2/resize:fit:750/format:webp/1*vUjRD1wNcbZyo0chMjYrQQ.jpeg",
     link: "https://medium.com/@mochrks/develop-order-store-dengan-oltp-olap-kafka-use-case-order-grab-198e852441a2",
@@ -134,7 +134,7 @@ const dummyContent = [
         </p>
       </>
     ),
-    badge: ["X-Mart", "Fullstack", "ReactJS+ Java Spring Boot + ExpressJS"],
+    badge: ["X-Mart", "Fullstack", "ReactJS", "express"],
     image:
       "https://miro.medium.com/v2/resize:fit:750/format:webp/1*KS08wiab3dmsJxaCEOABYA.png",
     link: "https://medium.com/@mochrks/fullstack-web-development-dengan-reactjs-java-spring-boot-node-js-expressjs-graphql-66f4d881e32f",

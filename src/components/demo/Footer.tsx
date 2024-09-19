@@ -10,8 +10,8 @@ import {
   FaPinterest,
 } from "react-icons/fa";
 import { FiArrowUp } from "react-icons/fi";
-import "../../styles/Footer.css";
-import useBreakpoints from "../../hooks/useBreakpoints";
+import "@/styles/Footer.css";
+import useBreakpoints from "@/hooks/useBreakpoints";
 import { favicon } from "@/assets";
 export default function Footer() {
   const { isLg } = useBreakpoints();
@@ -31,7 +31,7 @@ export default function Footer() {
               <span className="font-bold"> mochrizkiks@gmail.com</span>.
             </span>
           </p>
-          <ul className="flex flex-wrap justify-center space-x-4 gap-10 pt-10 mt-10">
+          <ul className="flex flex-wrap justify-center space-x-4 gap-10 pt-10 mt-10 ">
             <li>
               <a
                 href="https://medium.com/@mochrks"
@@ -108,14 +108,14 @@ export default function Footer() {
         </div>
       </div>
       {isLg ? null : (
-        <div className="text-center">
+        <div className="text-center ">
           <h4 className="text-md  tracking-tight text-slate-700">
             &copy; Design by Mochrks
           </h4>
         </div>
       )}
 
-      <footer className="flex ">
+      <footer className="flex">
         <div className="container flex items-center justify-center ">
           {isLg && (
             <div className="flex flex-row items-center">

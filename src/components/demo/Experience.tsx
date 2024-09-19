@@ -1,5 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
+import { cca } from "@/assets";
+
 import {
   IconAdjustmentsBolt,
   IconCloud,
@@ -55,7 +57,7 @@ export function Experience() {
       title: "Cimahi Creative Association(CCA)",
       description: "3D Modeler",
       datePeriode: "Jun 2016 - Sep 2016 · 4 bln",
-      icon: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-Hi5Ohe7HkTCit3jrCFXQ8YXmlvMkecHvwqNjuxSj-QCymVCywrAIxSyPjw_pDguoovr02RiAcaieZ4b6xUbsaCnGTn_HncJWtMM55bIpxCv5SIVSrjtclVIvD7LftEybD3f7COor4jg/s1600/cca%255B1%255D.png",
+      icon: cca,
     },
   ];
   return (

@@ -4,16 +4,16 @@ import { PiGlobeSimpleBold } from "react-icons/pi";
 export default function About() {
   return (
     <>
-      <div className="container ">
-        <div className="flex row ">
+      <div className="container">
+        <header className="flex row ">
           <h1 className="flex-grow scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-7xl ">
             About me
           </h1>
           <PiGlobeSimpleBold className="w-[3rem] h-[3rem] " />
-        </div>
+        </header>
 
-        <div className="mt-20 mb-20">
-          <p className="max-w-full text-base md:text-xl lg:text-2xl  text-white ">
+        <article className="mt-20 mb-20">
+          <p className="max-w-full antialiased text-base leading-loose text-white md:text-xl lg:text-2xl ">
             I'm Moch. Rizki Kurniawan as a software developer with a special
             interest in full-stack development and UI/UX design. I blend
             creativity with technical skills in all my projects. With a strong
@@ -57,7 +57,7 @@ export default function About() {
             production, and graphic design, let's connect and explore the
             possibilities!
           </p> */}
-        </div>
+        </article>
       </div>
     </>
   );

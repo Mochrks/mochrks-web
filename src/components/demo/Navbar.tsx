@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/Navbar.css";
+import "@/styles/Navbar.css";
 import Menu from "./Menu";
 import { logo } from "@/assets/index";
 export default function Navbar() {
@@ -15,8 +15,8 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="nav">
-        <div className="logo">
+      <nav className="nav">
+        <header className="logo">
           <img
             className="inline w-[3rem] h-[3rem]"
             src={logo}
@@ -27,7 +27,9 @@ export default function Navbar() {
             <br />
             World.
           </h2>
-        </div>
+        </header>
+
+
 
         <div
           className={`container w-[7rem] h-[5rem] sm:w-[8rem]  ${isActive ? "active" : ""
@@ -79,7 +81,7 @@ export default function Navbar() {
         </div>
 
         {isActive ? <Menu onMenuItemClick={handleMenuItemClick} /> : null}
-      </div>
+      </nav>
     </>
   );
 }

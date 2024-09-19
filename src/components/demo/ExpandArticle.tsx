@@ -84,13 +84,13 @@ export function ExpandArticle() {
                   <div className="max-w-full ">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-neutral-700 dark:text-neutral-200 "
+                      className="font-bold text-2xl text-neutral-700 dark:text-neutral-200 "
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400"
+                      className="text-base text-neutral-600 dark:text-neutral-400"
                     >
                       {active.description}
                     </motion.p>
@@ -104,13 +104,11 @@ export function ExpandArticle() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-neutral-600 text-md md:text-sm lg:text-lg h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {typeof active.content === "function"
                       ? active.content()
                       : active.content}
-
-
                   </motion.div>
                   <motion.a
                     layoutId={`button-${active.title}-${id}`}
@@ -245,7 +243,7 @@ const cards = [
     },
   },
   {
-    description: "React, Vite, TailwindCSS,Framer motion",
+    description: "React, Vite, TailwindCSS, Framer motion",
     title:
       "Implementasi Landing Page Produk Robotics dengan React, Vite, TailwindCSS, dan Framer Motion Animations",
     src: "https://miro.medium.com/v2/resize:fit:750/format:webp/1*BPzRb0XyNRbAqpUPOt49zg.png",
