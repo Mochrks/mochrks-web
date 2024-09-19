@@ -4,15 +4,15 @@ import { PiGlobeSimpleBold } from "react-icons/pi";
 export default function About() {
   return (
     <>
-      <div className="container">
-        <header className="flex row ">
+      <div className="container px-20 ">
+        <header className="flex row pt-10 ">
           <h1 className="flex-grow scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-7xl ">
             About me
           </h1>
           <PiGlobeSimpleBold className="w-[3rem] h-[3rem] " />
         </header>
 
-        <article className="mt-20 mb-20">
+        <article className="mt-20 pb-20">
           <p className="max-w-full antialiased text-base leading-loose text-white md:text-xl lg:text-2xl ">
             I'm Moch. Rizki Kurniawan as a software developer with a special
             interest in full-stack development and UI/UX design. I blend
