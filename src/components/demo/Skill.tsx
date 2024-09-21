@@ -5,10 +5,10 @@ export function Skill() {
   return (
     <>
       {" "}
-      <div className="h-[30rem] rounded-md flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-        <div className="pt-10">
-          <InfiniteMovingCards items={stack} direction="right" speed="slow" />
-        </div>
+      <div className="h-[20rem] rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden mt-20">
+
+        <InfiniteMovingCards items={stack} direction="right" speed="slow" />
+
       </div>
     </>
   );

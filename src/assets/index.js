@@ -16,6 +16,7 @@ import p3 from "./img/p3.webp";
 import p4 from "./img/p4.webp";
 import p5 from "./img/p5.webp";
 import artwork from "./img/artwork.webp";
+import dinkes from "./img/dinkes.png";
 
 export {
   favicon,
@@ -36,4 +37,5 @@ export {
   p4,
   p5,
   artwork,
+  dinkes,
 };

@@ -29,7 +29,7 @@ export default function index() {
           <div className="max-w-7xl mx-auto antialiased pt-4 relative  ml-5">
             {dummyContent.map((item, index) => (
               <div key={`content-${index}`} className="mb-10">
-                <p className="text-3xl mb-4 font-extrabold text-white">
+                <p className=" text-xl lg:text-3xl mb-4 font-extrabold text-white">
                   {item.title}
                 </p>
 

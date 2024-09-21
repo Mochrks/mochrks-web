@@ -74,6 +74,4 @@ const images = [
   "https://mochrks.github.io/assets/img-photo/17.png",
   "https://mochrks.github.io/assets/img-photo/1.jpg",
 
-
-
 ];

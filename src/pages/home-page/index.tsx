@@ -126,7 +126,7 @@ export default function index() {
             whileInView="show"
             viewport={{ once: false, amount: 0.45 }}
           >
-            <div className="w-full h-full">
+            <div className="w-full h-full ">
               <Skill />
             </div>
           </motion.section >
