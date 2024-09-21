@@ -24,10 +24,10 @@ export function WDYWTDN() {
   };
 
   const handleProject = () => {
-    navigate("/project");
+    navigate("/ui-ux-design");
   };
   const handleDesign = () => {
-    navigate("/design");
+    navigate("/design-artwork");
   };
 
   const words = [
@@ -70,17 +70,17 @@ export function WDYWTDN() {
         {isMd && (<div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
           <ShimmerButton className="shadow-2xl" onClick={handleArticle}>
             <span className="whitespace-pre-wrap text-end text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-              Article
+              My Article
             </span>
           </ShimmerButton>
           <ShimmerButton className="shadow-2xl" onClick={handleDesign}>
             <span className="whitespace-pre-wrap text-end text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-              Design
+              Design Artwork
             </span>
           </ShimmerButton>
           <ShimmerButton className="shadow-2xl" onClick={handleProject}>
             <span className="whitespace-pre-wrap text-end text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-              Project
+              UI/UX
             </span>
           </ShimmerButton>
         </div>)}
@@ -88,20 +88,20 @@ export function WDYWTDN() {
         {isMd ? null : (<div className="flex flex-col gap-4  mt-5 pt-5">
           <Card className="w-[350px] bg-black bg-black:hover hover:bg-zinc-950 cursor-pointer" onClick={handleArticle}>
             <CardHeader>
-              <CardTitle>Article</CardTitle>
+              <CardTitle>My Article</CardTitle>
               <CardDescription>Load more</CardDescription>
             </CardHeader>
           </Card>
           <Card className="w-[350px]  bg-black bg-black:hover hover:bg-zinc-950 cursor-pointer" onClick={handleDesign}>
             <CardHeader>
-              <CardTitle> Design</CardTitle>
+              <CardTitle> Design Artwork</CardTitle>
               <CardDescription>See all my design</CardDescription>
             </CardHeader>
           </Card>
           <Card className="w-[350px]  bg-black bg-black:hover hover:bg-zinc-950 cursor-pointer" onClick={handleProject}>
             <CardHeader>
-              <CardTitle>Project</CardTitle>
-              <CardDescription>See all project</CardDescription>
+              <CardTitle>UI/UX</CardTitle>
+              <CardDescription>See all project UI/UX</CardDescription>
             </CardHeader>
           </Card>
         </div>)}

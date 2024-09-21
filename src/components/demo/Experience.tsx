@@ -2,17 +2,6 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { cca } from "@/assets";
 
-import {
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconEaseInOut,
-  IconHeart,
-  IconHelp,
-  IconRouteAltLeft,
-  IconTerminal2,
-} from "@tabler/icons-react";
-
 export function Experience() {
   const features = [
     {

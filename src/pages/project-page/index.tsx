@@ -1,9 +1,14 @@
 import React from "react";
 import { CardProject } from "@/components/demo/CardProject";
-
+import { p1, p2, p3, p4, p5 } from "@/assets";
 export default function index() {
   return (
-    <div className="max-w-8xl mx-auto px-8">
+    <div className="max-w-[90rem] mx-auto px-8">
+      <div className="container pt-20 mt-10 mb-20 text-center">
+        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+          All Project
+        </h1>
+      </div>
       <CardProject items={projects} />
     </div>
   );
@@ -11,93 +16,53 @@ export default function index() {
 
 export const projects = [
   {
-    title: "Stripe",
+    title: "Web Drone Product",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
+      "The web drone website project using React and the Tailwind Framework is a website creation project designed to promote drone products",
+    link: "https://github.com/Mochrks/web-drone-project",
+    web: "https://web-drone-dji.vercel.app/",
+    git: "https://github.com/Mochrks/web-drone-project",
+    img: p1,
+
   },
   {
-    title: "Netflix",
+    title: "Web Robotics Ai Product",
     description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-    link: "https://netflix.com",
+      "in this project, I build a website about innovative, challenging, advanced, technology, artificial intelligence, robotics, interactive and attractive design order",
+    link: "https://github.com/Mochrks/web-robotics-ai-project",
+    web: "https://web-robotics-ai.vercel.app/",
+    git: "https://github.com/Mochrks/web-robotics-ai-project",
+    img: p2,
+
   },
   {
-    title: "Google",
+    title: "Web E-commerce Tshirt Product",
     description:
-      "A multinational technology company that specializes in Internet-related services and products.",
-    link: "https://google.com",
+      "Web modern and attractive T-shirt e-commerce website with a superior user interface (UI) and user experience (UX). ",
+    link: "https://github.com/Mochrks/web-e-commerce-tshirt-brand-project",
+    web: "https://web-tshirt-brand.vercel.app/",
+    git: "https://github.com/Mochrks/web-e-commerce-tshirt-brand-project",
+    img: p3,
+
   },
   {
-    title: "Meta",
+    title: "Web Blockchain Product",
     description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
+      "My project is to create a modern website UI/UX for blockchain technology using React + Vite, Tailwind and Framer Motion technologies",
+    link: "https://github.com/Mochrks/web-multichain-gen-z-project",
+    web: "https://web-multichain.vercel.app/",
+    git: "https://github.com/Mochrks/web-multichain-gen-z-project",
+    img: p4,
   },
   {
-    title: "Amazon",
+    title: "Web Nfts Product",
     description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
+      "Creating attractive and efficient modern NFTs can be achieved by using React as the main framework and combining it with Tailwind CSS and Vite as supporting tools.",
+    link: "https://github.com/Mochrks/web-nfts-project",
+    web: "https://web-nfts-three.vercel.app/",
+    git: "https://github.com/Mochrks/web-nfts-project",
+    img: p5,
   },
-  {
-    title: "Microsoft",
-    description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
-  },
-  {
-    title: "Meta",
-    description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
-  },
-  {
-    title: "Amazon",
-    description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
-  },
-  {
-    title: "Microsoft",
-    description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
-  },
-  {
-    title: "Meta",
-    description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
-  },
-  {
-    title: "Amazon",
-    description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
-  },
-  {
-    title: "Microsoft",
-    description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
-  },
-  {
-    title: "Meta",
-    description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
-  },
-  {
-    title: "Amazon",
-    description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
-  },
-  {
-    title: "Microsoft",
-    description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
-  },
+
+
 ];

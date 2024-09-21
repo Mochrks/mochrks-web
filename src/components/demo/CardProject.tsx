@@ -2,6 +2,8 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { PiGlobeSimpleBold } from "react-icons/pi";
+import { VscGithub } from "react-icons/vsc";
 
 export const CardProject = ({
   items,
@@ -11,6 +13,9 @@ export const CardProject = ({
     title: string;
     description: string;
     link: string;
+    web: string;
+    git: string;
+    img: string;
   }[];
   className?: string;
 }) => {
@@ -18,11 +23,7 @@ export const CardProject = ({
 
   return (
     <>
-      <div className="container pt-20 mt-10 mb-20 text-center">
-        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          All Project
-        </h1>
-      </div>
+
 
       <div
         className={cn(
@@ -41,7 +42,7 @@ export const CardProject = ({
             <AnimatePresence>
               {hoveredIndex === idx && (
                 <motion.span
-                  className="absolute inset-0 h-full w-full bg-gradient-to-t from-gray-600  dark:bg-slate-800/[0.8] to-transparent  block  rounded-3xl"
+                  className="absolute inset-0 h-full w-full bg-gradient-to-r from-gray-600  dark:bg-slate-800/[0.8] to-transparent  block  rounded-3xl"
                   layoutId="hoverBackground"
                   initial={{ opacity: 0 }}
                   animate={{
@@ -56,8 +57,18 @@ export const CardProject = ({
               )}
             </AnimatePresence>
             <Card>
-              <CardTitle>{item.title}</CardTitle>
+              <CardTitle>
+                <div className="flex justify-between">
+                  {item.title}
+
+                  <div className="flex gap-1">
+                    <a href={item.web}><PiGlobeSimpleBold className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 " /></a>
+                    <a href={item.git}><VscGithub className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 " /></a>
+                  </div>
+                </div>
+              </CardTitle>
               <CardDescription>{item.description}</CardDescription>
+              <CardContent><img src={item.img} alt={item.title} /></CardContent>
             </Card>
           </a>
         ))}
@@ -76,7 +87,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-[30rem] w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-[30rem] lg:h-[40rem] w-full p-4 overflow-hidden bg-gradient-to-t from-black dark:from-slate-100 to-transparant block border-transparent dark:border-white/[0.2] group-hover:border-slate-500 relative z-20",
         className
       )}
     >
@@ -96,7 +107,7 @@ export const CardTitle = ({
   return (
     <h4
       className={cn(
-        "text-zinc-100 text-3xl font-bold tracking-wide mt-4",
+        "text-zinc-100 text-xl md:text-2xl lg:text-3xl font-bold tracking-wide mt-4 ",
         className
       )}
     >
@@ -120,5 +131,25 @@ export const CardDescription = ({
     >
       {children}
     </p>
+  );
+};
+export const CardContent = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <div
+      className={cn(
+        " h-full w-full mt-2 p-2 overflow-hidden  border border-transparent  relative z-20",
+        className
+      )}
+    >
+      <div className="relative z-50">
+        {children}
+      </div>
+    </div>
   );
 };

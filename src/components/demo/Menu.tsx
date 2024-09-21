@@ -16,7 +16,7 @@ export default function Menu({ onMenuItemClick }) {
     navigate("/project");
   };
   const handleDesign = () => {
-    navigate("/design");
+    navigate("/design-artwork");
   };
   const handleUIUX = () => {
     navigate("/ui-ux-design");
@@ -37,7 +37,7 @@ export default function Menu({ onMenuItemClick }) {
           </li>
           <li>
             <a onClick={handleDesign} className="cursor-pointer">
-              DESIGN
+              DESIGN ARTWORK
             </a>
           </li>
           <li>

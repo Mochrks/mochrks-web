@@ -14,7 +14,7 @@ const _Routes = () => {
         <Route exact path="/article" element={<Article />} />
         <Route exact path="/photography" element={<Photography />} />
         <Route exact path="/project" element={<Project />} />
-        <Route exact path="/design" element={<Design />} />
+        <Route exact path="/design-artwork" element={<Design />} />
         <Route exact path="/ui-ux-design" element={<UIUXDesign />} />
       </Routes>
     </Router>

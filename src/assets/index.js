@@ -10,6 +10,11 @@ import web6 from "./img/web6.webp";
 import web7 from "./img/web7.webp";
 import web8 from "./img/web8.webp";
 import video from "./video/Videos.mp4";
+import p1 from "./img/p1.webp";
+import p2 from "./img/p2.webp";
+import p3 from "./img/p3.webp";
+import p4 from "./img/p4.webp";
+import p5 from "./img/p5.webp";
 
 export {
   favicon,
@@ -24,4 +29,9 @@ export {
   web8,
   video,
   cca,
+  p1,
+  p2,
+  p3,
+  p4,
+  p5,
 };

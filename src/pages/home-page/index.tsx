@@ -197,7 +197,7 @@ export default function index() {
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
           >
-            <div className="w-full h-full">
+            <div className="w-full h-full  my-10">
               <WDYWTDN />
             </div>
           </motion.section >
