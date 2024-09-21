@@ -15,6 +15,7 @@ import p2 from "./img/p2.webp";
 import p3 from "./img/p3.webp";
 import p4 from "./img/p4.webp";
 import p5 from "./img/p5.webp";
+import artwork from "./img/artwork.webp";
 
 export {
   favicon,
@@ -34,4 +35,5 @@ export {
   p3,
   p4,
   p5,
+  artwork,
 };

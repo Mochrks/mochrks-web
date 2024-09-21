@@ -50,15 +50,15 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
 
 const items = [
   {
-    image: "https://mochrks.github.io/img/ig5.jpg",
+    image: "https://mochrks.github.io/assets/img-photo/ig5.jpg",
     title: "Beach Bliss",
   },
   {
-    image: "https://mochrks.github.io/img/ig24.jpg",
+    image: "https://mochrks.github.io/assets/img-photo/ig24.jpg",
     title: "Forest Charm",
   },
   {
-    image: "https://mochrks.github.io/img/ig23.jpg",
+    image: "https://mochrks.github.io/assets/img-photo/ig23.jpg",
     title: "Fluttering Beauty",
   },
 ];

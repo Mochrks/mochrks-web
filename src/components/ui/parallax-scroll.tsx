@@ -108,7 +108,7 @@ const BGContent = () => {
     <div
       className="grid grid-cols-1 h-full w-full relative border rounded-md overflow-hidden"
       style={{
-        backgroundImage: `url(https://mochrks.github.io/img/ig10.jpg)`,
+        backgroundImage: `url(https://mochrks.github.io/assets/img-photo/ig10.jpg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

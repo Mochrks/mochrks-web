@@ -4,7 +4,7 @@ import { PiGlobeSimpleBold } from "react-icons/pi";
 export default function About() {
   return (
     <>
-      <div className="container px-10 lg:px-20 ">
+      <div className="container px-10 lg:px-20 py-20 ">
         <header className="flex row pt-10 ">
           <h1 className="flex-grow scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-7xl ">
             About me
