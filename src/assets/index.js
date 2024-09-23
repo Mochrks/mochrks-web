@@ -17,6 +17,13 @@ import p4 from "./img/p4.webp";
 import p5 from "./img/p5.webp";
 import artwork from "./img/artwork.webp";
 import dinkes from "./img/dinkes.png";
+import project from "./img/project.png";
+import about from "./img/about.png";
+import contact from "./img/contact.png";
+import photo from "./img/camera.png";
+import design from "./img/design.png";
+import uiux from "./img/uiux.png";
+import article from "./img/article.png";
 
 export {
   favicon,
@@ -38,4 +45,11 @@ export {
   p5,
   artwork,
   dinkes,
+  project,
+  contact,
+  article,
+  uiux,
+  about,
+  photo,
+  design,
 };
