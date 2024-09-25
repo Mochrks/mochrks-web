@@ -27,10 +27,7 @@ import {
 } from "@/utils/motion.js";
 
 
-
 const LazyVideo = lazy(() => import("@/components/demo/LazyVideo"));
-
-
 
 export default function index() {
   const [loading, setLoading] = useState(true);

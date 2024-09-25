@@ -6,12 +6,17 @@ import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import Particles from "@/components/magicui/particles";
 import { ExpandArticle } from "@/components/demo/ExpandArticle";
+import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
+import { motion } from "framer-motion";
 
 export default function index() {
   const [color, setColor] = useState("#ffffff");
   return (
     <>
-      <div className="relative w-full h-full overflow-hidden">
+      <header className="w-full">
+        <Title />
+      </header>
+      <article className="relative w-full h-full mt-20 overflow-hidden">
         <Particles
           className="absolute inset-0"
           quantity={300}
@@ -20,11 +25,6 @@ export default function index() {
           refresh
         />
         <ShootingStars />
-        <header className="container pt-20 mt-10 mb-20 text-center ">
-          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-            My Article
-          </h1>
-        </header>
         <TracingBeam className="px-6 ">
           <div className="max-w-7xl mx-auto antialiased pt-4 relative  ml-5">
             {dummyContent.map((item, index) => (
@@ -73,7 +73,8 @@ export default function index() {
             <ExpandArticle />
           </div>
         </TracingBeam>
-      </div>
+        <ScrollToTopButton />
+      </article>
     </>
   );
 }
@@ -140,3 +141,76 @@ const dummyContent = [
     link: "https://medium.com/@mochrks/fullstack-web-development-dengan-reactjs-java-spring-boot-node-js-expressjs-graphql-66f4d881e32f",
   },
 ];
+
+
+export const Title = () => {
+  return (
+    <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
+      <FlipLink>MY </FlipLink>
+      <FlipLink>ARTICLE.</FlipLink>
+    </section>
+  );
+};
+const DURATION = 0.25;
+const STAGGER = 0.025;
+
+const FlipLink = ({ children }) => {
+  return (
+    <motion.a
+      initial="initial"
+      whileHover="hovered"
+
+      className="relative block overflow-hidden whitespace-nowrap text-5xl font-black uppercase sm:text-7xl md:text-7xl lg:text-8xl 2xl:text-9xl"
+      style={{
+        lineHeight: 0.75,
+      }}
+    >
+      <div>
+        {children.split("").map((l, i) => (
+          <motion.span
+            variants={{
+              initial: {
+                y: 0,
+              },
+              hovered: {
+                y: "-100%",
+              },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+            key={i}
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
+      <div className="absolute inset-0">
+        {children.split("").map((l, i) => (
+          <motion.span
+            variants={{
+              initial: {
+                y: "100%",
+              },
+              hovered: {
+                y: 0,
+              },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+            key={i}
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
+    </motion.a>
+  );
+};

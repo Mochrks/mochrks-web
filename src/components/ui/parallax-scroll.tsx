@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import Particles from "@/components/magicui/particles";
+import ScrollToTopButton from "../demo/ScrollToTopButton";
 
 export const ParallaxScroll = ({
   images,
@@ -34,8 +35,8 @@ export const ParallaxScroll = ({
 
   return (
     <>
-      <div className="relative  w-full">
-        <BGContent />
+      <div className="relative w-full">
+        <Title />
       </div>
       <div className="relative w-full h-full overflow-hidden">
         <div className="container text-center mt-10"></div>
@@ -44,7 +45,7 @@ export const ParallaxScroll = ({
           ref={gridRef}
         >
           <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start  max-w-7xl mx-auto gap-10 py-40 px-10 z-10"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-5 text-center px-12 py-5"
             ref={gridRef}
           >
             <div className="grid gap-10">
@@ -99,38 +100,82 @@ export const ParallaxScroll = ({
           refresh
         />
         <ShootingStars />
+        <ScrollToTopButton />
       </div>
     </>
   );
 };
-const BGContent = () => {
+
+
+export const Title = () => {
   return (
-    <div
-      className="grid grid-cols-1 h-full w-full relative border rounded-md overflow-hidden"
-      style={{
-        backgroundImage: `url(https://mochrks.github.io/assets/img-photo/ig10.jpg)`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <Noise />
-      <h1 className="text-white text-center text-6xl md:text-7xl lg:text-9xl mt-40 font-extrabold tracking-tight  pb-10 z-10">
-        My Photography
-      </h1>
-      <div className="inset-0 absolute bg-grid-black/[0.1] dark:bg-grid-white/[0.1]" />
-    </div>
+    <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
+      <FlipLink>MY </FlipLink>
+      <FlipLink>Photography.</FlipLink>
+
+    </section>
   );
 };
+const DURATION = 0.25;
+const STAGGER = 0.025;
 
-const Noise = () => {
+const FlipLink = ({ children }) => {
   return (
-    <div
-      className="absolute inset-0 w-full h-[36rem] scale-[1.2] transform opacity-10 [mask-image:radial-gradient(#fff,transparent,75%)]"
+    <motion.a
+      initial="initial"
+      whileHover="hovered"
+
+      className="relative block overflow-hidden whitespace-nowrap text-5xl font-black uppercase sm:text-7xl md:text-7xl lg:text-8xl 2xl:text-9xl"
       style={{
-        backgroundImage: "url(/noise.webp)",
-        backgroundSize: "40%",
+        lineHeight: 0.75,
       }}
-    ></div>
+    >
+      <div>
+        {children.split("").map((l, i) => (
+          <motion.span
+            variants={{
+              initial: {
+                y: 0,
+              },
+              hovered: {
+                y: "-100%",
+              },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+            key={i}
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
+      <div className="absolute inset-0">
+        {children.split("").map((l, i) => (
+          <motion.span
+            variants={{
+              initial: {
+                y: "100%",
+              },
+              hovered: {
+                y: 0,
+              },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+            key={i}
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
+    </motion.a>
   );
 };

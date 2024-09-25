@@ -1,16 +1,19 @@
 import React from "react";
 import { CardProject } from "@/components/demo/CardProject";
 import { p1, p2, p3, p4, p5 } from "@/assets";
+import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
+import { motion } from "framer-motion";
 export default function index() {
   return (
-    <div className="max-w-[90rem] mx-auto px-8">
-      <div className="container pt-20 mt-10 mb-20 text-center">
-        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          All Project
-        </h1>
+    <>
+      <div className="w-full">
+        <Title />
       </div>
-      <CardProject items={projects} />
-    </div>
+      <div className="max-w-[90rem] 2xl:max-w-full mx-auto px-10 py-10 2xl:py-20">
+        <CardProject items={projects} />
+      </div>
+      <ScrollToTopButton />
+    </>
   );
 }
 
@@ -66,3 +69,76 @@ export const projects = [
 
 
 ];
+
+
+export const Title = () => {
+  return (
+    <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
+      <FlipLink>ALL </FlipLink>
+      <FlipLink>PROJECT.</FlipLink>
+    </section>
+  );
+};
+const DURATION = 0.25;
+const STAGGER = 0.025;
+
+const FlipLink = ({ children }) => {
+  return (
+    <motion.a
+      initial="initial"
+      whileHover="hovered"
+
+      className="relative block overflow-hidden whitespace-nowrap text-5xl font-black uppercase sm:text-7xl md:text-7xl lg:text-8xl 2xl:text-9xl"
+      style={{
+        lineHeight: 0.75,
+      }}
+    >
+      <div>
+        {children.split("").map((l, i) => (
+          <motion.span
+            variants={{
+              initial: {
+                y: 0,
+              },
+              hovered: {
+                y: "-100%",
+              },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+            key={i}
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
+      <div className="absolute inset-0">
+        {children.split("").map((l, i) => (
+          <motion.span
+            variants={{
+              initial: {
+                y: "100%",
+              },
+              hovered: {
+                y: 0,
+              },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+            key={i}
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
+    </motion.a>
+  );
+};

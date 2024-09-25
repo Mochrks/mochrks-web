@@ -61,7 +61,7 @@ const Icons = {
 const DATA = {
   navbar: [
     { href: "#", icon: HomeIcon, label: "Home" },
-    { href: "/article", icon: PencilIcon, label: "Blog" },
+    { href: "/article", icon: PencilIcon, label: "Article" },
   ],
   contact: {
     social: {
@@ -76,7 +76,7 @@ const DATA = {
         icon: Icons.linkedin,
       },
 
-      email: {
+      Email: {
         name: "Send Email",
         url: "mochrizkiks@gmail.com",
         icon: Icons.email,
