@@ -10,6 +10,7 @@ import useBreakpoints from "../../hooks/useBreakpoints";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Send } from 'lucide-react';
+import { Textarea } from "../ui/textarea";
 
 // Define Zod validation schema
 const formSchema = z.object({
@@ -92,10 +93,10 @@ export function Contact() {
               </LabelInputContainer>
               <LabelInputContainer className="mb-4">
                 <Label htmlFor="message">Message</Label>
-                <Input
+                <Textarea
                   id="message"
                   placeholder="Type your message here"
-                  className="input-class"
+                  className="input-class  "
                   {...register("message")}
                 />
                 {errors.message && <p className="text-red-600">{errors.message.message}</p>}
