@@ -173,8 +173,14 @@ export default function Index() {
     setIsLoading(false);
   };
 
-  useEffect(() => {
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
     setPage(1);
+    setDisplayedArtworks([]);
+    loadMoreArtworks(1, true);
+  };
+
+  useEffect(() => {
     loadMoreArtworks(1, true);
   }, [activeCategory]);
 
@@ -197,7 +203,7 @@ export default function Index() {
     <>
       <div className="w-full h-full">
         <Title />
-        <TabsMenu setActiveCategory={setActiveCategory} />
+        <TabsMenu setActiveCategory={handleCategoryChange} />
         <section id="photos" className="mx-auto px-10 py-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-7">
             {displayedArtworks.map((artwork) => (
@@ -219,8 +225,8 @@ export default function Index() {
             ))}
           </div>
           {isLoading && (
-            <div className="flex justify-center items-center mt-8">
-              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900"></div>
+            <div className="flex justify-center items-center my-8">
+              <h5 className="text-white">Load more data ...</h5>
             </div>
           )}
         </section>
@@ -320,10 +326,10 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-03.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "portrait"
+    category: "design"
   },
   {
-    id: 3,
+    id: 5,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-04.webp",
     artist: "@mochrks",
@@ -331,7 +337,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 6,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-05.webp",
     artist: "@mochrks",
@@ -339,7 +345,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 7,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-06.webp",
     artist: "@mochrks",
@@ -347,7 +353,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 8,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-07.webp",
     artist: "@mochrks",
@@ -355,7 +361,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 9,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-08.webp",
     artist: "@mochrks",
@@ -363,7 +369,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 10,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-09.webp",
     artist: "@mochrks",
@@ -371,7 +377,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 11,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-10.webp",
     artist: "@mochrks",
@@ -379,7 +385,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 12,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-11.webp",
     artist: "@mochrks",
@@ -387,7 +393,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 13,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-12.webp",
     artist: "@mochrks",
@@ -395,7 +401,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 14,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-13.webp",
     artist: "@mochrks",
@@ -403,7 +409,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 15,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-14.webp",
     artist: "@mochrks",
@@ -411,7 +417,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 16,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-15.webp",
     artist: "@mochrks",
@@ -419,7 +425,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 17,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-16.webp",
     artist: "@mochrks",
@@ -427,7 +433,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 18,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-17.webp",
     artist: "@mochrks",
@@ -435,7 +441,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 19,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-18.webp",
     artist: "@mochrks",
@@ -443,7 +449,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 20,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-19.webp",
     artist: "@mochrks",
@@ -451,7 +457,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 21,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-20.webp",
     artist: "@mochrks",
@@ -459,7 +465,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 22,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-21.webp",
     artist: "@mochrks",
@@ -467,7 +473,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 23,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-22.webp",
     artist: "@mochrks",
@@ -475,7 +481,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 24,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-23.webp",
     artist: "@mochrks",
@@ -483,7 +489,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 25,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-24.webp",
     artist: "@mochrks",
@@ -491,7 +497,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 26,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-25.webp",
     artist: "@mochrks",
@@ -499,7 +505,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 27,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-26.webp",
     artist: "@mochrks",
@@ -507,7 +513,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 28,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-27.webp",
     artist: "@mochrks",
@@ -515,7 +521,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 29,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-28.webp",
     artist: "@mochrks",
@@ -523,7 +529,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 30,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-29.webp",
     artist: "@mochrks",
@@ -531,7 +537,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 31,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-30.webp",
     artist: "@mochrks",
@@ -539,7 +545,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 32,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-31.webp",
     artist: "@mochrks",
@@ -547,7 +553,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 33,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-32.webp",
     artist: "@mochrks",
@@ -555,7 +561,7 @@ const artworks: Artwork[] = [
     category: "design"
   },
   {
-    id: 3,
+    id: 34,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-33.webp",
     artist: "@mochrks",
@@ -906,278 +912,531 @@ const artworks: Artwork[] = [
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
     category: "design"
   },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork43.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork44.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork45.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork46.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork47.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork48.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork49.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork50.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork51.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork52.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork53.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork54.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork55.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork56.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork57.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork58.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork59.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork60.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork61.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork62.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork63.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork64.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork65.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork66.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork67.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork68.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork69.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork70.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork71.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork72.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork73.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork74.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork75.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Artwork",
+  //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork76.webp",
+  //   artist: "@mochrks",
+  //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+  //   category: "design"
+  // },
+  // portrait
   {
-    id: 3,
+    id: 201,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork43.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/1.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 202,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork44.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/2.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 203,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork45.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/3.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 204,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork46.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/4.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 205,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork47.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/5.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 206,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork48.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/6.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 207,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork49.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/7.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 208,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork50.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/8.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 209,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork51.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/9.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 210,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork52.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/10.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 211,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork53.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/11.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 212,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork54.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/12.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 213,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork55.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/13.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 300,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork56.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/20.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 301,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork57.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/21.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 302,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork58.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/22.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 304,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork59.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/24.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 305,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork60.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/25.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 306,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork61.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/26.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 307,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork62.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/27.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 308,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork63.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/28.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 309,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork64.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/29.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 311,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork65.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/31.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 312,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork66.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/32.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
   },
   {
-    id: 3,
+    id: 313,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork67.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-artwork-potrait/33.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "portrait"
+  },
+
+  // illustration
+
+  {
+    id: 501,
+    title: "Artwork",
+    imageUrl: "https://mochrks.github.io/assets/img-ilustration/artwork 1.webp",
+    artist: "@mochrks",
+    description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+    category: "illustration"
   },
   {
-    id: 3,
+    id: 502,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork68.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-ilustration/artwork 2.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "illustration"
   },
   {
-    id: 3,
+    id: 503,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork69.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-ilustration/artwork 3.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "illustration"
   },
   {
-    id: 3,
+    id: 504,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork70.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-ilustration/artwork 4.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "illustration"
   },
   {
-    id: 3,
+    id: 505,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork71.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-ilustration/artwork 5.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "illustration"
   },
   {
-    id: 3,
+    id: 506,
     title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork72.webp",
+    imageUrl: "https://mochrks.github.io/assets/img-ilustration/artwork 6.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "illustration"
   },
-  {
-    id: 3,
-    title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork73.webp",
-    artist: "@mochrks",
-    description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
-  },
-  {
-    id: 3,
-    title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork74.webp",
-    artist: "@mochrks",
-    description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
-  },
-  {
-    id: 3,
-    title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork75.webp",
-    artist: "@mochrks",
-    description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
-  },
-  {
-    id: 3,
-    title: "Artwork",
-    imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork76.webp",
-    artist: "@mochrks",
-    description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
-  },
+
 
 
 ]
