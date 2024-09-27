@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { X } from 'lucide-react'
@@ -72,7 +70,7 @@ const FlipLink = ({ children }) => {
   );
 };
 
-const ITEMS_PER_PAGE = 20;
+const ITEMS_PER_PAGE = 8;
 
 export const TabsMenu = ({ setActiveCategory }) => {
   return (
@@ -89,7 +87,7 @@ const SlideTabs = ({ setActiveCategory }) => {
     opacity: 0,
   });
 
-  const categories = ["design", "illustration", "manipulation", "portrait"];
+  const categories = ["design t-shirt", "illustration", "artwork", "portrait"];
 
   return (
     <ul
@@ -146,7 +144,7 @@ const Cursor = ({ position }) => {
 };
 export default function Index() {
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
-  const [activeCategory, setActiveCategory] = useState("design");
+  const [activeCategory, setActiveCategory] = useState("illustration");
   const [displayedArtworks, setDisplayedArtworks] = useState<Artwork[]>([]);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
@@ -155,7 +153,7 @@ export default function Index() {
     setIsLoading(true);
 
     // Simulate API call with a 2-second delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise(resolve => setTimeout(resolve, 1000));
 
     const filteredArtworks = artworks.filter(
       (artwork) => artwork.category.toLowerCase() === activeCategory.toLowerCase()
@@ -199,6 +197,8 @@ export default function Index() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [page, activeCategory, isLoading]);
 
+  const range = (n: number) => Array.from(Array(n).keys())
+
   return (
     <>
       <div className="w-full h-full">
@@ -225,8 +225,15 @@ export default function Index() {
             ))}
           </div>
           {isLoading && (
-            <div className="flex justify-center items-center my-8">
-              <h5 className="text-white">Load more data ...</h5>
+            <div className="flex justify-center items-center my-8 space-x-1">
+              {range(3).map((i) => (
+                <motion.div
+                  key={i}
+                  className="w-3 h-3 bg-gray-500 rounded-full "
+                  animate={{ opacity: [1, 0.5, 1] }}
+                  transition={{ duration: 1, repeat: Infinity, delay: i * 0.3 }}
+                />
+              ))}
             </div>
           )}
         </section>
@@ -300,7 +307,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork//D-1.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
 
   {
@@ -309,7 +316,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-01.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
 
   {
@@ -318,7 +325,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-02.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 4,
@@ -326,7 +333,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-03.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 5,
@@ -334,7 +341,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-04.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 6,
@@ -342,7 +349,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-05.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 7,
@@ -350,7 +357,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-06.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 8,
@@ -358,7 +365,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-07.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 9,
@@ -366,7 +373,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-08.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 10,
@@ -374,7 +381,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-09.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 11,
@@ -382,7 +389,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-10.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 12,
@@ -390,7 +397,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-11.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 13,
@@ -398,7 +405,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-12.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 14,
@@ -406,7 +413,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-13.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 15,
@@ -414,7 +421,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-14.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 16,
@@ -422,7 +429,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-15.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 17,
@@ -430,7 +437,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-16.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 18,
@@ -438,7 +445,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-17.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 19,
@@ -446,7 +453,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-18.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 20,
@@ -454,7 +461,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-19.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 21,
@@ -462,7 +469,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-20.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 22,
@@ -470,7 +477,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-21.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 23,
@@ -478,7 +485,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-22.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 24,
@@ -486,7 +493,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-23.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 25,
@@ -494,7 +501,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-24.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 26,
@@ -502,7 +509,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-25.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 27,
@@ -510,7 +517,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-26.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 28,
@@ -518,7 +525,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-27.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 29,
@@ -526,7 +533,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-28.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 30,
@@ -534,7 +541,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-29.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 31,
@@ -542,7 +549,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-30.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 32,
@@ -550,7 +557,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-31.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 33,
@@ -558,7 +565,7 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-32.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
     id: 34,
@@ -566,351 +573,351 @@ const artworks: Artwork[] = [
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-33.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 35,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/D-34.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 36,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork1.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 37,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork2.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 38,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork3.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 39,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork4.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 40,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork5.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 41,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork6.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 42,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork7.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 43,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork8.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 44,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork9.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 45,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork10.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 46,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork11.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 47,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork12.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 48,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork13.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 49,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork14.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 50,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork15.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 51,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork16.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 52,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork17.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 53,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork18.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 54,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork19.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 55,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork20.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 56,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork21.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 57,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork22.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 58,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork23.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 59,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork24.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 60,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork25.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 61,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork26.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 62,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork27.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 63,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork28.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 64,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork29.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 65,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork30.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 66,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork31.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 67,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork32.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 68,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork33.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 69,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork34.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 70,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork35.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 71,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork36.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 72,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork37.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 73,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork38.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 74,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork39.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 75,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork40.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 76,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork41.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   {
-    id: 3,
+    id: 77,
     title: "Artwork",
     imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork42.webp",
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-    category: "design"
+    category: "design t-shirt"
   },
   // {
   //   id: 3,
@@ -918,7 +925,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork43.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -926,7 +933,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork44.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -934,7 +941,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork45.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -942,7 +949,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork46.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -950,7 +957,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork47.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -958,7 +965,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork48.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -966,7 +973,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork49.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -974,7 +981,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork50.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -982,7 +989,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork51.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -990,7 +997,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork52.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -998,7 +1005,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork53.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1006,7 +1013,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork54.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1014,7 +1021,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork55.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1022,7 +1029,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork56.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1030,7 +1037,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork57.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1038,7 +1045,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork58.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1046,7 +1053,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork59.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1054,7 +1061,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork60.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1062,7 +1069,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork61.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1070,7 +1077,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork62.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1078,7 +1085,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork63.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1086,7 +1093,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork64.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1094,7 +1101,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork65.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1102,7 +1109,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork66.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1110,7 +1117,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork67.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1118,7 +1125,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork68.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1126,7 +1133,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork69.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1134,7 +1141,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork70.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1142,7 +1149,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork71.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1150,7 +1157,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork72.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1158,7 +1165,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork73.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1166,7 +1173,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork74.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1174,7 +1181,7 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork75.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
   // {
   //   id: 3,
@@ -1182,8 +1189,10 @@ const artworks: Artwork[] = [
   //   imageUrl: "https://mochrks.github.io/assets/img-artwork/Desain_Artwork76.webp",
   //   artist: "@mochrks",
   //   description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
-  //   category: "design"
+  //   category: "design t-shirt"
   // },
+
+
   // portrait
   {
     id: 201,
@@ -1428,6 +1437,9 @@ const artworks: Artwork[] = [
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
     category: "illustration"
   },
+
+
+  // artwork
   {
     id: 506,
     title: "Artwork",
@@ -1435,6 +1447,56 @@ const artworks: Artwork[] = [
     artist: "@mochrks",
     description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
     category: "illustration"
+  },
+
+  // artwork
+  {
+    id: 601,
+    title: "Artwork",
+    imageUrl: "https://mochrks.github.io/assets/img-manipulation/m-6.webp",
+    artist: "@mochrks",
+    description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+    category: "artwork"
+  },
+  {
+    id: 602,
+    title: "Artwork",
+    imageUrl: "https://mochrks.github.io/assets/img-manipulation/m-7.webp",
+    artist: "@mochrks",
+    description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+    category: "artwork"
+  },
+  {
+    id: 603,
+    title: "Artwork",
+    imageUrl: "https://mochrks.github.io/assets/img-manipulation/m-8.webp",
+    artist: "@mochrks",
+    description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+    category: "artwork"
+  },
+  {
+    id: 604,
+    title: "Artwork",
+    imageUrl: "https://mochrks.github.io/assets/img-manipulation/m-9.webp",
+    artist: "@mochrks",
+    description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+    category: "artwork"
+  },
+  {
+    id: 605,
+    title: "Artwork",
+    imageUrl: "https://mochrks.github.io/assets/img-manipulation/m-10.webp",
+    artist: "@mochrks",
+    description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+    category: "artwork"
+  },
+  {
+    id: 606,
+    title: "Artwork",
+    imageUrl: "https://mochrks.github.io/assets/img-manipulation/m-11.webp",
+    artist: "@mochrks",
+    description: "A tranquil landscape featuring a misty forest and a calm lake, evoking a sense of peace and harmony.",
+    category: "artwork"
   },
 
 
