@@ -18,13 +18,13 @@ const projects: Project[] = [
     id: 1,
     title: "UI/UX Mobile MYPETS",
     description: "A modern take on online for pets",
-    imageUrl: "https://mochrks.github.io/assets/img-design/M-1.png"
+    imageUrl: "https://mochrks.github.io/assets/img-design/M-1_11_11zon.jpg"
   },
   {
     id: 2,
     title: "UI/UX Mobile POLISIKU",
     description: "Redesign mobile apps polisiku",
-    imageUrl: "https://mochrks.github.io/assets/img-design/M-2.png"
+    imageUrl: "https://mochrks.github.io/assets/img-design/M-2_12_11zon.jpg"
   },
 
 ];
@@ -33,83 +33,83 @@ const projects: Project[] = [
 const cards = [
   {
     title: "UI/UX Web Earphone Products",
-    src: "https://mochrks.github.io/assets/img-design/A.png",
+    src: "https://mochrks.github.io/assets/img-design/A_11_11zon.jpg",
   },
   {
     title: "UI/UX Web Shoes Products",
-    src: "https://mochrks.github.io/assets/img-design/B.png",
+    src: "https://mochrks.github.io/assets/img-design/B_12_11zon.jpg",
   },
   {
     title: "UI/UX Web Travel",
-    src: "https://mochrks.github.io/assets/img-design/C.png",
+    src: "https://mochrks.github.io/assets/img-design/C_13_11zon.jpg",
   },
   {
     title: "UI/UX Web Drone Products",
-    src: "https://mochrks.github.io/assets/img-design/D.png",
+    src: "https://mochrks.github.io/assets/img-design/D_1_11zon.jpg",
   },
   {
     title: "UI/UX Web Cars Products",
-    src: "https://mochrks.github.io/assets/img-design/E.png",
+    src: "https://mochrks.github.io/assets/img-design/E_2_11zon.jpg",
   },
   {
     title: "UI/UX Web  Company Profile",
-    src: "https://mochrks.github.io/assets/img-design/F.png",
+    src: "https://mochrks.github.io/assets/img-design/F_3_11zon.jpg",
   },
   {
     title: "UI/UX Web Nfts",
-    src: "https://mochrks.github.io/assets/img-design/G.png",
+    src: "https://mochrks.github.io/assets/img-design/G_4_11zon.jpg",
   },
   {
     title: "UI/UX Web Portfolio",
-    src: "https://mochrks.github.io/assets/img-design/H.png",
+    src: "https://mochrks.github.io/assets/img-design/H_5_11zon.jpg",
   },
   {
     title: "UI/UX Web Shop T-Shirt Brand",
-    src: "https://mochrks.github.io/assets/img-design/I.png",
+    src: "https://mochrks.github.io/assets/img-design/I_6_11zon.jpg",
   },
   {
     title: "UI/UX Web Restaurant",
-    src: "https://mochrks.github.io/assets/img-design/J.png",
+    src: "https://mochrks.github.io/assets/img-design/J_7_11zon.jpg",
   },
   {
     title: "UI/UX Web Phone Products",
-    src: "https://mochrks.github.io/assets/img-design/K.png",
+    src: "https://mochrks.github.io/assets/img-design/K_8_11zon.jpg",
   },
   {
     title: "UI/UX Web AI Robotics Products",
-    src: "https://mochrks.github.io/assets/img-design/L.png",
+    src: "https://mochrks.github.io/assets/img-design/L_9_11zon.jpg",
   },
   {
     title: "UI/UX Web Fruit Drinks",
-    src: "https://mochrks.github.io/assets/img-design/M.png",
+    src: "https://mochrks.github.io/assets/img-design/M_10_11zon.jpg",
   },
   {
     title: "UI/UX Web Watch Products",
-    src: "https://mochrks.github.io/assets/img-design/N.png",
+    src: "https://mochrks.github.io/assets/img-design/N_13_11zon.jpg",
   },
   {
     title: "UI/UX Web Headphone Products",
-    src: "https://mochrks.github.io/assets/img-design/O.png",
+    src: "https://mochrks.github.io/assets/img-design/O_1_11zon.jpg",
   },
   {
     title: "UI/UX Web Batik",
-    src: "https://mochrks.github.io/assets/img-design/P.png",
+    src: "https://mochrks.github.io/assets/img-design/P_2_11zon.jpg",
   },
   {
     title: "UI/UX Web E-Commerce Products",
-    src: "https://mochrks.github.io/assets/img-design/Q.png",
+    src: "https://mochrks.github.io/assets/img-design/Q_3_11zon.jpg",
   },
   {
     title: "UI/UX Web Product Bag",
-    src: "https://mochrks.github.io/assets/img-design/R.png",
+    src: "https://mochrks.github.io/assets/img-design/R_4_11zon.jpg",
   },
   {
     title: "UI/UX Web Caffe In Forest",
-    src: "https://mochrks.github.io/assets/img-design/S.png",
+    src: "https://mochrks.github.io/assets/img-design/S_5_11zon.jpg",
   },
   {
     title: "UI/UX Web Multi-chain Gen Z Platform",
-    src: "https://mochrks.github.io/assets/img-design/T.png",
+    src: "https://mochrks.github.io/assets/img-design/T_6_11zon.jpg",
   },
 
 ];
