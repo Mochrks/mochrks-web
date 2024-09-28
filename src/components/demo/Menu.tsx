@@ -170,7 +170,7 @@ const Link: React.FC<LinkProps> = ({ heading, imgSrc, subheading, href, onClick 
       onClick={onClick}
       initial="initial"
       whileHover="whileHover"
-      className="group relative flex items-center justify-between border-b-2 border-neutral-700  transition-colors duration-500 hover:border-neutral-50 py-1 md:py-3 2xl:py-8  cursor-pointer"
+      className="group relative flex items-center justify-between border-b-2 border-neutral-700  transition-colors duration-500 hover:border-neutral-50 py-1 md:py-3 2xl:py-[0.85rem]  cursor-pointer"
     >
       <div>
         <motion.span
