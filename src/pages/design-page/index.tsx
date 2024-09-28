@@ -4,6 +4,7 @@ import { X } from 'lucide-react'
 import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const Title = () => {
   return (
@@ -70,7 +71,7 @@ const FlipLink = ({ children }) => {
   );
 };
 
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 13;
 
 export const TabsMenu = ({ setActiveCategory }) => {
   return (
@@ -142,6 +143,8 @@ const Cursor = ({ position }) => {
     />
   );
 };
+
+
 export default function Index() {
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
   const [activeCategory, setActiveCategory] = useState("illustration");
@@ -206,6 +209,7 @@ export default function Index() {
         <TabsMenu setActiveCategory={handleCategoryChange} />
         <section id="photos" className="mx-auto px-10 py-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-7">
+
             {displayedArtworks.map((artwork) => (
               <motion.div
                 key={artwork.id}
@@ -224,6 +228,8 @@ export default function Index() {
               </motion.div>
             ))}
           </div>
+
+
           {isLoading && (
             <div className="flex justify-center items-center my-8 space-x-1">
               {range(3).map((i) => (

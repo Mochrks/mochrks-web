@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { FocusCards } from "@/components/ui/focus-cards";
+import ScrollToTopButton from '@/components/demo/ScrollToTopButton'
 interface Project {
   id: number
   title: string
@@ -14,42 +16,103 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-commerce Redesign",
-    description: "A modern take on online shopping experiences",
-    imageUrl: "https://images.unsplash.com/photo-1607082349566-187342175e2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    title: "UI/UX Mobile MYPETS",
+    description: "A modern take on online for pets",
+    imageUrl: "https://mochrks.github.io/assets/img-design/M-1.png"
   },
   {
     id: 2,
-    title: "Finance App",
-    description: "Simplifying personal finance management",
-    imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80"
-  },
-  {
-    id: 3,
-    title: "Social Media Dashboard",
-    description: "Centralized platform for social media management",
-    imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80"
-  },
-  {
-    id: 4,
-    title: "Travel Planner",
-    description: "Streamlining travel itinerary creation",
-    imageUrl: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=2021&q=80"
-  },
-  {
-    id: 5,
-    title: "Health Tracker",
-    description: "Monitoring personal health and fitness goals",
-    imageUrl: "https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-  },
-  {
-    id: 6,
-    title: "Smart Home Control",
-    description: "Intuitive interface for managing smart home devices",
-    imageUrl: "https://images.unsplash.com/photo-1558002038-bb4237b50b11?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    title: "UI/UX Mobile POLISIKU",
+    description: "Redesign mobile apps polisiku",
+    imageUrl: "https://mochrks.github.io/assets/img-design/M-2.png"
   },
 
-]
+];
+
+
+const cards = [
+  {
+    title: "UI/UX Web Earphone Products",
+    src: "https://mochrks.github.io/assets/img-design/A.png",
+  },
+  {
+    title: "UI/UX Web Shoes Products",
+    src: "https://mochrks.github.io/assets/img-design/B.png",
+  },
+  {
+    title: "UI/UX Web Travel",
+    src: "https://mochrks.github.io/assets/img-design/C.png",
+  },
+  {
+    title: "UI/UX Web Drone Products",
+    src: "https://mochrks.github.io/assets/img-design/D.png",
+  },
+  {
+    title: "UI/UX Web Cars Products",
+    src: "https://mochrks.github.io/assets/img-design/E.png",
+  },
+  {
+    title: "UI/UX Web  Company Profile",
+    src: "https://mochrks.github.io/assets/img-design/F.png",
+  },
+  {
+    title: "UI/UX Web Nfts",
+    src: "https://mochrks.github.io/assets/img-design/G.png",
+  },
+  {
+    title: "UI/UX Web Portfolio",
+    src: "https://mochrks.github.io/assets/img-design/H.png",
+  },
+  {
+    title: "UI/UX Web Shop T-Shirt Brand",
+    src: "https://mochrks.github.io/assets/img-design/I.png",
+  },
+  {
+    title: "UI/UX Web Restaurant",
+    src: "https://mochrks.github.io/assets/img-design/J.png",
+  },
+  {
+    title: "UI/UX Web Phone Products",
+    src: "https://mochrks.github.io/assets/img-design/K.png",
+  },
+  {
+    title: "UI/UX Web AI Robotics Products",
+    src: "https://mochrks.github.io/assets/img-design/L.png",
+  },
+  {
+    title: "UI/UX Web Fruit Drinks",
+    src: "https://mochrks.github.io/assets/img-design/M.png",
+  },
+  {
+    title: "UI/UX Web Watch Products",
+    src: "https://mochrks.github.io/assets/img-design/N.png",
+  },
+  {
+    title: "UI/UX Web Headphone Products",
+    src: "https://mochrks.github.io/assets/img-design/O.png",
+  },
+  {
+    title: "UI/UX Web Batik",
+    src: "https://mochrks.github.io/assets/img-design/P.png",
+  },
+  {
+    title: "UI/UX Web E-Commerce Products",
+    src: "https://mochrks.github.io/assets/img-design/Q.png",
+  },
+  {
+    title: "UI/UX Web Product Bag",
+    src: "https://mochrks.github.io/assets/img-design/R.png",
+  },
+  {
+    title: "UI/UX Web Caffe In Forest",
+    src: "https://mochrks.github.io/assets/img-design/S.png",
+  },
+  {
+    title: "UI/UX Web Multi-chain Gen Z Platform",
+    src: "https://mochrks.github.io/assets/img-design/T.png",
+  },
+
+];
 
 export default function index() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -64,63 +127,86 @@ export default function index() {
   return (
     <div className="relative  w-full">
       <Title />
-      <div className=" py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-full mx-auto">
-          <div className="relative">
-            <div className="overflow-hidden">
-              <motion.div
-                className="flex"
-                animate={{ x: `${-currentIndex * 25}%` }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              >
-                {projects.map((project) => (
-                  <motion.div
-                    key={project.id}
-                    className="w-1/1 2xl:w-1/3  flex-shrink-0 px-2"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <Card className="h-full">
-                      <CardHeader className="p-0">
-                        <div className="relative h-[25rem] 2xl:h-[40rem] overflow-hidden rounded-t-lg">
-                          <img
-                            src={project.imageUrl}
-                            alt={project.title}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </CardHeader>
-                      <CardContent className="p-4 bg-white/10">
-                        <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
-                        <CardDescription>{project.description}</CardDescription>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </motion.div>
+      <div className='flex bg-white/10'>
+        <div className='flex max-w-xl items-center justify-center px-5'>
+          <div className='flex'>
+            <Avatar className='w-[3rem] h-[3rem] mt-4 '>
+              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarFallback>MR</AvatarFallback>
+            </Avatar>
+            <div className='px-5'>
+              <h2 className='scroll-m-20 text-2xl font-extrabold tracking-tight lg:text2xl'>Mochrks</h2>
+              <p className="text-sm leading-1 [&:not(:first-child)]:mt-1">
+                Once upon a time, in a far-off land, there was a very lazy king who
+                spent all day lounging on his throne.
+              </p>
             </div>
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2  rounded-full shadow-lg"
-              onClick={prevSlide}
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2  rounded-full shadow-lg"
-              onClick={nextSlide}
-            >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
+          </div>
+        </div>
+        <div className=" py-12 px-6 sm:px-6 lg:px-8 ">
+          <div className="max-w-full mx-auto">
+            <div className="relative">
+              <div className="overflow-hidden">
+                <motion.div
+                  className="flex"
+                  animate={{ x: `${-currentIndex * 25}%` }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                >
+                  {projects.map((project) => (
+                    <motion.div
+                      key={project.id}
+                      className="flex-shrink-0 px-2"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <Card className="h-full">
+                        <CardHeader className="p-0">
+                          <div className="relative w-[35rem]  h-[15rem] lg:h-[25rem] overflow-hidden rounded-t-lg">
+                            <img
+                              src={project.imageUrl}
+                              alt={project.title}
+                              className="w-full h-[15rem] lg:h-[25rem] object-cover"
+                            />
+                          </div>
+                        </CardHeader>
+                        <CardContent className="p-4 bg-white/10">
+                          <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
+                          <CardDescription>{project.description}</CardDescription>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+              <Button
+                variant="outline"
+                size="icon"
+                className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2  rounded-full shadow-lg"
+                onClick={prevSlide}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2  rounded-full shadow-lg"
+                onClick={nextSlide}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <div className=' w-full h-full p-6 lg:p-20 '>
+        <FocusCards cards={cards} />
+      </div>
+      <ScrollToTopButton />
+    </div >
   );
 }
+
+
 
 export const Title = () => {
   return (

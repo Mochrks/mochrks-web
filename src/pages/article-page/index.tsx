@@ -1,4 +1,4 @@
-"use client";
+
 import React, { useState } from "react";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { Button } from "@/components/ui/button";
@@ -27,7 +27,7 @@ export default function index() {
         <ShootingStars />
         <TracingBeam className="px-6 ">
           <div className="max-w-7xl mx-auto antialiased pt-4 relative  ml-5">
-            {dummyContent.map((item, index) => (
+            {treeContent.map((item, index) => (
               <div key={`content-${index}`} className="mb-10">
                 <p className=" text-xl lg:text-3xl mb-4 font-extrabold text-white">
                   {item.title}
@@ -78,70 +78,6 @@ export default function index() {
     </>
   );
 }
-
-const dummyContent = [
-  {
-    title: "UI/UX Case Study : My Pets",
-    description: (
-      <>
-        <p>
-          Halo semuanya 👋 Salam kenal, saya Moch Rizki Kurniawan, seorang
-          mahasiswa yang sangat antusias dengan dunia desain dan industri
-          kreatif. Artikel ini akan membahas alur proses desain UI/UX untuk
-          aplikasi yang kami buat, yaitu “My Pets”, sebuah aplikasi berbasis
-          mobile. Proyek ini tidak saya lakukan sendirian, saya berkolaborasi
-          dengan rekan saya, Sony Santana.
-        </p>
-      </>
-    ),
-    badge: ["Figma", "UI/UX Designer", "Design Thinking"],
-    image:
-      "https://miro.medium.com/v2/resize:fit:750/format:webp/1*mQB0eOilTc8T6AfCL55gKA.png",
-    link: "https://medium.com/@mochrks/ui-ux-case-study-my-pets-cc76a63f37ac",
-  },
-  {
-    title:
-      "Implementasi Order Store dengan OLTP(Mongodb) , OLAP (Postgresql) & Kafka Menggunakan Java springboot & ReactJS ( UseCase: Order Grab )",
-    description: (
-      <>
-        <p>
-          Halo semuanya 👋 Perkenalkan saya, Moch Rizki Kurniawan seorang
-          software developer di Pt. Padepokan Tujuh Sembilan. Pada kesempatan
-          ini, dengan senang hati saya akan membagikan sebuah proyek yang telah
-          saya kembangkan. Proyek kali ini adalah pengembangan sistem order
-          store yang menggunakan teknologi OLTP, OLAP, dan Kafka, dengan studi
-          kasus order grab. Untuk lebih jelasnya anda dapat melihat tautan ini :
-          How we store and process millions of orders daily
-        </p>
-      </>
-    ),
-    badge: ["Order", "Fullstack", "Mongodb ", " Postgresql",],
-    image:
-      "https://miro.medium.com/v2/resize:fit:750/format:webp/1*vUjRD1wNcbZyo0chMjYrQQ.jpeg",
-    link: "https://medium.com/@mochrks/develop-order-store-dengan-oltp-olap-kafka-use-case-order-grab-198e852441a2",
-  },
-  {
-    title:
-      "Fullstack Web Development Mini Project X-Mart Menggunakan ReactJS, Java Spring Boot, & Node.js (ExpressJS + GraphQL)",
-    description: (
-      <>
-        <p>
-          Halo semuanya 👋 Saya Moch. Rizki Kurniawan, seorang software
-          developer. Dalam kesempatan ini, saya ingin berbagi pengalaman tentang
-          pembuatan mini proyek web development X-mart menggunakan teknologi
-          ReactJS, Java Spring Boot, dan Node.js (ExpressJS + GraphQL). Proyek
-          ini juga memanfaatkan Redis untuk caching serta mengintegrasikan dua
-          jenis database, yaitu NoSQL MongoDB dan SQL PostgreSQL.
-        </p>
-      </>
-    ),
-    badge: ["X-Mart", "Fullstack", "ReactJS", "express"],
-    image:
-      "https://miro.medium.com/v2/resize:fit:750/format:webp/1*KS08wiab3dmsJxaCEOABYA.png",
-    link: "https://medium.com/@mochrks/fullstack-web-development-dengan-reactjs-java-spring-boot-node-js-expressjs-graphql-66f4d881e32f",
-  },
-];
-
 
 export const Title = () => {
   return (
@@ -214,3 +150,67 @@ const FlipLink = ({ children }) => {
     </motion.a>
   );
 };
+
+
+const treeContent = [
+  {
+    title: "UI/UX Case Study : My Pets",
+    description: (
+      <>
+        <p>
+          Halo semuanya 👋 Salam kenal, saya Moch Rizki Kurniawan, seorang
+          mahasiswa yang sangat antusias dengan dunia desain dan industri
+          kreatif. Artikel ini akan membahas alur proses desain UI/UX untuk
+          aplikasi yang kami buat, yaitu “My Pets”, sebuah aplikasi berbasis
+          mobile. Proyek ini tidak saya lakukan sendirian, saya berkolaborasi
+          dengan rekan saya, Sony Santana.
+        </p>
+      </>
+    ),
+    badge: ["Figma", "UI/UX Designer", "Design Thinking"],
+    image:
+      "https://miro.medium.com/v2/resize:fit:750/format:webp/1*mQB0eOilTc8T6AfCL55gKA.png",
+    link: "https://medium.com/@mochrks/ui-ux-case-study-my-pets-cc76a63f37ac",
+  },
+  {
+    title:
+      "Implementasi Order Store dengan OLTP(Mongodb) , OLAP (Postgresql) & Kafka Menggunakan Java springboot & ReactJS ( UseCase: Order Grab )",
+    description: (
+      <>
+        <p>
+          Halo semuanya 👋 Perkenalkan saya, Moch Rizki Kurniawan seorang
+          software developer di Pt. Padepokan Tujuh Sembilan. Pada kesempatan
+          ini, dengan senang hati saya akan membagikan sebuah proyek yang telah
+          saya kembangkan. Proyek kali ini adalah pengembangan sistem order
+          store yang menggunakan teknologi OLTP, OLAP, dan Kafka, dengan studi
+          kasus order grab. Untuk lebih jelasnya anda dapat melihat tautan ini :
+          How we store and process millions of orders daily
+        </p>
+      </>
+    ),
+    badge: ["Order", "Fullstack", "Mongodb ", " Postgresql",],
+    image:
+      "https://miro.medium.com/v2/resize:fit:750/format:webp/1*vUjRD1wNcbZyo0chMjYrQQ.jpeg",
+    link: "https://medium.com/@mochrks/develop-order-store-dengan-oltp-olap-kafka-use-case-order-grab-198e852441a2",
+  },
+  {
+    title:
+      "Fullstack Web Development Mini Project X-Mart Menggunakan ReactJS, Java Spring Boot, & Node.js (ExpressJS + GraphQL)",
+    description: (
+      <>
+        <p>
+          Halo semuanya 👋 Saya Moch. Rizki Kurniawan, seorang software
+          developer. Dalam kesempatan ini, saya ingin berbagi pengalaman tentang
+          pembuatan mini proyek web development X-mart menggunakan teknologi
+          ReactJS, Java Spring Boot, dan Node.js (ExpressJS + GraphQL). Proyek
+          ini juga memanfaatkan Redis untuk caching serta mengintegrasikan dua
+          jenis database, yaitu NoSQL MongoDB dan SQL PostgreSQL.
+        </p>
+      </>
+    ),
+    badge: ["X-Mart", "Fullstack", "ReactJS", "express"],
+    image:
+      "https://miro.medium.com/v2/resize:fit:750/format:webp/1*KS08wiab3dmsJxaCEOABYA.png",
+    link: "https://medium.com/@mochrks/fullstack-web-development-dengan-reactjs-java-spring-boot-node-js-expressjs-graphql-66f4d881e32f",
+  },
+];

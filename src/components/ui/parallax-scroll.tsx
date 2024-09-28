@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion";
@@ -33,6 +33,18 @@ export const ParallaxScroll = ({
   const thirdPart = images.slice(2 * third);
   const [color, setColor] = useState("#ffffff");
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
+
   return (
     <>
       <div className="relative w-full">
@@ -44,62 +56,56 @@ export const ParallaxScroll = ({
           className={cn("h-full items-start overflow-y-auto w-full ", className)}
           ref={gridRef}
         >
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-5 text-center px-12 py-5"
-            ref={gridRef}
-          >
-            <div className="grid gap-10">
-              {firstPart.map((el, idx) => (
-                <motion.div
-                  style={{ y: translateFirst }} // Apply the translateY motion value here
-                  key={"grid-1" + idx}
-                >
-                  <img
-                    src={el}
-                    className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0 z-50"
-                    height="400"
-                    width="400"
-                    alt="thumbnail"
-                  />
-                </motion.div>
-              ))}
+          {loading ? (<Loading />) : (
+            <div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-5 text-center px-12 py-5"
+              ref={gridRef}
+            >
+              <div className="grid gap-10">
+                {firstPart.map((el, idx) => (
+                  <motion.div
+                    style={{ y: translateFirst }} // Apply the translateY motion value here
+                    key={"grid-1" + idx}
+                  >
+                    <img
+                      src={el}
+                      className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0 z-50"
+                      height="400"
+                      width="400"
+                      alt="thumbnail"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+              <div className="grid gap-10">
+                {secondPart.map((el, idx) => (
+                  <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
+                    <img
+                      src={el}
+                      className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
+                      height="400"
+                      width="400"
+                      alt="thumbnail"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+              <div className="grid gap-10">
+                {thirdPart.map((el, idx) => (
+                  <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
+                    <img
+                      src={el}
+                      className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
+                      height="400"
+                      width="400"
+                      alt="thumbnail"
+                    />
+                  </motion.div>
+                ))}
+              </div>
             </div>
-            <div className="grid gap-10">
-              {secondPart.map((el, idx) => (
-                <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
-                  <img
-                    src={el}
-                    className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
-                    height="400"
-                    width="400"
-                    alt="thumbnail"
-                  />
-                </motion.div>
-              ))}
-            </div>
-            <div className="grid gap-10">
-              {thirdPart.map((el, idx) => (
-                <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
-                  <img
-                    src={el}
-                    className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
-                    height="400"
-                    width="400"
-                    alt="thumbnail"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>{" "}
-        <Particles
-          className="absolute inset-0"
-          quantity={200}
-          ease={80}
-          color={color}
-          refresh
-        />
-        <ShootingStars />
+          )}
+        </div>
         <ScrollToTopButton />
       </div>
     </>
@@ -179,3 +185,22 @@ const FlipLink = ({ children }) => {
     </motion.a>
   );
 };
+
+
+const Loading: React.FC = () => {
+  const range = (n: number) => Array.from(Array(n).keys())
+  return (
+    <>
+      <div className="flex justify-center items-center my-8 space-x-1">
+        {range(3).map((i) => (
+          <motion.div
+            key={i}
+            className="w-3 h-3 bg-gray-500 rounded-full "
+            animate={{ opacity: [1, 0.5, 1] }}
+            transition={{ duration: 1, repeat: Infinity, delay: i * 0.3 }}
+          />
+        ))}
+      </div>
+    </>
+  );
+}
