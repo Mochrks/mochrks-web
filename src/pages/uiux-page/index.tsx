@@ -131,7 +131,7 @@ export default function index() {
         <div className='flex max-w-xl items-center justify-center px-5'>
           <div className='flex'>
             <Avatar className='w-[3rem] h-[3rem] mt-4 '>
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarImage src="https://mochrks.github.io/assets/img-photo/pf.jpg" alt="@mochrks" />
               <AvatarFallback>MR</AvatarFallback>
             </Avatar>
             <div className='px-5'>

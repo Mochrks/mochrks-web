@@ -274,7 +274,7 @@ export default function Index() {
                 <div className="flex p-5">
                   <div className="flex p-2 ">
                     <Avatar>
-                      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                      <AvatarImage src="https://mochrks.github.io/assets/img-photo/pf.jpg" alt="@mochrks" />
                       <AvatarFallback>MR</AvatarFallback>
                     </Avatar>
                   </div>
