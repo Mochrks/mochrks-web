@@ -117,7 +117,8 @@ export const Title = () => {
   return (
     <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
       <FlipLink>MY </FlipLink>
-      <FlipLink>Photography.</FlipLink>
+      <FlipLink>Photo-</FlipLink>
+      <FlipLink>Graphy.</FlipLink>
 
     </section>
   );
