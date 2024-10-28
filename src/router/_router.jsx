@@ -5,6 +5,7 @@ import Photography from "../pages/photography-page";
 import Project from "../pages/project-page";
 import Design from "../pages/design-page";
 import UIUXDesign from "../pages/uiux-page";
+import { ComponentNotFound } from "@/components/demo/NotFound";
 
 const _Routes = () => {
   return (
@@ -16,6 +17,7 @@ const _Routes = () => {
         <Route exact path="/project" element={<Project />} />
         <Route exact path="/design-artwork" element={<Design />} />
         <Route exact path="/ui-ux-design" element={<UIUXDesign />} />
+        <Route exact path="/*" element={<ComponentNotFound />} />
       </Routes>
     </Router>
   );
