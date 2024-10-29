@@ -4,11 +4,31 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./src/assets/img/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      as="style"
+      crossorigin="anonymous"
+    />
+
+    <!-- Stylesheet untuk font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      crossorigin="anonymous"
+    />
+
+    <!-- Sisipkan CSS inline untuk mengaplikasikan font segera -->
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
 
     <title>Mochrks</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

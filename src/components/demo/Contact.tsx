@@ -11,6 +11,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Send } from 'lucide-react';
 import { Textarea } from "../ui/textarea";
+import emailjs from '@emailjs/browser';
+
+
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      VITE_EMAILJS_SERVICE_ID: string;
+      VITE_EMAILJS_TEMPLATE_ID: string;
+      VITE_EMAILJS_USER_ID: string;
+    }
+  }
+}
+
 
 // Define Zod validation schema
 const formSchema = z.object({
@@ -21,10 +34,12 @@ const formSchema = z.object({
   message: z.string().min(1, { message: "Message is required" }),
 });
 
+
 type FormData = z.infer<typeof formSchema>;
 
 export function Contact() {
   const [showAlert, setShowAlert] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   // React Hook Form setup with Zod validation
   const {
@@ -36,10 +51,31 @@ export function Contact() {
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = (data: FormData) => {
-    setShowAlert(true);
-    console.log("Form submitted:", data);
-    reset(); // Reset form after submission
+  const onSubmit = async (data: FormData) => {
+    setIsLoading(true);
+    try {
+      const result = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          firstname: data.firstname,
+          lastname: data.lastname,
+          from_email: data.email,
+          subject: data.subject,
+          message: data.message,
+          current_year: new Date().getFullYear(),
+        },
+        import.meta.env.VITE_EMAILJS_USER_ID
+      );
+
+      console.log(result.text);
+      setShowAlert(true);
+      reset();
+    } catch (error) {
+      console.error('Failed to send email:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {

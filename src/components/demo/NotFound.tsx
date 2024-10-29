@@ -4,7 +4,7 @@ import { Button } from '../ui/button'
 import Loading from './Loading'
 import { useNavigate } from 'react-router-dom';
 
-export const ComponentNotFound = () => {
+export default function ComponentNotFound() {
     const [isEntering, setIsEntering] = useState(false)
     const [isHovering, setIsHovering] = useState(false)
     const navigate = useNavigate();
@@ -19,17 +19,26 @@ export const ComponentNotFound = () => {
         }
     }, [isEntering, navigate]);
     return (
-        <div className="h-screen flex  flex-col items-center justify-center bg-gradient-to-br from-gray-800 to-slate-900">
+        <div className="relative h-screen w-screen flex overflow-hidden flex-col items-center justify-center bg-gradient-to-br from-gray-800 to-slate-900">
+            {/* Container untuk circle */}
+            <div className="absolute inset-0 flex items-center justify-center">
+                <motion.div
+                    className="w-[300px] h-[300px] rounded-full bg-gradient-to-br from-cyan-600 to-blue-900"
+                    animate={{
+                        scale: isEntering ? [1, Math.max(window.innerWidth / 300, window.innerHeight / 300) * 1.2] : 1,
+                        opacity: isEntering ? [1, 0.8, 0] : 1,
+                    }}
+                    transition={{
+                        duration: 1.5,
+                        scale: {
+                            type: "tween",
+                            ease: "easeInOut"
+                        }
+                    }}
+                />
+            </div>
             <motion.div
-                className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-br from-cyan-600 to-blue-900"
-                animate={{
-                    scale: isEntering ? 20 : 1,
-                    opacity: isEntering ? 0 : 1,
-                }}
-                transition={{ duration: 1.5 }}
-            />
-            <motion.div
-                className='absolute'
+                className='absolute overflow-hidden'
                 animate={{ opacity: isEntering ? 0 : 1 }}
                 transition={{ duration: 0.5 }}>
                 <svg width="600" height="700" viewBox="0 0 200 200">
@@ -62,9 +71,8 @@ export const ComponentNotFound = () => {
                 animate={{ opacity: isEntering ? 0 : 1 }}
                 transition={{ duration: 0.5 }}
             >
-
                 <motion.div
-                    className="text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-purple-600"
+                    className="text-9xl overflow-hidden font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-purple-600"
                     style={{
                         WebkitTextStroke: '2px rgba(255,255,255,0.1)',
                     }}
@@ -83,7 +91,7 @@ export const ComponentNotFound = () => {
                     404
                 </motion.div>
                 <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-50 blur-xl"
+                    className="absolute overflow-hidden inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-50 blur-xl"
                     animate={{
                         opacity: isHovering ? [0.5, 0.8, 0.5] : 0.5,
                     }}
@@ -95,7 +103,7 @@ export const ComponentNotFound = () => {
                 />
                 <h1 className="text-4xl font-bold mt-8 mb-4"></h1>
             </motion.div>
-            <motion.div className='absolute pt-[120px] text-center'
+            <motion.div className='absolute pt-[120px] text-center overflow-hidden'
                 animate={{ opacity: isEntering ? 0 : 1 }}
                 transition={{ duration: 0.5 }}>
                 <Button
@@ -110,7 +118,7 @@ export const ComponentNotFound = () => {
 
             {isEntering && (
                 <motion.div
-                    className="absolute inset-0 flex items-center justify-center"
+                    className="absolute inset-0  flex items-center justify-center overflow-hidden"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0, duration: 0.5 }}
