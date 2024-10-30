@@ -115,8 +115,8 @@ export default function Footer() {
         </div>
       )}
 
-      <footer className="flex">
-        <div className="container flex items-center justify-center ">
+      <footer className="flex ">
+        <div className="container flex items-center justify-center z-0">
           {isLg && (
             <div className="flex flex-row items-center">
               <div className="flex-grow text-center sm:text-left">

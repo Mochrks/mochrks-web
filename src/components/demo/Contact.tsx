@@ -39,7 +39,7 @@ type FormData = z.infer<typeof formSchema>;
 
 export function Contact() {
   const [showAlert, setShowAlert] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
   // React Hook Form setup with Zod validation
   const {
@@ -69,6 +69,11 @@ export function Contact() {
       );
 
       console.log(result.text);
+      setIsLoading(true)
+
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 3000)
       setShowAlert(true);
       reset();
     } catch (error) {
@@ -140,8 +145,20 @@ export function Contact() {
               <button
                 className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                 type="submit"
+                disabled={isLoading}
               >
-                Send &rarr;
+                <div className="flex items-center justify-center">
+
+                  {isLoading && (
+                    <motion.div
+                      className="w-3 h-3 border-2 mr-2 border-white rounded-full border-t-transparent"
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                    />
+                  )}
+                  Send
+                  &rarr;
+                </div>
                 <BottomGradient />
               </button>
               <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
@@ -181,7 +198,7 @@ const LabelInputContainer = ({
 };
 
 const FloatingAlert: React.FC = () => (
-  <div className="space-y-4 p-4">
+  <div className="space-y-4 p-4 z-10">
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
