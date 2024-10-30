@@ -8,6 +8,7 @@ import { VscGithub } from "react-icons/vsc";
 export const CardProject = ({
   items,
   className,
+  cols = 3,
 }: {
   items: {
     title: string;
@@ -18,6 +19,7 @@ export const CardProject = ({
     img: string;
   }[];
   className?: string;
+  cols?: number;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -25,7 +27,7 @@ export const CardProject = ({
     <>
       <div
         className={cn(
-          "grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 py-10 gap-3 ",
+          `grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-${cols} py-10 gap-3`,
           className
         )}
       >

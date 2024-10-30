@@ -19,7 +19,7 @@ export function RecentProject() {
       <div className="relative flex w-full h-full flex-col items-center overflow-hidden justify-center gap-10 pt-20 ">
         <div className="container flex items-center justify-center ">
           <div className="max-w-full mx-auto ">
-            <CardProject items={projects} />
+            <CardProject items={projects} cols={2} />
           </div>
 
         </div>
