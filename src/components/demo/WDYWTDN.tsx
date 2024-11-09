@@ -1,5 +1,4 @@
 import React from "react";
-import { Vortex } from "../ui/vortex";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { useNavigate } from "react-router-dom";
@@ -11,8 +10,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Button } from "../ui/button";
-
 import useBreakpoints from "../../hooks/useBreakpoints";
 
 export function WDYWTDN() {

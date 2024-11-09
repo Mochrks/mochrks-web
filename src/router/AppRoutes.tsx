@@ -17,7 +17,7 @@ interface RouteConfig {
   element: React.ReactNode
 }
 
-// Definisikan routes dalam array
+
 const routes: RouteConfig[] = [
   { path: '/', element: <Home /> },
   { path: '/article', element: <Article /> },

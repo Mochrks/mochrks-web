@@ -60,10 +60,7 @@ export default function index() {
   return (
     <>
       {/* navbar */}
-      <header>
-        <Navbar />
-      </header>
-
+      <Navbar />
       <main>
         {/* hero */}
         <motion.div
@@ -213,7 +210,7 @@ export default function index() {
           </motion.section >
 
           {/* section for connection and footer */}
-          < div className="w-full h-full p-10 bg-slate-50" >
+          <div className="w-full h-full p-10 bg-slate-50" >
             <Footer />
           </div >
         </motion.div >

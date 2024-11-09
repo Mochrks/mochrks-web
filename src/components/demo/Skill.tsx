@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
-import ShimmerButton from "@/components/magicui/shimmer-button";
+
 export function Skill() {
   return (
     <>
-      {" "}
       <div className="h-[20rem] rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden mt-20">
-
         <InfiniteMovingCards items={stack} direction="right" speed="slow" />
-
       </div>
     </>
   );

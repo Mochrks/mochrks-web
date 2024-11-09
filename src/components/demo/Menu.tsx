@@ -30,41 +30,7 @@ export default function Menu({ onMenuItemClick }) {
     <>
       <div className="menu">
         <ul className="list-none  px-5 md:px-14 2xl:px-[100px] pt-[3rem] 4xl:pt-[15rem] ">
-          {/* <li>
-            <a href="#about" onClick={onMenuItemClick}>
-              ABOUT
-            </a>
-          </li>
-          <li>
-            <a onClick={handleProject} className="cursor-pointer">
-              PROJECT
-            </a>
-          </li>
-          <li>
-            <a onClick={handleDesign} className="cursor-pointer">
-              DESIGN ARTWORK
-            </a>
-          </li>
-          <li>
-            <a onClick={handleUIUX} className="cursor-pointer">
-              UI/UX
-            </a>
-          </li>
-          <li>
-            <a onClick={handlePhotography} className="cursor-pointer">
-              PHOTOGRAPHY
-            </a>
-          </li>
-          <li>
-            <a onClick={handleArticle} className="cursor-pointer">
-              ARTICLE
-            </a>
-          </li>
-          <li>
-            <a href="#contact" onClick={onMenuItemClick}>
-              CONTACT
-            </a>
-          </li> */}
+
           <li>
             <section className="w-full">
               <div className="mx-auto ">

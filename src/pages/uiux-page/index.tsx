@@ -7,113 +7,16 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { FocusCards } from "@/components/ui/focus-cards";
 import ScrollToTopButton from '@/components/demo/ScrollToTopButton'
 import useBreakpoints from "@/hooks/useBreakpoints";
+import { FlipLinkTitle } from '@/components/demo/Title'
+import { projects, cards } from '@/apis/uiux'
+
+
 interface Project {
   id: number
   title: string
   description: string
   imageUrl: string
 }
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: "UI/UX Mobile MYPETS",
-    description: "A modern take on online for pets",
-    imageUrl: "https://mochrks.github.io/assets/img-design/M-1_11_11zon.jpg"
-  },
-  {
-    id: 2,
-    title: "UI/UX Mobile POLISIKU",
-    description: "Redesign mobile apps polisiku",
-    imageUrl: "https://mochrks.github.io/assets/img-design/M-2_12_11zon.jpg"
-  },
-
-];
-
-
-const cards = [
-  {
-    title: "UI/UX Web Earphone Products",
-    src: "https://mochrks.github.io/assets/img-design/A_11_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Shoes Products",
-    src: "https://mochrks.github.io/assets/img-design/B_12_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Travel",
-    src: "https://mochrks.github.io/assets/img-design/C_13_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Drone Products",
-    src: "https://mochrks.github.io/assets/img-design/D_1_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Cars Products",
-    src: "https://mochrks.github.io/assets/img-design/E_2_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web  Company Profile",
-    src: "https://mochrks.github.io/assets/img-design/F_3_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Nfts",
-    src: "https://mochrks.github.io/assets/img-design/G_4_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Portfolio",
-    src: "https://mochrks.github.io/assets/img-design/H_5_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Shop T-Shirt Brand",
-    src: "https://mochrks.github.io/assets/img-design/I_6_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Restaurant",
-    src: "https://mochrks.github.io/assets/img-design/J_7_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Phone Products",
-    src: "https://mochrks.github.io/assets/img-design/K_8_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web AI Robotics Products",
-    src: "https://mochrks.github.io/assets/img-design/L_9_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Fruit Drinks",
-    src: "https://mochrks.github.io/assets/img-design/M_10_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Watch Products",
-    src: "https://mochrks.github.io/assets/img-design/N_13_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Headphone Products",
-    src: "https://mochrks.github.io/assets/img-design/O_1_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Batik",
-    src: "https://mochrks.github.io/assets/img-design/P_2_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web E-Commerce Products",
-    src: "https://mochrks.github.io/assets/img-design/Q_3_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Product Bag",
-    src: "https://mochrks.github.io/assets/img-design/R_4_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Caffe In Forest",
-    src: "https://mochrks.github.io/assets/img-design/S_5_11zon.jpg",
-  },
-  {
-    title: "UI/UX Web Multi-chain Gen Z Platform",
-    src: "https://mochrks.github.io/assets/img-design/T_6_11zon.jpg",
-  },
-
-];
 
 export default function index() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -129,7 +32,11 @@ export default function index() {
   const { isMd } = useBreakpoints();
   return (
     <div className="relative  w-full">
-      <Title />
+      {/* title */}
+      <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
+        <FlipLinkTitle>DESIGN</FlipLinkTitle>
+        <FlipLinkTitle>UI/UX.</FlipLinkTitle>
+      </section>
       {isMd && (
         <div className='flex bg-white/10 py-5'>
 
@@ -214,77 +121,3 @@ export default function index() {
     </div >
   );
 }
-
-
-
-export const Title = () => {
-  return (
-    <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
-      <FlipLink>DESIGN </FlipLink>
-      <FlipLink>UI /UX.</FlipLink>
-    </section>
-  );
-};
-const DURATION = 0.25;
-const STAGGER = 0.025;
-
-const FlipLink = ({ children }) => {
-  return (
-    <motion.a
-      initial="initial"
-      whileHover="hovered"
-
-      className="relative block overflow-hidden whitespace-nowrap text-5xl font-black uppercase sm:text-7xl md:text-7xl lg:text-8xl 2xl:text-9xl"
-      style={{
-        lineHeight: 0.75,
-      }}
-    >
-      <div>
-        {children.split("").map((l, i) => (
-          <motion.span
-            variants={{
-              initial: {
-                y: 0,
-              },
-              hovered: {
-                y: "-100%",
-              },
-            }}
-            transition={{
-              duration: DURATION,
-              ease: "easeInOut",
-              delay: STAGGER * i,
-            }}
-            className="inline-block"
-            key={i}
-          >
-            {l}
-          </motion.span>
-        ))}
-      </div>
-      <div className="absolute inset-0">
-        {children.split("").map((l, i) => (
-          <motion.span
-            variants={{
-              initial: {
-                y: "100%",
-              },
-              hovered: {
-                y: 0,
-              },
-            }}
-            transition={{
-              duration: DURATION,
-              ease: "easeInOut",
-              delay: STAGGER * i,
-            }}
-            className="inline-block"
-            key={i}
-          >
-            {l}
-          </motion.span>
-        ))}
-      </div>
-    </motion.a>
-  );
-};

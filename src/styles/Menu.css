@@ -26,6 +26,7 @@
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation: fadeOutAnimation ease-in 0.09s;
+  overflow-y: auto;
 }
 
 .menu ul{

@@ -17,7 +17,7 @@ export default function Footer() {
   const { isLg } = useBreakpoints();
 
   return (
-    <>
+    <footer>
       <div className="flex items-center justify-center py-10 my-10">
         <div className="text-center">
           <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight dark:text-neutral-200 text-slate-700">
@@ -137,6 +137,6 @@ export default function Footer() {
           </a>
         </div>
       </footer>
-    </>
+    </footer>
   );
 }

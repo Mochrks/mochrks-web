@@ -35,7 +35,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <>
+    <header>
       <nav className={`nav ${isScrolled ? "scrolled" : ""}`}>
         <header className="logo">
           <img
@@ -89,7 +89,7 @@ export default function Navbar() {
 
         {isActive ? <Menu onMenuItemClick={handleMenuItemClick} /> : null}
       </nav>
-    </>
+    </header>
   );
 }
 

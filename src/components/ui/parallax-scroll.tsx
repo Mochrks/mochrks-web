@@ -8,6 +8,8 @@ import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import Particles from "@/components/magicui/particles";
 import ScrollToTopButton from "../demo/ScrollToTopButton";
+import { FlipLinkTitle } from "../demo/Title";
+import { LoadingContent } from "../demo/LoadingContent";
 
 export const ParallaxScroll = ({
   images,
@@ -18,8 +20,8 @@ export const ParallaxScroll = ({
 }) => {
   const gridRef = useRef<any>(null);
   const { scrollYProgress } = useScroll({
-    container: gridRef, // remove this if your container is not fixed height
-    offset: ["start start", "end start"], // remove this if your container is not fixed height
+    container: gridRef,
+    offset: ["start start", "end start"],
   });
 
   const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -200]);
@@ -48,7 +50,10 @@ export const ParallaxScroll = ({
   return (
     <>
       <div className="relative w-full">
-        <Title />
+        <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
+          <FlipLinkTitle>MY</FlipLinkTitle>
+          <FlipLinkTitle>PHOTOGRAPHY.</FlipLinkTitle>
+        </section>
       </div>
       <div className="relative w-full h-full overflow-hidden">
         <div className="container text-center mt-10"></div>
@@ -56,7 +61,7 @@ export const ParallaxScroll = ({
           className={cn("h-full items-start overflow-y-auto w-full ", className)}
           ref={gridRef}
         >
-          {loading ? (<Loading />) : (
+          {loading ? (<LoadingContent />) : (
             <div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-5 text-center px-12 py-5"
               ref={gridRef}
@@ -111,97 +116,3 @@ export const ParallaxScroll = ({
     </>
   );
 };
-
-
-export const Title = () => {
-  return (
-    <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
-      <FlipLink>MY </FlipLink>
-      <FlipLink>Photo-</FlipLink>
-      <FlipLink>Graphy.</FlipLink>
-
-    </section>
-  );
-};
-const DURATION = 0.25;
-const STAGGER = 0.025;
-
-const FlipLink = ({ children }) => {
-  return (
-    <motion.a
-      initial="initial"
-      whileHover="hovered"
-
-      className="relative block overflow-hidden whitespace-nowrap text-5xl font-black uppercase sm:text-7xl md:text-7xl lg:text-8xl 2xl:text-9xl"
-      style={{
-        lineHeight: 0.75,
-      }}
-    >
-      <div>
-        {children.split("").map((l, i) => (
-          <motion.span
-            variants={{
-              initial: {
-                y: 0,
-              },
-              hovered: {
-                y: "-100%",
-              },
-            }}
-            transition={{
-              duration: DURATION,
-              ease: "easeInOut",
-              delay: STAGGER * i,
-            }}
-            className="inline-block"
-            key={i}
-          >
-            {l}
-          </motion.span>
-        ))}
-      </div>
-      <div className="absolute inset-0">
-        {children.split("").map((l, i) => (
-          <motion.span
-            variants={{
-              initial: {
-                y: "100%",
-              },
-              hovered: {
-                y: 0,
-              },
-            }}
-            transition={{
-              duration: DURATION,
-              ease: "easeInOut",
-              delay: STAGGER * i,
-            }}
-            className="inline-block"
-            key={i}
-          >
-            {l}
-          </motion.span>
-        ))}
-      </div>
-    </motion.a>
-  );
-};
-
-
-const Loading: React.FC = () => {
-  const range = (n: number) => Array.from(Array(n).keys())
-  return (
-    <>
-      <div className="flex justify-center items-center my-8 space-x-1">
-        {range(3).map((i) => (
-          <motion.div
-            key={i}
-            className="w-3 h-3 bg-gray-500 rounded-full "
-            animate={{ opacity: [1, 0.5, 1] }}
-            transition={{ duration: 1, repeat: Infinity, delay: i * 0.3 }}
-          />
-        ))}
-      </div>
-    </>
-  );
-}
