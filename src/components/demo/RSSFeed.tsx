@@ -4,28 +4,29 @@ import { Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 import { Switch } from '../ui/switch';
+import { LoadingContent } from './LoadingContent';
 
-// Tambahkan interface untuk tipe data
+// interface type data
 interface Post {
     guid: string;
     title: string;
     pubDate: string;
     author: string;
     link: string;
-    thumbnail?: string; // Tambahkan thumbnail
-    description: string; // Tambahkan deskripsi untuk ekstraksi gambar
+    thumbnail?: string;
+    description: string;
 }
 
 interface RSSData {
     items: Post[];
 }
 
-// Fungsi untuk ekstraksi gambar dari deskripsi
+//Extract thumbnail
 const extractImageFromDescription = (description: string) => {
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = description;
     const img = tempDiv.querySelector('img');
-    return img ? img.src : '/placeholder-image.jpg'; // Gunakan placeholder jika tidak ada gambar
+    return img ? img.src : 'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png';
 };
 
 const Layout = () => {
@@ -41,7 +42,7 @@ const Layout = () => {
                 setLoading(true);
                 const result = await fetchRSSData(rssUrl);
 
-                // Tambahkan ekstraksi thumbnail
+                // extract thumbnail
                 const processedItems = result.items.map(item => ({
                     ...item,
                     thumbnail: extractImageFromDescription(item.description)
@@ -59,12 +60,12 @@ const Layout = () => {
         fetchData();
     }, []);
 
-    // Tambahkan kondisi loading dan error
+    // Load & error
     if (loading) {
         return (
-            <div className="flex justify-center items-center min-h-screen">
-                Loading...
-            </div>
+            <>
+                <LoadingContent />
+            </>
         );
     }
 
@@ -78,7 +79,7 @@ const Layout = () => {
 
     return (
         <div className={`${darkMode ? 'dark' : ''}`}>
-            <div className="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-300">
+            <div className="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-300 px-1 md:px-20">
                 <div className="container mx-auto px-4 py-20">
                     <div className="flex justify-between items-center mb-8">
                         <h1 className="text-3xl font-bold text-gray-700 dark:text-white">Article</h1>
