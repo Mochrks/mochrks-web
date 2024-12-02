@@ -3,8 +3,8 @@
 <p align="center">
   <img src="https://img.shields.io/badge/React-18.0.0-blue" alt="React Version" />
   <img src="https://img.shields.io/badge/TypeScript-4.0.0-blue" alt="TypeScript Version" />
-  <img src="https://img.shields.io/badge/Vite-2.5.0-brightgreen" alt="Vite Version" />
-  <img src="https://img.shields.io/badge/TailwindCSS-2.2.19-06B6D4" alt="TailwindCSS Version" />
+  <img src="https://img.shields.io/badge/Vite-5.3.4-brightgreen" alt="Vite Version" />
+  <img src="https://img.shields.io/badge/TailwindCSS-2.4.0-06B6D4" alt="TailwindCSS Version" />
 </p>
 
 <p align="center">
@@ -26,11 +26,10 @@ Explore the innovative projects and extensive expertise of **Moch. Rizki Kurniaw
 ## Tech Stack
 
 - **React 18.0.0**
-- **TypeScript 4.0.0**
 - **Vite** for fast development and build optimization
 - **Tailwind CSS** for utility-first styling
 - **Framer Motion** for animations
-- **ShadCN UI**, **MagicUI**, and **AceternityUI** for UI components
+- **ShadCN UI**, **MagicUI**, **Animata**, **Lukacho UI** and **AceternityUI** for UI components
 
 
 ## Connect with me:
