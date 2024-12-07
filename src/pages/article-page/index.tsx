@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FlipLinkTitle } from "@/components/demo/Title";
 import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
 import RSSFeed from "@/components/demo/RSSFeed";

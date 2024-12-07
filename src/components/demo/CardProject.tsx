@@ -6,6 +6,8 @@ import { PiGlobeSimpleBold } from "react-icons/pi";
 import { VscGithub } from "react-icons/vsc";
 import { Badge } from "../ui/badge";
 import { formatDate } from "@/utils/date";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { profile } from "@/assets";
 
 
 export const CardProject = ({
@@ -67,14 +69,18 @@ export const CardProject = ({
               </AnimatePresence>
               <Card>
                 <CardTitle>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between border-b my-4 py-2">
                     {item.name}
                     <div className="flex gap-1">
                       <a href={item.homepage}><PiGlobeSimpleBold className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 " /></a>
                       <a href={item.html_url}><VscGithub className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 " /></a>
                     </div>
                   </div>
-                  <div className="flex gap-4 mt-1">
+                  <div className="flex items-center gap-4 mt-1 ">
+                    <Avatar className="w-7 h-7">
+                      <AvatarImage src={profile} alt="@mochrks" />
+                      <AvatarFallback>MR</AvatarFallback>
+                    </Avatar>
                     <p className="text-sm text-gray-300 font-thin">{item.full_name}</p>
                   </div>
                 </CardTitle>

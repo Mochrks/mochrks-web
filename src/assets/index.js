@@ -24,8 +24,10 @@ import photo from "./img/camera.png";
 import design from "./img/design.png";
 import uiux from "./img/uiux.png";
 import article from "./img/article.png";
+import profile from "./img/profile.jpg";
 
 export {
+  profile,
   favicon,
   logo,
   web1,

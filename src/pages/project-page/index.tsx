@@ -58,7 +58,7 @@ export default function index() {
   console.log('Projects State:', projects);
 
   if (isLoading) {
-    return <LoadingContent />;
+    return <div className="flex w-full h-screen justify-center items-center "><LoadingContent /></div>
   }
 
   if (error) {
@@ -80,8 +80,8 @@ export default function index() {
       </div>
       <div className="max-w-[90rem] 2xl:max-w-full mx-auto px-10 py-10 2xl:py-20">
         <CardProject items={projects} cols={3} />
+        <ScrollToTopButton />
       </div>
-      <ScrollToTopButton />
     </>
   );
 }

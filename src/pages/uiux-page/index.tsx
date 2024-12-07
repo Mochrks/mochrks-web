@@ -43,8 +43,7 @@ export default function index() {
               <div className='px-5'>
                 <h2 className='scroll-m-20 text-2xl font-extrabold tracking-tight lg:text2xl'>Mochrks</h2>
                 <p className="text-sm leading-1 [&:not(:first-child)]:mt-1">
-                  Once upon a time, in a far-off land, there was a very lazy king who
-                  spent all day lounging on his throne.
+                  "Simplicity is the soul of efficiency." - Austin Freeman
                 </p>
               </div>
             </div>
@@ -55,20 +54,20 @@ export default function index() {
               <div className="relative">
                 <div className="overflow-hidden">
                   <motion.div
-                    className="flex"
+                    className="flex flex-wrap  gap-5 p-2"
                     animate={{ x: `${-currentIndex * 25}%` }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   >
                     {projects.map((project) => (
                       <motion.div
                         key={project.id}
-                        className="flex-shrink-0 px-2"
+                        className="flex-shrink-0   px-2"
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
                         <Card className="h-full bg-white">
                           <CardHeader className="p-0">
-                            <div className="relative h-[15rem] lg:w-[35rem] lg:h-[25rem] overflow-hidden rounded-t-lg">
+                            <div className="relative h-[15rem] lg:w-[35rem] lg:h-[15rem] overflow-hidden rounded-t-lg">
                               <img
                                 src={project.imageUrl}
                                 alt={project.title}
@@ -77,8 +76,8 @@ export default function index() {
                             </div>
                           </CardHeader>
                           <CardContent className="p-4 bg-white/10">
-                            <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
-                            <CardDescription>{project.description}</CardDescription>
+                            <CardTitle className="text-xl  text-gray-900 mb-2">{project.title}</CardTitle>
+                            <CardDescription className='text-gray-700'>{project.description}</CardDescription>
                           </CardContent>
                         </Card>
                       </motion.div>
