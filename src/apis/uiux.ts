@@ -22,7 +22,7 @@ export const projects: Project[] = [
   },
 
 ];
-
+ 
 
 export const cards = [
   {

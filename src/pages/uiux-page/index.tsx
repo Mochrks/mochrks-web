@@ -11,12 +11,6 @@ import { FlipLinkTitle } from '@/components/demo/Title'
 import { projects, cards } from '@/apis/uiux'
 
 
-interface Project {
-  id: number
-  title: string
-  description: string
-  imageUrl: string
-}
 
 export default function index() {
   const [currentIndex, setCurrentIndex] = useState(0)
