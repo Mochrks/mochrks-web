@@ -25,6 +25,7 @@ import {
   textVariantFromTop,
   textVariantFromLeft,
 } from "@/utils/motion.js";
+import Aurora from "@/components/demo/Aurora";
 
 
 const LazyVideo = lazy(() => import("@/components/demo/LazyVideo"));
@@ -208,6 +209,14 @@ export default function index() {
               <Contact />
             </div>
           </motion.section >
+          <div>
+            <Aurora
+              colorStops={["#00D8FF", "#7CFF67", "#00D8FF"]}
+              blend={0.5}
+              amplitude={1.0}
+              speed={0.5}
+            />
+          </div>
 
           {/* section for connection and footer */}
           <div className="w-full h-full p-10 bg-slate-50" >
