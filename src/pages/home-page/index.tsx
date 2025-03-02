@@ -26,6 +26,7 @@ import {
   textVariantFromLeft,
 } from "@/utils/motion.js";
 import Aurora from "@/components/demo/Aurora";
+import CircularText from "@/components/demo/CircularText";
 
 
 const LazyVideo = lazy(() => import("@/components/demo/LazyVideo"));
@@ -71,6 +72,7 @@ export default function index() {
           viewport={{ once: false, amount: 0.25 }}
           className="hero"
         >
+
           <Suspense >
             <LazyVideo />
           </Suspense>
@@ -88,8 +90,21 @@ export default function index() {
                 <TypewriterEffectSmooth words={mochrks} />
               </div>
             </motion.div>
+            <motion.div
+              variants={textVariantFromButtom(0.9)}
+              className="absolute buttom-10 xs:left-10 md:right-20 transform translate-x-0 translate-y-0">
+              <CircularText
+                text="MOCHRKS*HELLO*WORLD*"
+                onHover="speedUp"
+                spinDuration={20}
+                className="custom-class"
+              />
+            </motion.div>
+
           </div>
         </motion.div>
+
+
 
         {/* main content */}
         < motion.div
