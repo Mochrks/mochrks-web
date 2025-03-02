@@ -63,9 +63,9 @@ const Layout = () => {
     // Load & error
     if (loading) {
         return (
-            <>
+            <div>
                 <LoadingContent />
-            </>
+            </div>
         );
     }
 

@@ -70,7 +70,7 @@ export default function index() {
   }
 
   return (
-    <>
+    <React.Fragment>
       <div className="w-full">
         {/* title */}
         <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
@@ -82,7 +82,7 @@ export default function index() {
         <CardProject items={projects} cols={3} />
         <ScrollToTopButton />
       </div>
-    </>
+    </React.Fragment>
   );
 }
 

@@ -27,7 +27,7 @@ export default function Menu({ onMenuItemClick }) {
     navigate("/ui-ux-design");
   };
   return (
-    <>
+    <React.Fragment>
       <div className="menu">
         <ul className="list-none  px-5 md:px-14 2xl:px-[100px] pt-[3rem] 4xl:pt-[15rem] ">
 
@@ -86,7 +86,7 @@ export default function Menu({ onMenuItemClick }) {
           </li>
         </ul>
       </div>
-    </>
+    </React.Fragment>
   );
 }
 

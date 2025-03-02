@@ -58,7 +58,7 @@ export default function index() {
   ];
 
   return (
-    <>
+    <React.Fragment>
       {/* navbar */}
       <Navbar />
       <main>
@@ -215,7 +215,7 @@ export default function index() {
           </div >
         </motion.div >
       </main>
-    </>
+    </React.Fragment>
   );
 }
 

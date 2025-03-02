@@ -1,7 +1,6 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
-import { Button } from "../ui/button";
 
 export function ExpandArticle() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -30,7 +29,7 @@ export function ExpandArticle() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <>
+    <React.Fragment>
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
@@ -174,7 +173,7 @@ export function ExpandArticle() {
           </motion.div>
         ))}
       </ul>
-    </>
+    </React.Fragment>
   );
 }
 

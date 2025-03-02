@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { useNavigate } from "react-router-dom";
 import { CardProject } from "@/components/demo/CardProject";
-// import { recentProjects } from "@/apis/project";
 import GitHubCalendar from 'react-github-calendar';
 import { GihubData } from "@/services/projectService";
 import { LoadingContent } from "./LoadingContent";
@@ -67,7 +66,7 @@ export function RecentProject() {
 
 
   return (
-    <>
+    <React.Fragment>
       <div className="hidden md:flex flex-col w-full items-center justify-center mt-20 ">
         <h4 className="scroll-m-20 text-xl  tracking-tight py-5">
           @mochrks on GitHub
@@ -95,7 +94,7 @@ export function RecentProject() {
           </ShimmerButton>
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 }
 

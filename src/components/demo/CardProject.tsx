@@ -32,7 +32,7 @@ export const CardProject = ({
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <>
+    <React.Fragment>
       {items.length === 0 ? (
         <div className="text-center text-gray-500">No projects found</div>
       ) : (
@@ -100,7 +100,7 @@ export const CardProject = ({
           ))}
         </div>
       )}
-    </>
+    </React.Fragment>
   );
 };
 

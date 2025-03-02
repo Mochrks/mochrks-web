@@ -87,7 +87,7 @@ const DATA = {
 
 export function MenuFeatures() {
   return (
-    <>
+    <React.Fragment>
       <TooltipProvider>
         <Dock direction="middle">
           {DATA.navbar.map((item) => (
@@ -134,6 +134,6 @@ export function MenuFeatures() {
           <Separator orientation="vertical" className="h-full py-2" />
         </Dock>
       </TooltipProvider>
-    </>
+    </React.Fragment>
   );
 }

@@ -4,7 +4,6 @@ import { X } from 'lucide-react'
 import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Skeleton } from "@/components/ui/skeleton";
 import { FlipLinkTitle } from "@/components/demo/Title";
 import { LoadingContent } from "@/components/demo/LoadingContent";
 import { artworks } from "@/apis/design-artwork";
