@@ -4,11 +4,14 @@ import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
 import { FlipLinkTitle } from "@/components/demo/Title";
 import { GihubData } from "@/services/projectService";
 import { LoadingContent } from "@/components/demo/LoadingContent";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import { useNavigate } from "react-router-dom"; // Import useNavigate dari react-router-dom
 
-export default function index() {
+export default function ProjectIndex() {
   const [projects, setProjects] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -69,10 +72,11 @@ export default function index() {
   }
 
   return (
-    <React.Fragment>
+
+    <div className="pb-20">
       <div className="w-full">
         {/* title */}
-        <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
+        <section className="place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
           <FlipLinkTitle>ALL </FlipLinkTitle>
           <FlipLinkTitle>PROJECT.</FlipLinkTitle>
         </section>
@@ -81,10 +85,15 @@ export default function index() {
         <CardProject items={projects} cols={3} />
         <ScrollToTopButton />
       </div>
-    </React.Fragment>
+      <div className="flex justify-center mb-20">
+        <InteractiveHoverButton
+          onClick={() => navigate(-1)}
+          className="text-lg font-medium"
+        >
+          Back to Previous Page
+        </InteractiveHoverButton>
+      </div>
+    </div>
+
   );
 }
-
-
-
-

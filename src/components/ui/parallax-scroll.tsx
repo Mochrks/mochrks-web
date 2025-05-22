@@ -10,6 +10,8 @@ import Particles from "@/components/magicui/particles";
 import ScrollToTopButton from "../demo/ScrollToTopButton";
 import { FlipLinkTitle } from "../demo/Title";
 import { LoadingContent } from "../demo/LoadingContent";
+import { InteractiveHoverButton } from "../magicui/interactive-hover-button";
+import { useNavigate } from "react-router-dom";
 
 export const ParallaxScroll = ({
   images,
@@ -45,7 +47,7 @@ export const ParallaxScroll = ({
     return () => clearTimeout(timer);
   }, []);
 
-
+  const navigate = useNavigate();
 
   return (
     <>
@@ -62,53 +64,64 @@ export const ParallaxScroll = ({
           ref={gridRef}
         >
           {loading ? (<LoadingContent />) : (
-            <div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-5 text-center px-12 py-5"
-              ref={gridRef}
-            >
-              <div className="grid gap-10">
-                {firstPart.map((el, idx) => (
-                  <motion.div
-                    style={{ y: translateFirst }} // Apply the translateY motion value here
-                    key={"grid-1" + idx}
-                  >
-                    <img
-                      src={el}
-                      className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0 z-50"
-                      height="400"
-                      width="400"
-                      alt="thumbnail"
-                    />
-                  </motion.div>
-                ))}
+            <>
+              <div
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-5 text-center px-12 py-5"
+                ref={gridRef}
+              >
+                <div className="grid gap-10">
+                  {firstPart.map((el, idx) => (
+                    <motion.div
+                      style={{ y: translateFirst }} // Apply the translateY motion value here
+                      key={"grid-1" + idx}
+                    >
+                      <img
+                        src={el}
+                        className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0 z-50"
+                        height="400"
+                        width="400"
+                        alt="thumbnail"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+                <div className="grid gap-10">
+                  {secondPart.map((el, idx) => (
+                    <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
+                      <img
+                        src={el}
+                        className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
+                        height="400"
+                        width="400"
+                        alt="thumbnail"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+                <div className="grid gap-10">
+                  {thirdPart.map((el, idx) => (
+                    <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
+                      <img
+                        src={el}
+                        className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
+                        height="400"
+                        width="400"
+                        alt="thumbnail"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+
               </div>
-              <div className="grid gap-10">
-                {secondPart.map((el, idx) => (
-                  <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
-                    <img
-                      src={el}
-                      className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
-                      height="400"
-                      width="400"
-                      alt="thumbnail"
-                    />
-                  </motion.div>
-                ))}
+              <div className="flex justify-center mb-20 mt-10">
+                <InteractiveHoverButton
+                  onClick={() => navigate(-1)}
+                  className="text-lg font-medium"
+                >
+                  Back to Previous Page
+                </InteractiveHoverButton>
               </div>
-              <div className="grid gap-10">
-                {thirdPart.map((el, idx) => (
-                  <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
-                    <img
-                      src={el}
-                      className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
-                      height="400"
-                      width="400"
-                      alt="thumbnail"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+            </>
           )}
         </div>
         <ScrollToTopButton />

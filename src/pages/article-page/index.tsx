@@ -2,9 +2,11 @@ import React from "react";
 import { FlipLinkTitle } from "@/components/demo/Title";
 import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
 import RSSFeed from "@/components/demo/RSSFeed";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import { useNavigate } from "react-router-dom";
 
 export default function index() {
-
+  const navigate = useNavigate();
   return (
     <React.Fragment>
       <header className="w-full">
@@ -18,7 +20,14 @@ export default function index() {
         <RSSFeed />
         <ScrollToTopButton />
       </article>
-
+      <div className="flex justify-center mb-20 mt-10">
+        <InteractiveHoverButton
+          onClick={() => navigate(-1)}
+          className="text-lg font-medium"
+        >
+          Back to Previous Page
+        </InteractiveHoverButton>
+      </div>
     </React.Fragment>
   );
 }

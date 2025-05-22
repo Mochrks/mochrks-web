@@ -9,13 +9,22 @@ import { LoadingContent } from "@/components/demo/LoadingContent";
 import { artworks } from "@/apis/design-artwork";
 import { Artwork, } from "@/types/design-page";
 import { ITEMS_PER_PAGE } from "@/constants/variable";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import { useNavigate } from "react-router-dom";
 
 
 
 export const TabsMenu = ({ setActiveCategory }) => {
+  const navigate = useNavigate();
   return (
-    <div className="py-10">
+    <div className="py-10 bg-gray-400 flex justify-space-between">
       <SlideTabs setActiveCategory={setActiveCategory} />
+      <InteractiveHoverButton
+        onClick={() => navigate(-1)}
+        className="text-lg font-medium mr-10"
+      >
+        Back to Previous Page
+      </InteractiveHoverButton>
     </div>
   );
 };

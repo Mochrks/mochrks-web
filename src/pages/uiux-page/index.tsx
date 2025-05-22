@@ -7,9 +7,12 @@ import ScrollToTopButton from '@/components/demo/ScrollToTopButton'
 import useBreakpoints from "@/hooks/useBreakpoints";
 import { FlipLinkTitle } from '@/components/demo/Title'
 import { projects, cards } from '@/apis/uiux'
+import { useNavigate } from 'react-router-dom';
+import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button';
 
 export default function index() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const navigate = useNavigate();
 
 
   const { isMd } = useBreakpoints();
@@ -84,6 +87,15 @@ export default function index() {
         <FocusCards cards={cards} />
       </div>
       <ScrollToTopButton />
+
+      <div className="flex justify-center mb-20">
+        <InteractiveHoverButton
+          onClick={() => navigate(-1)}
+          className="text-lg font-medium"
+        >
+          Back to Previous Page
+        </InteractiveHoverButton>
+      </div>
     </div >
   );
 }
