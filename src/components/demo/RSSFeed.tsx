@@ -5,21 +5,8 @@ import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 import { Switch } from '../ui/switch';
 import { LoadingContent } from './LoadingContent';
+import { RSSData } from '@/types/rss';
 
-// interface type data
-interface Post {
-    guid: string;
-    title: string;
-    pubDate: string;
-    author: string;
-    link: string;
-    thumbnail?: string;
-    description: string;
-}
-
-interface RSSData {
-    items: Post[];
-}
 
 //Extract thumbnail
 const extractImageFromDescription = (description: string) => {

@@ -25,8 +25,10 @@ import design from "./img/design.png";
 import uiux from "./img/uiux.png";
 import article from "./img/article.png";
 import profile from "./img/profile.jpg";
+import leaf from "./img/leaf.jpg";
 
 export {
+  leaf,
   profile,
   favicon,
   logo,

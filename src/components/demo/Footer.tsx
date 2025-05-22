@@ -13,6 +13,9 @@ import { FiArrowUp } from "react-icons/fi";
 import "@/styles/Footer.css";
 import useBreakpoints from "@/hooks/useBreakpoints";
 import { favicon } from "@/assets";
+
+
+
 export default function Footer() {
   const { isLg } = useBreakpoints();
 

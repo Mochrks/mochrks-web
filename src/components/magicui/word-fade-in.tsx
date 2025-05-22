@@ -1,13 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { motion, Variants } from "framer-motion";
-
-interface WordFadeInProps {
-  words: string;
-  className?: string;
-  delay?: number;
-  variants?: Variants;
-}
+import { WordFadeInProps } from "@/types/word-fade";
 
 export default function WordFadeIn({
   words,

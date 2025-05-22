@@ -2,16 +2,12 @@ import React, { useState, useEffect } from "react";
 import "@/styles/Navbar.css";
 import Menu from "./Menu";
 import { logo } from "@/assets/index";
-import { FiMenu, FiX } from "react-icons/fi";
 import { MotionConfig, motion } from "framer-motion";
 
 export default function Navbar() {
   const [isActive, setIsActive] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const handleClick = () => {
-    setIsActive(!isActive);
-  };
 
   const handleMenuItemClick = () => {
     setIsActive(false);
@@ -92,9 +88,6 @@ export default function Navbar() {
     </header>
   );
 }
-
-
-
 
 const VARIANTS = {
   top: {

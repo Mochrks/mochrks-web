@@ -9,7 +9,6 @@ import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
 import { FlipLinkTitle } from "@/components/demo/Title";
 import { treeContent } from "@/apis/article";
 
-
 export default function index() {
     const [color, setColor] = useState("#ffffff");
     return (

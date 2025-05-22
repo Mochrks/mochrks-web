@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
@@ -11,6 +10,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Textarea } from "../ui/textarea";
 import emailjs from '@emailjs/browser';
 import { FloatingAlert } from "./FloatingAlert";
+import { formSchema } from "@/schema";
+import { z } from "zod";
 
 declare global {
   namespace NodeJS {
@@ -21,15 +22,6 @@ declare global {
     }
   }
 }
-
-// Define Zod validation schema
-const formSchema = z.object({
-  firstname: z.string().min(1, { message: "First name is required" }),
-  lastname: z.string().min(1, { message: "Last name is required" }),
-  email: z.string().min(1, { message: "Email is required" }).email("Invalid email format"),
-  subject: z.string().min(1, { message: "Subject is required" }),
-  message: z.string().min(1, { message: "Message is required" }),
-});
 
 
 type FormData = z.infer<typeof formSchema>;

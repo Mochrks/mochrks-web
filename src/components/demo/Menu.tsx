@@ -6,6 +6,7 @@ import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import { about, project, photo, uiux, article, contact, design } from "@/assets";
+import { LinkProps } from "@/types/link";
 
 
 export default function Menu({ onMenuItemClick }) {
@@ -90,14 +91,6 @@ export default function Menu({ onMenuItemClick }) {
   );
 }
 
-
-interface LinkProps {
-  heading: string;
-  imgSrc: string;
-  subheading: string;
-  href?: string;
-  onClick: () => void;
-}
 
 
 const Link: React.FC<LinkProps> = ({ heading, imgSrc, subheading, href, onClick }) => {

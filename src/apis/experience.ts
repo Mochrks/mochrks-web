@@ -1,4 +1,4 @@
-import { cca, dinkes } from "@/assets";
+import { cca, dinkes, leaf } from "@/assets";
 
 export const features = [
     {
@@ -6,12 +6,6 @@ export const features = [
       description: "Software Developer ",
       datePeriode: "Jan 2024 - Present",
       icon: "https://media.licdn.com/dms/image/C560BAQHVE9T8weMAQA/company-logo_200_200/0/1630665946003/padepokantujuhsembilan_logo?e=2147483647&v=beta&t=S4DzajPy2eCUvCzgovLF84e4UOdqQ-lS-r8AxE8Zj3k",
-    },
-    {
-      title: "Arutala Lab",
-      description: "Bootcamp Participant",
-      datePeriode: "Okt 2023 - Des 2023 · 3 bln",
-      icon: "https://media.licdn.com/dms/image/v2/C560BAQGIDmJrVr9lIQ/company-logo_200_200/company-logo_200_200/0/1675394886122?e=2147483647&v=beta&t=YP3L151vo3SxvCwAc9u48ukyH4DYSxdmzzBJJBQ0m98",
     },
     {
       title: "Universitas Jenderal Achmad Yani",
@@ -36,7 +30,7 @@ export const features = [
       title: "Leaf Studio",
       description: "Freelance Photographer, Video Editor, Motion Graphics",
       datePeriode: "Feb 2018 - Jun 2021 · 3 thn 5 bln",
-      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD59N9Hh4H-_uDhX-B5P8Bj69Gttasxwlxlg&s",
+      icon: leaf,
     },
 
     {

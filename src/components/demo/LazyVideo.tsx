@@ -7,7 +7,6 @@ const LazyVideo: React.FC = () => {
   const [isHeroVisible, setIsHeroVisible] = useState(true);
   const [isVideoReady, setIsVideoReady] = useState(false);
 
-
   const startFadeOutHero = () => {
     setTimeout(() => {
       setIsHeroVisible(false);

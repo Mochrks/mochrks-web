@@ -1,20 +1,8 @@
 import React from "react";
-import { HTMLAttributes, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import WaveReveal from "@/components/animata/text/wave-reveal";
 import { cn } from "@/lib/utils";
-
-interface ImageProps extends HTMLAttributes<HTMLDivElement> {
-  item: { image: string; title: string };
-  index: number;
-  activeItem: number;
-}
-
-interface ExpandableProps {
-  list?: { image: string; title: string }[];
-  autoPlay?: boolean;
-  className?: string;
-}
-
+import { ExpandableProps, ImageProps } from "@/types/expandable";
 const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
   return (
     <div

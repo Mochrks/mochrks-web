@@ -1,13 +1,8 @@
 import React from "react";
 import { useMemo } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion, } from "framer-motion";
 
-type FadeTextProps = {
-  className?: string;
-  direction?: "up" | "down" | "left" | "right";
-  framerProps?: Variants;
-  text: string;
-};
+
 
 export function FadeText({
   direction = "up",

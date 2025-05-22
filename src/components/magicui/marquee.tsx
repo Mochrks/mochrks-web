@@ -1,14 +1,7 @@
 import { cn } from "@/lib/utils";
+import { MarqueeProps } from "@/types/marquee";
 import React = require("react");
-interface MarqueeProps {
-  className?: string;
-  reverse?: boolean;
-  pauseOnHover?: boolean;
-  children?: React.ReactNode;
-  vertical?: boolean;
-  repeat?: number;
-  [key: string]: any;
-}
+
 
 export default function Marquee({
   className,
