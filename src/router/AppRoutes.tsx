@@ -1,7 +1,6 @@
-import React from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
-import { lazy } from 'react'
-
+import { RouteConfig } from '@/types/route-config'
+import React, { lazy } from 'react'
+import { Routes, Route, } from 'react-router-dom'
 
 const Home = lazy(() => import('@/pages/home-page'))
 const Article = lazy(() => import('@/pages/article-page'))
@@ -10,12 +9,6 @@ const Project = lazy(() => import('@/pages/project-page'))
 const Design = lazy(() => import('@/pages/design-page'))
 const UIUXDesign = lazy(() => import('@/pages/uiux-page'))
 const NotFound = lazy(() => import('@/components/demo/NotFound'))
-
-
-interface RouteConfig {
-  path: string
-  element: React.ReactNode
-}
 
 
 const routes: RouteConfig[] = [

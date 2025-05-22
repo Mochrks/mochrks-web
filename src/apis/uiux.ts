@@ -1,12 +1,5 @@
 import { web1, web2, web3, web4, web5, web6, web7, web8 } from "@/assets/index";
-
-interface Project {
-  id: number
-  title: string
-  description: string
-  imageUrl: string
-}
-
+import { Project } from "@/types/project";
 export const projects: Project[] = [
   {
     id: 1,

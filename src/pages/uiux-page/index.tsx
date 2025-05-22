@@ -8,18 +8,9 @@ import useBreakpoints from "@/hooks/useBreakpoints";
 import { FlipLinkTitle } from '@/components/demo/Title'
 import { projects, cards } from '@/apis/uiux'
 
-
-
 export default function index() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % (projects.length - 3))
-  }
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + (projects.length - 3)) % (projects.length - 3))
-  }
 
   const { isMd } = useBreakpoints();
   return (
@@ -82,22 +73,6 @@ export default function index() {
                     ))}
                   </motion.div>
                 </div>
-                {/* <Button
-                variant="outline"
-                size="icon"
-                className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2  rounded-full shadow-lg"
-                onClick={prevSlide}
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2  rounded-full shadow-lg"
-                onClick={nextSlide}
-              >
-                <ChevronRight className="h-4 w-4" />
-              </Button> */}
               </div>
 
             </div>

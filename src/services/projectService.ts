@@ -1,4 +1,4 @@
-import { githubApiInstance } from '@/utils/axiosConfig';
+import { githubApiInstance } from '@/utils/axios-config';
 
 // Fetch GITHUB GET DATA
 export const GihubData = async (per_page: number) => {

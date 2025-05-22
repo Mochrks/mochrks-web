@@ -7,17 +7,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FlipLinkTitle } from "@/components/demo/Title";
 import { LoadingContent } from "@/components/demo/LoadingContent";
 import { artworks } from "@/apis/design-artwork";
+import { Artwork, } from "@/types/design-page";
+import { ITEMS_PER_PAGE } from "@/constants/variable";
 
-interface Artwork {
-  id: number
-  title: string
-  imageUrl: string
-  artist: string
-  description: string
-  category: string
-}
 
-const ITEMS_PER_PAGE = 13;
 
 export const TabsMenu = ({ setActiveCategory }) => {
   return (

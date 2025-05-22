@@ -1,4 +1,4 @@
-import { mediumApiInstance } from '@/utils/axiosConfig';
+import { mediumApiInstance } from '@/utils/axios-config';
 
 // Fetch RSS GET DATA
 export const fetchRSSData = async (rssUrl: string) => {

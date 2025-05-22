@@ -1,27 +1,17 @@
+import { AxiosConfig } from '@/types/axios';
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-// Optional configuration for Axios instance
-interface AxiosConfig {
-    baseURL?: string;
-    timeout?: number;
-    headers?: Record<string, string>;
-}
-
-// Create flexible Axios instance
 const createAxiosInstance = (config: AxiosConfig = {}): AxiosInstance => {
-    // Default configuration
+   
     const defaultConfig: AxiosConfig = {
-        baseURL: '', // Optional base URL
+        baseURL: '',
         timeout: 10000,
         headers: {
             'Content-Type': 'application/json'
         }
     };
-
-    // Merge configurations
     const mergedConfig = { ...defaultConfig, ...config };
 
-    // Create Axios instance
     const axiosInstance: AxiosInstance = axios.create({
         baseURL: mergedConfig.baseURL,
         timeout: mergedConfig.timeout,
@@ -57,11 +47,11 @@ const createAxiosInstance = (config: AxiosConfig = {}): AxiosInstance => {
 
 // API instances for different domains
 export const mediumApiInstance = createAxiosInstance({
-    baseURL: import.meta.env.VITE_MEDIUM_RSS || ''
+    baseURL: import.meta.env.VITE_MEDIUM_RSS ?? ''
 });
 
 export const githubApiInstance = createAxiosInstance({
-    baseURL: import.meta.env.VITE_GITHUB || '',
+    baseURL: import.meta.env.VITE_GITHUB ?? '',
     headers: {
         Authorization: `${import.meta.env.VITE_GITHUB_TOKEN}`, 
      },

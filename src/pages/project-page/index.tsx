@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { CardProject } from "@/components/demo/CardProject";
 import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
 import { FlipLinkTitle } from "@/components/demo/Title";
-// import { projects } from "@/apis/project";
 import { GihubData } from "@/services/projectService";
 import { LoadingContent } from "@/components/demo/LoadingContent";
 
@@ -19,18 +18,18 @@ export default function index() {
 
         console.log('Raw Response:', response);
 
-        const fetchedProjects = response || [];
+        const fetchedProjects = response ?? [];
 
         const mappedProjects = fetchedProjects.map(project => ({
           id: project.id,
           name: project.name,
-          full_name: project.full_name || '',
-          description: project.description || 'No description',
-          html_url: project.html_url || '',
-          homepage: project.homepage || '',
-          topics: project.topics || [],
-          created_at: project.created_at || new Date().toISOString(),
-          updated_at: project.updated_at || new Date().toISOString(),
+          full_name: project.full_name ?? '',
+          description: project.description ?? 'No description',
+          html_url: project.html_url ?? '',
+          homepage: project.homepage ?? '',
+          topics: project.topics ?? [],
+          created_at: project.created_at ?? new Date().toISOString(),
+          updated_at: project.updated_at ?? new Date().toISOString(),
         }));
 
         console.log('Mapped Projects:', mappedProjects);
