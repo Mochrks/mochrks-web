@@ -20,9 +20,6 @@ export function RecentProject() {
         setIsLoading(true);
         const response = await GihubData(1000);
 
-        console.log("Raw Response:", response);
-
-
         const fetchedProjects = response || [];
 
         const mappedProjects = fetchedProjects.map(project => ({
@@ -37,7 +34,7 @@ export function RecentProject() {
           updated_at: project.updated_at || new Date().toISOString(),
         }));
 
-        console.log('Mapped Projects:', mappedProjects);
+
 
         // Sort projects by updated_at in descending order
         const sortedProjects = mappedProjects.sort((a, b) =>
@@ -47,7 +44,7 @@ export function RecentProject() {
         // slice to 4 projects
         const latestProjects = sortedProjects.slice(0, 4);
 
-        console.log("Sorted and Filtered Projects:", latestProjects);
+
         setRecentProjects(latestProjects);
         setIsLoading(false);
       } catch (err) {

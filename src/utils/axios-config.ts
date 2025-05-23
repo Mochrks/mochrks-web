@@ -21,7 +21,7 @@ const createAxiosInstance = (config: AxiosConfig = {}): AxiosInstance => {
     // Request interceptor for logging
     axiosInstance.interceptors.request.use(
         (requestConfig: AxiosRequestConfig) => {
-            console.log('Request:', requestConfig);
+           
             return requestConfig;
         },
         (error) => {
@@ -32,7 +32,7 @@ const createAxiosInstance = (config: AxiosConfig = {}): AxiosInstance => {
     // Response interceptor for logging
     axiosInstance.interceptors.response.use(
         (response: AxiosResponse) => {
-            console.log('Response:', response); 
+           
             return response.data; 
         },
         (error) => {

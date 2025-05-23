@@ -57,7 +57,7 @@ export function Contact() {
         import.meta.env.VITE_EMAILJS_USER_ID
       );
 
-      console.log(result.text);
+
       setIsLoading(true)
 
       setTimeout(() => {

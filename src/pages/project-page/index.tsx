@@ -19,7 +19,7 @@ export default function ProjectIndex() {
         setIsLoading(true);
         const response = await GihubData(1000);
 
-        console.log('Raw Response:', response);
+
 
         const fetchedProjects = response ?? [];
 
@@ -35,14 +35,13 @@ export default function ProjectIndex() {
           updated_at: project.updated_at ?? new Date().toISOString(),
         }));
 
-        console.log('Mapped Projects:', mappedProjects);
 
         // Sort projects by updated_at in descending order
         const sortedProjects = mappedProjects.sort((a, b) =>
           new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
         );
 
-        console.log('Sorted Projects:', sortedProjects);
+
 
         setProjects(sortedProjects);
         setIsLoading(false);
@@ -57,7 +56,7 @@ export default function ProjectIndex() {
     fetchProjects();
   }, []);
 
-  console.log('Projects State:', projects);
+
 
   if (isLoading) {
     return <div className="flex w-full h-screen justify-center items-center "><LoadingContent /></div>
