@@ -21,12 +21,10 @@ export interface SmoothCursorProps {
 const DefaultCursorSVG: FC = () => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={50}
-      height={54}
+      width={30}  // Ubah nilai ini
+      height={34} // Ubah nilai ini
       viewBox="0 0 50 54"
-      fill="none"
-      style={{ scale: 0.5 }}
+      style={{ scale: 0.5 }} // Ini juga mempengaruhi ukuran akhir
     >
       <g filter="url(#filter0_d_91_7928)">
         <path
