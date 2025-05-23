@@ -5,7 +5,7 @@ import { FlipLinkTitle } from "@/components/demo/Title";
 import { GihubData } from "@/services/projectService";
 import { LoadingContent } from "@/components/demo/LoadingContent";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
-import { useNavigate } from "react-router-dom"; // Import useNavigate dari react-router-dom
+import { useNavigate } from "react-router-dom";
 
 export default function ProjectIndex() {
   const [projects, setProjects] = useState<any[]>([]);
@@ -18,9 +18,6 @@ export default function ProjectIndex() {
       try {
         setIsLoading(true);
         const response = await GihubData(1000);
-
-
-
         const fetchedProjects = response ?? [];
 
         const mappedProjects = fetchedProjects.map(project => ({
@@ -86,7 +83,7 @@ export default function ProjectIndex() {
       </div>
       <div className="flex justify-center mb-20">
         <InteractiveHoverButton
-          onClick={() => navigate(-1)}
+          onClick={() => navigate("/")}
           className="text-lg font-medium"
         >
           Back to Previous Page

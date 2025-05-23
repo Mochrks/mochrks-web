@@ -12,23 +12,23 @@ import { ITEMS_PER_PAGE } from "@/constants/variable";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
 
-
-
-export const TabsMenu = ({ setActiveCategory }) => {
+const TabsMenu = ({ setActiveCategory }) => {
   const navigate = useNavigate();
   return (
-    <div className="py-10 bg-gray-400 flex justify-space-between">
-      <SlideTabs setActiveCategory={setActiveCategory} />
+    <div className="py-5 md:py-10 bg-gray-400 flex flex-col md:flex-row items-center justify-between gap-4 px-4">
+
+      <div className="w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+        <SlideTabs setActiveCategory={setActiveCategory} />
+      </div>
       <InteractiveHoverButton
-        onClick={() => navigate(-1)}
-        className="text-lg font-medium mr-10"
+        onClick={() => navigate("/")}
+        className="w-[15rem]  md:w-auto text-sm md:text-lg font-medium md:mr-10 whitespace-nowrap"
       >
         Back to Previous Page
       </InteractiveHoverButton>
     </div>
   );
 };
-
 const SlideTabs = ({ setActiveCategory }) => {
   const [position, setPosition] = useState({
     left: 0,
@@ -49,8 +49,13 @@ const SlideTabs = ({ setActiveCategory }) => {
       className="relative mx-auto md:ml-7 flex w-fit rounded-full border-2 border-black bg-white p-1"
     >
       {categories.map((category) => (
-        <Tab key={category} setPosition={setPosition} setActiveCategory={setActiveCategory} category={category}>
-          {category.charAt(0).toUpperCase() + category.slice(1)}
+        <Tab
+          key={category}
+          setPosition={setPosition}
+          setActiveCategory={setActiveCategory}
+          category={category}
+        >
+          {category.split(' ')[0].charAt(0).toUpperCase() + category.split(' ')[0].slice(1)}
         </Tab>
       ))}
       <Cursor position={position} />
@@ -74,7 +79,7 @@ const Tab = ({ children, setPosition, setActiveCategory, category }) => {
         });
       }}
       onClick={() => setActiveCategory(category)}
-      className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
+      className="relative z-10 block cursor-pointer px-2 py-1 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
     >
       {children}
     </li>
@@ -103,7 +108,6 @@ export default function Index() {
   const loadMoreArtworks = async (nextPage: number, reset: boolean = false) => {
     setIsLoading(true);
 
-    // Simulate API call with a 2-second delay
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     const filteredArtworks = artworks.filter(
@@ -148,7 +152,6 @@ export default function Index() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [page, activeCategory, isLoading]);
 
-  const range = (n: number) => Array.from(Array(n).keys())
 
   return (
     <>
@@ -161,7 +164,6 @@ export default function Index() {
         <TabsMenu setActiveCategory={handleCategoryChange} />
         <section id="photos" className="mx-auto px-10 py-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-7">
-
             {displayedArtworks.map((artwork) => (
               <motion.div
                 key={artwork.id}
@@ -202,33 +204,42 @@ export default function Index() {
               <X size={20} />
             </Button>
             <motion.div
-              className="flex flex-col justify-between bg-white rounded-lg h-5/6 max-w-3xl w-full lg:max-w-full lg:w-[90rem] overflow-hidden"
+              className="flex flex-col bg-white rounded-lg max-h-[90vh] max-w-3xl w-full lg:max-w-full lg:w-[90rem] overflow-hidden shadow-xl"
               onClick={(e) => e.stopPropagation()}
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
             >
-              <div className="">
-                <img
-                  src={selectedArtwork.imageUrl}
-                  alt={selectedArtwork.title}
-                  className="w-full h-[25rem] lg:h-[28rem] 2xl:h-[50rem] object-cover"
-                />
-                <div className="flex p-5">
-                  <div className="flex p-2 ">
+              <div className="relative h-full min-h-[50vh]">
+                <div className="absolute inset-0 blur-md scale-105 z-0 overflow-hidden">
+                  <img
+                    src={selectedArtwork.imageUrl}
+                    alt={selectedArtwork.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative z-10 flex justify-center items-center h-full p-8">
+                  <img
+                    src={selectedArtwork.imageUrl}
+                    alt={selectedArtwork.title}
+                    className="max-h-[60vh] object-contain"
+                  />
+                </div>
+              </div>
+              <div className="bg-white w-full p-5 z-50">
+                <div className="flex items-center">
+                  <div className="flex p-2">
                     <Avatar>
                       <AvatarImage src="https://mochrks.github.io/assets/img-photo/pf.jpg" alt="@mochrks" />
                       <AvatarFallback>MR</AvatarFallback>
                     </Avatar>
                   </div>
-                  <div className="flex-col px-2 ">
-                    <h2 className="text-2xl font-bold text-black ">{selectedArtwork.title}</h2>
-                    <p className="text-gray-600 ">by {selectedArtwork.artist}</p>
+                  <div className="flex-col px-2">
+                    <h2 className="text-2xl font-bold text-black">{selectedArtwork.title}</h2>
+                    <p className="text-gray-600">by {selectedArtwork.artist}</p>
                   </div>
                 </div>
-                <p className="text-gray-800 px-7">{selectedArtwork.description}</p>
               </div>
-              <div className="p-5"></div>
             </motion.div>
           </motion.div>
         )}

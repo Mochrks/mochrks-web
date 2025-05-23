@@ -115,7 +115,7 @@ export const ParallaxScroll = ({
               </div>
               <div className="flex justify-center mb-20 mt-10">
                 <InteractiveHoverButton
-                  onClick={() => navigate(-1)}
+                  onClick={() => navigate("/")}
                   className="text-lg font-medium"
                 >
                   Back to Previous Page

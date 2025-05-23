@@ -6,7 +6,8 @@ import { Button } from '../ui/button';
 import { Switch } from '../ui/switch';
 import { LoadingContent } from './LoadingContent';
 import { RSSData } from '@/types/rss';
-
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import { useNavigate } from "react-router-dom";
 
 //Extract thumbnail
 const extractImageFromDescription = (description: string) => {
@@ -21,6 +22,7 @@ const Layout = () => {
     const [data, setData] = useState<RSSData | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const rssUrl = 'https://medium.com/feed/@mochrks';
@@ -111,17 +113,30 @@ const Layout = () => {
                                     {/*  thumbnail */}
                                     <div className="hidden md:block w-64 h-48 relative">
                                         <img
-                                            src={post.thumbnail || '/placeholder-image.jpg'}
+                                            src={post.thumbnail ?? '/placeholder-image.jpg'}
                                             alt={post.title}
                                             className="object-cover rounded-lg w-full h-full"
                                         />
                                     </div>
+
                                 </motion.div>
+
                             ))
+
                         ) : (
                             <p className="text-center text-gray-500">No articles found</p>
                         )}
                     </div>
+                    {data.items && data.items.length > 0 && (
+                        <div className="flex justify-center mb-20 mt-10">
+                            <InteractiveHoverButton
+                                onClick={() => navigate("/")}
+                                className="text-lg font-medium"
+                            >
+                                Back to Previous Page
+                            </InteractiveHoverButton>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
