@@ -9,88 +9,93 @@ import { about, project, photo, uiux, article, contact, design } from "@/assets"
 import { LinkProps } from "@/types/link";
 
 
+// Menu items data
+const MENU_ITEMS = [
+  {
+    heading: "About",
+    subheading: "Learn more about my personality",
+    imgSrc: about,
+    href: "#about",
+    handler: (onClick) => onClick
+  },
+  {
+    heading: "Project",
+    subheading: "Showcasing my latest project",
+    imgSrc: project,
+    handler: (_, navigate) => navigate("/project")
+  },
+  {
+    heading: "Design Artwork",
+    subheading: "Creative designs that tell a story",
+    imgSrc: design,
+    handler: (_, navigate) => navigate("/design-artwork")
+  },
+  {
+    heading: "UI/UX",
+    subheading: "Designing intuitive user experiences",
+    imgSrc: uiux,
+    handler: (_, navigate) => navigate("/ui-ux-design")
+  },
+  {
+    heading: "Photography",
+    subheading: "Visual storytelling through my lens",
+    imgSrc: photo,
+    handler: (_, navigate) => navigate("/photography")
+  },
+  {
+    heading: "Article",
+    subheading: "Read my thoughts on article",
+    imgSrc: article,
+    handler: (_, navigate) => navigate("/article")
+  },
+  {
+    heading: "Contact",
+    subheading: "Let's connect and collaborate",
+    imgSrc: contact,
+    href: "#contact",
+    handler: (onClick) => onClick
+  }
+];
+
 export default function Menu({ onMenuItemClick }) {
   const navigate = useNavigate();
-  const handleArticle = () => {
-    navigate("/article");
-  };
-  const handlePhotography = () => {
-    navigate("/photography");
+
+  const handleClick = (item) => {
+    if (item.href) {
+
+      onMenuItemClick();
+    } else {
+
+      item.handler(onMenuItemClick, navigate);
+    }
   };
 
-  const handleProject = () => {
-    navigate("/project");
-  };
-  const handleDesign = () => {
-    navigate("/design-artwork");
-  };
-  const handleUIUX = () => {
-    navigate("/ui-ux-design");
-  };
   return (
-    <React.Fragment>
-      <div className="menu">
-        <ul className="list-none  px-5 md:px-14 2xl:px-[100px] pt-[3rem] 4xl:pt-[15rem] ">
-
-          <li>
-            <section className="w-full">
-              <div className="mx-auto ">
+    <div className="menu">
+      <ul className="list-none px-5 md:px-14 2xl:px-[100px] pt-[3rem] 4xl:pt-[15rem]">
+        <li>
+          <section className="w-full">
+            <div className="mx-auto">
+              {MENU_ITEMS.map((item, index) => (
                 <Link
-                  heading="About"
-                  subheading="Learn more about my personality"
-                  imgSrc={about}
-                  href="#about"
-                  onClick={onMenuItemClick}
+                  key={index}
+                  heading={item.heading}
+                  subheading={item.subheading}
+                  imgSrc={item.imgSrc}
+                  href={item.href}
+                  onClick={() => handleClick(item)}
                 />
-                <Link
-                  heading="Project"
-                  subheading="Showcasing my latest work"
-                  imgSrc={project}
-                  onClick={handleProject}
-                />
-                <Link
-                  heading="Design Artwork"
-                  subheading="Creative designs that tell a story"
-                  imgSrc={design}
-                  onClick={handleDesign}
-                />
-                <Link
-                  heading="UI/UX"
-                  subheading="Designing intuitive user experiences"
-                  imgSrc={uiux}
-                  onClick={handleUIUX}
-                />
-                <Link
-                  heading="Photography"
-                  subheading="Visual storytelling through my lens"
-                  imgSrc={photo}
-                  onClick={handlePhotography}
-                />
-                <Link
-                  heading="Article"
-                  subheading="Read my thoughts on design and development"
-                  imgSrc={article}
-                  onClick={handleArticle}
-                />
-                <Link
-                  heading="Contact"
-                  subheading="Let’s connect and collaborate"
-                  imgSrc={contact}
-                  href="#contact"
-                  onClick={onMenuItemClick}
-                />
-              </div>
-            </section>
-          </li>
-          <li>
-            <MenuFeatures />
-          </li>
-        </ul>
-      </div>
-    </React.Fragment>
+              ))}
+            </div>
+          </section>
+        </li>
+        <li>
+          <MenuFeatures />
+        </li>
+      </ul>
+    </div>
   );
 }
-
 
 
 const Link: React.FC<LinkProps> = ({ heading, imgSrc, subheading, href, onClick }) => {
