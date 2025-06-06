@@ -13,7 +13,7 @@
 
 ## Overview
 
-Explore the innovative projects and extensive expertise of **Moch. Rizki Kurniawan** in **React**, **Tailwind CSS**, and **Framer Motion**, showcasing a decade of excellence in software development through compelling and dynamic web experiences. This project utilizes a combination of cutting-edge technologies to create a user-friendly interface that engages and captivates users.
+Explore the innovative projects and extensive expertise of **Moch. Rizki Kurniawan** in **React**, **Tailwind CSS**, and **Framer Motion**, showcasings a decade of excellence in software development through compelling and dynamic web experiences. This project utilizes a combination of cutting-edge technologies to create a user-friendly interface that engages and captivates users.
 
 ## Features
 
