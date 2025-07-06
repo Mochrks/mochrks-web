@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useEffect, useRef } from "react"
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl"
 import { AuroraProps, FRAG, VERT } from "@/types/aurora"
