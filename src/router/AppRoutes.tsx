@@ -30,7 +30,7 @@ const AppRoutes: React.FC = () => {
           element={route.element}
         />
       ))}
-      {/* Catch all route for 404 */}
+
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

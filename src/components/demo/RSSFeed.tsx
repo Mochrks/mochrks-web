@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchRSSData } from '@/services/mediumService';
+import { fetchRSSData } from '@/services/medium-service';
 import { Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
@@ -9,7 +9,7 @@ import { RSSData } from '@/types/rss';
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
 
-//Extract thumbnail
+
 const extractImageFromDescription = (description: string) => {
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = description;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CardProject } from "@/components/demo/CardProject";
 import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
 import { FlipLinkTitle } from "@/components/demo/Title";
-import { GihubData } from "@/services/projectService";
+import { GihubData } from "@/services/project-service";
 import { LoadingContent } from "@/components/demo/LoadingContent";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
@@ -71,7 +71,7 @@ export default function ProjectIndex() {
 
     <div className="pb-20">
       <div className="w-full">
-        {/* title */}
+
         <section className="place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
           <FlipLinkTitle>ALL </FlipLinkTitle>
           <FlipLinkTitle>PROJECT.</FlipLinkTitle>

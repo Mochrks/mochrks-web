@@ -7,7 +7,6 @@ export default function index() {
   return (
     <React.Fragment>
       <header className="w-full">
-        {/* title */}
         <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
           <FlipLinkTitle>MY </FlipLinkTitle>
           <FlipLinkTitle>ARTICLE.</FlipLinkTitle>

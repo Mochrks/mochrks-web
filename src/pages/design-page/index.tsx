@@ -156,7 +156,7 @@ export default function Index() {
   return (
     <>
       <div className="w-full h-full">
-        {/* title */}
+
         <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
           <FlipLinkTitle>MY DESIGN</FlipLinkTitle>
           <FlipLinkTitle>ARTWORK.</FlipLinkTitle>

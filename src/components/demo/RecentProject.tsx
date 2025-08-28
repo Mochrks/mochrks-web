@@ -3,7 +3,7 @@ import ShimmerButton from "@/components/magicui/shimmer-button";
 import { useNavigate } from "react-router-dom";
 import { CardProject } from "@/components/demo/CardProject";
 import GitHubCalendar from 'react-github-calendar';
-import { GihubData } from "@/services/projectService";
+import { GihubData } from "@/services/project-service";
 import { LoadingContent } from "./LoadingContent";
 export function RecentProject() {
   const navigate = useNavigate();
@@ -34,14 +34,11 @@ export function RecentProject() {
           updated_at: project.updated_at || new Date().toISOString(),
         }));
 
-
-
-        // Sort projects by updated_at in descending order
         const sortedProjects = mappedProjects.sort((a, b) =>
           new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
         );
 
-        // slice to 4 projects
+
         const latestProjects = sortedProjects.slice(0, 4);
 
 

@@ -18,7 +18,7 @@ export default function index() {
   const { isMd } = useBreakpoints();
   return (
     <div className="relative  w-full">
-      {/* title */}
+
       <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
         <FlipLinkTitle>DESIGN</FlipLinkTitle>
         <FlipLinkTitle>UI/UX.</FlipLinkTitle>

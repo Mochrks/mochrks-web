@@ -13,7 +13,7 @@ export default function Navbar() {
     setIsActive(false);
   };
 
-  // Handle scroll event
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {

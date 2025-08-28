@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import { MarqueeProps } from "@/types/marquee";
 import React = require("react");
 
-
 export default function Marquee({
   className,
   reverse,

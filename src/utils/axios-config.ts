@@ -18,7 +18,7 @@ const createAxiosInstance = (config: AxiosConfig = {}): AxiosInstance => {
         headers: mergedConfig.headers
     });
 
-    // Request interceptor for logging
+    
     axiosInstance.interceptors.request.use(
         (requestConfig: AxiosRequestConfig) => {
            
@@ -29,7 +29,7 @@ const createAxiosInstance = (config: AxiosConfig = {}): AxiosInstance => {
         }
     );
 
-    // Response interceptor for logging
+    
     axiosInstance.interceptors.response.use(
         (response: AxiosResponse) => {
            
