@@ -26,9 +26,11 @@ import uiux from "./img/uiux.png";
 import article from "./img/article.png";
 import profile from "./img/profile.jpg";
 import leaf from "./img/leaf.jpg";
+import Rizki from "./img/Rizki.jpg";
 
 export {
   leaf,
+  Rizki,
   profile,
   favicon,
   logo,
