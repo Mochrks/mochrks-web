@@ -9,6 +9,7 @@ import {
   FaMedium,
   FaPinterest,
 } from "react-icons/fa";
+import { SiHackerrank } from "react-icons/si";
 import { FiArrowUp } from "react-icons/fi";
 import "@/styles/Footer.css";
 import useBreakpoints from "@/hooks/useBreakpoints";
@@ -51,6 +52,15 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <FaGithub className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.hackerrank.com/profile/mochrks"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SiHackerrank className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
             <li>
