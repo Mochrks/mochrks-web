@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion, } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export const FlipWords = ({
   words,
@@ -64,15 +64,23 @@ export const FlipWords = ({
         {currentWord.split("").map((letter, index) => (
           <motion.span
             key={currentWord + index}
-            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{
+              opacity: letter === " " ? 1 : 0,
+              y: letter === " " ? 0 : 10,
+              filter: letter === " " ? "blur(0px)" : "blur(8px)"
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              filter: "blur(0px)"
+            }}
             transition={{
-              delay: index * 0.08,
-              duration: 0.4,
+              delay: letter === " " ? 0 : index * 0.08,
+              duration: letter === " " ? 0 : 0.4,
             }}
             className="inline-block"
           >
-            {letter}
+            {letter === " " ? "\u00A0" : letter}
           </motion.span>
         ))}
       </motion.div>
