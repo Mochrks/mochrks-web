@@ -1,48 +1,60 @@
 import React from "react";
 import OrbitingCircles from "@/components/magicui/orbiting-circles";
+import Orb from "./Orb";
 export function OrbitingCircle() {
   return (
-    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">
-      <span className="md:w-[300px] lg:w-[600px] pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-slate-600 to-white bg-clip-text text-center text-4xl md:text-5xl lg:text-7xl  font-semibold leading-none text-transparent dark:from-white dark:to-black">
+    <div className="relative flex h-[700px] w-full flex-col items-center justify-center overflow-hidden rounded-lg">
+      <div className="absolute inset-3 z-0">
+        <Orb
+          hue={360}
+          hoverIntensity={0.95}
+          rotateOnHover={false}
+          forceHoverState={false}
+        />
+      </div>
+
+      <span className="md:w-[300px] lg:w-[600px] pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-slate-600 to-white bg-clip-text text-center text-4xl md:text-5xl lg:text-7xl font-semibold leading-none text-transparent dark:from-white dark:to-black relative z-10">
         Contact
       </span>
 
       {/* Inner Circles */}
-      <OrbitingCircles
-        className="size-[30px] border-none bg-transparent"
-        duration={20}
-        delay={20}
-        radius={80}
-      >
-        <Icons.message />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[30px] border-none bg-transparent"
-        duration={20}
-        delay={10}
-        radius={80}
-      >
-        <Icons.mail />
-      </OrbitingCircles>
+      <div className="relative z-10">
+        <OrbitingCircles
+          className="size-[30px] border-none bg-transparent"
+          duration={20}
+          delay={20}
+          radius={80}
+        >
+          <Icons.message />
+        </OrbitingCircles>
+        <OrbitingCircles
+          className="size-[30px] border-none bg-transparent"
+          duration={20}
+          delay={10}
+          radius={80}
+        >
+          <Icons.mail />
+        </OrbitingCircles>
 
-      {/* Outer Circles (reverse) */}
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={190}
-        duration={20}
-        reverse
-      >
-        <Icons.linkedin />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={190}
-        duration={20}
-        delay={20}
-        reverse
-      >
-        <Icons.gitHub />
-      </OrbitingCircles>
+        {/* Outer Circles (reverse) */}
+        <OrbitingCircles
+          className="size-[50px] border-none bg-transparent"
+          radius={190}
+          duration={20}
+          reverse
+        >
+          <Icons.linkedin />
+        </OrbitingCircles>
+        <OrbitingCircles
+          className="size-[50px] border-none bg-transparent"
+          radius={190}
+          duration={20}
+          delay={20}
+          reverse
+        >
+          <Icons.gitHub />
+        </OrbitingCircles>
+      </div>
     </div>
   );
 }

@@ -22,6 +22,7 @@ import Aurora from "@/components/demo/Aurora"
 import CircularText from "@/components/demo/CircularText"
 import { AnimatedSectionProps } from "@/types/home-page"
 import { Skeleton } from "@/components/ui/skeleton"
+import Orb from "@/components/demo/Orb"
 
 
 const LazyVideo = lazy(() => import("@/components/demo/LazyVideo"))
