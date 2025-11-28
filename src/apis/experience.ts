@@ -1,6 +1,6 @@
 import { cca, dinkes, leaf } from "@/assets";
 
-export const features = [
+export const experiece = [
     {
       title: "Padepokan Tujuh Sembilan",
       description: "Software Developer ",

@@ -35,7 +35,6 @@ export const ParallaxScroll = ({
   const firstPart = images.slice(0, third);
   const secondPart = images.slice(third, 2 * third);
   const thirdPart = images.slice(2 * third);
-  const [color, setColor] = useState("#ffffff");
 
   const [loading, setLoading] = useState(true);
 
@@ -52,10 +51,21 @@ export const ParallaxScroll = ({
   return (
     <>
       <div className="relative w-full">
-        <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
-          <FlipLinkTitle>MY</FlipLinkTitle>
-          <FlipLinkTitle>PHOTOGRAPHY.</FlipLinkTitle>
-        </section>
+        <div className="flex flex-col place-content-center gap-2 bg-white px-8 py-14 lg:py-24 ">
+          <div className="text-black">
+            <FlipLinkTitle>MY</FlipLinkTitle>
+            <FlipLinkTitle>PHOTO-</FlipLinkTitle>
+            <FlipLinkTitle>GRAPHY.</FlipLinkTitle>
+          </div>
+          <div>
+            <InteractiveHoverButton
+              onClick={() => navigate("/")}
+              className="text-sm md:text-lg xs font-medium mt:2"
+            >
+              Back
+            </InteractiveHoverButton>
+          </div>
+        </div>
       </div>
       <div className="relative w-full h-full overflow-hidden">
         <div className="container text-center mt-10"></div>

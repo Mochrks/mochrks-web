@@ -127,7 +127,6 @@ export function ExpandArticle() {
         ) : null}
       </AnimatePresence>
 
-      {/* before show dialog modal */}
       <div className="px-3">
         <hr className="my-2 " style={{ border: "1px solid " }}></hr>
       </div>

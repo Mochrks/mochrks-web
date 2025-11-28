@@ -8,7 +8,6 @@ import { FiArrowRight } from "react-icons/fi";
 import { about, project, photo, uiux, article, contact, design } from "@/assets";
 import { LinkProps } from "@/types/link";
 
-// Menu items data
 const MENU_ITEMS = [
   {
     heading: "About",

@@ -12,7 +12,7 @@ import {
 import { SiHackerrank } from "react-icons/si";
 import { FiArrowUp } from "react-icons/fi";
 import "@/styles/Footer.css";
-import useBreakpoints from "@/hooks/useBreakpoints";
+import useBreakpoints from "@/hooks/use-breakpoints";
 import { favicon } from "@/assets";
 
 

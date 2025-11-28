@@ -71,11 +71,20 @@ export default function ProjectIndex() {
 
     <div className="pb-20">
       <div className="w-full">
-
-        <section className="place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
-          <FlipLinkTitle>ALL </FlipLinkTitle>
-          <FlipLinkTitle>PROJECT.</FlipLinkTitle>
-        </section>
+        <div className="flex flex-col place-content-center gap-2 bg-white px-8 py-14 lg:py-24 ">
+          <div className="text-black">
+            <FlipLinkTitle>ALL </FlipLinkTitle>
+            <FlipLinkTitle>PROJECT.</FlipLinkTitle>
+          </div>
+          <div>
+            <InteractiveHoverButton
+              onClick={() => navigate("/")}
+              className="text-sm md:text-lg xs font-medium mt:2"
+            >
+              Back
+            </InteractiveHoverButton>
+          </div>
+        </div>
       </div>
       <div className="max-w-[90rem] 2xl:max-w-full mx-auto px-10 py-10 2xl:py-20">
         <CardProject items={projects} cols={3} />

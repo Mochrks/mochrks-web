@@ -22,7 +22,7 @@ const Word = ({
   }
 
   return (
-    <>
+    <React.Fragment>
       {word.split("").map((letter, letterIndex) => {
         return (
           <span
@@ -43,7 +43,7 @@ const Word = ({
           </span>
         );
       })}
-    </>
+    </React.Fragment>
   );
 };
 
@@ -82,7 +82,6 @@ const createAnimatedNodes = (
   const className = cn(
     "inline-block opacity-0 transition-all ease-minor-spring fill-mode-forwards",
     {
-      // Determine the animation direction
       ["animate-[reveal-down]"]: !isUp && !blur,
       ["animate-[reveal-up]"]: isUp && !blur,
       ["animate-[reveal-down,content-blur]"]: !isUp && blur,

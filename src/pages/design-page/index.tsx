@@ -13,22 +13,15 @@ import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-b
 import { useNavigate } from "react-router-dom";
 
 const TabsMenu = ({ setActiveCategory }) => {
-  const navigate = useNavigate();
   return (
     <div className="py-5 md:py-10 bg-gray-400 flex flex-col md:flex-row items-center justify-between gap-4 px-4">
-
       <div className="w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
         <SlideTabs setActiveCategory={setActiveCategory} />
       </div>
-      <InteractiveHoverButton
-        onClick={() => navigate("/")}
-        className="w-[15rem]  md:w-auto text-sm md:text-lg font-medium md:mr-10 whitespace-nowrap"
-      >
-        Back to Previous Page
-      </InteractiveHoverButton>
     </div>
   );
 };
+
 const SlideTabs = ({ setActiveCategory }) => {
   const [position, setPosition] = useState({
     left: 0,
@@ -92,7 +85,7 @@ const Cursor = ({ position }) => {
       animate={{
         ...position,
       }}
-      className="absolute z-0 h-7 rounded-full bg-black md:h-12"
+      className="absolute z-0 h-6 rounded-full bg-black md:h-12"
     />
   );
 };
@@ -104,7 +97,7 @@ export default function Index() {
   const [displayedArtworks, setDisplayedArtworks] = useState<Artwork[]>([]);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-
+  const navigate = useNavigate();
   const loadMoreArtworks = async (nextPage: number, reset: boolean = false) => {
     setIsLoading(true);
 
@@ -156,11 +149,20 @@ export default function Index() {
   return (
     <>
       <div className="w-full h-full">
-
-        <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
-          <FlipLinkTitle>MY DESIGN</FlipLinkTitle>
-          <FlipLinkTitle>ARTWORK.</FlipLinkTitle>
-        </section>
+        <div className="flex flex-col place-content-center gap-2 bg-white px-8 py-14 lg:py-24 ">
+          <div className="text-black">
+            <FlipLinkTitle>MY DESIGN</FlipLinkTitle>
+            <FlipLinkTitle>ARTWORK.</FlipLinkTitle>
+          </div>
+          <div>
+            <InteractiveHoverButton
+              onClick={() => navigate("/")}
+              className="text-sm md:text-lg xs font-medium mt:2"
+            >
+              Back
+            </InteractiveHoverButton>
+          </div>
+        </div>
         <TabsMenu setActiveCategory={handleCategoryChange} />
         <section id="photos" className="mx-auto px-10 py-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-7">

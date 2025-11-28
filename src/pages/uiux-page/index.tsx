@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { FocusCards } from "@/components/ui/focus-cards";
 import ScrollToTopButton from '@/components/demo/ScrollToTopButton'
-import useBreakpoints from "@/hooks/useBreakpoints";
+import useBreakpoints from "@/hooks/use-breakpoints";
 import { FlipLinkTitle } from '@/components/demo/Title'
 import { projects, cards } from '@/apis/uiux'
 import { useNavigate } from 'react-router-dom';
@@ -18,11 +18,21 @@ export default function index() {
   const { isMd } = useBreakpoints();
   return (
     <div className="relative  w-full">
+      <div className="flex flex-col place-content-center gap-2 bg-white px-8 py-14 lg:py-24 ">
+        <div className="text-black">
+          <FlipLinkTitle>DESIGN</FlipLinkTitle>
+          <FlipLinkTitle>UI/UX.</FlipLinkTitle>
+        </div>
+        <div>
+          <InteractiveHoverButton
+            onClick={() => navigate("/")}
+            className="text-sm md:text-lg xs font-medium mt:2"
+          >
+            Back
+          </InteractiveHoverButton>
+        </div>
+      </div>
 
-      <section className=" place-content-center gap-2 bg-white px-8 py-14 lg:py-24 text-black">
-        <FlipLinkTitle>DESIGN</FlipLinkTitle>
-        <FlipLinkTitle>UI/UX.</FlipLinkTitle>
-      </section>
       {isMd && (
         <div className='flex bg-white/10 py-5'>
 

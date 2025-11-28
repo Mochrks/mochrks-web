@@ -1,12 +1,12 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { features } from "@/apis/experience";
+import { experiece } from "@/apis/experience";
 
 export function Experience() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-20 px-2 max-w-7xl mx-auto  ">
-      {features.map((feature, index) => (
+      {experiece.map((feature, index) => (
         <Feature key={feature.title} {...feature} index={index} />
       ))}
     </div>

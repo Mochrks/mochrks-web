@@ -23,6 +23,7 @@ import CircularText from "@/components/demo/CircularText"
 import { AnimatedSectionProps } from "@/types/home-page"
 import { Skeleton } from "@/components/ui/skeleton"
 import Orb from "@/components/demo/Orb"
+import { skills } from "@/constants/variable"
 
 
 const LazyVideo = lazy(() => import("@/components/demo/LazyVideo"))
@@ -63,7 +64,7 @@ export default function Portfolio() {
     return <Loading />
   }
 
-  const skills = ["Software Developer"]
+
 
   const signature = [
     {
@@ -166,7 +167,7 @@ export default function Portfolio() {
           {/* Projects Section */}
           <AnimatedSection id="projects" variant={textVariantFromButtom(0.12)}>
             <div className="w-full h-full pt-[100px]">
-              <WordFadeIn words="Recent Projects" />
+              <WordFadeIn words="Recent Projects Github" />
               <RecentProject />
             </div>
           </AnimatedSection>

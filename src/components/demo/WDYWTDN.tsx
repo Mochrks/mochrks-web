@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import useBreakpoints from "../../hooks/useBreakpoints";
+import useBreakpoints from "../../hooks/use-breakpoints";
 
 export function WDYWTDN() {
   const navigate = useNavigate();

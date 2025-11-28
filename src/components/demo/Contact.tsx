@@ -5,7 +5,7 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { OrbitingCircle } from "./OrbitingCircle";
-import useBreakpoints from "../../hooks/useBreakpoints";
+import useBreakpoints from "../../hooks/use-breakpoints";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Textarea } from "../ui/textarea";
 import emailjs from '@emailjs/browser';
@@ -23,14 +23,12 @@ declare global {
   }
 }
 
-
 type FormData = z.infer<typeof formSchema>;
 
 export function Contact() {
   const [showAlert, setShowAlert] = useState(false);
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  // React Hook Form setup with Zod validation
   const {
     register,
     handleSubmit,

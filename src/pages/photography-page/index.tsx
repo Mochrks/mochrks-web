@@ -5,9 +5,9 @@ import { images } from "@/apis/photography";
 
 export default function index() {
   return (
-    <div>
-      <ParallaxScroll images={images} />
-    </div>
+
+    <ParallaxScroll images={images} />
+
   );
 }
 

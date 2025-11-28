@@ -20,7 +20,6 @@ export default function ComponentNotFound() {
     }, [isEntering, navigate]);
     return (
         <div className="relative h-screen w-screen flex overflow-hidden flex-col items-center justify-center bg-gradient-to-br from-gray-800 to-slate-900">
-            {/* Container untuk circle */}
             <div className="absolute inset-0 flex items-center justify-center">
                 <motion.div
                     className="w-[300px] h-[300px] rounded-full bg-gradient-to-br from-cyan-600 to-blue-900"
