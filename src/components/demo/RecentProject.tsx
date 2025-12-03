@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { useNavigate } from "react-router-dom";
 import { CardProject } from "@/components/demo/CardProject";
-import GitHubCalendar from 'react-github-calendar';
+import GitHubCalendar from "react-github-calendar";
 import { GihubData } from "@/services/project-service";
 import { LoadingContent } from "./LoadingContent";
 export function RecentProject() {
@@ -22,25 +22,23 @@ export function RecentProject() {
 
         const fetchedProjects = response || [];
 
-        const mappedProjects = fetchedProjects.map(project => ({
+        const mappedProjects = fetchedProjects.map((project) => ({
           id: project.id,
           name: project.name,
-          full_name: project.full_name || '',
-          description: project.description || 'No description',
-          html_url: project.html_url || '',
-          homepage: project.homepage || '',
+          full_name: project.full_name || "",
+          description: project.description || "No description",
+          html_url: project.html_url || "",
+          homepage: project.homepage || "",
           topics: project.topics || [],
           created_at: project.created_at || new Date().toISOString(),
           updated_at: project.updated_at || new Date().toISOString(),
         }));
 
-        const sortedProjects = mappedProjects.sort((a, b) =>
-          new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+        const sortedProjects = mappedProjects.sort(
+          (a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
         );
 
-
         const latestProjects = sortedProjects.slice(0, 4);
-
 
         setRecentProjects(latestProjects);
         setIsLoading(false);
@@ -57,22 +55,23 @@ export function RecentProject() {
     return <LoadingContent />;
   }
 
-
-
   return (
     <React.Fragment>
       <div className="hidden md:flex flex-col w-full items-center justify-center mt-20 ">
-        <h4 className="scroll-m-20 text-xl  tracking-tight py-5">
-          @mochrks on GitHub
-        </h4>
-        <GitHubCalendar username="mochrks" fontSize={16} colorScheme="dark" blockRadius={13} maxLevel={9} />
+        <h4 className="scroll-m-20 text-xl  tracking-tight py-5">@mochrks on GitHub</h4>
+        <GitHubCalendar
+          username="mochrks"
+          fontSize={16}
+          colorScheme="dark"
+          blockRadius={13}
+          maxLevel={9}
+        />
       </div>
       <div className="relative flex w-full h-full flex-col items-center overflow-hidden justify-center gap-10 pt-20 ">
         <div className="container flex items-center justify-center ">
           <div className="max-w-full mx-auto ">
             <CardProject items={recentProjects} cols={2} />
           </div>
-
         </div>
 
         <div className="pt-10 text-center">
@@ -91,7 +90,3 @@ export function RecentProject() {
     </React.Fragment>
   );
 }
-
-
-
-

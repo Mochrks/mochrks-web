@@ -20,31 +20,27 @@ export default function ProjectIndex() {
         const response = await GihubData(1000);
         const fetchedProjects = response ?? [];
 
-        const mappedProjects = fetchedProjects.map(project => ({
+        const mappedProjects = fetchedProjects.map((project) => ({
           id: project.id,
           name: project.name,
-          full_name: project.full_name ?? '',
-          description: project.description ?? 'No description',
-          html_url: project.html_url ?? '',
-          homepage: project.homepage ?? '',
+          full_name: project.full_name ?? "",
+          description: project.description ?? "No description",
+          html_url: project.html_url ?? "",
+          homepage: project.homepage ?? "",
           topics: project.topics ?? [],
           created_at: project.created_at ?? new Date().toISOString(),
           updated_at: project.updated_at ?? new Date().toISOString(),
         }));
 
-
-        // Sort projects by updated_at in descending order
-        const sortedProjects = mappedProjects.sort((a, b) =>
-          new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+        const sortedProjects = mappedProjects.sort(
+          (a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
         );
-
-
 
         setProjects(sortedProjects);
         setIsLoading(false);
       } catch (err) {
-        console.error('Failed to fetch projects:', err);
-        setError('Failed to load projects');
+        console.error("Failed to fetch projects:", err);
+        setError("Failed to load projects");
         setIsLoading(false);
         setProjects([]);
       }
@@ -53,22 +49,21 @@ export default function ProjectIndex() {
     fetchProjects();
   }, []);
 
-
-
   if (isLoading) {
-    return <div className="flex w-full h-screen justify-center items-center "><LoadingContent /></div>
-  }
-
-  if (error) {
     return (
-      <div className="flex justify-center items-center min-h-screen text-red-500">
-        {error}
+      <div className="flex w-full h-screen justify-center items-center ">
+        <LoadingContent />
       </div>
     );
   }
 
-  return (
+  if (error) {
+    return (
+      <div className="flex justify-center items-center min-h-screen text-red-500">{error}</div>
+    );
+  }
 
+  return (
     <div className="pb-20">
       <div className="w-full">
         <div className="flex flex-col place-content-center gap-2 bg-white px-8 py-14 lg:py-24 ">
@@ -91,14 +86,10 @@ export default function ProjectIndex() {
         <ScrollToTopButton />
       </div>
       <div className="flex justify-center mb-20">
-        <InteractiveHoverButton
-          onClick={() => navigate("/")}
-          className="text-lg font-medium"
-        >
+        <InteractiveHoverButton onClick={() => navigate("/")} className="text-lg font-medium">
           Back to Previous Page
         </InteractiveHoverButton>
       </div>
     </div>
-
   );
 }

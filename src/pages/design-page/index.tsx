@@ -1,13 +1,13 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { X } from 'lucide-react'
+import { X } from "lucide-react";
 import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FlipLinkTitle } from "@/components/demo/Title";
 import { LoadingContent } from "@/components/demo/LoadingContent";
 import { artworks } from "@/apis/design-artwork";
-import { Artwork, } from "@/types/design-page";
+import { Artwork } from "@/types/design-page";
 import { ITEMS_PER_PAGE } from "@/constants/variable";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
@@ -48,7 +48,7 @@ const SlideTabs = ({ setActiveCategory }) => {
           setActiveCategory={setActiveCategory}
           category={category}
         >
-          {category.split(' ')[0].charAt(0).toUpperCase() + category.split(' ')[0].slice(1)}
+          {category.split(" ")[0].charAt(0).toUpperCase() + category.split(" ")[0].slice(1)}
         </Tab>
       ))}
       <Cursor position={position} />
@@ -90,7 +90,6 @@ const Cursor = ({ position }) => {
   );
 };
 
-
 export default function Index() {
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
   const [activeCategory, setActiveCategory] = useState("illustration");
@@ -101,7 +100,7 @@ export default function Index() {
   const loadMoreArtworks = async (nextPage: number, reset: boolean = false) => {
     setIsLoading(true);
 
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     const filteredArtworks = artworks.filter(
       (artwork) => artwork.category.toLowerCase() === activeCategory.toLowerCase()
@@ -135,16 +134,15 @@ export default function Index() {
       if (
         !isLoading &&
         window.innerHeight + document.documentElement.scrollTop >=
-        document.documentElement.offsetHeight - 100
+          document.documentElement.offsetHeight - 100
       ) {
         loadMoreArtworks(page + 1);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [page, activeCategory, isLoading]);
-
 
   return (
     <>
@@ -185,10 +183,7 @@ export default function Index() {
             ))}
           </div>
 
-
-          {isLoading && (
-            <LoadingContent />
-          )}
+          {isLoading && <LoadingContent />}
         </section>
 
         {selectedArtwork && (
@@ -232,7 +227,10 @@ export default function Index() {
                 <div className="flex items-center">
                   <div className="flex p-2">
                     <Avatar>
-                      <AvatarImage src="https://mochrks.github.io/assets/img-photo/pf.jpg" alt="@mochrks" />
+                      <AvatarImage
+                        src="https://mochrks.github.io/assets/img-photo/pf.jpg"
+                        alt="@mochrks"
+                      />
                       <AvatarFallback>MR</AvatarFallback>
                     </Avatar>
                   </div>
@@ -250,8 +248,3 @@ export default function Index() {
     </>
   );
 }
-
-
-
-
-

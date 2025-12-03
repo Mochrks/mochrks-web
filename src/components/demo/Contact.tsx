@@ -6,9 +6,9 @@ import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { OrbitingCircle } from "./OrbitingCircle";
 import useBreakpoints from "../../hooks/use-breakpoints";
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from "framer-motion";
 import { Textarea } from "../ui/textarea";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import { FloatingAlert } from "./FloatingAlert";
 import { formSchema } from "@/schema";
 import { z } from "zod";
@@ -27,7 +27,7 @@ type FormData = z.infer<typeof formSchema>;
 
 export function Contact() {
   const [showAlert, setShowAlert] = useState(false);
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const {
     register,
@@ -55,16 +55,15 @@ export function Contact() {
         import.meta.env.VITE_EMAILJS_USER_ID
       );
 
-
-      setIsLoading(true)
+      setIsLoading(true);
 
       setTimeout(() => {
-        setIsLoading(false)
-      }, 3000)
+        setIsLoading(false);
+      }, 3000);
       setShowAlert(true);
       reset();
     } catch (error) {
-      console.error('Failed to send email:', error);
+      console.error("Failed to send email:", error);
     } finally {
       setIsLoading(false);
     }
@@ -85,16 +84,13 @@ export function Contact() {
     <div>
       <div className="container mx-auto p-4">
         <div className="flex flex-col md:flex-row items-start justify-center gap-4  p-4">
-          <div className="flex justify-center w-full md:w-auto ">
-            {isMd && <OrbitingCircle />}
-          </div>
+          <div className="flex justify-center w-full md:w-auto ">{isMd && <OrbitingCircle />}</div>
           <div className="max-w-md w-full h-full mx-auto rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
             <h2 className="font-bold text-2xl text-neutral-800 dark:text-neutral-200 py-4">
               Contact me
             </h2>
             <p className="text-neutral-600 text-base md:text-md max-w-sm mt-2 dark:text-neutral-300">
-              Feel free to reach out to me for any inquiries or collaboration
-              opportunities.
+              Feel free to reach out to me for any inquiries or collaboration opportunities.
             </p>
             <form className="my-8" onSubmit={handleSubmit(onSubmit)}>
               <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
@@ -111,12 +107,22 @@ export function Contact() {
               </div>
               <LabelInputContainer className="mb-4">
                 <Label htmlFor="email">Your Email</Label>
-                <Input id="email" placeholder="youremail@email.com" type="email" {...register("email")} />
+                <Input
+                  id="email"
+                  placeholder="youremail@email.com"
+                  type="email"
+                  {...register("email")}
+                />
                 {errors.email && <p className="text-red-600">{errors.email.message}</p>}
               </LabelInputContainer>
               <LabelInputContainer className="mb-4">
                 <Label htmlFor="subject">Subject</Label>
-                <Input id="subject" placeholder="subject email" type="text" {...register("subject")} />
+                <Input
+                  id="subject"
+                  placeholder="subject email"
+                  type="text"
+                  {...register("subject")}
+                />
                 {errors.subject && <p className="text-red-600">{errors.subject.message}</p>}
               </LabelInputContainer>
               <LabelInputContainer className="mb-4">
@@ -135,7 +141,6 @@ export function Contact() {
                 disabled={isLoading}
               >
                 <div className="flex items-center justify-center">
-
                   {isLoading && (
                     <motion.div
                       className="w-3 h-3 border-2 mr-2 border-white rounded-full border-t-transparent"
@@ -143,8 +148,7 @@ export function Contact() {
                       transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                     />
                   )}
-                  Send
-                  &rarr;
+                  Send &rarr;
                 </div>
                 <BottomGradient />
               </button>
@@ -154,9 +158,7 @@ export function Contact() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {showAlert && <FloatingAlert />}
-      </AnimatePresence>
+      <AnimatePresence>{showAlert && <FloatingAlert />}</AnimatePresence>
     </div>
   );
 }
@@ -177,11 +179,5 @@ const LabelInputContainer = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return (
-    <div className={cn("flex flex-col space-y-2 w-full", className)}>
-      {children}
-    </div>
-  );
+  return <div className={cn("flex flex-col space-y-2 w-full", className)}>{children}</div>;
 };
-
-

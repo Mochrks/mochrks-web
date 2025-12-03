@@ -51,11 +51,7 @@ const items = [
   },
 ];
 
-export default function Expandable({
-  list = items,
-  autoPlay = true,
-  className,
-}: ExpandableProps) {
+export default function Expandable({ list = items, autoPlay = true, className }: ExpandableProps) {
   const [activeItem, setActiveItem] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
 

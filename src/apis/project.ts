@@ -1,8 +1,7 @@
-
 import { p1, p2, p3, p4, p5 } from "@/assets";
 export const projects = [
   {
-    id:1,
+    id: 1,
     name: "Web Drone Product",
     full_name: "Mochrks/fullstack-go-hexagon",
     description:
@@ -10,16 +9,11 @@ export const projects = [
     html_url: "https://github.com/Mochrks/web-drone-project",
     homepage: "https://web-drone-dji.vercel.app/",
     img: p1,
-    topics: [
-            "nextjs",
-            "tailwindcss",
-            "typescript"
-    ],
-    created_at: "2024-11-06T02:36:22Z"
-
+    topics: ["nextjs", "tailwindcss", "typescript"],
+    created_at: "2024-11-06T02:36:22Z",
   },
   {
-    id:2,
+    id: 2,
     name: "Web Robotics Ai Product",
     full_name: "Mochrks/fullstack-go-hexagon",
     description:
@@ -27,15 +21,11 @@ export const projects = [
     html_url: "https://github.com/Mochrks/web-robotics-ai-project",
     homepage: "https://web-robotics-ai.vercel.app/",
     img: p2,
-    topics: [
-            "nextjs",
-            "tailwi",
-            "typescript"
-        ],
-    created_at: "2024-11-06T02:36:22Z"
+    topics: ["nextjs", "tailwi", "typescript"],
+    created_at: "2024-11-06T02:36:22Z",
   },
   {
-    id:3,
+    id: 3,
     name: "Web E-commerce Tshirt Product",
     full_name: "Mochrks/fullstack-go-hexagon",
     description:
@@ -43,15 +33,11 @@ export const projects = [
     html_url: "https://github.com/Mochrks/web-e-commerce-tshirt-brand-project",
     homepage: "https://web-tshirt-brand.vercel.app/",
     img: p3,
-     topics: [
-            "nextjs",
-            "tailwi",
-            "typescript"
-        ],
-    created_at: "2024-11-06T02:36:22Z"
+    topics: ["nextjs", "tailwi", "typescript"],
+    created_at: "2024-11-06T02:36:22Z",
   },
   {
-    id:4,
+    id: 4,
     name: "Web Blockchain Product",
     full_name: "Mochrks/fullstack-go-hexagon",
     description:
@@ -59,15 +45,11 @@ export const projects = [
     html_url: "https://github.com/Mochrks/web-multichain-gen-z-project",
     homepage: "https://web-multichain.vercel.app/",
     img: p4,
-     topics: [
-            "nextjs",
-            "tailwi",
-            "typescript"
-        ],
-    created_at: "2024-11-06T02:36:22Z"
+    topics: ["nextjs", "tailwi", "typescript"],
+    created_at: "2024-11-06T02:36:22Z",
   },
   {
-    id:5,
+    id: 5,
     name: "Web Nfts Product",
     full_name: "Mochrks/fullstack-go-hexagon",
     description:
@@ -75,15 +57,9 @@ export const projects = [
     link: "https://github.com/Mochrks/web-nfts-project",
     homepage: "https://web-nfts-three.vercel.app/",
     img: p5,
-     topics: [
-            "nextjs",
-            "tailwi",
-            "typescript"
-        ],
-    created_at: "2024-11-06T02:36:22Z"
+    topics: ["nextjs", "tailwi", "typescript"],
+    created_at: "2024-11-06T02:36:22Z",
   },
-
-
 ];
 
 export const recentProjects = [
@@ -95,7 +71,6 @@ export const recentProjects = [
     web: "https://web-drone-dji.vercel.app/",
     git: "https://github.com/Mochrks/web-drone-project",
     img: p1,
-
   },
   {
     title: "Web Robotics Ai Product",
@@ -105,7 +80,6 @@ export const recentProjects = [
     web: "https://web-robotics-ai.vercel.app/",
     git: "https://github.com/Mochrks/web-robotics-ai-project",
     img: p2,
-
   },
   {
     title: "Web E-commerce Tshirt Product",
@@ -115,7 +89,6 @@ export const recentProjects = [
     web: "https://web-tshirt-brand.vercel.app/",
     git: "https://github.com/Mochrks/web-e-commerce-tshirt-brand-project",
     img: p3,
-
   },
   {
     title: "Web Blockchain Product",

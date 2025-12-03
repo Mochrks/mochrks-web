@@ -1,19 +1,18 @@
-import React, { useState } from 'react'
-import { motion, } from 'framer-motion'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FocusCards } from "@/components/ui/focus-cards";
-import ScrollToTopButton from '@/components/demo/ScrollToTopButton'
+import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
 import useBreakpoints from "@/hooks/use-breakpoints";
-import { FlipLinkTitle } from '@/components/demo/Title'
-import { projects, cards } from '@/apis/uiux'
-import { useNavigate } from 'react-router-dom';
-import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button';
+import { FlipLinkTitle } from "@/components/demo/Title";
+import { projects, cards } from "@/apis/uiux";
+import { useNavigate } from "react-router-dom";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
 export default function index() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
-
 
   const { isMd } = useBreakpoints();
   return (
@@ -34,16 +33,20 @@ export default function index() {
       </div>
 
       {isMd && (
-        <div className='flex bg-white/10 py-5'>
-
-          <div className='flex max-w-xl items-center justify-center px-5'>
-            <div className='flex'>
-              <Avatar className='w-[3rem] h-[3rem] mt-4 '>
-                <AvatarImage src="https://mochrks.github.io/assets/img-photo/pf.jpg" alt="@mochrks" />
+        <div className="flex bg-white/10 py-5">
+          <div className="flex max-w-xl items-center justify-center px-5">
+            <div className="flex">
+              <Avatar className="w-[3rem] h-[3rem] mt-4 ">
+                <AvatarImage
+                  src="https://mochrks.github.io/assets/img-photo/pf.jpg"
+                  alt="@mochrks"
+                />
                 <AvatarFallback>MR</AvatarFallback>
               </Avatar>
-              <div className='px-5'>
-                <h2 className='scroll-m-20 text-2xl font-extrabold tracking-tight lg:text2xl'>Mochrks</h2>
+              <div className="px-5">
+                <h2 className="scroll-m-20 text-2xl font-extrabold tracking-tight lg:text2xl">
+                  Mochrks
+                </h2>
                 <p className="text-sm leading-1 [&:not(:first-child)]:mt-1">
                   "Simplicity is the soul of efficiency." - Austin Freeman
                 </p>
@@ -78,8 +81,12 @@ export default function index() {
                             </div>
                           </CardHeader>
                           <CardContent className="p-4 bg-white/10">
-                            <CardTitle className="text-xl  text-gray-900 mb-2">{project.title}</CardTitle>
-                            <CardDescription className='text-gray-700'>{project.description}</CardDescription>
+                            <CardTitle className="text-xl  text-gray-900 mb-2">
+                              {project.title}
+                            </CardTitle>
+                            <CardDescription className="text-gray-700">
+                              {project.description}
+                            </CardDescription>
                           </CardContent>
                         </Card>
                       </motion.div>
@@ -87,25 +94,21 @@ export default function index() {
                   </motion.div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       )}
       {/* content web uiux */}
-      <div className=' w-full h-full p-6 lg:p-20 '>
+      <div className=" w-full h-full p-6 lg:p-20 ">
         <FocusCards cards={cards} />
       </div>
       <ScrollToTopButton />
 
       <div className="flex justify-center mb-20">
-        <InteractiveHoverButton
-          onClick={() => navigate("/")}
-          className="text-lg font-medium"
-        >
+        <InteractiveHoverButton onClick={() => navigate("/")} className="text-lg font-medium">
           Back to Previous Page
         </InteractiveHoverButton>
       </div>
-    </div >
+    </div>
   );
 }

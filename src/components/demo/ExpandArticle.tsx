@@ -3,9 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
 export function ExpandArticle() {
-  const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
-    null
-  );
+  const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(null);
   const ref = useRef<HTMLDivElement>(null);
   const id = useId();
 
@@ -94,8 +92,6 @@ export function ExpandArticle() {
                       {active.description}
                     </motion.p>
                   </div>
-
-
                 </div>
                 <div className="pt-4 pb-10 relative px-4 ">
                   <motion.div
@@ -105,9 +101,7 @@ export function ExpandArticle() {
                     exit={{ opacity: 0 }}
                     className="text-neutral-600 text-md md:text-sm lg:text-sm h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
-                    {typeof active.content === "function"
-                      ? active.content()
-                      : active.content}
+                    {typeof active.content === "function" ? active.content() : active.content}
                   </motion.div>
                   <motion.a
                     layoutId={`button-${active.title}-${id}`}
@@ -117,10 +111,7 @@ export function ExpandArticle() {
                   >
                     {active.ctaText}
                   </motion.a>
-
-
                 </div>
-
               </div>
             </motion.div>
           </div>
@@ -220,22 +211,19 @@ const cards = [
     content: () => {
       return (
         <p>
-          Saya Moch. Rizki Kurniawan, seorang software developer. Dalam artikel
-          ini, saya akan membahas proyek pengembangan CRUD API (Create, Read,
-          Update, Delete) menggunakan ASP.NET Core Web API. Artikel ini
-          bertujuan untuk memberikan pemahaman mengenai konsep dasar dan
-          penerapan CRUD API. Dalam implementasinya, disini menggunakan metode
-          scaffolding yang disediakan oleh ASP.NET Core. <br />
-          Penjelasan ASP.NET Core ASP.NET Core adalah framework open-source yang
-          kuat untuk membangun aplikasi web modern di berbagai platform.
-          Dikembangkan oleh Microsoft, framework ini dirancang untuk performa
-          tinggi, mudah di-maintain, dan dapat di-deploy di berbagai lingkungan
-          seperti Windows, macOS, dan Linux. Penggunaan Scaffold dalam ASP.NET
-          Core Salah satu fitur yang menonjol dari ASP.NET Core adalah kemampuan
-          untuk menggunakan scaffolding. Scaffolding adalah teknik otomatisasi
-          yang membantu pengembang menghasilkan kode boilerplate untuk operasi
-          CRUD. Dengan scaffolding, Anda dapat menghemat waktu dan memastikan
-          konsistensi dalam kode yang dihasilkan.
+          Saya Moch. Rizki Kurniawan, seorang software developer. Dalam artikel ini, saya akan
+          membahas proyek pengembangan CRUD API (Create, Read, Update, Delete) menggunakan ASP.NET
+          Core Web API. Artikel ini bertujuan untuk memberikan pemahaman mengenai konsep dasar dan
+          penerapan CRUD API. Dalam implementasinya, disini menggunakan metode scaffolding yang
+          disediakan oleh ASP.NET Core. <br />
+          Penjelasan ASP.NET Core ASP.NET Core adalah framework open-source yang kuat untuk
+          membangun aplikasi web modern di berbagai platform. Dikembangkan oleh Microsoft, framework
+          ini dirancang untuk performa tinggi, mudah di-maintain, dan dapat di-deploy di berbagai
+          lingkungan seperti Windows, macOS, dan Linux. Penggunaan Scaffold dalam ASP.NET Core Salah
+          satu fitur yang menonjol dari ASP.NET Core adalah kemampuan untuk menggunakan scaffolding.
+          Scaffolding adalah teknik otomatisasi yang membantu pengembang menghasilkan kode
+          boilerplate untuk operasi CRUD. Dengan scaffolding, Anda dapat menghemat waktu dan
+          memastikan konsistensi dalam kode yang dihasilkan.
         </p>
       );
     },
@@ -251,19 +239,16 @@ const cards = [
     content: () => {
       return (
         <p>
-          Saya Moch. Rizki Kurniawan, seorang software developer. Dalam artikel
-          ini, saya akan membahas bagaimana mengimplementasikan landing page
-          untuk produk robotics menggunakan React, Vite, TailwindCSS, dan Framer
-          Motion Animations. React adalah pustaka JavaScript yang populer untuk
-          membangun antarmuka pengguna(UI) interaktif dan dinamis. Vite adalah
-          build tool yang sangat cepat dan efisien yang membantu dalam
-          pengembangan proyek React. TailwindCSS adalah framework CSS yang
-          memudahkan pembuatan desain yang responsif dan estetis melalui
-          kelas-kelas utility yang siap pakai. Sementara itu, Framer Motion
-          adalah pustaka untuk membuat animasi yang interaktif dan kompleks
-          dengan mudah di dalam aplikasi React. Artikel ini bertujuan untuk
-          memberikan pemahaman tentang bagaimana implmentasi untuk menciptakan
-          landing page yang menarik dan fungsional untuk produk robotics.
+          Saya Moch. Rizki Kurniawan, seorang software developer. Dalam artikel ini, saya akan
+          membahas bagaimana mengimplementasikan landing page untuk produk robotics menggunakan
+          React, Vite, TailwindCSS, dan Framer Motion Animations. React adalah pustaka JavaScript
+          yang populer untuk membangun antarmuka pengguna(UI) interaktif dan dinamis. Vite adalah
+          build tool yang sangat cepat dan efisien yang membantu dalam pengembangan proyek React.
+          TailwindCSS adalah framework CSS yang memudahkan pembuatan desain yang responsif dan
+          estetis melalui kelas-kelas utility yang siap pakai. Sementara itu, Framer Motion adalah
+          pustaka untuk membuat animasi yang interaktif dan kompleks dengan mudah di dalam aplikasi
+          React. Artikel ini bertujuan untuk memberikan pemahaman tentang bagaimana implmentasi
+          untuk menciptakan landing page yang menarik dan fungsional untuk produk robotics.
         </p>
       );
     },
@@ -280,17 +265,15 @@ const cards = [
     content: () => {
       return (
         <p>
-          Saya Moch. Rizki Kurniawan, seorang software developer. Pada
-          kesempatan kali ini, saya akan membahas tentang proyek pengembangan
-          website generator tiket event dengan QR Code menggunakan teknologi
-          React, Vite, Node.js (Express & GraphQL), Framer Motion, TailwindCSS,
-          dan MongoDB. Artikel ini bertujuan untuk memberikan pemahaman tentang
-          bagaimana cara mengimplementasikan sebuah aplikasi yang dapat
-          menghasilkan tiket event dengan QR Code secara efisien dan menarik.
-          Selain itu, aplikasi ini juga dilengkapi dengan fitur QR reader untuk
-          membaca hasil QR Code yang telah dibuat, sehingga memudahkan proses
-          verifikasi tiket. Penjelasan React dan Vite digunakan dalam pembuatan
-          antarmuka pengguna (UI) pada website generator tiket event.
+          Saya Moch. Rizki Kurniawan, seorang software developer. Pada kesempatan kali ini, saya
+          akan membahas tentang proyek pengembangan website generator tiket event dengan QR Code
+          menggunakan teknologi React, Vite, Node.js (Express & GraphQL), Framer Motion,
+          TailwindCSS, dan MongoDB. Artikel ini bertujuan untuk memberikan pemahaman tentang
+          bagaimana cara mengimplementasikan sebuah aplikasi yang dapat menghasilkan tiket event
+          dengan QR Code secara efisien dan menarik. Selain itu, aplikasi ini juga dilengkapi dengan
+          fitur QR reader untuk membaca hasil QR Code yang telah dibuat, sehingga memudahkan proses
+          verifikasi tiket. Penjelasan React dan Vite digunakan dalam pembuatan antarmuka pengguna
+          (UI) pada website generator tiket event.
         </p>
       );
     },

@@ -3,7 +3,7 @@ in vec2 position;
 void main() {
   gl_Position = vec4(position, 0.0, 1.0);
 }
-`
+`;
 
 export const FRAG = `#version 300 es
 precision highp float;
@@ -103,12 +103,12 @@ void main() {
   
   fragColor = vec4(auroraColor * auroraAlpha, auroraAlpha);
 }
-`
+`;
 
 export interface AuroraProps {
-    colorStops?: string[]
-    amplitude?: number
-    blend?: number
-    time?: number
-    speed?: number
+  colorStops?: string[];
+  amplitude?: number;
+  blend?: number;
+  time?: number;
+  speed?: number;
 }

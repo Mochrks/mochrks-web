@@ -25,7 +25,6 @@ const LazyVideo: React.FC = () => {
 
   return (
     <div className="relative">
-
       {isHeroVisible && (
         <motion.div
           initial="hidden"

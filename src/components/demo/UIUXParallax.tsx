@@ -5,4 +5,3 @@ import { products } from "@/apis/uiux";
 export function UIUXParallax() {
   return <HeroParallax products={products} />;
 }
-

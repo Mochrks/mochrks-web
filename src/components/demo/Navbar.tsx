@@ -8,11 +8,9 @@ export default function Navbar() {
   const [isActive, setIsActive] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-
   const handleMenuItemClick = () => {
     setIsActive(false);
   };
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,11 +32,7 @@ export default function Navbar() {
     <header>
       <nav className={`nav ${isScrolled ? "scrolled" : ""}`}>
         <header className="logo">
-          <img
-            className="inline w-[3rem] h-[3rem] "
-            src={logo}
-            alt="Logo"
-          />
+          <img className="inline w-[3rem] h-[3rem] " src={logo} alt="Logo" />
           <h2 className="text-white ml-2 my-auto text-md font-semibold tracking-tight first:mt-0">
             Hello
             <br />

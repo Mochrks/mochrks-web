@@ -23,7 +23,6 @@ Explore the innovative projects and extensive expertise of **Moch. Rizki Kurniaw
 - Built with **React** and **TypeScript** for enhanced development experience and maintainability
 - Optimized for performance using **Vite**
 
-
 ## Tech Stack
 
 - **React 18.0.0**
@@ -32,8 +31,8 @@ Explore the innovative projects and extensive expertise of **Moch. Rizki Kurniaw
 - **Framer Motion** for animations
 - **ShadCN UI**, **MagicUI**, **Animata**, **Lukacho UI** and **AceternityUI** for UI components
 
-
 ## Connect with me:
+
 [![GitHub](https://img.shields.io/badge/GitHub-333?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mochrks)
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@Gdvisuel)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/mochrks)

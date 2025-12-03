@@ -19,7 +19,7 @@ export interface SmoothCursorProps {
 const DefaultCursorSVG: FC = () => {
   return (
     <svg
-      width={30}  // Ubah nilai ini
+      width={30} // Ubah nilai ini
       height={34} // Ubah nilai ini
       viewBox="0 0 50 54"
       style={{ scale: 0.5 }} // Ini juga mempengaruhi ukuran akhir
@@ -55,15 +55,8 @@ const DefaultCursorSVG: FC = () => {
           <feOffset dy={2.25825} />
           <feGaussianBlur stdDeviation={2.25825} />
           <feComposite in2="hardAlpha" operator="out" />
-          <feColorMatrix
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"
-          />
-          <feBlend
-            mode="normal"
-            in2="BackgroundImageFix"
-            result="effect1_dropShadow_91_7928"
-          />
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0" />
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_91_7928" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -125,17 +118,14 @@ export function SmoothCursor({
       const currentPos = { x: e.clientX, y: e.clientY };
       updateVelocity(currentPos);
 
-      const speed = Math.sqrt(
-        Math.pow(velocity.current.x, 2) + Math.pow(velocity.current.y, 2),
-      );
+      const speed = Math.sqrt(Math.pow(velocity.current.x, 2) + Math.pow(velocity.current.y, 2));
 
       cursorX.set(currentPos.x);
       cursorY.set(currentPos.y);
 
       if (speed > 0.1) {
         const currentAngle =
-          Math.atan2(velocity.current.y, velocity.current.x) * (180 / Math.PI) +
-          90;
+          Math.atan2(velocity.current.y, velocity.current.x) * (180 / Math.PI) + 90;
 
         let angleDiff = currentAngle - previousAngle.current;
         if (angleDiff > 180) angleDiff -= 360;

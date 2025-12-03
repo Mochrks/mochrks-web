@@ -2,24 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-// import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { ShootingStars } from "@/components/ui/shooting-stars";
-import { StarsBackground } from "@/components/ui/stars-background";
-import Particles from "@/components/magicui/particles";
 import ScrollToTopButton from "../demo/ScrollToTopButton";
 import { FlipLinkTitle } from "../demo/Title";
 import { LoadingContent } from "../demo/LoadingContent";
 import { InteractiveHoverButton } from "../magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
 
-export const ParallaxScroll = ({
-  images,
-  className,
-}: {
-  images: string[];
-  className?: string;
-}) => {
+export const ParallaxScroll = ({ images, className }: { images: string[]; className?: string }) => {
   const gridRef = useRef<any>(null);
   const { scrollYProgress } = useScroll({
     container: gridRef,
@@ -69,11 +59,10 @@ export const ParallaxScroll = ({
       </div>
       <div className="relative w-full h-full overflow-hidden">
         <div className="container text-center mt-10"></div>
-        <div
-          className={cn("h-full items-start overflow-y-auto w-full ", className)}
-          ref={gridRef}
-        >
-          {loading ? (<LoadingContent />) : (
+        <div className={cn("h-full items-start overflow-y-auto w-full ", className)} ref={gridRef}>
+          {loading ? (
+            <LoadingContent />
+          ) : (
             <>
               <div
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-5 text-center px-12 py-5"
@@ -81,10 +70,7 @@ export const ParallaxScroll = ({
               >
                 <div className="grid gap-10">
                   {firstPart.map((el, idx) => (
-                    <motion.div
-                      style={{ y: translateFirst }} // Apply the translateY motion value here
-                      key={"grid-1" + idx}
-                    >
+                    <motion.div style={{ y: translateFirst }} key={"grid-1" + idx}>
                       <img
                         src={el}
                         className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0 z-50"
@@ -121,7 +107,6 @@ export const ParallaxScroll = ({
                     </motion.div>
                   ))}
                 </div>
-
               </div>
               <div className="flex justify-center mb-20 mt-10">
                 <InteractiveHoverButton

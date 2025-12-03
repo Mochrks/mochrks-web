@@ -23,11 +23,7 @@ export default function About() {
             <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-white" />
             <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-white" />
             <div className="w-80 h-80 overflow-hidden ">
-              <img
-                src={Rizki}
-                alt="Moch. Rizki Kurniawan"
-                className="object-cover w-full h-full"
-              />
+              <img src={Rizki} alt="Moch. Rizki Kurniawan" className="object-cover w-full h-full" />
             </div>
 
             <h2 className="dark:text-white text-white mt-4 text-sm font-light">
@@ -41,7 +37,15 @@ export default function About() {
         <div className="w-full ">
           <article className="mt-2 lg:mt-10 pb-10 lg:pb-20">
             <p className="max-w-full antialiased text-base leading-loose text-white md:text-lg lg:text-xl">
-              I'm Moch. Rizki Kurniawan - a Software Developer passionate about full-stack web development and UI/UX design. I specialize in building modern web applications using React, Vue.js, and Next.js, creating both powerful functionality and engaging user experiences. My background in UI/UX design ensures I craft interfaces that are not just technically sound but also intuitive and visually appealing. Beyond coding, my skills in photography, video production, and graphic design bring an extra creative dimension to every project. I'm ready to deliver innovative solutions for robust web applications, intuitive interfaces, and enhanced user experiences. Let's connect and create something amazing together!
+              I'm Moch. Rizki Kurniawan - a Software Developer passionate about full-stack web
+              development and UI/UX design. I specialize in building modern web applications using
+              React, Vue.js, and Next.js, creating both powerful functionality and engaging user
+              experiences. My background in UI/UX design ensures I craft interfaces that are not
+              just technically sound but also intuitive and visually appealing. Beyond coding, my
+              skills in photography, video production, and graphic design bring an extra creative
+              dimension to every project. I'm ready to deliver innovative solutions for robust web
+              applications, intuitive interfaces, and enhanced user experiences. Let's connect and
+              create something amazing together!
             </p>
           </article>
         </div>

@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 import { experiece } from "@/apis/experience";
 
 export function Experience() {
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-20 px-2 max-w-7xl mx-auto  ">
       {experiece.map((feature, index) => (

@@ -5,17 +5,15 @@ export const projects: Project[] = [
     id: 1,
     title: "UI/UX Mobile MYPETS",
     description: "A modern take on online for pets",
-    imageUrl: "https://mochrks.github.io/assets/img-design/M-1_11_11zon.jpg"
+    imageUrl: "https://mochrks.github.io/assets/img-design/M-1_11_11zon.jpg",
   },
   {
     id: 2,
     title: "UI/UX Mobile POLISIKU",
     description: "Redesign mobile apps polisiku",
-    imageUrl: "https://mochrks.github.io/assets/img-design/M-2_12_11zon.jpg"
+    imageUrl: "https://mochrks.github.io/assets/img-design/M-2_12_11zon.jpg",
   },
-
 ];
- 
 
 export const cards = [
   {
@@ -98,9 +96,7 @@ export const cards = [
     title: "UI/UX Web Multi-chain Gen Z Platform",
     src: "https://mochrks.github.io/assets/img-design/T_6_11zon.jpg",
   },
-
 ];
-
 
 export const products = [
   {
@@ -187,5 +183,4 @@ export const products = [
     link: "https://www.behance.net/gallery/162641181/Landing-Page-Web-Batik-Shirts?tracking_source=search_projects|mochrks&l=12",
     thumbnail: web8,
   },
-
 ];

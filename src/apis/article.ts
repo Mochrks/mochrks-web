@@ -12,8 +12,7 @@ export const treeContent = [
      
     `,
     badge: ["Figma", "UI/UX Designer", "Design Thinking"],
-    image:
-      "https://miro.medium.com/v2/resize:fit:750/format:webp/1*mQB0eOilTc8T6AfCL55gKA.png",
+    image: "https://miro.medium.com/v2/resize:fit:750/format:webp/1*mQB0eOilTc8T6AfCL55gKA.png",
     link: "https://medium.com/@mochrks/ui-ux-case-study-my-pets-cc76a63f37ac",
   },
   {
@@ -32,14 +31,13 @@ export const treeContent = [
       
     `,
     badge: ["Order", "Fullstack", "MongoDB", "PostgreSQL"],
-    image:
-      "https://miro.medium.com/v2/resize:fit:750/format:webp/1*vUjRD1wNcbZyo0chMjYrQQ.jpeg",
+    image: "https://miro.medium.com/v2/resize:fit:750/format:webp/1*vUjRD1wNcbZyo0chMjYrQQ.jpeg",
     link: "https://medium.com/@mochrks/develop-order-store-dengan-oltp-olap-kafka-use-case-order-grab-198e852441a2",
   },
   {
     title:
       "Fullstack Web Development Mini Project X-Mart Menggunakan ReactJS, Java Spring Boot, & Node.js (ExpressJS + GraphQL)",
-    description:`
+    description: `
       
           Halo semuanya 👋 Saya Moch. Rizki Kurniawan, seorang software
           developer. Dalam kesempatan ini, saya ingin berbagi pengalaman tentang
@@ -50,8 +48,7 @@ export const treeContent = [
         
       `,
     badge: ["X-Mart", "Fullstack", "ReactJS", "Express"],
-    image:
-      "https://miro.medium.com/v2/resize:fit:750/format:webp/1*KS08wiab3dmsJxaCEOABYA.png",
+    image: "https://miro.medium.com/v2/resize:fit:750/format:webp/1*KS08wiab3dmsJxaCEOABYA.png",
     link: "https://medium.com/@mochrks/fullstack-web-development-dengan-reactjs-java-spring-boot-node-js-expressjs-graphql-66f4d881e32f",
   },
 ];

@@ -2,7 +2,6 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { OrbitingCirclesProps } from "@/types/orbiting-type";
 
-
 export default function OrbitingCircles({
   className,
   children,

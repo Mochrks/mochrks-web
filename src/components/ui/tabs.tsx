@@ -60,16 +60,11 @@ export const Tabs = ({
               <motion.div
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
-                className={cn(
-                  "absolute inset-0 border border-b-white ",
-                  activeTabClassName
-                )}
+                className={cn("absolute inset-0 border border-b-white ", activeTabClassName)}
               />
             )}
 
-            <span className="relative text-xl text-white ">
-              {tab.title}
-            </span>
+            <span className="relative text-xl text-white ">{tab.title}</span>
           </button>
         ))}
       </div>

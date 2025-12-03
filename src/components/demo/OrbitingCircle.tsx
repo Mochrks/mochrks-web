@@ -5,12 +5,7 @@ export function OrbitingCircle() {
   return (
     <div className="relative flex h-[700px] w-full flex-col items-center justify-center overflow-hidden rounded-lg">
       <div className="absolute inset-3 z-0">
-        <Orb
-          hue={360}
-          hoverIntensity={0.95}
-          rotateOnHover={false}
-          forceHoverState={false}
-        />
+        <Orb hue={360} hoverIntensity={0.95} rotateOnHover={false} forceHoverState={false} />
       </div>
 
       <span className="md:w-[300px] lg:w-[600px] pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-slate-600 to-white bg-clip-text text-center text-4xl md:text-5xl lg:text-7xl font-semibold leading-none text-transparent dark:from-white dark:to-black relative z-10">
@@ -92,18 +87,12 @@ const Icons = {
         d="M22.0508 15.2575V23.9924H25.8428C25.8428 23.9924 26.9219 23.8813 26.9995 22.6513V11.459L22.0508 15.2575Z"
         fill="#34A853"
       />
-      <path
-        d="M9.94811 24.0001V15.0732L9.94043 15.0669L9.94811 24.0001Z"
-        fill="#C5221F"
-      />
+      <path d="M9.94811 24.0001V15.0732L9.94043 15.0669L9.94811 24.0001Z" fill="#C5221F" />
       <path
         d="M9.94014 8.52404L8.37646 7.39382C5.60179 5.91001 5 9.17692 5 9.17692V11.4651L9.94014 15.0667V8.52404Z"
         fill="#C5221F"
       />
-      <path
-        d="M9.94043 8.52441V15.0671L9.94811 15.0734V8.53073L9.94043 8.52441Z"
-        fill="#C5221F"
-      />
+      <path d="M9.94043 8.52441V15.0671L9.94811 15.0734V8.53073L9.94043 8.52441Z" fill="#C5221F" />
       <path
         d="M5 11.4668V22.6591C5.07646 23.8904 6.15673 24.0003 6.15673 24.0003H9.94877L9.94014 15.0671L5 11.4668Z"
         fill="#4285F4"
@@ -163,18 +152,9 @@ const Icons = {
         d="M640 512c0-125.4-51.5-238.7-134.5-320H128c-35.3 0-64 28.7-64 64v512c0 35.3 28.7 64 64 64h377.5c83-81.3 134.5-194.6 134.5-320z"
         fill="#536DFE"
       />
-      <path
-        d="M256 512m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z"
-        fill="#FFFF8D"
-      />
-      <path
-        d="M512 512m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z"
-        fill="#FFFF00"
-      />
-      <path
-        d="M768 512m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z"
-        fill="#FFEA00"
-      />
+      <path d="M256 512m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#FFFF8D" />
+      <path d="M512 512m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#FFFF00" />
+      <path d="M768 512m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#FFEA00" />
     </svg>
   ),
 };

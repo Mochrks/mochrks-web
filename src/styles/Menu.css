@@ -2,16 +2,15 @@
 /* @import url('https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro-2'); */
 /* @import url('https://db.onlinewebfonts.com/c/fc650de7c3b3af62825a0e743b69425f?family=Helvetica+Neue+LT+W05+55+Roman'); */
 
-
 @font-face {
-  font-family: 'Helvetica Neue LT W05 55 Roman';
-  src: url('../assets/fonts/helvetica-roman/Web/fc650de7c3b3af62825a0e743b69425f.woff2') format('woff2'),
-       url('../assets/fonts/helvetica-roman/Web/fc650de7c3b3af62825a0e743b69425f.woff') format('woff');
+  font-family: "Helvetica Neue LT W05 55 Roman";
+  src:
+    url("../assets/fonts/helvetica-roman/Web/fc650de7c3b3af62825a0e743b69425f.woff2")
+      format("woff2"),
+    url("../assets/fonts/helvetica-roman/Web/fc650de7c3b3af62825a0e743b69425f.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
- 
-
 
 .menu {
   object-fit: cover;
@@ -29,45 +28,45 @@
   overflow-y: auto;
 }
 
-.menu ul{
+.menu ul {
   height: 100vh;
   padding: auto;
   margin: auto;
   justify-content: center;
   align-items: center;
- /* background-color: aqua; */
+  /* background-color: aqua; */
 }
-.menu li{
+.menu li {
   /* background-color: blue; */
   margin: auto;
   justify-content: center;
-  align-items: center;  
-  font-family: 'Helvetica Neue LT W05 55 Roman', sans-serif;
+  align-items: center;
+  font-family: "Helvetica Neue LT W05 55 Roman", sans-serif;
   padding: 5px;
   font-weight: 700;
   color: #ffffff;
 }
 
-.menu li:hover{
-  color: #A5F3FC;
+.menu li:hover {
+  color: #a5f3fc;
 }
 
 @keyframes fadeInAnimation {
-            0% {
-                opacity: 0;
-            }
+  0% {
+    opacity: 0;
+  }
 
-            100% {
-                opacity: 1;
-            }
-        }
+  100% {
+    opacity: 1;
+  }
+}
 
 @keyframes fadeOutAnimation {
-            100% {
-                opacity: 1;
-            }
+  100% {
+    opacity: 1;
+  }
 
-            0% {
-                opacity: 0;
-            }
-        }
+  0% {
+    opacity: 0;
+  }
+}

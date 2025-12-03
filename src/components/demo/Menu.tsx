@@ -14,45 +14,45 @@ const MENU_ITEMS = [
     subheading: "Learn more about my personality",
     imgSrc: about,
     href: "#about",
-    handler: (onClick) => onClick
+    handler: (onClick) => onClick,
   },
   {
     heading: "Project",
     subheading: "Showcasing my latest project",
     imgSrc: project,
-    handler: (_, navigate) => navigate("/project")
+    handler: (_, navigate) => navigate("/project"),
   },
   {
     heading: "Design Artwork",
     subheading: "Creative designs that tell a story",
     imgSrc: design,
-    handler: (_, navigate) => navigate("/design-artwork")
+    handler: (_, navigate) => navigate("/design-artwork"),
   },
   {
     heading: "UI/UX",
     subheading: "Designing intuitive user experiences",
     imgSrc: uiux,
-    handler: (_, navigate) => navigate("/ui-ux-design")
+    handler: (_, navigate) => navigate("/ui-ux-design"),
   },
   {
     heading: "Photography",
     subheading: "Visual storytelling through my lens",
     imgSrc: photo,
-    handler: (_, navigate) => navigate("/photography")
+    handler: (_, navigate) => navigate("/photography"),
   },
   {
     heading: "Article",
     subheading: "Read my thoughts on article",
     imgSrc: article,
-    handler: (_, navigate) => navigate("/article")
+    handler: (_, navigate) => navigate("/article"),
   },
   {
     heading: "Contact",
     subheading: "Let's connect and collaborate",
     imgSrc: contact,
     href: "#contact",
-    handler: (onClick) => onClick
-  }
+    handler: (onClick) => onClick,
+  },
 ];
 
 export default function Menu({ onMenuItemClick }) {
@@ -60,10 +60,8 @@ export default function Menu({ onMenuItemClick }) {
 
   const handleClick = (item) => {
     if (item.href) {
-
       onMenuItemClick();
     } else {
-
       item.handler(onMenuItemClick, navigate);
     }
   };
@@ -94,7 +92,6 @@ export default function Menu({ onMenuItemClick }) {
     </div>
   );
 }
-
 
 const Link: React.FC<LinkProps> = ({ heading, imgSrc, subheading, href, onClick }) => {
   const ref = useRef(null);

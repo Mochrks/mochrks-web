@@ -1,12 +1,6 @@
 import { useRef } from "react";
-import {
-  AnimatePresence,
-  motion,
-  useInView,
-  Variants,
-} from "framer-motion";
+import { AnimatePresence, motion, useInView, Variants } from "framer-motion";
 import { BlurFadeProps } from "@/types/blur-fade";
-
 
 export default function BlurFade({
   children,

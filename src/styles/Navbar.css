@@ -1,35 +1,35 @@
-/* navbar */ 
-.nav{
-    display: flex;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 8px 5%;
+/* navbar */
+.nav {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 8px 5%;
 
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-    z-index: 1000;
+  justify-content: space-between;
+  align-items: center;
+  transition:
+    background-color 0.3s ease,
+    backdrop-filter 0.3s ease;
+  z-index: 1000;
 }
-
 
 .nav.scrolled {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 
-.nav .logo{
-    display: flex;
-    position: relative;
-    cursor: pointer;
-    flex-grow: 1; 
-    z-index: 30;
+.nav .logo {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  flex-grow: 1;
+  z-index: 30;
 }
 
 .nav .container {
   cursor: pointer;
   display: flex;
   z-index: 32;
- 
 }

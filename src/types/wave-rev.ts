@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 
-
 export interface WaveRevealProps {
   /**
    * The text to animate
@@ -43,12 +42,12 @@ export interface WaveRevealProps {
   delay?: number;
 }
 export interface ReducedValue extends Pick<WaveRevealProps, "direction" | "mode"> {
-    nodes: ReactNode[];
-    offset: number;
-    duration: number | string;
-    delay: number;
-    blur?: boolean;
-    className?: string;
-    wordsLength: number;
-    textLength: number;
-  }
+  nodes: ReactNode[];
+  offset: number;
+  duration: number | string;
+  delay: number;
+  blur?: boolean;
+  className?: string;
+  wordsLength: number;
+  textLength: number;
+}

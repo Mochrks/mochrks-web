@@ -228,7 +228,7 @@ export const typographyVariant = {
     transition: {
       type: "spring",
       duration: 1.65,
-      delay: 0.7, 
+      delay: 0.7,
     },
   },
 };

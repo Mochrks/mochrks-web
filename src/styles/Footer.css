@@ -1,71 +1,68 @@
 /* footer */
 footer {
-   margin-top: 120px;
-   position: relative;
+  margin-top: 120px;
+  position: relative;
 }
 
-
-footer  img {
-   display: inline-block;
-   justify-content: end;
-   margin-top: 10px;
-   width: 40px;
-   margin-left: 800px;
+footer img {
+  display: inline-block;
+  justify-content: end;
+  margin-top: 10px;
+  width: 40px;
+  margin-left: 800px;
 }
 
+.scrolldown {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -29px;
+  color: #fff;
+  display: block;
+  height: 42px;
+  width: 42px;
+  font-size: 42px;
+  line-height: 42px;
+  color: #fff;
+  border-radius: 100%;
 
-.scrolldown  {
-   position: absolute;
-   bottom: 30px;
-   left: 50%;
-   margin-left: -29px;
-   color: #fff;
-   display: block;
-   height: 42px;
-   width: 42px;
-   font-size: 42px;
-   line-height: 42px;
-   color: #fff;
-   border-radius: 100%;
-
-   -webkit-transition: all .3s ease-in-out;
-   -moz-transition: all .3s ease-in-out;
-   -o-transition: all .3s ease-in-out;
-   transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Go To Top Button */
 #go-top {
-   position: absolute;
-   top: -80px;
-   left: 50%;
-   bottom: 20px;
-   margin-left: -30px;
-   margin-bottom: 20px;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  bottom: 20px;
+  margin-left: -30px;
+  margin-bottom: 20px;
 }
 
 #go-top a {
-   text-decoration: none;
-   border: 0 none;
-   display: block;
-   width: 60px;
-   height: 60px;
-   background-color: #525252;
+  text-decoration: none;
+  border: 0 none;
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: #525252;
 
-   -webkit-transition: all 0.2s ease-in-out;
-   -moz-transition: all 0.2s ease-in-out;
-   -o-transition: all 0.2s ease-in-out;
-   -ms-transition: all 0.2s ease-in-out;
-   transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
-   color: #fff;
-   font-size: 21px;
-   line-height: 60px;
-   border-radius: 100%;
+  color: #fff;
+  font-size: 21px;
+  line-height: 60px;
+  border-radius: 100%;
 }
 
 #go-top a:hover {
-   background-color: #038290;
-   text-align: center;
-
+  background-color: #038290;
+  text-align: center;
 }

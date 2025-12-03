@@ -1,55 +1,86 @@
-
-/* home */
-
 /* @import url('https://fonts.cdnfonts.com/css/danila'); */
 /* @import url('https://db.onlinewebfonts.com/c/fc650de7c3b3af62825a0e743b69425f?family=Helvetica+Neue+LT+W05+55+Roman'); */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @font-face {
-    font-family: 'Danila';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Danila'), url('../assets/fonts/danila/danilla.woff') format('woff');
+  font-family: "Danila";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local("Danila"),
+    url("../assets/fonts/danila/danilla.woff") format("woff");
 }
 
-
-
 @font-face {
-  font-family: 'Helvetica Neue LT W05 55 Roman';
-  src: url('../assets/fonts/helvetica-roman/Web/fc650de7c3b3af62825a0e743b69425f.woff2') format('woff2'),
-       url('../assets/fonts/helvetica-roman/Web/fc650de7c3b3af62825a0e743b69425f.woff') format('woff');
+  font-family: "Helvetica Neue LT W05 55 Roman";
+  src:
+    url("../assets/fonts/helvetica-roman/Web/fc650de7c3b3af62825a0e743b69425f.woff2")
+      format("woff2"),
+    url("../assets/fonts/helvetica-roman/Web/fc650de7c3b3af62825a0e743b69425f.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
- 
 
+::-webkit-scrollbar {
+  width: 12px;
+}
 
-body{
-  overflow-x:hidden; margin: 0;
+::-webkit-scrollbar-track {
+  background: rgba(15, 18, 21, 0.95);
+  border-radius: 10px;
+  margin: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #555, #777);
+  border-radius: 10px;
+  border: 2px solid rgba(15, 18, 21, 0.95);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #666, #888);
+  transform: scale(1.05);
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(15, 18, 21, 0.95);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #0f1215;
+}
+
+body {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(15, 18, 21);
 }
 
-html{
-    scroll-behavior: smooth;
-    overflow-x:hidden;
-}
-.hero{
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(15, 18, 21, 0.362),rgb(15, 18, 21));
-    position:relative;
-    padding: 0 5%;
-    display: flex;
-    align-items: center;   
-
- 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-.hero video{
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(15, 18, 21, 0.362), rgb(15, 18, 21));
+  position: relative;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+}
+
+.hero video {
   object-fit: cover;
   width: 100vw;
   height: 100vh;
@@ -59,42 +90,92 @@ html{
   z-index: -1;
 }
 
-.hero .grid-animation{
+.hero .grid-animation {
   object-fit: cover;
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
- 
 }
 
-.hero #content{
-  font-family: 'Helvetica Neue LT W05 55 Roman', sans-serif;
- 
+.hero #content {
+  font-family: "Helvetica Neue LT W05 55 Roman", sans-serif;
 }
-.hero #content #signature{
-  font-family: 'Danila', sans-serif;
+
+.hero #content #signature {
+  font-family: "Danila", sans-serif;
 }
 
 .MainContent {
-  background-color: rgb(15,18,21);
+  background-color: rgb(15, 18, 21);
   position: relative;
   height: 100%;
 }
 
 .text-spaced {
   letter-spacing: 0.02em;
-  line-height: 1.5; 
+  line-height: 1.5;
   font-weight: 900;
   display: inline-block;
- 
 }
-
 
 .about {
   max-width: 1080px;
   margin: 0 auto;
- 
-  
+}
+
+:target {
+  scroll-margin-top: 20px;
+}
+
+.scrolling-element {
+  transition: transform 0.3s ease;
+}
+
+section,
+div,
+article {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  * {
+    scrollbar-width: thin;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: rgba(15, 18, 21, 0.98);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #444, #666);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  ::-webkit-scrollbar-track {
+    background: rgba(240, 240, 240, 0.95);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #888, #aaa);
+    border: 2px solid rgba(240, 240, 240, 0.95);
+  }
+
+  * {
+    scrollbar-color: #888 #f0f0f0;
+  }
 }

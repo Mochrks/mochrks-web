@@ -9,7 +9,6 @@ import { formatDate } from "@/utils/date";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { profile } from "@/assets";
 
-
 export const CardProject = ({
   items,
   className,
@@ -72,8 +71,12 @@ export const CardProject = ({
                   <div className="flex justify-between border-b my-4 py-2">
                     {item.name}
                     <div className="flex gap-1">
-                      <a href={item.homepage}><PiGlobeSimpleBold className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 " /></a>
-                      <a href={item.html_url}><VscGithub className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 " /></a>
+                      <a href={item.homepage}>
+                        <PiGlobeSimpleBold className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 " />
+                      </a>
+                      <a href={item.html_url}>
+                        <VscGithub className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 " />
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 mt-1 ">
@@ -92,9 +95,11 @@ export const CardProject = ({
                       <Badge key={topicIndex}>{topic}</Badge>
                     ))}
                   </div>
-
                 </CardContent>
-                <p className="text-sm text-gray-300 font-thin mt-2"> Created : {formatDate(item.created_at)}</p>
+                <p className="text-sm text-gray-300 font-thin mt-2">
+                  {" "}
+                  Created : {formatDate(item.created_at)}
+                </p>
               </Card>
             </a>
           ))}
@@ -174,9 +179,7 @@ export const CardContent = ({
         className
       )}
     >
-      <div className="relative z-50">
-        {children}
-      </div>
+      <div className="relative z-50">{children}</div>
     </div>
   );
 };

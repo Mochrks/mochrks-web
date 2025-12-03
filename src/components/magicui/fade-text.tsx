@@ -1,6 +1,6 @@
 import React from "react";
 import { useMemo } from "react";
-import { motion, } from "framer-motion";
+import { motion } from "framer-motion";
 
 export function FadeText({
   direction = "up",

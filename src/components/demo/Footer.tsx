@@ -15,8 +15,6 @@ import "@/styles/Footer.css";
 import useBreakpoints from "@/hooks/use-breakpoints";
 import { favicon } from "@/assets";
 
-
-
 export default function Footer() {
   const { isLg } = useBreakpoints();
 
@@ -30,27 +28,19 @@ export default function Footer() {
           <p className="max-w-full text-base md:text-xl mt-8 dark:text-neutral-200 text-slate-700">
             <span>
               Find me online on most digital platforms
-              <span className="font-bold"> @mochrks</span>, or by clicking the
-              links below. For all business and projects inquiries, email me at
+              <span className="font-bold"> @mochrks</span>, or by clicking the links below. For all
+              business and projects inquiries, email me at
               <span className="font-bold"> mochrizkiks@gmail.com</span>.
             </span>
           </p>
           <ul className="flex flex-wrap justify-center space-x-4 gap-10 pt-10 mt-10 ">
             <li>
-              <a
-                href="https://medium.com/@mochrks"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://medium.com/@mochrks" target="_blank" rel="noopener noreferrer">
                 <FaMedium className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
             <li>
-              <a
-                href="https://github.com/Mochrks"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://github.com/Mochrks" target="_blank" rel="noopener noreferrer">
                 <FaGithub className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
@@ -82,38 +72,22 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a
-                href="https://www.behance.net/mochrks"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://www.behance.net/mochrks" target="_blank" rel="noopener noreferrer">
                 <FaBehance className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
             <li>
-              <a
-                href="https://dribbble.com/mochrks"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://dribbble.com/mochrks" target="_blank" rel="noopener noreferrer">
                 <FaDribbble className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
             <li>
-              <a
-                href="https://www.youtube.com/@gdvisuel"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://www.youtube.com/@gdvisuel" target="_blank" rel="noopener noreferrer">
                 <FaYoutube className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
             <li>
-              <a
-                href="https://id.pinterest.com/mochrks"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://id.pinterest.com/mochrks" target="_blank" rel="noopener noreferrer">
                 <FaPinterest className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
@@ -122,9 +96,7 @@ export default function Footer() {
       </div>
       {isLg ? null : (
         <div className="text-center ">
-          <h4 className="text-md  tracking-tight text-slate-700">
-            &copy; Design by Mochrks
-          </h4>
+          <h4 className="text-md  tracking-tight text-slate-700">&copy; Design by Mochrks</h4>
         </div>
       )}
 

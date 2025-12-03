@@ -57,22 +57,8 @@ const createDelay = ({
   return delay + (index + offset) * 50 + "ms";
 };
 
-const createAnimatedNodes = (
-  args: ReducedValue,
-  word: string,
-  index: number
-): ReducedValue => {
-  const {
-    nodes,
-    offset,
-    wordsLength,
-    textLength,
-    mode,
-    direction,
-    duration,
-    delay,
-    blur,
-  } = args;
+const createAnimatedNodes = (args: ReducedValue, word: string, index: number): ReducedValue => {
+  const { nodes, offset, wordsLength, textLength, mode, direction, duration, delay, blur } = args;
 
   const isWordMode = mode === "word";
   const isUp = direction === "up";
@@ -98,13 +84,13 @@ const createAnimatedNodes = (
       style={
         isWordMode
           ? {
-            animationDuration: `${duration}`,
-            animationDelay: createDelay({
-              index,
-              offset,
-              delay,
-            }),
-          }
+              animationDuration: `${duration}`,
+              animationDelay: createDelay({
+                index,
+                offset,
+                delay,
+              }),
+            }
           : undefined
       }
     >

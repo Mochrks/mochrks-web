@@ -67,12 +67,12 @@ export const FlipWords = ({
             initial={{
               opacity: letter === " " ? 1 : 0,
               y: letter === " " ? 0 : 10,
-              filter: letter === " " ? "blur(0px)" : "blur(8px)"
+              filter: letter === " " ? "blur(0px)" : "blur(8px)",
             }}
             animate={{
               opacity: 1,
               y: 0,
-              filter: "blur(0px)"
+              filter: "blur(0px)",
             }}
             transition={{
               delay: letter === " " ? 0 : index * 0.08,

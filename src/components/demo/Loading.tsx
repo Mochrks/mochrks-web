@@ -1,5 +1,5 @@
-import React from 'react'
-import '../../styles/Loading.css'
+import React from "react";
+import "../../styles/Loading.css";
 export default function Loading() {
   return (
     <div>
@@ -7,5 +7,5 @@ export default function Loading() {
         <span className="loader"></span>
       </div>
     </div>
-  )
+  );
 }
