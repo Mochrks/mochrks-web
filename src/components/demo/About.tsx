@@ -26,9 +26,17 @@ export default function About() {
               <img src={Rizki} alt="Moch. Rizki Kurniawan" className="object-cover w-full h-full" />
             </div>
 
-            <h2 className="dark:text-white text-white mt-4 text-sm font-light">
-              "If the plan doesn't work, change the plan but never the goal"
+            <h2 className="dark:text-white text-white text-2xl font-medium mt-4">
+              Fullstack Developer
             </h2>
+
+            <div className="flex items-center space-x-2 mt-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <h2 className="dark:text-white text-white text-sm font-light">
+                Available for new projects
+              </h2>
+            </div>
+
             <p className="text-sm border font-light dark:border-white/[0.2] border-white/[0.2] rounded-full mt-4 text-white dark:text-white px-2 py-0.5">
               @mochrks
             </p>

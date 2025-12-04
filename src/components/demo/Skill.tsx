@@ -4,7 +4,7 @@ import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 export function Skill() {
   return (
     <>
-      <div className="h-[20rem] rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden mt-20">
+      <div className="h-[10rem] rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards items={stack} direction="right" speed="slow" />
       </div>
     </>

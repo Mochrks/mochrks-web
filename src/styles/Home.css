@@ -1,5 +1,3 @@
-/* @import url('https://fonts.cdnfonts.com/css/danila'); */
-/* @import url('https://db.onlinewebfonts.com/c/fc650de7c3b3af62825a0e743b69425f?family=Helvetica+Neue+LT+W05+55+Roman'); */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @font-face {
@@ -133,6 +131,21 @@ html {
   transition: transform 0.3s ease;
 }
 
+.mask-gradient {
+  mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+}
+
+.group\/product {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.parallax-container {
+  contain: layout style paint;
+}
+
 section,
 div,
 article {
@@ -178,4 +191,99 @@ article {
   * {
     scrollbar-color: #888 #f0f0f0;
   }
+}
+
+@media (max-width: 640px) {
+  .group\/product {
+    min-width: 280px;
+    height: 180px;
+    margin: 0 8px;
+  }
+
+  .mask-gradient {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .mask-gradient::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .group\/product {
+    min-width: 320px;
+    height: 220px;
+    margin: 0 16px;
+  }
+
+  .mask-gradient {
+    overflow-x: auto;
+  }
+}
+
+@media (min-width: 1025px) {
+  .group\/product {
+    min-width: 380px;
+    height: 280px;
+    margin: 0 24px;
+  }
+
+  .mask-gradient {
+    overflow-x: hidden;
+  }
+
+  .mask-gradient > div {
+    margin-bottom: 2rem !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .group\/product {
+    min-width: 420px;
+    height: 320px;
+    margin: 0 32px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .group\/product:hover {
+    transform: none !important;
+  }
+
+  .group\/product:active {
+    transform: scale(0.98) !important;
+  }
+}
+
+@media (hover: hover) {
+  .group\/product:hover {
+    z-index: 10;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .group\/product,
+  .mask-gradient,
+  .motion-div {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+.parallax-container {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.hardware-accelerated {
+  transform: translate3d(0, 0, 0);
 }

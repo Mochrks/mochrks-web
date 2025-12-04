@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useMemo, memo } from "react";
 import { HeroParallax } from "../ui/hero-parallax";
 import { products } from "@/apis/uiux";
 
-export function UIUXParallax() {
-  return <HeroParallax products={products} />;
-}
+export const UIUXParallax = memo(function UIUXParallax() {
+  const memoizedProducts = useMemo(() => products, []);
+
+  return <HeroParallax products={memoizedProducts} />;
+});

@@ -58,7 +58,9 @@ export function RecentProject() {
   return (
     <React.Fragment>
       <div className="hidden md:flex flex-col w-full items-center justify-center mt-20 ">
-        <h4 className="scroll-m-20 text-xl  tracking-tight py-5">@mochrks on GitHub</h4>
+        <h4 className="scroll-m-20 text-xl tracking-tight py-5">
+          <span className="font-bold">@mochrks</span> on GitHub
+        </h4>
         <GitHubCalendar
           username="mochrks"
           fontSize={16}
@@ -67,14 +69,14 @@ export function RecentProject() {
           maxLevel={9}
         />
       </div>
-      <div className="relative flex w-full h-full flex-col items-center overflow-hidden justify-center gap-10 pt-20 ">
-        <div className="container flex items-center justify-center ">
+      <div className="relative flex w-full h-full flex-col items-center overflow-hidden justify-center gap-10  ">
+        <div className="w-full md:w-3/4 flex items-center justify-center ">
           <div className="max-w-full mx-auto ">
             <CardProject items={recentProjects} cols={2} />
           </div>
         </div>
 
-        <div className="pt-10 text-center">
+        <div className="text-center">
           <h2 className="scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl">
             See Other Project
           </h2>
