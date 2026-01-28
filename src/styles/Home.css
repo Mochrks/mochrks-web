@@ -71,11 +71,19 @@ html {
 .hero {
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(rgba(15, 18, 21, 0.362), rgb(15, 18, 21));
   position: relative;
   padding: 0 5%;
   display: flex;
   align-items: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom, rgba(15, 18, 21, 0.3), rgb(20, 23, 27));
 }
 
 .hero video {
@@ -99,6 +107,8 @@ html {
 
 .hero #content {
   font-family: "Helvetica Neue LT W05 55 Roman", sans-serif;
+  position: relative;
+  z-index: 2;
 }
 
 .hero #content #signature {

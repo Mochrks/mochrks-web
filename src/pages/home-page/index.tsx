@@ -133,13 +133,7 @@ export default function Portfolio() {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <motion.div
-          variants={staggerContainer(0.3, 1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
-          className="hero relative"
-        >
+        <div className="hero relative">
           <Suspense
             fallback={
               <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
@@ -160,7 +154,13 @@ export default function Portfolio() {
             <LazyVideo />
           </Suspense>
 
-          <div id="content">
+          <motion.div
+            id="content"
+            variants={staggerContainer(0.3, 1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.25 }}
+          >
             <motion.div
               variants={textVariantFromButtom(0.9)}
               className="text-start text-3xl md:text-4xl lg:text-6xl z-20 mx-auto text-cyan-200 dark:text-white-400 text-spaced"
@@ -173,20 +173,8 @@ export default function Portfolio() {
                 <TypewriterEffectSmooth words={signature} />
               </div>
             </motion.div>
-
-            <motion.div
-              variants={textVariantFromButtom(0.9)}
-              className="absolute buttom-10 xs:left-10 md:right-20 transform translate-x-0 translate-y-0"
-            >
-              <CircularText
-                text="MOCHRKS*HELLO*WORLD*"
-                onHover="speedUp"
-                spinDuration={20}
-                className="custom-class"
-              />
-            </motion.div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         {/* Main Content */}
         <motion.div

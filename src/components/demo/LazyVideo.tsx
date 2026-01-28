@@ -1,55 +1,32 @@
-import React, { useState, useEffect } from "react";
-import Meteors from "@/components/magicui/meteors";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
 import { video } from "@/assets/index";
 
 const LazyVideo: React.FC = () => {
-  const [isHeroVisible, setIsHeroVisible] = useState(true);
   const [isVideoReady, setIsVideoReady] = useState(false);
 
-  const startFadeOutHero = () => {
-    setTimeout(() => {
-      setIsHeroVisible(false);
-    }, 2000);
-  };
-
-  useEffect(() => {
-    startFadeOutHero();
-  }, []);
-
-  const fadeInOutHero = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 1 } },
-    fadeOut: { opacity: 0, transition: { duration: 1 } },
-  };
-
   return (
-    <div className="relative">
-      {isHeroVisible && (
-        <motion.div
-          initial="hidden"
-          animate={isHeroVisible ? "visible" : "fadeOut"}
-          variants={fadeInOutHero}
-          className="absolute inset-0 flex items-center justify-center"
-        >
-          <Meteors number={5} />
-        </motion.div>
-      )}
+    <div className="absolute inset-0 h-full w-full overflow-hidden">
+      {/* Static Overlay - Always visible for text contrast */}
+      <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
 
-      {!isHeroVisible && (
+      <div
+        className={`absolute inset-0 h-full w-full transition-opacity duration-1000 ${
+          isVideoReady ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <video
           autoPlay
-          preload="none"
           loop
           muted
           playsInline
+          preload="auto"
           onCanPlay={() => setIsVideoReady(true)}
           data-video-manager-ignore
-          className="w-full h-full"
+          className="w-full h-full object-cover object-right [will-change:transform]"
         >
           <source src={video} type="video/mp4" />
         </video>
-      )}
+      </div>
     </div>
   );
 };
