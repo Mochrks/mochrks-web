@@ -2,12 +2,14 @@ import React, { useEffect, useRef } from "react";
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
 import { AuroraProps, FRAG, VERT } from "@/types/aurora";
 
-export default function Aurora(props: AuroraProps) {
+export default React.memo(Aurora);
+function Aurora(props: AuroraProps) {
   const { colorStops = ["#00d8ff", "#7cff67", "#00d8ff"], amplitude = 1.0, blend = 0.5 } = props;
   const propsRef = useRef<AuroraProps>(props);
   propsRef.current = props;
 
   const ctnDom = useRef<HTMLDivElement>(null);
+  const isVisibleRef = useRef(false);
 
   useEffect(() => {
     const ctn = ctnDom.current;
@@ -65,7 +67,13 @@ export default function Aurora(props: AuroraProps) {
 
     let animateId = 0;
     const update = (t: number) => {
-      animateId = requestAnimationFrame(update);
+      if (isVisibleRef.current) {
+        animateId = requestAnimationFrame(update);
+      } else {
+        animateId = 0;
+        return; // Stop loop if not visible
+      }
+
       const { time = t * 0.01, speed = 1.0 } = propsRef.current;
       if (program) {
         program.uniforms.uTime.value = time * speed * 0.1;
@@ -79,12 +87,32 @@ export default function Aurora(props: AuroraProps) {
         renderer.render({ scene: mesh });
       }
     };
+
+    // Intersection Observer
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          if (!animateId) {
+            animateId = requestAnimationFrame(update);
+          }
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(ctn);
+
+    // Initial start
+    isVisibleRef.current = true; // Assume visible initially or let observer handle it.
+    // Actually observer callback runs immediately on observe? Not always synchronously.
+    // Let's rely on observer to start it if visible, or start it if we want immediate render.
     animateId = requestAnimationFrame(update);
 
     resize();
 
     return () => {
-      cancelAnimationFrame(animateId);
+      if (animateId) cancelAnimationFrame(animateId);
+      observer.disconnect();
       window.removeEventListener("resize", resize);
       if (ctn && gl.canvas.parentNode === ctn) {
         ctn.removeChild(gl.canvas);

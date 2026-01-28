@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from "react";
+import React, { useState, useEffect, lazy, Suspense, useRef } from "react";
 import "@/styles/Home.css";
 import { motion } from "framer-motion";
 import {
@@ -9,17 +9,9 @@ import {
 } from "@/utils/motion.js";
 
 import Navbar from "@/components/demo/Navbar";
-import { Experience } from "@/components/demo/Experience";
 import Expandable from "@/components/animata/corousel/expandable";
 import WordFadeIn from "@/components/magicui/word-fade-in";
-import { UIUXParallax } from "@/components/demo/UIUXParallax";
-import About from "@/components/demo/About";
-import { Skill } from "@/components/demo/Skill";
 import Footer from "@/components/demo/Footer";
-import { WDYWTDN } from "@/components/demo/WDYWTDN";
-import { RecentProject } from "@/components/demo/RecentProject";
-import { Contact } from "@/components/demo/Contact";
-import { SeeMyPhotography } from "@/components/demo/SeeMyPhotography";
 import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import Loading from "@/components/demo/Loading";
@@ -29,7 +21,69 @@ import { AnimatedSectionProps } from "@/types/home-page";
 import { Skeleton } from "@/components/ui/skeleton";
 import { skills } from "@/constants/variable";
 
+// Lazy load components
+const Experience = lazy(() =>
+  import("@/components/demo/Experience").then((module) => ({ default: module.Experience }))
+);
+const UIUXParallax = lazy(() =>
+  import("@/components/demo/UIUXParallax").then((module) => ({ default: module.UIUXParallax }))
+);
+const About = lazy(() => import("@/components/demo/About"));
+const Skill = lazy(() =>
+  import("@/components/demo/Skill").then((module) => ({ default: module.Skill }))
+);
+const WDYWTDN = lazy(() =>
+  import("@/components/demo/WDYWTDN").then((module) => ({ default: module.WDYWTDN }))
+);
+const RecentProject = lazy(() =>
+  import("@/components/demo/RecentProject").then((module) => ({ default: module.RecentProject }))
+);
+const Contact = lazy(() =>
+  import("@/components/demo/Contact").then((module) => ({ default: module.Contact }))
+);
+const SeeMyPhotography = lazy(() =>
+  import("@/components/demo/SeeMyPhotography").then((module) => ({
+    default: module.SeeMyPhotography,
+  }))
+);
 const LazyVideo = lazy(() => import("@/components/demo/LazyVideo"));
+
+const LazyLoadSection = ({ children }: { children: React.ReactNode }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="w-full h-full">
+      {isVisible ? (
+        <Suspense
+          fallback={
+            <div className="h-96 flex items-center justify-center">
+              <Loading />
+            </div>
+          }
+        >
+          {children}
+        </Suspense>
+      ) : (
+        <div className="h-96" />
+      )}
+    </div>
+  );
+};
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   id,
@@ -144,9 +198,9 @@ export default function Portfolio() {
         >
           {/* UI/UX Section */}
           <AnimatedSection id="uiux" variant={textVariantFromTop(1.6)}>
-            <div className="w-full h-full">
+            <LazyLoadSection>
               <UIUXParallax />
-            </div>
+            </LazyLoadSection>
           </AnimatedSection>
 
           {/* Skills Section */}
@@ -155,23 +209,25 @@ export default function Portfolio() {
             variant={textVariantFromLeft(0.12)}
             viewport={{ once: false, amount: 0.45 }}
           >
-            <div className="w-full h-full">
+            <LazyLoadSection>
               <Skill />
-            </div>
+            </LazyLoadSection>
           </AnimatedSection>
 
           {/* About Section */}
           <AnimatedSection id="about" variant={textVariantFromButtom(0.12)}>
-            <div className="w-full h-full">
+            <LazyLoadSection>
               <About />
-            </div>
+            </LazyLoadSection>
           </AnimatedSection>
 
           {/* Experience Section */}
           <AnimatedSection id="experience" variant={textVariantFromButtom(0.12)}>
             <div className="w-full h-full pt-20">
               <WordFadeIn words="Experience" />
-              <Experience />
+              <LazyLoadSection>
+                <Experience />
+              </LazyLoadSection>
             </div>
           </AnimatedSection>
 
@@ -179,7 +235,9 @@ export default function Portfolio() {
           <AnimatedSection id="projects" variant={textVariantFromButtom(0.12)}>
             <div className="w-full h-full pt-[100px]">
               <WordFadeIn words="Recent Projects Github" />
-              <RecentProject />
+              <LazyLoadSection>
+                <RecentProject />
+              </LazyLoadSection>
             </div>
           </AnimatedSection>
 
@@ -189,7 +247,9 @@ export default function Portfolio() {
               <WordFadeIn words="My Photography" />
               <div className="container pt-10">
                 <Expandable className="w-full min-w-72 storybook-fix" />
-                <SeeMyPhotography />
+                <LazyLoadSection>
+                  <SeeMyPhotography />
+                </LazyLoadSection>
               </div>
             </div>
           </AnimatedSection>
@@ -197,14 +257,18 @@ export default function Portfolio() {
           {/* WDYWTDN Section */}
           <AnimatedSection id="wdywtdn" variant={textVariantFromButtom(0.12)}>
             <div className="w-full h-full my-10">
-              <WDYWTDN />
+              <LazyLoadSection>
+                <WDYWTDN />
+              </LazyLoadSection>
             </div>
           </AnimatedSection>
 
           {/* Contact Section */}
           <AnimatedSection id="contact" variant={textVariantFromLeft(0.12)}>
             <div className="w-full h-full pt-10 mb-10 pb-10">
-              <Contact />
+              <LazyLoadSection>
+                <Contact />
+              </LazyLoadSection>
             </div>
           </AnimatedSection>
 

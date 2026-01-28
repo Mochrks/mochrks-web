@@ -1,12 +1,14 @@
-import React from "react";
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import AppRoutes from "@/router/AppRoutes";
 import Loading from "./components/demo/Loading";
+import SmoothScroll from "./components/demo/SmoothScroll";
 
 const App: React.FC = () => {
   return (
     <Suspense fallback={<Loading />}>
-      <AppRoutes />
+      <SmoothScroll>
+        <AppRoutes />
+      </SmoothScroll>
     </Suspense>
   );
 };

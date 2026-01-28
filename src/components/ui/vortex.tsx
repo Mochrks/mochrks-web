@@ -17,7 +17,9 @@ interface VortexProps {
   backgroundColor?: string;
 }
 
-export const Vortex = (props: VortexProps) => {
+export const Vortex = React.memo(VortexComponent);
+
+function VortexComponent(props: VortexProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef(null);
   const particleCount = props.particleCount || 200;
@@ -96,7 +98,12 @@ export const Vortex = (props: VortexProps) => {
     particleProps.set([x, y, vx, vy, life, ttl, speed, radius, hue], i);
   };
 
+  const animationIdRef = useRef<number>();
+  const isVisibleRef = useRef(false);
+
   const draw = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
+    if (!isVisibleRef.current) return;
+
     tick++;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -108,8 +115,40 @@ export const Vortex = (props: VortexProps) => {
     renderGlow(canvas, ctx);
     renderToScreen(canvas, ctx);
 
-    window.requestAnimationFrame(() => draw(canvas, ctx));
+    animationIdRef.current = window.requestAnimationFrame(() => draw(canvas, ctx));
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          const canvas = canvasRef.current;
+          const ctx = canvas?.getContext("2d");
+          if (canvas && ctx && !animationIdRef.current) {
+            draw(canvas, ctx);
+          }
+        } else {
+          if (animationIdRef.current) {
+            window.cancelAnimationFrame(animationIdRef.current);
+            animationIdRef.current = undefined;
+          }
+        }
+      },
+      { threshold: 0 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+      if (animationIdRef.current) {
+        window.cancelAnimationFrame(animationIdRef.current);
+      }
+    };
+  }, []);
 
   const drawParticles = (ctx: CanvasRenderingContext2D) => {
     for (let i = 0; i < particlePropsLength; i += particlePropCount) {
@@ -240,4 +279,4 @@ export const Vortex = (props: VortexProps) => {
       <div className={cn("relative z-10", props.className)}>{props.children}</div>
     </div>
   );
-};
+}
