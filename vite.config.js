@@ -16,12 +16,9 @@ export default defineConfig({
   },
   build: {
     target: "esnext",
-    minify: "terser",
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
+    minify: "esbuild",
+    esbuild: {
+      drop: ["console", "debugger"],
     },
     rollupOptions: {
       output: {
@@ -37,7 +34,7 @@ export default defineConfig({
             "clsx",
             "tailwind-merge",
           ],
-          "utils-vendor": ["axios", "zod", "react-hook-form", "dotenv"],
+          "utils-vendor": ["axios", "zod", "react-hook-form"],
         },
       },
     },
