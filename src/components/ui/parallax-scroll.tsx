@@ -57,15 +57,24 @@ export const ParallaxScroll = ({ images, className }: { images: string[]; classN
           </div>
         </div>
       </div>
+      <div className="w-full h-full px-4 py-8 md:px-6 md:py-12 lg:px-20 lg:py-16 ">
+        <div className="mb-8 md:mb-12 text-left px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Captured Moments
+          </h2>
+          <p className="text-gray-400 text-lg max-w-3xl">
+            A visual journey through my lens, capturing life's beautiful moments and perspectives.
+          </p>
+        </div>
+      </div>
       <div className="relative w-full h-full overflow-hidden">
-        <div className="container text-center mt-10"></div>
         <div className={cn("h-full items-start overflow-y-auto w-full ", className)} ref={gridRef}>
           {loading ? (
             <LoadingContent />
           ) : (
             <>
               <div
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-5 text-center px-12 py-5"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-5 text-center px-12 "
                 ref={gridRef}
               >
                 <div className="grid gap-10">

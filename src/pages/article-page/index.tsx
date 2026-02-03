@@ -25,7 +25,7 @@ export default function index() {
           </div>
         </div>
       </header>
-      <article className="relative w-full h-full  overflow-hidden">
+      <article className="relative w-full h-full  overflow-hidden bg-[#0F1215]">
         <RSSFeed />
         <ScrollToTopButton />
       </article>

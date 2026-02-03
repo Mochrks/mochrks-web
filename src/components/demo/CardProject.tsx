@@ -28,8 +28,6 @@ export const CardProject = ({
   className?: string;
   cols?: number;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   const EmptyStateIllustration = () => (
     <svg
       className="w-64 h-64 md:w-80 md:h-80 mx-auto mb-6"
@@ -136,70 +134,76 @@ export const CardProject = ({
             className
           )}
         >
-          {items.map((item, idx) => (
-            <a
-              href={item?.html_url}
-              key={item?.id}
-              className="relative group block p-2 h-full w-full"
-              onMouseEnter={() => setHoveredIndex(idx)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <AnimatePresence>
-                {hoveredIndex === idx && (
-                  <motion.span
-                    className="absolute inset-0 h-full w-full bg-gradient-to-r from-gray-600  dark:bg-slate-800/[0.8] to-transparent  block  rounded-3xl"
-                    layoutId="hoverBackground"
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      opacity: 1,
-                      transition: { duration: 0.15 },
-                    }}
-                    exit={{
-                      opacity: 0,
-                      transition: { duration: 0.15, delay: 0.2 },
-                    }}
-                  />
-                )}
-              </AnimatePresence>
-              <Card>
-                <CardTitle>
-                  <div className="flex justify-between border-b my-4 py-2">
-                    {item.name}
-                    <div className="flex gap-1">
-                      <a href={item.homepage}>
-                        <PiGlobeSimpleBold className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 " />
-                      </a>
-                      <a href={item.html_url}>
-                        <VscGithub className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 " />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4 mt-1 ">
-                    <Avatar className="w-7 h-7">
-                      <AvatarImage src={profile} alt="@mochrks" />
-                      <AvatarFallback>MR</AvatarFallback>
-                    </Avatar>
-                    <p className="text-sm text-gray-300 font-thin">{item.full_name}</p>
-                  </div>
-                </CardTitle>
-                <CardDescription>{item.description}</CardDescription>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 items-center">
-                    {item.topics.map((topic, topicIndex) => (
-                      <Badge key={topicIndex}>{topic}</Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <p className="text-sm text-gray-300 font-thin mt-2">
-                  {" "}
-                  Created : {formatDate(item.created_at)}
-                </p>
-              </Card>
-            </a>
+          {items.map((item) => (
+            <ProjectCard key={item.id} item={item} />
           ))}
         </div>
       )}
     </React.Fragment>
+  );
+};
+
+const ProjectCard = ({ item }: { item: any }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <a
+      href={item?.html_url}
+      className="relative group block p-2 h-full w-full"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <AnimatePresence>
+        {isHovered && (
+          <motion.span
+            className="absolute inset-0 h-full w-full bg-white/10 dark:bg-white/[0.05] block rounded-3xl"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { duration: 0.2, ease: "easeOut" },
+            }}
+            exit={{
+              opacity: 0,
+              transition: { duration: 0.15, ease: "easeIn" },
+            }}
+          />
+        )}
+      </AnimatePresence>
+      <Card>
+        <CardTitle>
+          <div className="flex justify-between border-b border-white/10 my-4 py-2">
+            {item.name}
+            <div className="flex gap-1">
+              <a href={item.homepage}>
+                <PiGlobeSimpleBold className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 transition-colors" />
+              </a>
+              <a href={item.html_url}>
+                <VscGithub className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 transition-colors" />
+              </a>
+            </div>
+          </div>
+          <div className="flex items-center gap-4 mt-1 ">
+            <Avatar className="w-7 h-7">
+              <AvatarImage src={profile} alt="@mochrks" />
+              <AvatarFallback>MR</AvatarFallback>
+            </Avatar>
+            <p className="text-sm text-gray-300 font-thin">{item.full_name}</p>
+          </div>
+        </CardTitle>
+        <CardDescription>{item.description}</CardDescription>
+        <CardContent>
+          <div className="flex flex-wrap gap-2 items-center">
+            {item.topics.map((topic: any, topicIndex: number) => (
+              <Badge key={topicIndex}>{topic}</Badge>
+            ))}
+          </div>
+        </CardContent>
+        <p className="text-sm text-gray-300 font-thin mt-2">
+          {" "}
+          Created : {formatDate(item.created_at)}
+        </p>
+      </Card>
+    </a>
   );
 };
 
@@ -213,7 +217,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-gradient-to-t from-black dark:from-slate-100 to-transparant block border-transparent dark:border-white/[0.2] group-hover:border-slate-500 relative z-20",
+        "rounded-3xl h-full w-full p-5 overflow-hidden bg-gradient-to-br from-white/15 to-white/0 backdrop-blur-3xl border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2),0_8px_32px_0_rgba(0,0,0,0.36)] group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.3),0_15px_40px_0_rgba(0,0,0,0.5)] group-hover:border-white/20 hover:-translate-y-1 transition-transform duration-300 ease-out relative z-20",
         className
       )}
     >

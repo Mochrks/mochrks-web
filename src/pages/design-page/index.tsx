@@ -14,10 +14,17 @@ import { useNavigate } from "react-router-dom";
 
 const TabsMenu = ({ setActiveCategory }) => {
   return (
-    <div className="py-5 md:py-10 bg-gray-400 flex flex-col md:flex-row items-center justify-between gap-4 px-4">
-      <div className="w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
-        <SlideTabs setActiveCategory={setActiveCategory} />
+    <div className="w-full h-full px-4 py-8 md:px-6 md:py-12 lg:px-20 lg:py-16 ">
+      <div className="mb-8 md:mb-12">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          Visual Artistry
+        </h2>
+        <p className="text-gray-400 text-lg max-w-3xl">
+          A curated gallery of illustrations, apparel designs, and creative artwork crafted with
+          passion and detail.
+        </p>
       </div>
+      <SlideTabs setActiveCategory={setActiveCategory} />
     </div>
   );
 };
@@ -39,7 +46,7 @@ const SlideTabs = ({ setActiveCategory }) => {
           opacity: 0,
         }));
       }}
-      className="relative mx-auto md:ml-7 flex w-fit rounded-full border-2 border-black bg-white p-1"
+      className="relative mx-auto md:mx-0 flex w-fit rounded-full border-2 border-black bg-white p-1 justify-start"
     >
       {categories.map((category) => (
         <Tab

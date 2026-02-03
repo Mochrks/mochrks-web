@@ -281,16 +281,27 @@ export default function ProjectIndex() {
           </div>
         </div>
       </div>
-      <div className="w-full flex items-center justify-center ">
-        <div className="max-w-full mx-auto ">
-          <CardProject items={projects} cols={3} />
-          <ScrollToTopButton />
+      <div className="w-full h-full px-4 py-8 md:px-6 md:py-12 lg:px-20 lg:py-16 ">
+        <div className="mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Code Innovation
+          </h2>
+          <p className="text-gray-400 text-lg max-w-3xl">
+            A collection of coding projects, open-source contributions, and technical experiments
+            pushing the boundaries of web development.
+          </p>
         </div>
-      </div>
-      <div className="flex justify-center mb-20">
-        <InteractiveHoverButton onClick={() => navigate("/")} className="text-lg font-medium">
-          Back to Previous Page
-        </InteractiveHoverButton>
+        <div className="w-full flex items-center justify-center ">
+          <div className="max-w-full mx-auto ">
+            <CardProject items={projects} cols={3} />
+          </div>
+        </div>
+        <div className="flex justify-center mb-20">
+          <InteractiveHoverButton onClick={() => navigate("/")} className="text-lg font-medium">
+            Back to Previous Page
+          </InteractiveHoverButton>
+        </div>
+        <ScrollToTopButton />
       </div>
     </div>
   );

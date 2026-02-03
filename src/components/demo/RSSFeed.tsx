@@ -69,7 +69,7 @@ const Layout = () => {
 
   return (
     <div className={`${darkMode ? "dark" : ""}`}>
-      <div className="bg-white dark:bg-gray-900 min-h-screen transition-colors duration-300 px-1 md:px-20">
+      <div className="bg-white dark:bg-[#0F1215] min-h-screen transition-colors duration-300 px-1 md:px-20">
         <div className="container mx-auto px-4 py-20">
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-3xl font-bold text-gray-700 dark:text-white">Article</h1>
