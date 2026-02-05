@@ -62,7 +62,7 @@ export function Contact() {
       }, 3000);
       setShowAlert(true);
       reset();
-    } catch (error) {
+    } catch (error: unknown) {
       console.error("Failed to send email:", error);
     } finally {
       setIsLoading(false);

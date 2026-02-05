@@ -30,7 +30,7 @@ export const SpotifyNowPlaying = () => {
           setNowPlaying(data);
           setCurrentProgress(data.progress);
         }
-      } catch (error) {
+      } catch (error: unknown) {
         console.error("Failed to fetch Spotify data", error);
       }
     };

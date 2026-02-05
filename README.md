@@ -1,10 +1,10 @@
 <h1 align="center">Mochrks Web</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-18.0.0-blue" alt="React Version" />
-  <img src="https://img.shields.io/badge/TypeScript-4.0.0-blue" alt="TypeScript Version" />
+  <img src="https://img.shields.io/badge/React-18.3.1-blue" alt="React Version" />
+  <img src="https://img.shields.io/badge/TypeScript-5.5.0-blue" alt="TypeScript Version" />
   <img src="https://img.shields.io/badge/Vite-5.3.4-brightgreen" alt="Vite Version" />
-  <img src="https://img.shields.io/badge/TailwindCSS-2.4.0-06B6D4" alt="TailwindCSS Version" />
+  <img src="https://img.shields.io/badge/TailwindCSS-3.4.7-06B6D4" alt="TailwindCSS Version" />
 </p>
 
 <p align="center">
@@ -25,11 +25,27 @@ Explore the innovative projects and extensive expertise of **Moch. Rizki Kurniaw
 
 ## Tech Stack
 
-- **React 18.0.0**
+- **React 18.3.1**
+- **TypeScript 5.5.0**
 - **Vite** for fast development and build optimization
-- **Tailwind CSS** for utility-first styling
-- **Framer Motion** for animations
-- **ShadCN UI**, **MagicUI**, **Animata**, **Lukacho UI** and **AceternityUI** for UI components
+- **Tailwind CSS 3.4.7** for utility-first styling
+- **Framer Motion & Motion** for interactions and layout animations
+- **GSAP** for advanced timeline-based animations
+- **Three.js & React Three Fiber** for 3D elements and physics (Rapier)
+- **Lenis** for smooth scroll experience
+- **ShadCN UI, MagicUI, AceternityUI, Animata, LukachoUI** for high-quality UI components
+- **React Hook Form & Zod** for robust form handling and validation
+- **Lucide React & React Icons** for comprehensive iconography
+- **EmailJS** for client-side email integration
+- **Axios** for API requests (GitHub, Spotify, Medium)
+
+## Scripts
+
+- `npm run dev` / `npm start`: Runs the app in development mode
+- `npm run build`: Builds the app for production
+- `npm run lint`: Lints the code using ESLint
+- `npm run format`: Formats the code using Prettier
+- `npm run preview`: Previews the production build locally
 
 ## Connect with me:
 

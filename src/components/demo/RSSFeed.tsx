@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { Switch } from "../ui/switch";
 import { LoadingContent } from "./LoadingContent";
-import { RSSData } from "@/types/rss";
+import { Post, RSSData } from "@/types/rss";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
 import { Badge } from "../ui/badge";
@@ -41,13 +41,14 @@ const Layout = () => {
         const result = await fetchRSSData(rssUrl);
 
         // extract thumbnail
-        const processedItems = result.items.map((item) => ({
+        const processedItems = result.items.map((item: Post) => ({
           ...item,
           thumbnail: item.thumbnail || extractImageFromDescription(item.description),
+          categories: item.categories || [],
         }));
 
         setData({ ...result, items: processedItems });
-      } catch (err: any) {
+      } catch (err: unknown) {
         setError("Failed to fetch RSS data");
         console.error(err);
       } finally {

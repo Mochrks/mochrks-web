@@ -1,5 +1,5 @@
 import { AxiosConfig } from "@/types/axios";
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 
 const createAxiosInstance = (config: AxiosConfig = {}): AxiosInstance => {
   const defaultConfig: AxiosConfig = {
@@ -9,7 +9,16 @@ const createAxiosInstance = (config: AxiosConfig = {}): AxiosInstance => {
       "Content-Type": "application/json",
     },
   };
-  const mergedConfig = { ...defaultConfig, ...config };
+
+  // Fix: Use deep merge for headers to avoid losing default configuration
+  const mergedConfig = {
+    ...defaultConfig,
+    ...config,
+    headers: {
+      ...defaultConfig.headers,
+      ...config.headers,
+    },
+  };
 
   const axiosInstance: AxiosInstance = axios.create({
     baseURL: mergedConfig.baseURL,
@@ -18,20 +27,24 @@ const createAxiosInstance = (config: AxiosConfig = {}): AxiosInstance => {
   });
 
   axiosInstance.interceptors.request.use(
-    (requestConfig: AxiosRequestConfig) => {
+    (requestConfig: InternalAxiosRequestConfig) => {
       return requestConfig;
     },
-    (error) => {
+    (error: any) => {
       return Promise.reject(error);
     }
   );
 
   axiosInstance.interceptors.response.use(
     (response: AxiosResponse) => {
+      // In many parts of the project, the code expects response.data directly.
+      // We keep this behavior but ensure the types are handled correctly.
       return response.data;
     },
-    (error) => {
-      console.error("Error:", error);
+    (error: any) => {
+      const errorMessage =
+        error.response?.data?.message || error.message || "An unknown error occurred";
+      console.error("API Error:", errorMessage);
       return Promise.reject(error);
     }
   );
@@ -47,7 +60,7 @@ export const mediumApiInstance = createAxiosInstance({
 export const githubApiInstance = createAxiosInstance({
   baseURL: import.meta.env.VITE_GITHUB ?? "",
   headers: {
-    Authorization: `${import.meta.env.VITE_GITHUB_TOKEN}`,
+    Authorization: import.meta.env.VITE_GITHUB_TOKEN ? `${import.meta.env.VITE_GITHUB_TOKEN}` : "",
   },
 });
 

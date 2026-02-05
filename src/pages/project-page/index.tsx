@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import { CardProject } from "@/components/demo/CardProject";
 import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
 import { FlipLinkTitle } from "@/components/demo/Title";
-import { GihubData } from "@/services/project-service";
+import { getGithubRepos } from "@/services/project-service";
 import { LoadingContent } from "@/components/demo/LoadingContent";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { GitHubProject, MappedProject } from "@/types/github";
 
 export default function ProjectIndex() {
-  const [projects, setProjects] = useState<any[]>([]);
+  const [projects, setProjects] = useState<MappedProject[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -18,10 +19,11 @@ export default function ProjectIndex() {
     const fetchProjects = async () => {
       try {
         setIsLoading(true);
-        const response = await GihubData(1000);
-        const fetchedProjects = response ?? [];
+        const response = await getGithubRepos(1000);
 
-        const mappedProjects = fetchedProjects.map((project) => ({
+        const fetchedProjects: GitHubProject[] = response ?? [];
+
+        const mappedProjects: MappedProject[] = fetchedProjects.map((project: GitHubProject) => ({
           id: project.id,
           name: project.name,
           full_name: project.full_name ?? "",
@@ -34,12 +36,13 @@ export default function ProjectIndex() {
         }));
 
         const sortedProjects = mappedProjects.sort(
-          (a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+          (a: MappedProject, b: MappedProject) =>
+            new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
         );
 
         setProjects(sortedProjects);
         setIsLoading(false);
-      } catch (err) {
+      } catch (err: unknown) {
         console.error("Failed to fetch projects:", err);
         setError("Failed to load projects");
         setIsLoading(false);

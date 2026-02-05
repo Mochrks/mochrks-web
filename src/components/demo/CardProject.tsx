@@ -21,7 +21,7 @@ export const CardProject = ({
     description: string;
     html_url?: string;
     homepage: string;
-    img: string;
+    img?: string;
     topics: string[];
     created_at: string;
   }[];

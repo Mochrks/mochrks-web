@@ -52,7 +52,7 @@ export const getNowPlaying = async (): Promise<SpotifyTrack | null> => {
 
     const isPlaying = song.is_playing;
     const title = song.item.name;
-    const artist = song.item.artists.map((_artist: any) => _artist.name).join(", ");
+    const artist = song.item.artists.map((_artist: { name: string }) => _artist.name).join(", ");
     const album = song.item.album.name;
     const albumImageUrl = song.item.album.images[0].url;
     const songUrl = song.item.external_urls.spotify;
@@ -69,7 +69,7 @@ export const getNowPlaying = async (): Promise<SpotifyTrack | null> => {
       duration,
       progress,
     };
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Error fetching Spotify data:", error);
     return null;
   }
@@ -97,14 +97,14 @@ const getRecentlyPlayed = async (access_token: string): Promise<SpotifyTrack | n
     return {
       isPlaying: false,
       title: track.name,
-      artist: track.artists.map((_artist: any) => _artist.name).join(", "),
+      artist: track.artists.map((_artist: { name: string }) => _artist.name).join(", "),
       album: track.album.name,
       albumImageUrl: track.album.images[0].url,
       songUrl: track.external_urls.spotify,
       duration: track.duration_ms,
       progress: 0,
     };
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Error fetching Recently Played:", error);
     return null;
   }
@@ -126,7 +126,7 @@ export const getSpotifyProfileUrl = async (): Promise<string> => {
 
     const user = await response.json();
     return user.external_urls.spotify;
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Error fetching Spotify User:", error);
     return "https://open.spotify.com/";
   }

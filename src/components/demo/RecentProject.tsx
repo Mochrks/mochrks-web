@@ -3,11 +3,13 @@ import ShimmerButton from "@/components/magicui/shimmer-button";
 import { useNavigate } from "react-router-dom";
 import { CardProject } from "@/components/demo/CardProject";
 import GitHubCalendar from "react-github-calendar";
-import { GihubData } from "@/services/project-service";
+import { getGithubRepos } from "@/services/project-service";
 import { LoadingContent } from "./LoadingContent";
+import { GitHubProject, MappedProject } from "@/types/github";
+
 export function RecentProject() {
   const navigate = useNavigate();
-  const [recentProjects, setRecentProjects] = useState<any[]>([]);
+  const [recentProjects, setRecentProjects] = useState<MappedProject[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const handleProject = () => {
@@ -18,11 +20,11 @@ export function RecentProject() {
     const fetchRecentProjects = async () => {
       try {
         setIsLoading(true);
-        const response = await GihubData(1000);
+        const response = await getGithubRepos(1000);
 
-        const fetchedProjects = response || [];
+        const fetchedProjects: GitHubProject[] = response || [];
 
-        const mappedProjects = fetchedProjects.map((project) => ({
+        const mappedProjects: MappedProject[] = fetchedProjects.map((project: GitHubProject) => ({
           id: project.id,
           name: project.name,
           full_name: project.full_name || "",
@@ -35,14 +37,15 @@ export function RecentProject() {
         }));
 
         const sortedProjects = mappedProjects.sort(
-          (a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+          (a: MappedProject, b: MappedProject) =>
+            new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
         );
 
         const latestProjects = sortedProjects.slice(0, 4);
 
         setRecentProjects(latestProjects);
         setIsLoading(false);
-      } catch (err) {
+      } catch (err: unknown) {
         console.error("Error fetching projects:", err);
         setIsLoading(false);
       }
