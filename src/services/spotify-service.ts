@@ -1,4 +1,5 @@
-import { SpotifyTrack } from "@/apis/spotify";
+import { SpotifyTrack } from "@/types/spotify";
+import { SPOTIFY_ENDPOINTS } from "@/constants/api-endpoints";
 
 const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 const client_secret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
@@ -6,10 +7,12 @@ const refresh_token = import.meta.env.VITE_SPOTIFY_REFRESH_TOKEN;
 
 const basic = btoa(`${client_id}:${client_secret}`);
 
-const TOKEN_ENDPOINT = import.meta.env.VITE_SPOTIFY_TOKEN_ENDPOINT;
-const NOW_PLAYING_ENDPOINT = import.meta.env.VITE_SPOTIFY_NOW_PLAYING_ENDPOINT;
-const RECENTLY_PLAYED_ENDPOINT = import.meta.env.VITE_SPOTIFY_RECENTLY_PLAYED_ENDPOINT;
-const USER_ENDPOINT = import.meta.env.VITE_SPOTIFY_USER_ENDPOINT;
+const {
+  TOKEN: TOKEN_ENDPOINT,
+  NOW_PLAYING: NOW_PLAYING_ENDPOINT,
+  RECENTLY_PLAYED: RECENTLY_PLAYED_ENDPOINT,
+  USER: USER_ENDPOINT,
+} = SPOTIFY_ENDPOINTS;
 
 const getAccessToken = async () => {
   const response = await fetch(TOKEN_ENDPOINT, {

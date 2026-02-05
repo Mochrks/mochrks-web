@@ -1,13 +1,4 @@
-export interface SpotifyTrack {
-  isPlaying: boolean;
-  title: string;
-  artist: string;
-  album: string;
-  albumImageUrl: string | null;
-  songUrl: string;
-  duration: number;
-  progress: number;
-}
+import { SpotifyTrack } from "@/types/spotify";
 
 export const MOCK_SPOTIFY_PLAYLIST: SpotifyTrack[] = [
   {
