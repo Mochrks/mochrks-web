@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useLenis } from "../demo/SmoothScroll";
 
 type CardType = {
   id: number;
@@ -247,104 +249,127 @@ interface BehanceModalProps {
   currentLikes: number;
 }
 
-function BehanceModal({ card, onClose, onLike, isLiked, currentLikes }: BehanceModalProps) {
+const BehanceModal = ({ card, onClose, onLike, isLiked, currentLikes }: BehanceModalProps) => {
+  const { lenis } = useLenis();
+
   useEffect(() => {
+    // Stop Lenis to prevent background scrolling
+    if (lenis) lenis.stop();
+
+    const originalBodyStyle = window.getComputedStyle(document.body).overflow;
+    const originalHtmlStyle = window.getComputedStyle(document.documentElement).overflow;
+
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
 
     return () => {
-      document.body.style.overflow = "unset";
+      if (lenis) lenis.start();
+      document.body.style.overflow = originalBodyStyle;
+      document.documentElement.style.overflow = originalHtmlStyle;
     };
-  }, []);
+  }, [lenis]);
 
-  const handleBackdropClick = () => {
-    onClose();
-  };
-
-  return (
-    <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+  return createPortal(
+    <div className="fixed inset-0 z-[100] isolate">
+      {/* Backdrop */}
       <motion.div
-        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+        className="fixed inset-0 bg-black/80 backdrop-blur-sm"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        onClick={handleBackdropClick}
+        onClick={onClose}
       />
 
-      <motion.div
-        className="relative bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col z-10"
-        initial={{ scale: 0.9, opacity: 0, y: 20 }}
-        animate={{ scale: 1, opacity: 1, y: 0 }}
-        exit={{ scale: 0.9, opacity: 0, y: 20 }}
-        transition={{ type: "spring", damping: 25, stiffness: 300 }}
-        onClick={(e) => e.stopPropagation()}
+      {/* Scroll Wrapper */}
+      <div
+        className="fixed inset-0 z-[101] overflow-y-auto overflow-x-hidden"
+        data-lenis-prevent="true"
+        onClick={(e) => {
+          if (e.target === e.currentTarget) onClose();
+        }}
       >
-        <motion.button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-30 p-2 rounded-full bg-black/70 hover:bg-black/90 text-white transition-colors backdrop-blur-sm shadow-lg"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <X className="w-6 h-6" />
-        </motion.button>
+        <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-6">
+          <motion.div
+            className="relative w-full max-w-5xl transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all"
+            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <motion.button
+              onClick={onClose}
+              className="absolute top-4 right-4 z-30 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white transition-colors backdrop-blur-md"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
+            </motion.button>
 
-        <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
-          <div className="relative w-full bg-gray-900">
-            <img
-              src={card.src}
-              alt={card.title}
-              className="w-full h-auto max-h-[60vh] object-contain mx-auto"
-            />
-          </div>
+            <div className="flex flex-col bg-white">
+              <div className="w-full bg-gray-900 border-b border-gray-100">
+                <img
+                  src={card.src}
+                  alt={card.title}
+                  className="w-full h-auto object-contain max-h-[70vh] mx-auto"
+                />
+              </div>
 
-          <div className="p-6 md:p-8 lg:p-10">
-            <div className="mb-8">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                {card.title}
-              </h2>
-              <div className="flex items-center gap-3">
-                <Avatar className="w-12 h-12">
-                  <AvatarImage
-                    src="https://mochrks.github.io/assets/img-photo/pf.jpg"
-                    alt={card.author}
-                  />
-                  <AvatarFallback>MR</AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="text-gray-900 font-semibold text-lg">{card.author}</p>
-                  <p className="text-gray-500 text-sm">Software Developer</p>
+              <div className="p-6 md:p-8 lg:p-10">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8 border-b border-gray-100 pb-8">
+                  <div className="space-y-4 max-w-2xl">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                      {card.title}
+                    </h2>
+                    <div className="flex items-center gap-3">
+                      <Avatar className="w-10 h-10 md:w-12 md:h-12 border border-gray-200">
+                        <AvatarImage
+                          src="https://mochrks.github.io/assets/img-photo/pf.jpg"
+                          alt={card.author}
+                        />
+                        <AvatarFallback>MR</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-gray-900 font-semibold text-base">{card.author}</p>
+                        <p className="text-gray-500 text-xs md:text-sm">Software Developer</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
+                  <div className="lg:col-span-2 space-y-6">
+                    <h3 className="text-xl font-bold text-gray-900">Project Description</h3>
+                    <div className="prose prose-lg text-gray-600 leading-relaxed">
+                      {card.description}
+                    </div>
+                  </div>
+
+                  <div className="space-y-6">
+                    <div className="bg-gray-50 rounded-xl p-6 space-y-4">
+                      <div>
+                        <p className="text-sm font-medium text-gray-500 mb-1">Year</p>
+                        <p className="text-lg font-semibold text-gray-900">2024</p>
+                      </div>
+                      <div className="h-px bg-gray-200" />
+                      <div>
+                        <p className="text-sm font-medium text-gray-500 mb-1">Category</p>
+                        <p className="text-lg font-semibold text-gray-900">{card.category}</p>
+                      </div>
+                      <div className="h-px bg-gray-200" />
+                      <div>
+                        <p className="text-sm font-medium text-gray-500 mb-1">Type</p>
+                        <p className="text-lg font-semibold text-gray-900">Design</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div className="prose prose-lg max-w-none mb-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">About This Project</h3>
-              <p className="text-gray-700 leading-relaxed text-lg">{card.description}</p>
-            </div>
-
-            <div className="pt-6 border-t border-gray-200">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl shadow-sm">
-                  <div className="text-3xl font-bold text-gray-900">2024</div>
-                  <div className="text-sm text-gray-600 mt-1 font-medium">Year</div>
-                </div>
-                <div className="text-center p-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl shadow-sm">
-                  <div className="text-3xl font-bold text-gray-900">{card.category}</div>
-                  <div className="text-sm text-gray-600 mt-1 font-medium">Platform</div>
-                </div>
-                <div className="text-center p-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl shadow-sm">
-                  <div className="text-3xl font-bold text-gray-900">Design</div>
-                  <div className="text-sm text-gray-600 mt-1 font-medium">Type</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </motion.div>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>,
+    document.body
   );
-}
+};

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -6,12 +6,23 @@ import "lenis/dist/lenis.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
+interface LenisContextType {
+  lenis: Lenis | null;
+}
+
+const LenisContext = createContext<LenisContextType>({
+  lenis: null,
+});
+
+// Custom Hook to use Lenis
+export const useLenis = () => useContext(LenisContext);
+
 interface SmoothScrollProps {
   children: React.ReactNode;
 }
 
 const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
-  const lenisRef = useRef<Lenis | null>(null);
+  const [lenisInstance, setLenisInstance] = useState<Lenis | null>(null);
 
   useEffect(() => {
     // Initialize Lenis
@@ -26,7 +37,7 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
       syncTouch: true, // Smooth transitions for touch devices
     });
 
-    lenisRef.current = lenis;
+    setLenisInstance(lenis);
 
     // Connect Lenis to GSAP ScrollTrigger
     const updateScrollTrigger = () => ScrollTrigger.update();
@@ -47,11 +58,15 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
       lenis.off("scroll", updateScrollTrigger);
       gsap.ticker.remove(updateTicker);
       lenis.destroy();
-      lenisRef.current = null;
+      setLenisInstance(null);
     };
   }, []);
 
-  return <div className="w-full min-h-screen">{children}</div>;
+  return (
+    <LenisContext.Provider value={{ lenis: lenisInstance }}>
+      <div className="w-full min-h-screen">{children}</div>
+    </LenisContext.Provider>
+  );
 };
 
 export default SmoothScroll;

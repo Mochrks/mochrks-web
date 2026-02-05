@@ -8,6 +8,7 @@ import { LoadingContent } from "./LoadingContent";
 import { RSSData } from "@/types/rss";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
+import { Badge } from "../ui/badge";
 
 const extractImageFromDescription = (description: string) => {
   const tempDiv = document.createElement("div");
@@ -16,6 +17,13 @@ const extractImageFromDescription = (description: string) => {
   return img
     ? img.src
     : "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png";
+};
+
+const getSnippet = (html: string, maxLength: number = 200) => {
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = html;
+  const text = tempDiv.textContent || tempDiv.innerText || "";
+  return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
 };
 
 const Layout = () => {
@@ -35,7 +43,7 @@ const Layout = () => {
         // extract thumbnail
         const processedItems = result.items.map((item) => ({
           ...item,
-          thumbnail: extractImageFromDescription(item.description),
+          thumbnail: item.thumbnail || extractImageFromDescription(item.description),
         }));
 
         setData({ ...result, items: processedItems });
@@ -71,14 +79,21 @@ const Layout = () => {
     <div className={`${darkMode ? "dark" : ""}`}>
       <div className="bg-white dark:bg-[#0F1215] min-h-screen transition-colors duration-300 px-1 md:px-20">
         <div className="container mx-auto px-4 py-20">
-          <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-700 dark:text-white">Article</h1>
+          <div className="flex justify-between items-center mb-2">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-700 dark:text-white">Article</h1>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                Showing the latest 10 articles from Medium
+              </p>
+            </div>
             <div className="flex items-center space-x-2">
               <Sun className="h-4 w-4 text-yellow-500" />
               <Switch checked={darkMode} onCheckedChange={setDarkMode} />
               <Moon className="h-4 w-4 text-gray-700 dark:text-white" />
             </div>
           </div>
+          <div className="h-px bg-gray-200 dark:bg-gray-800 mb-8" />
+
           <div className="space-y-12">
             {data.items && data.items.length > 0 ? (
               data.items.map((post) => (
@@ -91,20 +106,29 @@ const Layout = () => {
                 >
                   {/* Konten artikel */}
                   <div className="flex-grow">
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                      {post.pubDate} | By {post.author}
+                    </p>
                     <a href={post.link} target="_blank" rel="noopener noreferrer">
-                      <h2 className="text-2xl font-bold mb-2 text-gray-700 dark:text-white">
+                      <h2 className="text-2xl font-bold mb-3 text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                         {post.title}
                       </h2>
                     </a>
-                    <p className="text-sm text-gray-700 dark:text-gray-400 mb-4">
-                      {post.pubDate} | By {post.author}
-                    </p>
-                    <p className="text-md text-gray-700 dark:text-gray-400 mb-4">
-                      Halo semuanya 👋
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {post?.categories &&
+                        post?.categories.length > 0 &&
+                        post.categories.map((category) => (
+                          <Badge key={category} variant="secondary" className="px-2 py-1 text-xs">
+                            {category}
+                          </Badge>
+                        ))}
+                    </div>
+                    <p className="text-md text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 leading-relaxed">
+                      {getSnippet(post?.content || post.description)}
                     </p>
                     <Button
                       variant="link"
-                      className="p-0 h-auto text-gray-800 dark:text-white"
+                      className="p-0 h-auto text-blue-600 dark:text-blue-400 font-semibold"
                       onClick={() => window.open(post.guid, "_blank")}
                     >
                       Read More
@@ -112,11 +136,11 @@ const Layout = () => {
                   </div>
 
                   {/*  thumbnail */}
-                  <div className="hidden md:block w-64 h-48 relative">
+                  <div className="hidden md:block w-64 h-48 relative flex-shrink-0">
                     <img
                       src={post.thumbnail ?? "/placeholder-image.jpg"}
                       alt={post.title}
-                      className="object-cover rounded-lg w-full h-full"
+                      className="object-cover rounded-lg w-full h-full shadow-md"
                     />
                   </div>
                 </motion.div>
@@ -126,9 +150,12 @@ const Layout = () => {
             )}
           </div>
           {data.items && data.items.length > 0 && (
-            <div className="flex justify-center mb-20 mt-10">
-              <InteractiveHoverButton onClick={() => navigate("/")} className="text-lg font-medium">
-                Back to Previous Page
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-20 mt-12">
+              <InteractiveHoverButton
+                onClick={() => window.open("https://medium.com/@mochrks", "_blank")}
+                className="text-lg font-medium"
+              >
+                View All Articles
               </InteractiveHoverButton>
             </div>
           )}

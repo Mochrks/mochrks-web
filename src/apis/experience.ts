@@ -16,7 +16,7 @@ export const experiece = [
   {
     title: "Dinas Kesehatan Pemerintah Kota Cimahi",
     description: "Software Engineer & Video Editor",
-    datePeriode: "Jul 2024 - Okt 2024 · 4 bln",
+    datePeriode: "Jul 2023 - Dec 2023 · 6 bln",
     icon: dinkes,
   },
 
