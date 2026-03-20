@@ -22,6 +22,7 @@ export const CardProject = ({
     html_url?: string;
     homepage: string;
     img?: string;
+    period?: string;
     topics: string[];
     created_at: string;
   }[];
@@ -146,10 +147,22 @@ export const CardProject = ({
 const ProjectCard = ({ item }: { item: any }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const CardWrapper = item.html_url ? "a" : "div";
+  const wrapperProps = item.html_url
+    ? {
+        href: item.html_url,
+        target: "_blank",
+        rel: "noopener noreferrer",
+      }
+    : {};
+
   return (
-    <a
-      href={item?.html_url}
-      className="relative group block p-2 h-full w-full"
+    <CardWrapper
+      {...wrapperProps}
+      className={cn(
+        "relative group block p-2 h-full w-full",
+        item.html_url ? "cursor-pointer" : "cursor-default"
+      )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -172,38 +185,59 @@ const ProjectCard = ({ item }: { item: any }) => {
       <Card>
         <CardTitle>
           <div className="flex justify-between border-b border-white/10 my-4 py-2">
-            {item.name}
-            <div className="flex gap-1">
-              <a href={item.homepage}>
-                <PiGlobeSimpleBold className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 transition-colors" />
-              </a>
-              <a href={item.html_url}>
-                <VscGithub className="w-[3rem] h-[3rem] p-1 rounded-full bg-black hover:bg-cyan-800 transition-colors" />
-              </a>
+            <span className="line-clamp-2">{item.name}</span>
+            <div className="flex gap-2 flex-shrink-0">
+              {item.homepage && (
+                <a
+                  href={item.homepage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <PiGlobeSimpleBold className="w-10 h-10 p-2 rounded-full bg-black/50 hover:bg-cyan-800 transition-colors border border-white/10" />
+                </a>
+              )}
+              {item.html_url && (
+                <a
+                  href={item.html_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <VscGithub className="w-10 h-10 p-2 rounded-full bg-black/50 hover:bg-cyan-800 transition-colors border border-white/10" />
+                </a>
+              )}
             </div>
           </div>
-          <div className="flex items-center gap-4 mt-1 ">
-            <Avatar className="w-7 h-7">
+          <div className="flex items-center gap-3 mt-1 ">
+            <Avatar className="w-6 h-6 border border-white/20">
               <AvatarImage src={profile} alt="@mochrks" />
               <AvatarFallback>MR</AvatarFallback>
             </Avatar>
-            <p className="text-sm text-gray-300 font-thin">{item.full_name}</p>
+            <p className="text-xs text-gray-400 font-medium truncate">{item.full_name}</p>
           </div>
         </CardTitle>
-        <CardDescription>{item.description}</CardDescription>
+        <CardDescription className="line-clamp-4">{item.description}</CardDescription>
         <CardContent>
-          <div className="flex flex-wrap gap-2 items-center">
-            {item.topics.map((topic: any, topicIndex: number) => (
+          <div className="flex flex-wrap gap-1.5 items-center">
+            {item.topics.slice(0, 5).map((topic: any, topicIndex: number) => (
               <Badge key={topicIndex}>{topic}</Badge>
             ))}
+            {item.topics.length > 5 && (
+              <span className="text-[10px] text-gray-500 ml-1">+{item.topics.length - 5} more</span>
+            )}
           </div>
         </CardContent>
-        <p className="text-sm text-gray-300 font-thin mt-2">
-          {" "}
-          Created : {formatDate(item.created_at)}
-        </p>
+        <div className="flex justify-between items-center mt-4 pt-4 border-t border-white/5 text-gray">
+          <p className="text-[10px] text-gray-500 uppercase tracking-wide">
+            {item.html_url ? "Repository" : "Professional Work"}
+          </p>
+          <p className="text-[10px] text-gray-400 font-medium">
+            {item.period ? item.period : formatDate(item.created_at)}
+          </p>
+        </div>
       </Card>
-    </a>
+    </CardWrapper>
   );
 };
 

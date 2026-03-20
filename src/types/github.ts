@@ -21,4 +21,5 @@ export interface MappedProject {
   created_at: string;
   updated_at: string;
   img?: string;
+  period?: string;
 }

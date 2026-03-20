@@ -1,0 +1,82 @@
+import { MappedProject } from "@/types/github";
+
+export const REAL_PROJECTS: MappedProject[] = [
+  {
+    id: 101,
+    name: "NEW LOS (Loan Origination System)",
+    full_name: "Frontend Developer | PT Sarana Multi Infrastruktur (Persero)",
+    description:
+      "Developed and maintained a comprehensive Loan Origination System (LOS) to manage the end-to-end financing process — from loan application submission to disbursement. The platform streamlines credit workflows, enhances data accuracy, automates business processes, and provides full lifecycle visibility for financing operations.",
+    html_url: "",
+    homepage: "",
+    topics: ["Next js", "Loan System", "Finance", "Workflow Automation"],
+    created_at: "2025-09-01T00:00:00Z",
+    updated_at: "2025-09-01T00:00:00Z",
+    period: "Sep 2025 - Now",
+  },
+  {
+    id: 102,
+    name: "BJBS Management Project",
+    full_name: "Frontend Developer | PT Bank BJB Syariah",
+    description:
+      "Developed a comprehensive project management system to streamline tracking, collaboration, and reporting for BJBS. Built responsive and interactive user interfaces using React 19 + Vite and MUI, including dashboards with real-time data visualization using Chart.js. Integrated frontend components with backend APIs via Axios and managed application state efficiently with Redux.",
+    html_url: "",
+    homepage: "",
+    topics: ["React Js", "Vite", "MUI", "Redux", "Chart.js", "Axios"],
+    created_at: "2025-05-01T00:00:00Z",
+    updated_at: "2025-05-01T00:00:00Z",
+    period: "Mei 2025 - Sep 2025",
+  },
+  {
+    id: 103,
+    name: "HRMS (Human Resources Management System)",
+    full_name: "Frontend Developer | Pt. Padepokan Tujuh Sembilan",
+    description:
+      "As the Frontend Developer for this comprehensive HRMS project, I was responsible for building the user interface for several core modules—Employee Master Data, Leave & Attendance, and Payroll—by transforming complex Figma designs into a fully functional and user-friendly application using Next.js 15 and MUI v5. Successfully implemented key features, including complete CRUD operations and approval workflows for employee data.",
+    html_url: "",
+    homepage: "",
+    topics: ["Next.js 15", "MUI v5", "CRUD", "Figma", "HRMS"],
+    created_at: "2024-10-01T00:00:00Z",
+    updated_at: "2024-10-01T00:00:00Z",
+    period: "Okt 2024 - Mei 2025",
+  },
+  {
+    id: 104,
+    name: "Train Plan",
+    full_name: "Frontend Developer | PT Kereta Api Indonesia (Persero)",
+    description:
+      "Contributed as a frontend developer in building a critical train scheduling and planning application for Indonesia's national railway. Developed the core Schedule Setting, Update, and Publishing modules using React 18, Redux, and MUI, implementing complex arrival/departure time calculations and real-time data visualization features.",
+    html_url: "",
+    homepage: "",
+    topics: ["React 18", "Redux", "MUI", "API Integration", "KAI"],
+    created_at: "2025-05-01T00:00:00Z",
+    updated_at: "2025-05-01T00:00:00Z",
+    period: "Mei 2025",
+  },
+  {
+    id: 105,
+    name: "Reverse Engineering & Re-implementation: Productive Loan System",
+    full_name: "Frontend Developer | PT Astra Welab Digital Arta (AWDA)",
+    description:
+      "Tasked with reverse-engineering a legacy productive loan module, my role centered on ensuring the new frontend (React.js, MUI) could perfectly replicate complex business logic. Meticulously tracing every data point from the legacy Spring Boot backend to the React components. Documenting every API endpoint, request/response schema, and state management flow.",
+    html_url: "",
+    homepage: "",
+    topics: ["Reverse Engineering", "React.js", "MUI", "Spring Boot Integration"],
+    created_at: "2024-06-01T00:00:00Z",
+    updated_at: "2024-06-01T00:00:00Z",
+    period: "Jun 2024 - Okt 2024",
+  },
+  {
+    id: 106,
+    name: "Sistem informasi PPID Dinas Kesehatan Kota Cimahi",
+    full_name: "Fullstack Developer | Dinas Kesehatan Kota Cimahi",
+    description:
+      "Web PPID system at the Cimahi Health Office is an important aspect in providing access to public information regarding health services. Development included several aspects, such as improving the user interface, optimizing the public information request process, and setting up database structures to make them more organized and easy to manage.",
+    html_url: "",
+    homepage: "",
+    topics: ["PHP", "Fullstack", "Public Information", "Cimahi Health Office"],
+    created_at: "2022-07-01T00:00:00Z",
+    updated_at: "2022-07-01T00:00:00Z",
+    period: "Jul 2022 - Sep 2022",
+  },
+];

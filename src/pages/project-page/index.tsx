@@ -8,9 +8,10 @@ import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-b
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { GitHubProject, MappedProject } from "@/types/github";
+import { REAL_PROJECTS } from "@/apis/real-projects";
 
 export default function ProjectIndex() {
-  const [projects, setProjects] = useState<MappedProject[]>([]);
+  const [githubProjects, setGithubProjects] = useState<MappedProject[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -40,13 +41,13 @@ export default function ProjectIndex() {
             new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
         );
 
-        setProjects(sortedProjects);
+        setGithubProjects(sortedProjects);
         setIsLoading(false);
       } catch (err: unknown) {
         console.error("Failed to fetch projects:", err);
         setError("Failed to load projects");
         setIsLoading(false);
-        setProjects([]);
+        setGithubProjects([]);
       }
     };
 
@@ -242,30 +243,6 @@ export default function ProjectIndex() {
     );
   }
 
-  if (projects.length === 0) {
-    return (
-      <div className="pb-20">
-        <div className="w-full">
-          <div className="flex flex-col place-content-center gap-2 bg-white px-8 py-14 lg:py-24 dark:bg-gray-900">
-            <div className="text-black dark:text-white">
-              <FlipLinkTitle>ALL </FlipLinkTitle>
-              <FlipLinkTitle>PROJECT.</FlipLinkTitle>
-            </div>
-            <div>
-              <InteractiveHoverButton
-                onClick={() => navigate("/")}
-                className="text-sm md:text-lg xs font-medium mt:2"
-              >
-                Back
-              </InteractiveHoverButton>
-            </div>
-          </div>
-        </div>
-        <ProjectEmptyState />
-      </div>
-    );
-  }
-
   return (
     <div className="pb-20">
       <div className="w-full">
@@ -285,20 +262,42 @@ export default function ProjectIndex() {
         </div>
       </div>
       <div className="w-full h-full px-4 py-8 md:px-6 md:py-12 lg:px-20 lg:py-16 ">
-        <div className="mb-8 md:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Code Innovation
-          </h2>
-          <p className="text-gray-400 text-lg max-w-3xl">
-            A collection of coding projects, open-source contributions, and technical experiments
-            pushing the boundaries of web development.
-          </p>
-        </div>
-        <div className="w-full flex items-center justify-center ">
-          <div className="max-w-full mx-auto ">
-            <CardProject items={projects} cols={3} />
+        {/* Real Projects Section */}
+        <div className="mb-16 md:mb-24">
+          <div className="mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              Production Experience
+            </h2>
+            <p className="text-gray-400 text-lg max-w-3xl">
+              A showcase of professional projects developed for major institutions, focusing on
+              large-scale enterprise applications and industrial solutions.
+            </p>
+          </div>
+          <div className="w-full flex items-center justify-center ">
+            <div className="max-w-full mx-auto ">
+              <CardProject items={REAL_PROJECTS} cols={3} />
+            </div>
           </div>
         </div>
+
+        {/* GitHub Projects Section */}
+        <div className="mb-16 md:mb-24">
+          <div className="mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              Code Innovation
+            </h2>
+            <p className="text-gray-400 text-lg max-w-3xl">
+              A collection of coding projects, open-source contributions, and technical experiments
+              from my GitHub repository.
+            </p>
+          </div>
+          <div className="w-full flex items-center justify-center ">
+            <div className="max-w-full mx-auto ">
+              <CardProject items={githubProjects} cols={3} />
+            </div>
+          </div>
+        </div>
+
         <div className="flex justify-center mb-20">
           <InteractiveHoverButton onClick={() => navigate("/")} className="text-lg font-medium">
             Back to Previous Page

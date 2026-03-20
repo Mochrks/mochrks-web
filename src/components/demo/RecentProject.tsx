@@ -1,62 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { useNavigate } from "react-router-dom";
 import { CardProject } from "@/components/demo/CardProject";
 import GitHubCalendar from "react-github-calendar";
-import { getGithubRepos } from "@/services/project-service";
-import { LoadingContent } from "./LoadingContent";
-import { GitHubProject, MappedProject } from "@/types/github";
+import { MappedProject } from "@/types/github";
+import { REAL_PROJECTS } from "@/apis/real-projects";
 
 export function RecentProject() {
   const navigate = useNavigate();
-  const [recentProjects, setRecentProjects] = useState<MappedProject[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // Initialize with top 4 projects directly
+  const [recentProjects] = useState<MappedProject[]>(REAL_PROJECTS.slice(0, 4));
 
   const handleProject = () => {
     navigate("/project");
   };
-
-  useEffect(() => {
-    const fetchRecentProjects = async () => {
-      try {
-        setIsLoading(true);
-        const response = await getGithubRepos(1000);
-
-        const fetchedProjects: GitHubProject[] = response || [];
-
-        const mappedProjects: MappedProject[] = fetchedProjects.map((project: GitHubProject) => ({
-          id: project.id,
-          name: project.name,
-          full_name: project.full_name || "",
-          description: project.description || "No description",
-          html_url: project.html_url || "",
-          homepage: project.homepage || "",
-          topics: project.topics || [],
-          created_at: project.created_at || new Date().toISOString(),
-          updated_at: project.updated_at || new Date().toISOString(),
-        }));
-
-        const sortedProjects = mappedProjects.sort(
-          (a: MappedProject, b: MappedProject) =>
-            new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
-        );
-
-        const latestProjects = sortedProjects.slice(0, 4);
-
-        setRecentProjects(latestProjects);
-        setIsLoading(false);
-      } catch (err: unknown) {
-        console.error("Error fetching projects:", err);
-        setIsLoading(false);
-      }
-    };
-
-    fetchRecentProjects();
-  }, []);
-
-  if (isLoading) {
-    return <LoadingContent />;
-  }
 
   return (
     <React.Fragment>

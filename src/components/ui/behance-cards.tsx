@@ -277,6 +277,7 @@ const BehanceModal = ({ card, onClose, onLike, isLiked, currentLikes }: BehanceM
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        transition={{ duration: 0.4 }}
         onClick={onClose}
       />
 
@@ -290,11 +291,16 @@ const BehanceModal = ({ card, onClose, onLike, isLiked, currentLikes }: BehanceM
       >
         <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-6">
           <motion.div
-            className="relative w-full max-w-5xl transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all"
-            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+            className="relative w-full max-w-5xl transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl will-change-transform"
+            initial={{ scale: 0.95, opacity: 0, y: 40 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.9, opacity: 0, y: 20 }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            exit={{ scale: 0.95, opacity: 0, y: 40 }}
+            transition={{
+              type: "spring",
+              damping: 30,
+              stiffness: 300,
+              mass: 0.8,
+            }}
             onClick={(e) => e.stopPropagation()}
           >
             <motion.button
