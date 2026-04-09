@@ -5,7 +5,7 @@ export const experiece = [
     title: "Padepokan Tujuh Sembilan",
     description: "Software Developer ",
     datePeriode: "Jan 2024 - Present",
-    icon: "https://media.licdn.com/dms/image/C560BAQHVE9T8weMAQA/company-logo_200_200/0/1630665946003/padepokantujuhsembilan_logo?e=2147483647&v=beta&t=S4DzajPy2eCUvCzgovLF84e4UOdqQ-lS-r8AxE8Zj3k",
+    icon: "https://media.licdn.com/dms/image/v2/C560BAQHVE9T8weMAQA/company-logo_200_200/company-logo_200_200/0/1630665946003/padepokantujuhsembilan_logo?e=2147483647&v=beta&t=-yz7JQWPzJbONMGOAqeDlpc70qBvBx4WUlBMDNSBY1s",
   },
   {
     title: "Universitas Jenderal Achmad Yani",
