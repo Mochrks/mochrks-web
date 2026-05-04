@@ -67,6 +67,19 @@ export const REAL_PROJECTS: MappedProject[] = [
     period: "Jun 2024 - Okt 2024",
   },
   {
+    id: 107,
+    name: "Talent Center",
+    full_name: "Frontend Developer | PT Padepokan Tujuh Sembilan",
+    description:
+      "The Talent Center application at PT Padepokan 79 assists in tracking, evaluating, and developing talents across the company's entire talent pool. Developed modern and responsive user interfaces using React.js and Material UI, while utilizing Spring Boot and Io.Minio for backend integration and file manipulation. Implemented secure authentication with JWT and managed complex form validations using Formik, significantly improving talent information accessibility and management efficiency.",
+    html_url: "",
+    homepage: "",
+    topics: ["React.js", "Material UI", "Spring Boot", "PostgreSQL", "Minio", "Formik", "JWT"],
+    created_at: "2024-01-01T00:00:00Z",
+    updated_at: "2024-01-01T00:00:00Z",
+    period: "Jan 2024 - Mei 2024",
+  },
+  {
     id: 106,
     name: "Sistem informasi PPID Dinas Kesehatan Kota Cimahi",
     full_name: "Fullstack Developer | Dinas Kesehatan Kota Cimahi",

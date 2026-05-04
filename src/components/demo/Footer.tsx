@@ -14,6 +14,7 @@ import { FiArrowUp } from "react-icons/fi";
 import "@/styles/Footer.css";
 import useBreakpoints from "@/hooks/use-breakpoints";
 import { favicon } from "@/assets";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 export default function Footer() {
   const { isLg } = useBreakpoints();
@@ -115,12 +116,7 @@ export default function Footer() {
             </div>
           )}
         </div>
-
-        <div id="go-top">
-          <a className="p-4 smoothscroll" title="Back to Top" href="#">
-            <FiArrowUp className="w-7 h-7 text-center justify-center dark:text-neutral-200 text-slate-100" />
-          </a>
-        </div>
+        <ScrollToTopButton />
       </footer>
     </footer>
   );
