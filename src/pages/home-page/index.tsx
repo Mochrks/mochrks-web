@@ -106,6 +106,8 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   );
 };
 
+import SEO from "@/components/demo/SEO";
+
 export default function Portfolio() {
   const [loading, setLoading] = useState(true);
 
@@ -128,8 +130,49 @@ export default function Portfolio() {
     },
   ];
 
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Moch. Rizki Kurniawan",
+    alternateName: "mochrks",
+    url: "https://www.mochrks.my.id/",
+    image: "https://mochrks.github.io/assets/img-photo/pf.jpg",
+    sameAs: [
+      "https://medium.com/@mochrks",
+      "https://github.com/Mochrks",
+      "https://www.hackerrank.com/profile/mochrks",
+      "https://www.linkedin.com/in/mochrks/",
+      "https://www.instagram.com/mochrks/",
+      "https://www.behance.net/mochrks",
+      "https://dribbble.com/mochrks",
+      "https://www.youtube.com/@gdvisuel",
+      "https://id.pinterest.com/mochrks",
+    ],
+    jobTitle: "Fullstack Software Developer",
+    email: "mochrizkiks@gmail.com",
+    gender: "http://schema.org/Male",
+    knowsAbout: [
+      "Software Development",
+      "Fullstack Web Development",
+      "React.js",
+      "Next.js",
+      "Vue.js",
+      "Springboot",
+      "Node.js",
+      "UI/UX Design",
+      "Photography",
+    ],
+  };
+
   return (
     <React.Fragment>
+      <SEO
+        title="Moch. Rizki Kurniawawn | Software Developer"
+        description="Welcome to the personal portfolio of Moch. Rizki Kurniawan (@mochrks). A passionate Fullstack Software Developer and UI/UX Designer crafting robust, intuitive, and visually stunning web applications."
+        keywords="Moch. Rizki Kurniawan, mochrks, software developer, fullstack developer, UI/UX design, photography, portfolio, React developer, Next.js, Vue.js, ASP.NET Core, Indonesia"
+        path="/"
+        schema={personSchema}
+      />
       <Navbar />
       <main>
         {/* Hero Section */}

@@ -11,6 +11,7 @@ import { Artwork } from "@/types/design-page";
 import { ITEMS_PER_PAGE } from "@/constants/variable";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
+import SEO from "@/components/demo/SEO";
 
 const TabsMenu = ({ setActiveCategory }) => {
   return (
@@ -153,6 +154,12 @@ export default function Index() {
 
   return (
     <>
+      <SEO
+        title="Moch. Rizki Kurniawan | Graphic Design & Artwork Portfolio"
+        description="View the professional apparel designs, illustrations, brand assets, and creative vector artworks designed by Moch. Rizki Kurniawan (@mochrks)."
+        keywords="Moch. Rizki Kurniawan, graphic design portfolio, vector artwork, apparel design, illustration portfolio, t-shirt design, mochrks"
+        path="/design-artwork"
+      />
       <div className="w-full h-full">
         <div className="flex flex-col place-content-center gap-2 bg-white px-8 py-14 lg:py-24 ">
           <div className="text-black">

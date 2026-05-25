@@ -1,0 +1,6 @@
+# Allow all search engine crawlers to index the site
+User-agent: *
+Allow: /
+
+# Reference sitemap location
+Sitemap: https://www.mochrks.my.id/sitemap.xml

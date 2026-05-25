@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FaGithub,
   FaLinkedin,
@@ -10,7 +9,6 @@ import {
   FaPinterest,
 } from "react-icons/fa";
 import { SiHackerrank } from "react-icons/si";
-import { FiArrowUp } from "react-icons/fi";
 import "@/styles/Footer.css";
 import useBreakpoints from "@/hooks/use-breakpoints";
 import { favicon } from "@/assets";
@@ -36,12 +34,24 @@ export default function Footer() {
           </p>
           <ul className="flex flex-wrap justify-center space-x-4 gap-10 pt-10 mt-10 ">
             <li>
-              <a href="https://medium.com/@mochrks" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://medium.com/@mochrks"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Read Moch. Rizki Kurniawan's technical articles on Medium"
+                title="Medium Articles by @mochrks"
+              >
                 <FaMedium className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
             <li>
-              <a href="https://github.com/Mochrks" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/Mochrks"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Moch. Rizki Kurniawan's open source projects on GitHub"
+                title="GitHub Projects by @mochrks"
+              >
                 <FaGithub className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
@@ -50,6 +60,8 @@ export default function Footer() {
                 href="https://www.hackerrank.com/profile/mochrks"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="View Moch. Rizki Kurniawan's competitive programming progress on HackerRank"
+                title="HackerRank Profile of @mochrks"
               >
                 <SiHackerrank className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
@@ -59,6 +71,8 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/mochrks/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Connect with Moch. Rizki Kurniawan professional network on LinkedIn"
+                title="LinkedIn Professional Network of @mochrks"
               >
                 <FaLinkedin className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
@@ -68,27 +82,53 @@ export default function Footer() {
                 href="https://www.instagram.com/mochrks/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Follow @mochrks on Instagram for photography and video updates"
+                title="Instagram Profile of @mochrks"
               >
                 <FaInstagram className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
             <li>
-              <a href="https://www.behance.net/mochrks" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.behance.net/mochrks"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Explore Moch. Rizki Kurniawan's graphic design and apparel works on Behance"
+                title="Behance Creative Designs by @mochrks"
+              >
                 <FaBehance className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
             <li>
-              <a href="https://dribbble.com/mochrks" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://dribbble.com/mochrks"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Check out Moch. Rizki Kurniawan's creative shots on Dribbble"
+                title="Dribbble Creative shots by @mochrks"
+              >
                 <FaDribbble className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
             <li>
-              <a href="https://www.youtube.com/@gdvisuel" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.youtube.com/@gdvisuel"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Watch Moch. Rizki Kurniawan's visual production assets on YouTube"
+                title="YouTube Video Portfolio of @mochrks"
+              >
                 <FaYoutube className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
             <li>
-              <a href="https://id.pinterest.com/mochrks" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://id.pinterest.com/mochrks"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Browse Moch. Rizki Kurniawan's visual layout references on Pinterest"
+                title="Pinterest Boards by @mochrks"
+              >
                 <FaPinterest className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>

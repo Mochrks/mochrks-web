@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { GitHubProject, MappedProject } from "@/types/github";
 import { REAL_PROJECTS } from "@/apis/real-projects";
+import SEO from "@/components/demo/SEO";
 
 export default function ProjectIndex() {
   const [githubProjects, setGithubProjects] = useState<MappedProject[]>([]);
@@ -230,6 +231,12 @@ export default function ProjectIndex() {
   if (isLoading) {
     return (
       <div className="flex w-full h-screen justify-center items-center ">
+        <SEO
+          title="Moch. Rizki Kurniawan  |  Projects & Open Source Portfolio"
+          description="Explore the personal, open-source, and professional enterprise web development projects created by Moch. Rizki Kurniawan (@mochrks). Featuring Fullstack React, Node.js, and ASP.NET Core apps."
+          keywords="Moch. Rizki Kurniawan, software projects, github portfolio, React portfolio, ASP.NET Core projects, fullstack apps, mochrks"
+          path="/project"
+        />
         <LoadingContent />
       </div>
     );
@@ -238,6 +245,12 @@ export default function ProjectIndex() {
   if (error) {
     return (
       <div className="flex justify-center items-center min-h-screen">
+        <SEO
+          title="Moch. Rizki Kurniawan  |  Projects & Open Source Portfolio"
+          description="Explore the personal, open-source, and professional enterprise web development projects created by Moch. Rizki Kurniawan (@mochrks). Featuring Fullstack React, Node.js, and ASP.NET Core apps."
+          keywords="Moch. Rizki Kurniawan, software projects, github portfolio, React portfolio, ASP.NET Core projects, fullstack apps, mochrks"
+          path="/project"
+        />
         <ProjectEmptyState />
       </div>
     );
@@ -245,6 +258,12 @@ export default function ProjectIndex() {
 
   return (
     <div className="pb-20">
+      <SEO
+        title=" Moch. Rizki Kurniawan  | Projects & Open Source Portfolio"
+        description="Explore the personal, open-source, and professional enterprise web development projects created by Moch. Rizki Kurniawan (@mochrks). Featuring Fullstack React, Node.js, and ASP.NET Core apps."
+        keywords="Moch. Rizki Kurniawan, software projects, github portfolio, React portfolio, ASP.NET Core projects, fullstack apps, mochrks"
+        path="/project"
+      />
       <div className="w-full">
         <div className="flex flex-col place-content-center gap-2 bg-white dark:bg-gray-900 px-8 py-14 lg:py-24 ">
           <div className="text-black dark:text-white">

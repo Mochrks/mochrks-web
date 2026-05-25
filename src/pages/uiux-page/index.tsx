@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { BehanceCards } from "@/components/ui/behance-cards";
 import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
-import useBreakpoints from "@/hooks/use-breakpoints";
 import { FlipLinkTitle } from "@/components/demo/Title";
-import { projects, cards } from "@/apis/uiux";
+import { cards } from "@/apis/uiux";
 import { useNavigate } from "react-router-dom";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import SEO from "@/components/demo/SEO";
 
 export default function index() {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
 
-  const { isMd } = useBreakpoints();
   return (
     <div className="relative w-full bg-[#0F1215]">
+      <SEO
+        title="Moch. Rizki Kurniawan  | UI/UX Design Portfolio"
+        description="Explore beautiful, intuitive, and user-centric UI/UX case studies, interactive wireframes, web designs, and mobile prototypes created by Moch. Rizki Kurniawan (@mochrks)."
+        keywords="Moch. Rizki Kurniawan, UI/UX portfolio, user interface design, user experience design, mobile design, Figma prototypes, web design, mochrks"
+        path="/ui-ux-design"
+      />
       <div className="flex flex-col place-content-center gap-2 bg-white px-8 py-14 lg:py-24 ">
         <div className="text-black">
           <FlipLinkTitle>DESIGN</FlipLinkTitle>
