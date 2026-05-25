@@ -51,6 +51,8 @@ export default function Navbar() {
               initial={false}
               animate={isActive ? "open" : "closed"}
               onClick={() => setIsActive((pv) => !pv)}
+              aria-label="Toggle navigation menu"
+              title="Toggle Menu"
               className="relative h-[3rem] w-[3rem] lg:h-[4rem] lg:w-[4rem]  rounded-full bg-white/0 transition-colors hover:bg-white/20"
             >
               <motion.span

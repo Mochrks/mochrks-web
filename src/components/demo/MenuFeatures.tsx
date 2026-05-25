@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CalendarIcon, HomeIcon, MailIcon, Newspaper, BookOpen } from "lucide-react";
+import { CalendarIcon, HomeIcon, MailIcon, Newspaper } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -97,6 +97,8 @@ export function MenuFeatures() {
                 <TooltipTrigger asChild>
                   <Link
                     to={item.href}
+                    aria-label={`Go to ${item.label}`}
+                    title={item.label}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-12 rounded-full"
@@ -118,6 +120,8 @@ export function MenuFeatures() {
                 <TooltipTrigger asChild>
                   <Link
                     to={social.url}
+                    aria-label={`Visit my ${name}`}
+                    title={name}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-12 rounded-full"
