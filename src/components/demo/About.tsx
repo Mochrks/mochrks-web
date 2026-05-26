@@ -23,7 +23,12 @@ export default function About() {
             <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-white" />
             <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-white" />
             <div className="w-80 h-80 overflow-hidden ">
-              <img src={Rizki} alt="Moch. Rizki Kurniawan" className="object-cover w-full h-full" />
+              <img
+                src={Rizki}
+                alt="Moch. Rizki Kurniawan"
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
             </div>
 
             <h2 className="dark:text-white text-white text-2xl font-medium mt-4">
