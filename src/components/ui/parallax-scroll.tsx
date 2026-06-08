@@ -117,14 +117,14 @@ export const ParallaxScroll = ({ images, className }: { images: string[]; classN
                   ))}
                 </div>
               </div>
-              <div className="flex justify-center mb-20 mt-10">
+              {/* <div className="flex justify-center mb-20 mt-10">
                 <InteractiveHoverButton
                   onClick={() => navigate("/")}
                   className="text-lg font-medium"
                 >
                   Back to Previous Page
                 </InteractiveHoverButton>
-              </div>
+              </div> */}
             </>
           )}
         </div>

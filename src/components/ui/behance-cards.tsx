@@ -289,9 +289,9 @@ const BehanceModal = ({ card, onClose, onLike, isLiked, currentLikes }: BehanceM
           if (e.target === e.currentTarget) onClose();
         }}
       >
-        <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-6">
+        <div className="flex min-h-full justify-center p-4 text-center sm:p-6">
           <motion.div
-            className="relative w-full max-w-5xl transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl will-change-transform"
+            className="relative my-auto w-full max-w-5xl transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl will-change-transform"
             initial={{ scale: 0.95, opacity: 0, y: 40 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 40 }}
@@ -313,12 +313,34 @@ const BehanceModal = ({ card, onClose, onLike, isLiked, currentLikes }: BehanceM
             </motion.button>
 
             <div className="flex flex-col bg-white">
-              <div className="w-full bg-gray-900 border-b border-gray-100">
+              <div className="relative w-full bg-gray-900 border-b border-gray-100">
                 <img
                   src={card.src}
                   alt={card.title}
                   className="w-full h-auto object-contain max-h-[70vh] mx-auto"
                 />
+                <a
+                  href="https://www.behance.net/mochrks"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-4 right-4 md:bottom-6 md:right-6 flex items-center justify-center px-4 py-2 md:px-5 md:py-2.5 bg-[#25427d] hover:bg-[#1c3363] text-gray-200 font-semibold rounded-full transition-all gap-2 z-20 shadow-lg"
+                >
+                  <span className="text-sm md:text-base">Open in Behance</span>
+                  <svg
+                    className="w-4 h-4 md:w-5 md:h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </a>
               </div>
 
               <div className="p-6 md:p-8 lg:p-10">

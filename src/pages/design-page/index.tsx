@@ -201,63 +201,89 @@ export default function Index() {
         </section>
 
         {selectedArtwork && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50"
-            onClick={() => setSelectedArtwork(null)}
-          >
-            <Button
-              className="absolute top-4 right-3 rounded-full bg-transparent hover:bg-black/30 text-white hover:text-gray-200 transition-colors"
-              onClick={() => setSelectedArtwork(null)}
-            >
-              <X size={20} />
-            </Button>
+          <div className="fixed inset-0 z-[100] isolate">
             <motion.div
-              className="flex flex-col bg-white rounded-lg max-h-[90vh] max-w-3xl w-full lg:max-w-full lg:w-[90rem] overflow-hidden shadow-xl"
-              onClick={(e) => e.stopPropagation()}
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedArtwork(null)}
+            />
+            <div
+              className="fixed inset-0 z-[101] overflow-y-auto overflow-x-hidden"
+              onClick={(e) => {
+                if (e.target === e.currentTarget) setSelectedArtwork(null);
+              }}
             >
-              <div className="relative h-full min-h-[50vh]">
-                <div className="absolute inset-0 blur-md scale-105 z-0 overflow-hidden">
-                  <img
-                    src={selectedArtwork.imageUrl}
-                    alt={selectedArtwork.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="relative z-10 flex justify-center items-center h-full p-8">
-                  <img
-                    src={selectedArtwork.imageUrl}
-                    alt={selectedArtwork.title}
-                    className="max-h-[60vh] object-contain"
-                  />
-                </div>
-              </div>
-              <div className="bg-white w-full p-5 z-50">
-                <div className="flex items-center">
-                  <div className="flex p-2">
-                    <Avatar>
-                      <AvatarImage
-                        src="https://mochrks.github.io/assets/img-photo/pf.jpg"
-                        alt="@mochrks"
+              <div className="flex min-h-full justify-center p-4 text-center sm:p-6">
+                <motion.div
+                  className="relative my-auto w-full max-w-5xl transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl will-change-transform flex flex-col"
+                  onClick={(e) => e.stopPropagation()}
+                  initial={{ scale: 0.95, opacity: 0, y: 40 }}
+                  animate={{ scale: 1, opacity: 1, y: 0 }}
+                  exit={{ scale: 0.95, opacity: 0, y: 40 }}
+                  transition={{
+                    type: "spring",
+                    damping: 30,
+                    stiffness: 300,
+                    mass: 0.8,
+                  }}
+                >
+                  <motion.button
+                    onClick={() => setSelectedArtwork(null)}
+                    className="absolute top-4 right-4 z-30 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white transition-colors backdrop-blur-md"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <X className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </motion.button>
+
+                  <div className="flex flex-col bg-white">
+                    <div className="relative w-full bg-gray-900 border-b border-gray-100">
+                      <img
+                        src={selectedArtwork.imageUrl}
+                        alt={selectedArtwork.title}
+                        className="w-full h-auto object-contain max-h-[70vh] mx-auto"
                       />
-                      <AvatarFallback>MR</AvatarFallback>
-                    </Avatar>
+                    </div>
+
+                    <div className="p-6 md:p-8 lg:p-10">
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8 border-b border-gray-100 pb-8">
+                        <div className="space-y-4 max-w-2xl">
+                          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                            {selectedArtwork.title}
+                          </h2>
+                          <div className="flex items-center gap-3">
+                            <Avatar className="w-10 h-10 md:w-12 md:h-12 border border-gray-200">
+                              <AvatarImage
+                                src="https://mochrks.github.io/assets/img-photo/pf.jpg"
+                                alt={selectedArtwork.artist}
+                              />
+                              <AvatarFallback>MR</AvatarFallback>
+                            </Avatar>
+                            <div>
+                              <p className="text-gray-900 font-semibold text-base">
+                                {selectedArtwork.artist}
+                              </p>
+                              <p className="text-gray-500 text-xs md:text-sm">Artwork Designer</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex-col px-2">
-                    <h2 className="text-2xl font-bold text-black">{selectedArtwork.title}</h2>
-                    <p className="text-gray-600">by {selectedArtwork.artist}</p>
-                  </div>
-                </div>
+                </motion.div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         )}
         <ScrollToTopButton />
+        {/* 
+        <div className="flex justify-center mt-20 mb-20">
+          <InteractiveHoverButton onClick={() => navigate("/")} className="text-lg font-medium">
+            Back to Previous Page
+          </InteractiveHoverButton>
+        </div> */}
       </div>
     </>
   );

@@ -13,6 +13,7 @@ import SEO from "@/components/demo/SEO";
 
 export default function ProjectIndex() {
   const [githubProjects, setGithubProjects] = useState<MappedProject[]>([]);
+  const [visibleCount, setVisibleCount] = useState(6);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -310,18 +311,28 @@ export default function ProjectIndex() {
               from my GitHub repository.
             </p>
           </div>
-          <div className="w-full flex items-center justify-center ">
-            <div className="max-w-full mx-auto ">
-              <CardProject items={githubProjects} cols={3} />
+          <div className="w-full flex flex-col items-center justify-center ">
+            <div className="max-w-full mx-auto w-full">
+              <CardProject items={githubProjects.slice(0, visibleCount)} cols={3} />
             </div>
+            {visibleCount < githubProjects.length && (
+              <div className="mt-8 mb-8">
+                <InteractiveHoverButton
+                  onClick={() => setVisibleCount((prev) => prev + 6)}
+                  className="text-sm md:text-lg font-medium"
+                >
+                  Load More Projects
+                </InteractiveHoverButton>
+              </div>
+            )}
           </div>
         </div>
 
-        <div className="flex justify-center mb-20">
+        {/* <div className="flex justify-center mb-20">
           <InteractiveHoverButton onClick={() => navigate("/")} className="text-lg font-medium">
             Back to Previous Page
           </InteractiveHoverButton>
-        </div>
+        </div> */}
         <ScrollToTopButton />
       </div>
     </div>

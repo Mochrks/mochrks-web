@@ -38,11 +38,11 @@ export default function index() {
 
       <ScrollToTopButton />
 
-      <div className="flex justify-center py-20 bg-[#0F1215]">
+      {/* <div className="flex justify-center py-20 bg-[#0F1215]">
         <InteractiveHoverButton onClick={() => navigate("/")} className="text-lg font-medium">
           Back to Previous Page
         </InteractiveHoverButton>
-      </div>
+      </div> */}
     </div>
   );
 }
