@@ -16,10 +16,10 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import Loading from "@/components/demo/Loading";
 import Aurora from "@/components/demo/Aurora";
-import CircularText from "@/components/demo/CircularText";
 import { AnimatedSectionProps } from "@/types/home-page";
 import { Skeleton } from "@/components/ui/skeleton";
 import { skills } from "@/constants/variable";
+import cvFile from "@/assets/docs/CV_NEW_ATS_MOCH. RIZKI KURNIAWAN.pdf";
 
 // Lazy load components
 const Experience = lazy(() =>
@@ -319,6 +319,35 @@ export default function Portfolio() {
           </div>
         </motion.div>
       </main>
+
+      {/* Floating Action Button for CV */}
+      <a
+        href={cvFile}
+        download="CV_MOCH_RIZKI_KURNIAWAN.pdf"
+        className="fixed bottom-[4.5rem] right-5 z-[9999] group flex items-center justify-start w-10 h-10 hover:w-[150px] bg-slate-900 text-white rounded-full shadow-lg transition-all duration-300 border border-slate-700 hover:border-cyan-500 overflow-hidden"
+      >
+        <div className="absolute inset-0 rounded-full bg-slate-950 flex items-center justify-start z-10 overflow-hidden pl-[9px] gap-[10px]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-cyan-400 shrink-0"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span className="whitespace-nowrap text-[13px] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Download CV
+          </span>
+        </div>
+      </a>
     </React.Fragment>
   );
 }
