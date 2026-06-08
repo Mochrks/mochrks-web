@@ -8,6 +8,7 @@ import { Badge } from "../ui/badge";
 import { formatDate } from "@/utils/date";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { profile } from "@/assets";
+import MacbookMockup from "./MacbookMockup";
 
 export const CardProject = ({
   items,
@@ -217,6 +218,15 @@ const ProjectCard = ({ item }: { item: any }) => {
             <p className="text-xs text-gray-400 font-medium truncate">{item.full_name}</p>
           </div>
         </CardTitle>
+
+        {/* Laptop Mockup - only shown for non-experience projects (projects with html_url) */}
+        {item.html_url && (
+          <MacbookMockup
+            url={item.homepage || item.html_url || item.link || ""}
+            className="mt-4 mb-2"
+          />
+        )}
+
         <CardDescription className="line-clamp-4">{item.description}</CardDescription>
         <CardContent>
           <div className="flex flex-wrap gap-1.5 items-center">
@@ -251,7 +261,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-3xl h-full w-full p-5 overflow-hidden bg-gradient-to-br from-white/15 to-white/0 backdrop-blur-3xl border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2),0_8px_32px_0_rgba(0,0,0,0.36)] group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.3),0_15px_40px_0_rgba(0,0,0,0.5)] group-hover:border-white/20 hover:-translate-y-1 transition-transform duration-300 ease-out relative z-20",
+        "rounded-3xl h-full w-full p-5 overflow-hidden bg-gradient-to-br from-white/15 to-white/0 backdrop-blur-3xl border border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2),0_8px_32px_0_rgba(0,0,0,0.36)] group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.3),0_15px_40px_0_rgba(0,0,0,0.5)] group-hover:border-white/20 hover:-translate-y-1 transition-all duration-300 ease-out relative z-20 transform-gpu will-change-transform",
         className
       )}
     >
