@@ -159,32 +159,8 @@ const ProductCard = memo(({ product, rowPosition = "middle" }: ProductCardProps)
               </div>
               {/* Web Preview using Official Behance Embed */}
               <div className="relative flex-1 bg-gray-50 dark:bg-black w-full overflow-hidden group/preview">
-                {/* Overlay to capture mouse events and show Open button */}
-                <a
-                  href={product.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover/preview:opacity-100 bg-black/40 backdrop-blur-[2px] transition-all duration-300 cursor-pointer"
-                >
-                  <span className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium flex items-center gap-2 transform transition-transform scale-95 group-hover/preview:scale-100 shadow-xl">
-                    Open in Behance
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                  </span>
-                </a>
+                {/* Invisible overlay to capture mouse events but block iframe scroll/click */}
+                <div className="absolute inset-0 z-10" />
                 {product.link.includes("behance.net/gallery/") ? (
                   <iframe
                     src={`https://www.behance.net/embed/project/${product.link.split("behance.net/gallery/")[1].split("/")[0]}?color=0057ff&color_bg=ffffff&auto_preview=true`}
