@@ -4,7 +4,7 @@ import React from "react";
 export const LoadingContent: React.FC = () => {
   const range = (n: number) => Array.from(Array(n).keys());
   return (
-    <div className="flex justify-center items-center my-8 space-x-1">
+    <div className="flex justify-center items-center my-10 space-x-1">
       {range(3).map((i) => (
         <motion.div
           key={i}

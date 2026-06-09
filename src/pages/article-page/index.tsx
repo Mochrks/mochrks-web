@@ -32,6 +32,17 @@ export default function index() {
           </div>
         </div>
       </header>
+      <div className="w-full h-full px-4 py-8 md:px-6 md:py-12 lg:px-20 lg:py-16 ">
+        <div className="mb-8 md:mb-12 text-left px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Thoughts & Insights
+          </h2>
+          <p className="text-gray-400 text-lg max-w-3xl">
+            A collection of my articles covering web development, software engineering, technical
+            tutorials, and creative processes.
+          </p>
+        </div>
+      </div>
       <article className="relative w-full h-full  overflow-hidden bg-[#0F1215]">
         <RSSFeed />
         <ScrollToTopButton />

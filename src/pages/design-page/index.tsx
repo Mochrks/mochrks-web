@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
@@ -12,8 +12,19 @@ import { ITEMS_PER_PAGE } from "@/constants/variable";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/demo/SEO";
+import LazyImage from "@/components/demo/LazyImage";
 
-const TabsMenu = ({ setActiveCategory }) => {
+type Position = {
+  left: number;
+  width: number;
+  opacity: number;
+};
+
+interface TabsMenuProps {
+  setActiveCategory: (category: string) => void;
+}
+
+const TabsMenu: React.FC<TabsMenuProps> = ({ setActiveCategory }) => {
   return (
     <div className="w-full h-full px-4 py-8 md:px-6 md:py-12 lg:px-20 lg:py-16 ">
       <div className="mb-8 md:mb-12">
@@ -30,8 +41,8 @@ const TabsMenu = ({ setActiveCategory }) => {
   );
 };
 
-const SlideTabs = ({ setActiveCategory }) => {
-  const [position, setPosition] = useState({
+const SlideTabs: React.FC<TabsMenuProps> = ({ setActiveCategory }) => {
+  const [position, setPosition] = useState<Position>({
     left: 0,
     width: 0,
     opacity: 0,
@@ -64,8 +75,15 @@ const SlideTabs = ({ setActiveCategory }) => {
   );
 };
 
-const Tab = ({ children, setPosition, setActiveCategory, category }) => {
-  const ref = useRef(null);
+interface TabProps {
+  children: React.ReactNode;
+  setPosition: React.Dispatch<React.SetStateAction<Position>>;
+  setActiveCategory: (category: string) => void;
+  category: string;
+}
+
+const Tab: React.FC<TabProps> = ({ children, setPosition, setActiveCategory, category }) => {
+  const ref = useRef<HTMLLIElement>(null);
 
   return (
     <li
@@ -87,7 +105,7 @@ const Tab = ({ children, setPosition, setActiveCategory, category }) => {
   );
 };
 
-const Cursor = ({ position }) => {
+const Cursor: React.FC<{ position: Position }> = ({ position }) => {
   return (
     <motion.li
       animate={{
@@ -105,37 +123,40 @@ export default function Index() {
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const loadMoreArtworks = async (nextPage: number, reset: boolean = false) => {
-    setIsLoading(true);
+  const loadMoreArtworks = useCallback(
+    async (nextPage: number, reset: boolean = false) => {
+      setIsLoading(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    const filteredArtworks = artworks.filter(
-      (artwork) => artwork.category.toLowerCase() === activeCategory.toLowerCase()
-    );
-    const startIndex = (nextPage - 1) * ITEMS_PER_PAGE;
-    const endIndex = startIndex + ITEMS_PER_PAGE;
-    const newArtworks = filteredArtworks.slice(startIndex, endIndex);
+      const filteredArtworks = artworks.filter(
+        (artwork) => artwork.category.toLowerCase() === activeCategory.toLowerCase()
+      );
+      const startIndex = (nextPage - 1) * ITEMS_PER_PAGE;
+      const endIndex = startIndex + ITEMS_PER_PAGE;
+      const newArtworks = filteredArtworks.slice(startIndex, endIndex);
 
-    if (reset) {
-      setDisplayedArtworks(newArtworks);
-    } else {
-      setDisplayedArtworks((prev) => [...prev, ...newArtworks]);
-    }
-    setPage(nextPage);
-    setIsLoading(false);
-  };
+      if (reset) {
+        setDisplayedArtworks(newArtworks);
+      } else {
+        setDisplayedArtworks((prev) => [...prev, ...newArtworks]);
+      }
+      setPage(nextPage);
+      setIsLoading(false);
+    },
+    [activeCategory]
+  );
 
   const handleCategoryChange = (category: string) => {
+    if (category === activeCategory) return;
     setActiveCategory(category);
     setPage(1);
     setDisplayedArtworks([]);
-    loadMoreArtworks(1, true);
   };
 
   useEffect(() => {
     loadMoreArtworks(1, true);
-  }, [activeCategory]);
+  }, [loadMoreArtworks]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -150,7 +171,23 @@ export default function Index() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [page, activeCategory, isLoading]);
+  }, [page, isLoading, loadMoreArtworks]);
+
+  const getTitles = (category: string) => {
+    switch (category.toLowerCase()) {
+      case "design t-shirt":
+        return ["MY DESIGN", "T-SHIRT."];
+      case "illustration":
+        return ["MY", "ILLUSTRATION."];
+      case "artwork":
+        return ["MY", "ARTWORK."];
+      case "portrait":
+        return ["MY", "PORTRAIT."];
+      default:
+        return ["MY DESIGN", "ARTWORK."];
+    }
+  };
+  const [title1, title2] = getTitles(activeCategory);
 
   return (
     <>
@@ -162,9 +199,9 @@ export default function Index() {
       />
       <div className="w-full h-full">
         <div className="flex flex-col place-content-center gap-2 bg-white px-8 py-14 lg:py-24 ">
-          <div className="text-black">
-            <FlipLinkTitle>MY DESIGN</FlipLinkTitle>
-            <FlipLinkTitle>ARTWORK.</FlipLinkTitle>
+          <div className="text-black uppercase">
+            <FlipLinkTitle>{title1}</FlipLinkTitle>
+            <FlipLinkTitle>{title2}</FlipLinkTitle>
           </div>
           <div>
             <InteractiveHoverButton
@@ -177,19 +214,15 @@ export default function Index() {
         </div>
         <TabsMenu setActiveCategory={handleCategoryChange} />
         <section id="photos" className="mx-auto px-10 py-5">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-7 mb-20">
             {displayedArtworks.map((artwork) => (
               <motion.div
                 key={artwork.id}
-                className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg"
+                className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg "
                 whileHover={{ scale: 1.05 }}
                 onClick={() => setSelectedArtwork(artwork)}
               >
-                <img
-                  src={artwork.imageUrl}
-                  alt={artwork.title}
-                  className="h-96 w-full object-cover"
-                />
+                <LazyImage src={artwork.imageUrl} alt={artwork.title} className="h-96 w-full" />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <h3 className="text-white text-xl font-semibold">{artwork.title}</h3>
                 </div>
@@ -214,11 +247,19 @@ export default function Index() {
               onClick={(e) => {
                 if (e.target === e.currentTarget) setSelectedArtwork(null);
               }}
+              onKeyDown={(e) => {
+                if (e.key === "Escape" && e.target === e.currentTarget) setSelectedArtwork(null);
+              }}
+              role="dialog"
+              aria-modal="true"
+              tabIndex={-1}
             >
               <div className="flex min-h-full justify-center p-4 text-center sm:p-6">
                 <motion.div
                   className="relative my-auto w-full max-w-5xl transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl will-change-transform flex flex-col"
                   onClick={(e) => e.stopPropagation()}
+                  onKeyDown={(e) => e.stopPropagation()}
+                  role="document"
                   initial={{ scale: 0.95, opacity: 0, y: 40 }}
                   animate={{ scale: 1, opacity: 1, y: 0 }}
                   exit={{ scale: 0.95, opacity: 0, y: 40 }}
@@ -240,10 +281,11 @@ export default function Index() {
 
                   <div className="flex flex-col bg-white">
                     <div className="relative w-full bg-gray-900 border-b border-gray-100">
-                      <img
+                      <LazyImage
                         src={selectedArtwork.imageUrl}
                         alt={selectedArtwork.title}
-                        className="w-full h-auto object-contain max-h-[70vh] mx-auto"
+                        className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh]"
+                        imgClassName="w-full h-full object-contain mx-auto"
                       />
                     </div>
 

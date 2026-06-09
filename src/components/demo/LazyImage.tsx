@@ -5,6 +5,7 @@ interface LazyImageProps {
   src: string;
   alt: string;
   className?: string;
+  imgClassName?: string;
   loading?: "lazy" | "eager";
   sizes?: string;
 }
@@ -13,6 +14,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
   src,
   alt,
   className = "",
+  imgClassName = "w-full h-full object-cover",
   loading = "lazy",
   sizes = "(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw",
 }) => {
@@ -64,7 +66,9 @@ const LazyImage: React.FC<LazyImageProps> = ({
   return (
     <div ref={imgRef} className={`${className} relative overflow-hidden`}>
       {!isLoaded && !hasError && (
-        <Skeleton className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 animate-pulse" />
+        <Skeleton className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
+          <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        </Skeleton>
       )}
 
       {hasError && (
@@ -79,7 +83,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
         <img
           src={src}
           alt={alt}
-          className={`w-full h-full object-cover ${!isLoaded || hasError ? "opacity-0" : "opacity-100"} transition-opacity duration-300`}
+          className={`${imgClassName} ${!isLoaded || hasError ? "opacity-0" : "opacity-100"} transition-opacity duration-300`}
           loading={loading}
           sizes={sizes}
           onLoad={() => setIsLoaded(true)}
