@@ -123,7 +123,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://id.pinterest.com/mochrks"
+                href="https://id.pinterest.com/mochrizkiks"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Browse Moch. Rizki Kurniawan's visual layout references on Pinterest"
