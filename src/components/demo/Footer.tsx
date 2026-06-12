@@ -7,8 +7,10 @@ import {
   FaYoutube,
   FaMedium,
   FaPinterest,
+  FaGitlab,
 } from "react-icons/fa";
 import { SiHackerrank } from "react-icons/si";
+import { FaThreads } from "react-icons/fa6";
 import "@/styles/Footer.css";
 import useBreakpoints from "@/hooks/use-breakpoints";
 import { favicon } from "@/assets";
@@ -19,12 +21,12 @@ export default function Footer() {
 
   return (
     <footer>
-      <div className="flex items-center justify-center py-10 my-10">
+      <div className="flex items-center justify-center py-6 my-6 md:py-10 md:my-10 px-4">
         <div className="text-center">
           <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight dark:text-neutral-200 text-slate-700">
             Connect With Me
           </h3>
-          <p className="max-w-full text-base md:text-xl mt-8 dark:text-neutral-200 text-slate-700">
+          <p className="max-w-full text-base md:text-xl mt-4 md:mt-8 dark:text-neutral-200 text-slate-700">
             <span>
               Find me online on most digital platforms
               <span className="font-bold"> @mochrks</span>, or by clicking the links below. For all
@@ -32,7 +34,7 @@ export default function Footer() {
               <span className="font-bold"> mochrizkiks@gmail.com</span>.
             </span>
           </p>
-          <ul className="flex flex-wrap justify-center space-x-4 gap-10 pt-10 mt-10 ">
+          <ul className="flex flex-wrap justify-center gap-6 md:gap-10 pt-6 mt-6 md:pt-10 md:mt-10">
             <li>
               <a
                 href="https://medium.com/@mochrks"
@@ -53,6 +55,17 @@ export default function Footer() {
                 title="GitHub Projects by @mochrks"
               >
                 <FaGithub className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://gitlab.com/mochrks"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Moch. Rizki Kurniawan's open source projects on GitLab"
+                title="GitLab Projects by @mochrks"
+              >
+                <FaGitlab className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
             <li>
@@ -86,6 +99,17 @@ export default function Footer() {
                 title="Instagram Profile of @mochrks"
               >
                 <FaInstagram className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.threads.net/@mochrks"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow @mochrks on Threads for quick thoughts and updates"
+                title="Threads Profile of @mochrks"
+              >
+                <FaThreads className="w-8 h-8 dark:text-neutral-200 text-slate-700" />
               </a>
             </li>
             <li>
