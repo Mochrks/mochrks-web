@@ -5,9 +5,8 @@
 @font-face {
   font-family: "Helvetica Neue LT W05 55 Roman";
   src:
-    url("../assets/fonts/helvetica-roman/Web/fc650de7c3b3af62825a0e743b69425f.woff2")
-      format("woff2"),
-    url("../assets/fonts/helvetica-roman/Web/fc650de7c3b3af62825a0e743b69425f.woff") format("woff");
+    url("../assets/fonts/helvetica-roman/helvetica-neue.woff2") format("woff2"),
+    url("../assets/fonts/helvetica-roman/helvetica-neue.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -22,10 +21,6 @@
   left: 0;
   z-index: 30;
   background-color: black;
-  animation: fadeInAnimation ease-in 0.09s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation: fadeOutAnimation ease-in 0.09s;
   overflow-y: auto;
 }
 

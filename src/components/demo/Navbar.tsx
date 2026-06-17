@@ -2,14 +2,23 @@ import React, { useState, useEffect } from "react";
 import "@/styles/Navbar.css";
 import Menu from "./Menu";
 import { logo } from "@/assets/index";
-import { MotionConfig, motion } from "framer-motion";
-
+import { MotionConfig, motion, AnimatePresence } from "framer-motion";
 export default function Navbar() {
   const [isActive, setIsActive] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOrigin, setMenuOrigin] = useState({ x: window.innerWidth - 60, y: 40 });
 
   const handleMenuItemClick = () => {
     setIsActive(false);
+  };
+
+  const handleToggleMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMenuOrigin({
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2,
+    });
+    setIsActive((pv) => !pv);
   };
 
   useEffect(() => {
@@ -50,7 +59,7 @@ export default function Navbar() {
             <motion.button
               initial={false}
               animate={isActive ? "open" : "closed"}
-              onClick={() => setIsActive((pv) => !pv)}
+              onClick={handleToggleMenu}
               aria-label="Toggle navigation menu"
               title="Toggle Menu"
               className="relative h-[3rem] w-[3rem] lg:h-[4rem] lg:w-[4rem]  rounded-full bg-white/0 transition-colors hover:bg-white/20"
@@ -79,7 +88,9 @@ export default function Navbar() {
           </MotionConfig>
         </div>
 
-        {isActive ? <Menu onMenuItemClick={handleMenuItemClick} /> : null}
+        <AnimatePresence mode="wait">
+          {isActive && <Menu onMenuItemClick={handleMenuItemClick} origin={menuOrigin} />}
+        </AnimatePresence>
       </nav>
     </header>
   );

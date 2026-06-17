@@ -1,20 +1,27 @@
 import React from "react";
 import "@/styles/Menu.css";
 import { MenuFeatures } from "./MenuFeatures";
-import { useNavigate } from "react-router-dom";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import { about, project, photo, uiux, article, contact, design } from "@/assets";
 import { LinkProps } from "@/types/link";
 
-const MENU_ITEMS = [
+interface MenuItem {
+  heading: string;
+  subheading: string;
+  imgSrc: string;
+  href?: string;
+  handler?: (onClick: () => void, navigate: NavigateFunction) => void;
+}
+
+const MENU_ITEMS: MenuItem[] = [
   {
     heading: "About",
     subheading: "Learn more about my personality",
     imgSrc: about,
     href: "#about",
-    handler: (onClick) => onClick,
   },
   {
     heading: "Project",
@@ -51,23 +58,59 @@ const MENU_ITEMS = [
     subheading: "Let's connect and collaborate",
     imgSrc: contact,
     href: "#contact",
-    handler: (onClick) => onClick,
   },
 ];
 
-export default function Menu({ onMenuItemClick }) {
+interface MenuProps {
+  onMenuItemClick: () => void;
+  origin?: { x: number; y: number };
+}
+
+export default function Menu({ onMenuItemClick, origin }: MenuProps) {
   const navigate = useNavigate();
 
-  const handleClick = (item) => {
+  const handleClick = (item: MenuItem) => {
     if (item.href) {
       onMenuItemClick();
-    } else {
+    } else if (item.handler) {
       item.handler(onMenuItemClick, navigate);
     }
   };
 
+  const cx = origin?.x || window.innerWidth - 60;
+  const cy = origin?.y || 40;
+
+  const menuVariants = {
+    initial: {
+      clipPath: `circle(0px at ${cx}px ${cy}px)`,
+    },
+    animate: {
+      clipPath: `circle(150% at ${cx}px ${cy}px)`,
+      transition: {
+        type: "tween",
+        duration: 0.6,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+    exit: {
+      clipPath: `circle(0px at ${cx}px ${cy}px)`,
+      transition: {
+        type: "tween",
+        duration: 0.6,
+        ease: [0.76, 0, 0.24, 1],
+        delay: 0.2, // Small delay to let children exit if they had animations
+      },
+    },
+  };
+
   return (
-    <div className="menu">
+    <motion.div
+      className="menu"
+      variants={menuVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <ul className="list-none px-5 md:px-14 2xl:px-[100px] pt-[3rem] 4xl:pt-[15rem]">
         <li>
           <section className="w-full">
@@ -89,12 +132,12 @@ export default function Menu({ onMenuItemClick }) {
           <MenuFeatures />
         </li>
       </ul>
-    </div>
+    </motion.div>
   );
 }
 
 const Link: React.FC<LinkProps> = ({ heading, imgSrc, subheading, href, onClick }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLAnchorElement>(null);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -105,7 +148,8 @@ const Link: React.FC<LinkProps> = ({ heading, imgSrc, subheading, href, onClick 
   const top = useTransform(mouseYSpring, [0.5, -0.5], ["40%", "60%"]);
   const left = useTransform(mouseXSpring, [0.5, -0.5], ["60%", "70%"]);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
 
     const width = rect.width;

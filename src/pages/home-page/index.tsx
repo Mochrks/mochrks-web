@@ -207,11 +207,49 @@ export default function Portfolio() {
           >
             <motion.div
               variants={textVariantFromButtom(0.9)}
-              className="text-start text-3xl md:text-4xl lg:text-6xl z-20 mx-auto text-cyan-200 dark:text-white-400 text-spaced"
+              className="relative inline-block text-start text-3xl md:text-4xl lg:text-6xl z-20 mx-auto text-cyan-200 dark:text-white-400 text-spaced font-[Acorn]"
             >
-              <br />I invite you to explore my site to be better, <br />I am a{" "}
-              <FlipWords words={skills} /> <br />
-              Enjoy My Work
+              <br />
+              <span className="relative inline-block">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  className="absolute -top-6 md:-top-10 -left-6 md:-left-12 text-cyan-200 dark:text-white-400 opacity-90"
+                >
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-8 h-8 md:w-12 md:h-12"
+                  >
+                    <path d="M12 0C12 6.62742 17.3726 12 24 12C17.3726 12 12 17.3726 12 24C12 17.3726 6.62742 12 0 12C6.62742 12 12 6.62742 12 0Z" />
+                  </svg>
+                </motion.div>
+                I invite you to explore my site to be better,
+              </span>
+              <br />I am a <FlipWords words={skills} />
+              <br />
+              <span className="relative inline-block">
+                Enjoy My Work
+                <motion.div
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                  className="absolute top-1/2 -translate-y-1/2 -right-8 md:-right-14 text-cyan-200 dark:text-white-400 opacity-90"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6 md:w-10 md:h-10"
+                  >
+                    <path d="M12 0C12 6.62742 17.3726 12 24 12C17.3726 12 12 17.3726 12 24C12 17.3726 6.62742 12 0 12C6.62742 12 12 6.62742 12 0Z" />
+                  </svg>
+                </motion.div>
+              </span>
               <br />
               <div id="signature">
                 <TypewriterEffectSmooth words={signature} />
