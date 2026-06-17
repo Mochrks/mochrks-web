@@ -30,6 +30,10 @@
   font-display: swap;
 }
 
+.font-acorn {
+  font-family: "Acorn", sans-serif;
+}
+
 @font-face {
   font-family: "Acorn";
   src: url("../assets/fonts/acorn/Acorn-Light.woff") format("woff");
@@ -103,7 +107,7 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior handled by Lenis smooth scroll — do not use CSS scroll-behavior here */
   overflow-x: hidden;
 }
 
@@ -158,6 +162,17 @@ html {
   background-color: rgb(15, 18, 21);
   position: relative;
   height: 100%;
+  /* GPU acceleration for smooth scroll compositing */
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* GPU-accelerated sections for smoother animations during scroll */
+.MainContent section {
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 .text-spaced {

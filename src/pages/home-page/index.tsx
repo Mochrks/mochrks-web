@@ -6,12 +6,17 @@ import {
   textVariantFromButtom,
   textVariantFromTop,
   textVariantFromLeft,
+  revealFromBottom,
+  scaleReveal,
+  slideRevealLeft,
+  slideRevealRight,
 } from "@/utils/motion.js";
 import { Download } from "lucide-react";
 
 import Navbar from "@/components/demo/Navbar";
 import Expandable from "@/components/animata/corousel/expandable";
 import WordFadeIn from "@/components/magicui/word-fade-in";
+import TextReveal from "@/components/demo/TextReveal";
 import Footer from "@/components/demo/Footer";
 import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
@@ -99,7 +104,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
       variants={variant}
       initial="hidden"
       whileInView="show"
-      viewport={viewport}
+      viewport={viewport || { once: true, amount: 0.15 }}
       className={className}
     >
       {children}
@@ -108,6 +113,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
 };
 
 import SEO from "@/components/demo/SEO";
+import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
 
 export default function Portfolio() {
   const [loading, setLoading] = useState(true);
@@ -259,15 +265,9 @@ export default function Portfolio() {
         </div>
 
         {/* Main Content */}
-        <motion.div
-          variants={staggerContainer(0.3, 1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
-          className="MainContent"
-        >
+        <div className="MainContent">
           {/* UI/UX Section */}
-          <AnimatedSection id="uiux" variant={textVariantFromTop(1.6)}>
+          <AnimatedSection id="uiux" variant={revealFromBottom(0.1)}>
             <LazyLoadSection>
               <UIUXParallax />
             </LazyLoadSection>
@@ -276,8 +276,8 @@ export default function Portfolio() {
           {/* Skills Section */}
           <AnimatedSection
             id="skill"
-            variant={textVariantFromLeft(0.12)}
-            viewport={{ once: false, amount: 0.45 }}
+            variant={slideRevealLeft(0.1)}
+            viewport={{ once: true, amount: 0.15 }}
           >
             <LazyLoadSection>
               <Skill />
@@ -285,16 +285,21 @@ export default function Portfolio() {
           </AnimatedSection>
 
           {/* About Section */}
-          <AnimatedSection id="about" variant={textVariantFromButtom(0.12)}>
+          <AnimatedSection id="about" variant={revealFromBottom(0.1)}>
             <LazyLoadSection>
               <About />
             </LazyLoadSection>
           </AnimatedSection>
 
           {/* Experience Section */}
-          <AnimatedSection id="experience" variant={textVariantFromButtom(0.12)}>
+          <AnimatedSection id="experience" variant={revealFromBottom(0.1)}>
             <div className="w-full h-full pt-20">
-              <WordFadeIn words="Experience" />
+              <TextReveal
+                text="Experience"
+                as="h2"
+                className="font-acorn scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center"
+                delay={0.1}
+              />
               <LazyLoadSection>
                 <Experience />
               </LazyLoadSection>
@@ -302,9 +307,14 @@ export default function Portfolio() {
           </AnimatedSection>
 
           {/* Projects Section */}
-          <AnimatedSection id="projects" variant={textVariantFromButtom(0.12)}>
+          <AnimatedSection id="projects" variant={slideRevealRight(0.1)}>
             <div className="w-full h-full pt-[100px]">
-              <WordFadeIn words="Recent Projects Github" />
+              <TextReveal
+                text="Recent Projects Github"
+                as="h2"
+                className="font-acorn scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center"
+                delay={0.1}
+              />
               <LazyLoadSection>
                 <RecentProject />
               </LazyLoadSection>
@@ -312,9 +322,14 @@ export default function Portfolio() {
           </AnimatedSection>
 
           {/* Photography Section */}
-          <AnimatedSection id="photography" variant={textVariantFromButtom(0.12)}>
+          <AnimatedSection id="photography" variant={scaleReveal(0.1)}>
             <div className="w-full h-full pt-[6rem] mt-20">
-              <WordFadeIn words="My Photography" />
+              <TextReveal
+                text="My Photography"
+                as="h2"
+                className="font-acorn scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center"
+                delay={0.1}
+              />
               <div className="container pt-10">
                 <Expandable className="w-full min-w-72 storybook-fix" />
                 <LazyLoadSection>
@@ -325,7 +340,7 @@ export default function Portfolio() {
           </AnimatedSection>
 
           {/* WDYWTDN Section */}
-          <AnimatedSection id="wdywtdn" variant={textVariantFromButtom(0.12)}>
+          <AnimatedSection id="wdywtdn" variant={revealFromBottom(0.1)}>
             <div className="w-full h-full my-10">
               <LazyLoadSection>
                 <WDYWTDN />
@@ -334,7 +349,7 @@ export default function Portfolio() {
           </AnimatedSection>
 
           {/* Contact Section */}
-          <AnimatedSection id="contact" variant={textVariantFromLeft(0.12)}>
+          <AnimatedSection id="contact" variant={slideRevealLeft(0.1)}>
             <div className="w-full h-full pt-10 mb-10 pb-10">
               <LazyLoadSection>
                 <Contact />
@@ -356,7 +371,8 @@ export default function Portfolio() {
           <div className="w-full h-full p-10 bg-slate-50">
             <Footer />
           </div>
-        </motion.div>
+        </div>
+        <ScrollToTopButton />
       </main>
     </React.Fragment>
   );

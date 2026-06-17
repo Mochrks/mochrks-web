@@ -25,38 +25,35 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
   const [lenisInstance, setLenisInstance] = useState<Lenis | null>(null);
 
   useEffect(() => {
-    // Initialize Lenis
+    // Initialize Lenis with ultra-smooth config
     const lenis = new Lenis({
-      lerp: 0.1, // Lower value = smoother/slower (0.1 is standard for "buttery" feel)
-      duration: 1.5,
+      lerp: 0.06, // Very smooth interpolation — lower = silkier
+      duration: 1.4, // Comfortable scroll duration
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
-      syncTouch: true, // Smooth transitions for touch devices
+      wheelMultiplier: 0.7, // Slower wheel for controlled, premium feel
+      touchMultiplier: 1.5,
+      syncTouch: true,
+      infinite: false,
     });
 
     setLenisInstance(lenis);
 
-    // Connect Lenis to GSAP ScrollTrigger
-    const updateScrollTrigger = () => ScrollTrigger.update();
-    lenis.on("scroll", updateScrollTrigger);
+    // Connect Lenis scroll updates to GSAP ScrollTrigger
+    lenis.on("scroll", ScrollTrigger.update);
 
-    // Sync GSAP ticker with Lenis
-    const updateTicker = (time: number) => {
+    // Use GSAP ticker for perfectly synced frame updates (no stutter)
+    gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
-    };
+    });
 
-    gsap.ticker.add(updateTicker);
-
-    // Disable GSAP's native lag smoothing to prevent stutter
+    // Disable GSAP's native lag smoothing to prevent frame drops
     gsap.ticker.lagSmoothing(0);
 
     return () => {
-      // Cleanup
-      lenis.off("scroll", updateScrollTrigger);
-      gsap.ticker.remove(updateTicker);
+      lenis.off("scroll", ScrollTrigger.update);
+      gsap.ticker.remove(lenis.raf);
       lenis.destroy();
       setLenisInstance(null);
     };

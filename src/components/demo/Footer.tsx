@@ -180,7 +180,6 @@ export default function Footer() {
             </div>
           )}
         </div>
-        <ScrollToTopButton />
       </footer>
     </footer>
   );

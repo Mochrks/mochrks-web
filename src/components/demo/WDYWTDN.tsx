@@ -57,7 +57,7 @@ export function WDYWTDN() {
         backgroundColor="rgba(0, 0, 0, 0.5)"
         className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
       > */}
-      <div className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full">
+      <div className="font-acorn flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full">
         <TypewriterEffect words={words} />
 
         <p className="text-white text-base md:text-xl max-w-xl mt-6 text-center">

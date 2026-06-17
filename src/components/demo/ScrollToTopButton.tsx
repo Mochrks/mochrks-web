@@ -3,29 +3,40 @@ import { useState, useEffect } from "react";
 import { ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useLenis } from "./SmoothScroll";
 
 export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
+  const { lenis } = useLenis();
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+    if (!lenis) {
+      // Fallback if Lenis is not active
+      const toggleVisibility = () => {
+        setIsVisible(window.pageYOffset > 300);
+      };
+      window.addEventListener("scroll", toggleVisibility);
+      return () => window.removeEventListener("scroll", toggleVisibility);
+    }
+
+    // Use Lenis scroll event
+    const toggleLenisVisibility = ({ scroll }: any) => {
+      setIsVisible(scroll > 300);
     };
 
-    window.addEventListener("scroll", toggleVisibility);
-
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+    lenis.on("scroll", toggleLenisVisibility);
+    return () => lenis.off("scroll", toggleLenisVisibility);
+  }, [lenis]);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    if (lenis) {
+      lenis.scrollTo(0, { duration: 1.2 });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (

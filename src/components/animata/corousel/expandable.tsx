@@ -46,8 +46,12 @@ const items = [
     title: "Forest Charm",
   },
   {
-    image: "https://mochrks.github.io/assets/img-photo/ig23.jpg",
-    title: "Fluttering Beauty",
+    image: "https://mochrks.github.io/assets/img-photo/11.png",
+    title: "Horse & Landscape",
+  },
+  {
+    image: "https://mochrks.github.io/assets/img-instagram/mochrks/mochrks-44.jpg",
+    title: "Deer Sweetness",
   },
 ];
 

@@ -311,7 +311,7 @@ HeroParallax.displayName = "HeroParallax";
 const Header = memo(() => {
   return (
     <div className="max-w-7xl text-white relative mx-auto py-8 md:py-9 lg:py-32 px-4 w-full">
-      <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold text-center md:text-left z-99 text-white">
+      <h1 className="font-acorn text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold text-center md:text-left z-99 text-white">
         My Project <br /> UI /UX Designer
       </h1>
       <p className="max-w-2xl text-sm md:text-base lg:text-lg mt-4 md:mt-6 text-neutral-300 text-center md:text-left mx-auto md:mx-0">

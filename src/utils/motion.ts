@@ -253,3 +253,83 @@ export const footerVariants = {
     },
   },
 };
+
+// Reveal from bottom with premium cubic-bezier easing
+export const revealFromBottom = (delay = 0) => ({
+  hidden: {
+    y: 60,
+    opacity: 0,
+  },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94],
+      delay,
+    },
+  },
+});
+
+// Scale reveal for images and cards
+export const scaleReveal = (delay = 0) => ({
+  hidden: {
+    scale: 0.85,
+    opacity: 0,
+  },
+  show: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94],
+      delay,
+    },
+  },
+});
+
+// Stagger reveal container with natural timing
+export const staggerReveal = (staggerDelay = 0.1, startDelay = 0) => ({
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: staggerDelay,
+      delayChildren: startDelay,
+    },
+  },
+});
+
+// Slide reveal from left with premium easing
+export const slideRevealLeft = (delay = 0) => ({
+  hidden: {
+    x: -40,
+    opacity: 0,
+  },
+  show: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.25, 0.46, 0.45, 0.94],
+      delay,
+    },
+  },
+});
+
+// Slide reveal from right with premium easing
+export const slideRevealRight = (delay = 0) => ({
+  hidden: {
+    x: 40,
+    opacity: 0,
+  },
+  show: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.25, 0.46, 0.45, 0.94],
+      delay,
+    },
+  },
+});
