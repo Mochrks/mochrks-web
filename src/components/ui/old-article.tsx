@@ -3,12 +3,12 @@ import { TracingBeam } from "@/components/ui/tracing-beam";
 import { Button } from "@/components/ui/button";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import Particles from "@/components/magicui/particles";
-import { ExpandArticle } from "@/components/demo/ExpandArticle";
-import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
-import { FlipLinkTitle } from "@/components/demo/Title";
+import { ExpandArticle } from "@/components/ui/expand-article";
+import ScrollToTopButton from "@/components/layout/scroll-to-top-button";
+import { FlipLinkTitle } from "@/components/ui/title";
 import { treeContent } from "@/apis/article";
 
-export default function index() {
+export default function OldArticle() {
   const [color, setColor] = useState("#ffffff");
   return (
     <React.Fragment>

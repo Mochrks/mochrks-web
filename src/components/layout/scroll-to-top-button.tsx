@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useLenis } from "./SmoothScroll";
+import { useLenis } from "@/components/layout/smooth-scroll";
 
 export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);

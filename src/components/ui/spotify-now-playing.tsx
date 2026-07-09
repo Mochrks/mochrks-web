@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Music2, ExternalLink, User, X } from "lucide-react";
-import { Equalizer } from "./Equalizer";
+import { Equalizer } from "@/components/ui/equalizer";
 import { MOCK_SPOTIFY_PLAYLIST } from "@/apis/spotify";
 import { getNowPlaying, getSpotifyProfileUrl } from "@/services/spotify-service";
 import {

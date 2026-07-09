@@ -22,7 +22,7 @@ const Feature = ({
   title: string;
   description: string;
   datePeriode: string;
-  icon: React.ReactNode;
+  icon: string;
   index: number;
 }) => {
   return (

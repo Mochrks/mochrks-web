@@ -13,46 +13,49 @@ import {
 } from "@/utils/motion.js";
 import { Download } from "lucide-react";
 
-import Navbar from "@/components/demo/Navbar";
+import Navbar from "@/components/layout/navbar";
 import Expandable from "@/components/animata/corousel/expandable";
 import WordFadeIn from "@/components/magicui/word-fade-in";
-import TextReveal from "@/components/demo/TextReveal";
-import Footer from "@/components/demo/Footer";
+import TextReveal from "@/components/ui/text-reveal";
+import Footer from "@/components/layout/footer";
 import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
-import Loading from "@/components/demo/Loading";
-import Aurora from "@/components/demo/Aurora";
+import Loading from "@/components/layout/loading";
+import Aurora from "@/components/ui/aurora";
 import { AnimatedSectionProps } from "@/types/home-page";
 import { Skeleton } from "@/components/ui/skeleton";
 import { skills } from "@/constants/variable";
 import cvFile from "@/assets/docs/CV_NEW_ATS_MOCH. RIZKI KURNIAWAN.pdf";
+import { signature, personSchema } from "@/constants/data";
 
 // Lazy load components
 const Experience = lazy(() =>
-  import("@/components/demo/Experience").then((module) => ({ default: module.Experience }))
+  import("@/components/sections/experience").then((module) => ({ default: module.Experience }))
 );
 const UIUXParallax = lazy(() =>
-  import("@/components/demo/UIUXParallax").then((module) => ({ default: module.UIUXParallax }))
+  import("@/components/sections/uiux-parallax").then((module) => ({ default: module.UIUXParallax }))
 );
-const About = lazy(() => import("@/components/demo/About"));
+const About = lazy(() => import("@/components/sections/about"));
 const Skill = lazy(() =>
-  import("@/components/demo/Skill").then((module) => ({ default: module.Skill }))
+  import("@/components/sections/skill").then((module) => ({ default: module.Skill }))
 );
 const WDYWTDN = lazy(() =>
-  import("@/components/demo/WDYWTDN").then((module) => ({ default: module.WDYWTDN }))
+  import("@/components/sections/wdywtdn").then((module) => ({ default: module.WDYWTDN }))
 );
 const RecentProject = lazy(() =>
-  import("@/components/demo/RecentProject").then((module) => ({ default: module.RecentProject }))
+  import("@/components/sections/recent-project").then((module) => ({
+    default: module.RecentProject,
+  }))
 );
 const Contact = lazy(() =>
-  import("@/components/demo/Contact").then((module) => ({ default: module.Contact }))
+  import("@/components/sections/contact").then((module) => ({ default: module.Contact }))
 );
 const SeeMyPhotography = lazy(() =>
-  import("@/components/demo/SeeMyPhotography").then((module) => ({
+  import("@/components/sections/see-my-photography").then((module) => ({
     default: module.SeeMyPhotography,
   }))
 );
-const LazyVideo = lazy(() => import("@/components/demo/LazyVideo"));
+const LazyVideo = lazy(() => import("@/components/ui/lazy-video"));
 
 const LazyLoadSection = ({ children }: { children: React.ReactNode }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -112,8 +115,8 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   );
 };
 
-import SEO from "@/components/demo/SEO";
-import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
+import SEO from "@/components/layout/seo";
+import ScrollToTopButton from "@/components/layout/scroll-to-top-button";
 
 export default function Portfolio() {
   const [loading, setLoading] = useState(true);
@@ -129,47 +132,6 @@ export default function Portfolio() {
   if (loading) {
     return <Loading />;
   }
-
-  const signature = [
-    {
-      text: "Mochrks",
-      className: "text-slate-100",
-    },
-  ];
-
-  const personSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Moch. Rizki Kurniawan",
-    alternateName: "mochrks",
-    url: "https://www.mochrks.my.id/",
-    image: "https://mochrks.github.io/assets/img-photo/pf.jpg",
-    sameAs: [
-      "https://medium.com/@mochrks",
-      "https://github.com/Mochrks",
-      "https://www.hackerrank.com/profile/mochrks",
-      "https://www.linkedin.com/in/mochrks/",
-      "https://www.instagram.com/mochrks/",
-      "https://www.behance.net/mochrks",
-      "https://dribbble.com/mochrks",
-      "https://www.youtube.com/@gdvisuel",
-      "https://id.pinterest.com/mochrks",
-    ],
-    jobTitle: "Fullstack Software Developer",
-    email: "mochrizkiks@gmail.com",
-    gender: "http://schema.org/Male",
-    knowsAbout: [
-      "Software Development",
-      "Fullstack Web Development",
-      "React.js",
-      "Next.js",
-      "Vue.js",
-      "Springboot",
-      "Node.js",
-      "UI/UX Design",
-      "Photography",
-    ],
-  };
 
   return (
     <React.Fragment>

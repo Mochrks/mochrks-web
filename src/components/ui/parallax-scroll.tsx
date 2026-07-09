@@ -3,9 +3,9 @@ import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import ScrollToTopButton from "../demo/ScrollToTopButton";
-import { FlipLinkTitle } from "../demo/Title";
-import { LoadingContent } from "../demo/LoadingContent";
+import ScrollToTopButton from "@/components/layout/scroll-to-top-button";
+import { FlipLinkTitle } from "@/components/ui/title";
+import { LoadingContent } from "@/components/layout/loading-content";
 import { InteractiveHoverButton } from "../magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
 

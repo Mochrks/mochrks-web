@@ -1,6 +1,6 @@
 import React from "react";
 import "@/styles/Menu.css";
-import { MenuFeatures } from "./MenuFeatures";
+import { MenuFeatures } from "@/components/layout/menu-features";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";

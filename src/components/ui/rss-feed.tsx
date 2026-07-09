@@ -4,7 +4,7 @@ import { Moon, Sun } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { Switch } from "../ui/switch";
-import { LoadingContent } from "./LoadingContent";
+import { LoadingContent } from "@/components/layout/loading-content";
 import { Post, RSSData } from "@/types/rss";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "@/styles/Navbar.css";
-import Menu from "./Menu";
+import Menu from "@/components/layout/menu";
 import { logo } from "@/assets/index";
 import { MotionConfig, motion, AnimatePresence } from "framer-motion";
 export default function Navbar() {

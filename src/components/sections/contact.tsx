@@ -4,12 +4,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
-import { OrbitingCircle } from "./OrbitingCircle";
+import { OrbitingCircle } from "@/components/ui/orbiting-circle";
 import useBreakpoints from "../../hooks/use-breakpoints";
 import { motion, AnimatePresence } from "framer-motion";
 import { Textarea } from "../ui/textarea";
 import emailjs from "@emailjs/browser";
-import { FloatingAlert } from "./FloatingAlert";
+import { FloatingAlert } from "@/components/layout/floating-alert";
 import { formSchema } from "@/schema";
 import { z } from "zod";
 

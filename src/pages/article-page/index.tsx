@@ -1,12 +1,12 @@
 import React from "react";
-import { FlipLinkTitle } from "@/components/demo/Title";
-import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
-import RSSFeed from "@/components/demo/RSSFeed";
+import { FlipLinkTitle } from "@/components/ui/title";
+import ScrollToTopButton from "@/components/layout/scroll-to-top-button";
+import RSSFeed from "@/components/ui/rss-feed";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
-import SEO from "@/components/demo/SEO";
+import SEO from "@/components/layout/seo";
 
-export default function index() {
+export default function ArticlePage() {
   const navigate = useNavigate();
   return (
     <React.Fragment>

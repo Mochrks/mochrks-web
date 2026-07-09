@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import AppRoutes from "@/router/AppRoutes";
-import Loading from "./components/demo/Loading";
-import SmoothScroll from "./components/demo/SmoothScroll";
-import SpotifyNowPlaying from "./components/demo/SpotifyNowPlaying";
+import Loading from "@/components/layout/loading";
+import SmoothScroll from "@/components/layout/smooth-scroll";
+import SpotifyNowPlaying from "@/components/ui/spotify-now-playing";
 
 const App: React.FC = () => {
   return (

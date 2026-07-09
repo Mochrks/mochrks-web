@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useLenis } from "../demo/SmoothScroll";
+import { useLenis } from "@/components/layout/smooth-scroll";
 
 type CardType = {
   id: number;

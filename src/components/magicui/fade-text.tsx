@@ -2,6 +2,13 @@ import React from "react";
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 
+type FadeTextProps = {
+  direction?: "up" | "down" | "left" | "right";
+  className?: string;
+  framerProps?: any;
+  text: string;
+};
+
 export function FadeText({
   direction = "up",
   className,

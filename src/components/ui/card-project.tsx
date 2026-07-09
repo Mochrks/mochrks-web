@@ -8,7 +8,7 @@ import { Badge } from "../ui/badge";
 import { formatDate } from "@/utils/date";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { profile } from "@/assets";
-import MacbookMockup from "./MacbookMockup";
+import MacbookMockup from "@/components/ui/macbook-mockup";
 
 export const CardProject = ({
   items,

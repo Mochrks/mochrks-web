@@ -1,6 +1,6 @@
 import React, { useRef, useMemo, memo, useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import LazyImage from "@/components/demo/LazyImage";
+import LazyImage from "@/components/ui/lazy-image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";

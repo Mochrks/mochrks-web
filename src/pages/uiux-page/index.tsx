@@ -1,12 +1,12 @@
 import { BehanceCards } from "@/components/ui/behance-cards";
-import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
-import { FlipLinkTitle } from "@/components/demo/Title";
+import ScrollToTopButton from "@/components/layout/scroll-to-top-button";
+import { FlipLinkTitle } from "@/components/ui/title";
 import { cards } from "@/apis/uiux";
 import { useNavigate } from "react-router-dom";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
-import SEO from "@/components/demo/SEO";
+import SEO from "@/components/layout/seo";
 
-export default function index() {
+export default function UIUXPage() {
   const navigate = useNavigate();
 
   return (

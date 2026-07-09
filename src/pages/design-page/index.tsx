@@ -1,18 +1,18 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
-import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
+import ScrollToTopButton from "@/components/layout/scroll-to-top-button";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { FlipLinkTitle } from "@/components/demo/Title";
-import { LoadingContent } from "@/components/demo/LoadingContent";
+import { FlipLinkTitle } from "@/components/ui/title";
+import { LoadingContent } from "@/components/layout/loading-content";
 import { artworks } from "@/apis/design-artwork";
 import { Artwork } from "@/types/design-page";
 import { ITEMS_PER_PAGE } from "@/constants/variable";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
-import SEO from "@/components/demo/SEO";
-import LazyImage from "@/components/demo/LazyImage";
+import SEO from "@/components/layout/seo";
+import LazyImage from "@/components/ui/lazy-image";
 
 type Position = {
   left: number;

@@ -8,7 +8,7 @@ const Photography = lazy(() => import("@/pages/photography-page"));
 const Project = lazy(() => import("@/pages/project-page"));
 const Design = lazy(() => import("@/pages/design-page"));
 const UIUXDesign = lazy(() => import("@/pages/uiux-page"));
-const NotFound = lazy(() => import("@/components/demo/NotFound"));
+const NotFound = lazy(() => import("@/components/layout/not-found"));
 
 const routes: RouteConfig[] = [
   { path: "/", element: <Home /> },

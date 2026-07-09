@@ -1,9 +1,9 @@
 import React from "react";
 import { ParallaxScroll } from "@/components/ui/parallax-scroll";
 import { images } from "@/apis/photography";
-import SEO from "@/components/demo/SEO";
+import SEO from "@/components/layout/seo";
 
-export default function index() {
+export default function PhotographyPage() {
   return (
     <React.Fragment>
       <SEO

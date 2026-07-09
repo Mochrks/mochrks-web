@@ -5,7 +5,7 @@ import { Rizki } from "@/assets";
 import { Icon } from "../ui/evervault-card";
 import cvFile from "@/assets/docs/CV_NEW_ATS_MOCH. RIZKI KURNIAWAN.pdf";
 import { motion, useInView } from "framer-motion";
-import TextReveal from "./TextReveal";
+import TextReveal from "@/components/ui/text-reveal";
 
 export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null);

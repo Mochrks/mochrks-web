@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { CardProject } from "@/components/demo/CardProject";
-import ScrollToTopButton from "@/components/demo/ScrollToTopButton";
-import { FlipLinkTitle } from "@/components/demo/Title";
+import { CardProject } from "@/components/ui/card-project";
+import ScrollToTopButton from "@/components/layout/scroll-to-top-button";
+import { FlipLinkTitle } from "@/components/ui/title";
 import { getGithubRepos } from "@/services/project-service";
-import { LoadingContent } from "@/components/demo/LoadingContent";
+import { LoadingContent } from "@/components/layout/loading-content";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { GitHubProject, MappedProject } from "@/types/github";
 import { REAL_PROJECTS } from "@/apis/real-projects";
-import SEO from "@/components/demo/SEO";
+import SEO from "@/components/layout/seo";
 
 export default function ProjectIndex() {
   const [githubProjects, setGithubProjects] = useState<MappedProject[]>([]);

@@ -14,7 +14,7 @@ import { FaThreads } from "react-icons/fa6";
 import "@/styles/Footer.css";
 import useBreakpoints from "@/hooks/use-breakpoints";
 import { favicon } from "@/assets";
-import ScrollToTopButton from "./ScrollToTopButton";
+import ScrollToTopButton from "@/components/layout/scroll-to-top-button";
 
 export default function Footer() {
   const { isLg } = useBreakpoints();

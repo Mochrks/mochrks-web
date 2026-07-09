@@ -1,6 +1,6 @@
 import React from "react";
 import OrbitingCircles from "@/components/magicui/orbiting-circles";
-import Orb from "./Orb";
+import Orb from "@/components/ui/orb";
 export function OrbitingCircle() {
   return (
     <div className="relative flex h-[700px] w-full flex-col items-center justify-center overflow-hidden rounded-lg">
@@ -106,11 +106,11 @@ const Icons = {
       version="1.1"
       id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
       width="100"
       height="100"
       viewBox="0 0 552.77 552.77"
-      xml:space="preserve"
+      xmlSpace="preserve"
     >
       <g>
         <g>

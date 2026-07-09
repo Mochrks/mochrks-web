@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { useNavigate } from "react-router-dom";
-import { CardProject } from "@/components/demo/CardProject";
+import { CardProject } from "@/components/ui/card-project";
 import GitHubCalendar from "react-github-calendar";
 import { MappedProject } from "@/types/github";
 import { REAL_PROJECTS } from "@/apis/real-projects";
