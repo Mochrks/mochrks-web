@@ -2,6 +2,19 @@ import { MappedProject } from "@/types/github";
 
 export const REAL_PROJECTS: MappedProject[] = [
   {
+    id: 100,
+    name: "PPDB APSS (Student Admission System)",
+    full_name: "Full Stack Developer | PT Padepokan Tujuh Sembilan",
+    description:
+      "Developed a Full Stack Student Admission System (PPDB APSS) to streamline the end-to-end student registration process, from application submission and document verification to admission approval and enrollment. Built responsive user interfaces using React, Vite, and Material UI, while developing scalable backend services with Golang and RESTful APIs. Integrated an AI-powered OCR module to automatically extract and validate information from student documents, improving data accuracy and reducing manual verification time. Collaborated with cross-functional teams to optimize system performance, enhance user experience, and deliver a reliable digital admission platform.",
+    html_url: "",
+    homepage: "",
+    topics: ["React.js", "Vite", "Golang", "OCR", "REST API", "Material UI"],
+    created_at: "2026-06-01T00:00:00Z",
+    updated_at: "2026-06-01T00:00:00Z",
+    period: "Jun 2026 - Now",
+  },
+  {
     id: 101,
     name: "NEW LOS (Loan Origination System)",
     full_name: "Frontend Developer | PT Sarana Multi Infrastruktur (Persero)",
@@ -12,7 +25,7 @@ export const REAL_PROJECTS: MappedProject[] = [
     topics: ["Next js", "Loan System", "Finance", "Workflow Automation"],
     created_at: "2025-09-01T00:00:00Z",
     updated_at: "2025-09-01T00:00:00Z",
-    period: "Sep 2025 - Now",
+    period: "Sep 2025 - Mei 2026",
   },
   {
     id: 102,
@@ -28,19 +41,6 @@ export const REAL_PROJECTS: MappedProject[] = [
     period: "Mei 2025 - Sep 2025",
   },
   {
-    id: 103,
-    name: "HRMS (Human Resources Management System)",
-    full_name: "Frontend Developer | Pt. Padepokan Tujuh Sembilan",
-    description:
-      "As the Frontend Developer for this comprehensive HRMS project, I was responsible for building the user interface for several core modules—Employee Master Data, Leave & Attendance, and Payroll—by transforming complex Figma designs into a fully functional and user-friendly application using Next.js 15 and MUI v5. Successfully implemented key features, including complete CRUD operations and approval workflows for employee data.",
-    html_url: "",
-    homepage: "",
-    topics: ["Next.js 15", "MUI v5", "CRUD", "Figma", "HRMS"],
-    created_at: "2024-10-01T00:00:00Z",
-    updated_at: "2024-10-01T00:00:00Z",
-    period: "Okt 2024 - Mei 2025",
-  },
-  {
     id: 104,
     name: "Train Plan",
     full_name: "Frontend Developer | PT Kereta Api Indonesia (Persero)",
@@ -52,6 +52,19 @@ export const REAL_PROJECTS: MappedProject[] = [
     created_at: "2025-05-01T00:00:00Z",
     updated_at: "2025-05-01T00:00:00Z",
     period: "Mei 2025",
+  },
+  {
+    id: 103,
+    name: "HRMS (Human Resources Management System)",
+    full_name: "Frontend Developer | Pt. Padepokan Tujuh Sembilan",
+    description:
+      "As the Frontend Developer for this comprehensive HRMS project, I was responsible for building the user interface for several core modules—Employee Master Data, Leave & Attendance, and Payroll—by transforming complex Figma designs into a fully functional and user-friendly application using Next.js 15 and MUI v5. Successfully implemented key features, including complete CRUD operations and approval workflows for employee data.",
+    html_url: "",
+    homepage: "",
+    topics: ["Next.js 15", "MUI v5", "CRUD", "Figma", "HRMS"],
+    created_at: "2024-10-01T00:00:00Z",
+    updated_at: "2024-10-01T00:00:00Z",
+    period: "Okt 2024 - Mei 2025",
   },
   {
     id: 105,

@@ -133,7 +133,8 @@ export default function About() {
             >
               I'm Moch. Rizki Kurniawan - a Software Developer passionate about full-stack web
               development and UI/UX design. I specialize in building modern web applications using
-              React, Vue.js, and Next.js, creating both powerful functionality and engaging user
+              React, Vue.js, and Next.js on the frontend, and Node.js, Express.js, Spring Boot, and
+              Laravel on the backend, creating both powerful functionality and engaging user
               experiences. My background in UI/UX design ensures I craft interfaces that are not
               just technically sound but also intuitive and visually appealing. Beyond coding, my
               skills in photography, video production, and graphic design bring an extra creative
