@@ -2,17 +2,30 @@ import { MappedProject } from "@/types/github";
 
 export const REAL_PROJECTS: MappedProject[] = [
   {
+    id: 109,
+    name: "Digital Classroom Application",
+    full_name: "Full Stack Developer | PT Padepokan Tujuh Sembilan",
+    description:
+      "Engineered a modern Digital Classroom Application using React, Vite, and Golang, transforming traditional learning methods into an integrated online platform. Delivered responsive web interfaces and highly scalable backend APIs to support concurrent users, seamless content distribution, and interactive assessments. Prioritized clean architecture, API optimization, and an intuitive user experience to maximize student engagement and streamline educator workflows.",
+    html_url: "",
+    homepage: "",
+    topics: ["React.js", "Vite", "Golang", "API Optimization"],
+    created_at: "2026-06-01T00:00:00Z",
+    updated_at: "2026-06-01T00:00:00Z",
+    period: "Jun 2026 - Jul 2026",
+  },
+  {
     id: 100,
     name: "PPDB APSS (Student Admission System)",
     full_name: "Full Stack Developer | PT Padepokan Tujuh Sembilan",
     description:
-      "Developed a Full Stack Student Admission System (PPDB APSS) to streamline the end-to-end student registration process, from application submission and document verification to admission approval and enrollment. Built responsive user interfaces using React, Vite, and Material UI, while developing scalable backend services with Golang and RESTful APIs. Integrated an AI-powered OCR module to automatically extract and validate information from student documents, improving data accuracy and reducing manual verification time. Collaborated with cross-functional teams to optimize system performance, enhance user experience, and deliver a reliable digital admission platform.",
+      "Developed a Full Stack Student Admission System (PPDB APSS) using React, Vite, and Golang to digitalize the student admission process. Built responsive frontend interfaces, scalable backend APIs, and integrated an AI-powered OCR solution for automatic document recognition and data extraction, reducing manual verification while improving processing speed and accuracy. Focused on performance optimization, clean architecture, and delivering a seamless admission experience for both applicants and administrators.",
     html_url: "",
     homepage: "",
     topics: ["React.js", "Vite", "Golang", "OCR", "REST API", "Material UI"],
-    created_at: "2026-06-01T00:00:00Z",
-    updated_at: "2026-06-01T00:00:00Z",
-    period: "Jun 2026 - Now",
+    created_at: "2026-05-01T00:00:00Z",
+    updated_at: "2026-05-01T00:00:00Z",
+    period: "Mei 2026 - Jun 2026",
   },
   {
     id: 101,

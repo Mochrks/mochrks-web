@@ -2,6 +2,12 @@ import { cca, dinkes, leaf } from "@/assets";
 
 export const experiece = [
   {
+    title: "OCBC Indonesia",
+    description: "Fullstack Engineer",
+    datePeriode: "Aug 2026 - Present",
+    icon: "https://kilasjatim.com/wp-content/uploads/2020/04/ocbc.png",
+  },
+  {
     title: "Padepokan Tujuh Sembilan",
     description: "Software Developer ",
     datePeriode: "Jan 2024 - Present",
@@ -11,7 +17,7 @@ export const experiece = [
     title: "Universitas Jenderal Achmad Yani",
     description: "Computer Lab Assistant",
     datePeriode: "Apr 2023 - Jul 2023 · 4 bln",
-    icon: "https://www.unjani.ac.id/wp-content/uploads/2023/01/cropped-WhatsApp-Image-2022-06-24-at-17.28.png",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVDnZNU76bDtag-P0kG47nyhA_0sKdidJfpEDrEZlNRQ&s=10",
   },
   {
     title: "Dinas Kesehatan Pemerintah Kota Cimahi",
