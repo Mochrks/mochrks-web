@@ -25,7 +25,6 @@ import Aurora from "@/components/ui/aurora";
 import { AnimatedSectionProps } from "@/types/home-page";
 import { Skeleton } from "@/components/ui/skeleton";
 import { skills } from "@/constants/variable";
-import cvFile from "@/assets/docs/CV_NEW_ATS_MOCH. RIZKI KURNIAWAN.pdf";
 import { signature, personSchema } from "@/constants/data";
 
 // Lazy load components

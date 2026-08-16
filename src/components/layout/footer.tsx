@@ -14,7 +14,6 @@ import { FaThreads } from "react-icons/fa6";
 import "@/styles/Footer.css";
 import useBreakpoints from "@/hooks/use-breakpoints";
 import { favicon } from "@/assets";
-import ScrollToTopButton from "@/components/layout/scroll-to-top-button";
 
 export default function Footer() {
   const { isLg } = useBreakpoints();
@@ -23,7 +22,7 @@ export default function Footer() {
     <footer>
       <div className="flex items-center justify-center py-6 my-6 md:py-10 md:my-10 px-4">
         <div className="text-center">
-          <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight dark:text-neutral-200 text-slate-700">
+          <h3 className="font-acorn scroll-m-20 text-3xl font-semibold tracking-tight dark:text-neutral-200 text-slate-700">
             Connect With Me
           </h3>
           <p className="max-w-full text-base md:text-xl mt-4 md:mt-8 dark:text-neutral-200 text-slate-700">

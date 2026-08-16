@@ -37,7 +37,7 @@ export function RecentProject() {
         </div>
 
         <div className="text-center">
-          <h2 className="scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl">
+          <h2 className="font-acorn scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl">
             See Other Project
           </h2>
         </div>
