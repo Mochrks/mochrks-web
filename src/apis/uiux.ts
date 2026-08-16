@@ -1,20 +1,4 @@
 import { web1, web2, web3, web4, web5, web6, web7, web8 } from "@/assets/index";
-import { Project } from "@/types/project";
-export const projects: Project[] = [
-  {
-    id: 1,
-    title: "UI/UX Mobile MYPETS",
-    description: "A modern take on online for pets",
-    imageUrl: "https://mochrks.github.io/assets/img-design/M-1_11_11zon.jpg",
-  },
-  {
-    id: 2,
-    title: "UI/UX Mobile POLISIKU",
-    description: "Redesign mobile apps polisiku",
-    imageUrl: "https://mochrks.github.io/assets/img-design/M-2_12_11zon.jpg",
-  },
-];
-
 export const cards = [
   {
     id: 1,

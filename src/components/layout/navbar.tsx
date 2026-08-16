@@ -41,8 +41,14 @@ export default function Navbar() {
     <header>
       <nav className={`nav ${isScrolled ? "scrolled" : ""}`}>
         <header className="logo">
-          <img className="inline w-[3rem] h-[3rem] " src={logo} alt="Logo" width="48" height="48" />
-          <h2 className="text-white ml-2 my-auto text-md font-semibold tracking-tight first:mt-0">
+          <img
+            className="font-acorn inline w-[3rem] h-[3rem] "
+            src={logo}
+            alt="Logo"
+            width="48"
+            height="48"
+          />
+          <h2 className="font-acorn text-white ml-2 my-auto text-md font-semibold tracking-tight first:mt-0">
             Hello
             <br />
             World.

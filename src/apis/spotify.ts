@@ -102,18 +102,3 @@ export const MOCK_SPOTIFY_PLAYLIST: SpotifyTrack[] = [
     progress: 140000,
   },
 ];
-
-/**
- * Get random track from playlist
- */
-export const getRandomTrack = (): SpotifyTrack => {
-  const randomIndex = Math.floor(Math.random() * MOCK_SPOTIFY_PLAYLIST.length);
-  return MOCK_SPOTIFY_PLAYLIST[randomIndex];
-};
-
-/**
- * Get track by index
- */
-export const getTrackByIndex = (index: number): SpotifyTrack => {
-  return MOCK_SPOTIFY_PLAYLIST[index % MOCK_SPOTIFY_PLAYLIST.length];
-};

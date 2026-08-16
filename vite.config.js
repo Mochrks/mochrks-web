@@ -24,7 +24,6 @@ export default defineConfig({
       output: {
         manualChunks: {
           "react-vendor": ["react", "react-dom", "react-router-dom"],
-          "three-vendor": ["three", "@react-three/fiber", "@react-three/drei", "three-globe"],
           "motion-vendor": ["framer-motion", "motion"],
           "ui-vendor": [
             "@radix-ui/react-slot",
