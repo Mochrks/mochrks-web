@@ -1,11 +1,11 @@
-import { cca, dinkes, leaf } from "@/assets";
+import { cca, leaf } from "@/assets";
 
 export const experiece = [
   {
     title: "OCBC Indonesia",
     description: "Fullstack Engineer",
     datePeriode: "Aug 2026 - Present",
-    icon: "https://kilasjatim.com/wp-content/uploads/2020/04/ocbc.png",
+    icon: "https://yt3.googleusercontent.com/8dJ2T9GC-iQOiWfVHMGJ68Dgfr3p5f_Y03QeVSUsOW4FWOEc7AJZtNTHoZVg7fg4y0dH3ruxLg=s900-c-k-c0x00ffffff-no-rj",
   },
   {
     title: "Padepokan Tujuh Sembilan",
@@ -17,13 +17,13 @@ export const experiece = [
     title: "Universitas Jenderal Achmad Yani",
     description: "Computer Lab Assistant",
     datePeriode: "Apr 2023 - Jul 2023 · 4 bln",
-    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVDnZNU76bDtag-P0kG47nyhA_0sKdidJfpEDrEZlNRQ&s=10",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmfnrNgogTFUXc0mryRomC49rA5bbRP2baszK-gDt39A&s=10",
   },
   {
     title: "Dinas Kesehatan Pemerintah Kota Cimahi",
     description: "Software Engineer & Video Editor",
     datePeriode: "Jul 2023 - Dec 2023 · 6 bln",
-    icon: dinkes,
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl84vsVgKDczDz37xB3xNukF5H1x084AoWysUqalCFpFb9ZBTmoxGXWF8&s=10",
   },
 
   {

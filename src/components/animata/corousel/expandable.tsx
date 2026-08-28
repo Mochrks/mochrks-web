@@ -58,6 +58,33 @@ const items = [
 export default function Expandable({ list = items, autoPlay = true, className }: ExpandableProps) {
   const [activeItem, setActiveItem] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(list.length);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setVisibleCount(Math.min(4, list.length)); // Desktop: 4
+      } else if (window.innerWidth >= 768) {
+        setVisibleCount(Math.min(3, list.length)); // Tablet: 3
+      } else {
+        setVisibleCount(Math.min(2, list.length)); // Mobile: 2
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [list.length]);
+
+  const visibleList = list.slice(0, visibleCount);
+
+  useEffect(() => {
+    if (activeItem >= visibleCount) {
+      setActiveItem(0);
+    }
+  }, [visibleCount, activeItem]);
 
   useEffect(() => {
     if (!autoPlay) {
@@ -66,16 +93,16 @@ export default function Expandable({ list = items, autoPlay = true, className }:
 
     const interval = setInterval(() => {
       if (!isHovering) {
-        setActiveItem((prev) => (prev + 1) % list.length);
+        setActiveItem((prev) => (prev + 1) % visibleCount);
       }
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [autoPlay, list.length, isHovering]);
+  }, [autoPlay, visibleCount, isHovering]);
 
   return (
     <div className={cn("flex h-96 w-full gap-2 pt-10 ", className)}>
-      {list.map((item, index) => (
+      {visibleList.map((item, index) => (
         <List
           key={item.title}
           item={item}

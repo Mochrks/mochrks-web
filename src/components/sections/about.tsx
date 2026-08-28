@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { PiGlobeSimpleBold } from "react-icons/pi";
 import { Download } from "lucide-react";
-import { Rizki } from "@/assets";
+import { RizkiNew } from "@/assets";
 import { Icon } from "../ui/evervault-card";
 import cvFile from "@/assets/docs/CV_NEW_ATS_MOCH. RIZKI KURNIAWAN.pdf";
 import { motion, useInView } from "framer-motion";
@@ -100,7 +100,7 @@ export default function About() {
             <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-white" />
             <div className="w-80 h-80 overflow-hidden ">
               <img
-                src={Rizki}
+                src={RizkiNew}
                 alt="Moch. Rizki Kurniawan"
                 className="object-cover w-full h-full"
                 loading="lazy"

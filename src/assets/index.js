@@ -22,7 +22,7 @@ import article from "./img/article.png";
 import profile from "./img/profile.jpg";
 import leaf from "./img/leaf.jpg";
 import Rizki from "./img/Rizki.jpg";
-
+import RizkiNew from "./img/Rizki_new.jpeg";
 export {
   leaf,
   Rizki,
@@ -47,4 +47,5 @@ export {
   about,
   photo,
   design,
+  RizkiNew,
 };

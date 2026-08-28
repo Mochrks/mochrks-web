@@ -4,24 +4,21 @@ import { motion } from "framer-motion";
 import {
   staggerContainer,
   textVariantFromButtom,
-  textVariantFromTop,
-  textVariantFromLeft,
   revealFromBottom,
   scaleReveal,
   slideRevealLeft,
   slideRevealRight,
 } from "@/utils/motion.js";
-import { Download } from "lucide-react";
 
 import Navbar from "@/components/layout/navbar";
 import Expandable from "@/components/animata/corousel/expandable";
-import WordFadeIn from "@/components/magicui/word-fade-in";
 import TextReveal from "@/components/ui/text-reveal";
 import Footer from "@/components/layout/footer";
 import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import Loading from "@/components/layout/loading";
 import Aurora from "@/components/ui/aurora";
+import DarkVeil from "@/components/DarkVeil";
 import { AnimatedSectionProps } from "@/types/home-page";
 import { Skeleton } from "@/components/ui/skeleton";
 import { skills } from "@/constants/variable";
@@ -145,25 +142,42 @@ export default function Portfolio() {
       <main>
         {/* Hero Section */}
         <div className="hero relative">
-          <Suspense
-            fallback={
-              <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
-                <div className="w-full h-full relative">
-                  <Skeleton className="absolute inset-0 w-full h-full bg-gray-800/90 dark:bg-gray-900/90 rounded-none" />
-                  <div className="absolute inset-0 flex items-center justify-start pl-4 md:pl-16 lg:pl-18 xl:pl-20 2xl:pl-40">
-                    <div className="flex flex-col items-start gap-6 w-full px-4 sm:px-0">
-                      <Skeleton className="h-4 w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[800px] 2xl:max-w-[1000px] bg-gray-700 dark:bg-gray-600" />
-                      <Skeleton className="h-4 w-full max-w-[225px] sm:max-w-[300px] md:max-w-[375px] lg:max-w-[450px] xl:max-w-[600px] 2xl:max-w-[750px] bg-gray-700 dark:bg-gray-600" />
-                      <Skeleton className="h-4 w-full max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] xl:max-w-[400px] 2xl:max-w-[500px] bg-gray-700 dark:bg-gray-600" />
-                      <Skeleton className="h-4 w-full max-w-[75px] sm:max-w-[100px] md:max-w-[125px] lg:max-w-[150px] xl:max-w-[200px] 2xl:max-w-[250px] bg-gray-700 dark:bg-gray-600" />
+          <div className="hidden md:block">
+            <Suspense
+              fallback={
+                <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+                  <div className="w-full h-full relative">
+                    <Skeleton className="absolute inset-0 w-full h-full bg-gray-800/90 dark:bg-gray-900/90 rounded-none" />
+                    <div className="absolute inset-0 flex items-center justify-start pl-4 md:pl-16 lg:pl-18 xl:pl-20 2xl:pl-40">
+                      <div className="flex flex-col items-start gap-6 w-full px-4 sm:px-0">
+                        <Skeleton className="h-4 w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[800px] 2xl:max-w-[1000px] bg-gray-700 dark:bg-gray-600" />
+                        <Skeleton className="h-4 w-full max-w-[225px] sm:max-w-[300px] md:max-w-[375px] lg:max-w-[450px] xl:max-w-[600px] 2xl:max-w-[750px] bg-gray-700 dark:bg-gray-600" />
+                        <Skeleton className="h-4 w-full max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] xl:max-w-[400px] 2xl:max-w-[500px] bg-gray-700 dark:bg-gray-600" />
+                        <Skeleton className="h-4 w-full max-w-[75px] sm:max-w-[100px] md:max-w-[125px] lg:max-w-[150px] xl:max-w-[200px] 2xl:max-w-[250px] bg-gray-700 dark:bg-gray-600" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            }
+              }
+            >
+              <LazyVideo />
+            </Suspense>
+          </div>
+
+          <div
+            className="block md:hidden absolute inset-0 w-full h-full overflow-hidden"
+            style={{ minHeight: "600px" }}
           >
-            <LazyVideo />
-          </Suspense>
+            <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
+            <DarkVeil
+              hueShift={39}
+              noiseIntensity={0.04}
+              scanlineIntensity={0}
+              speed={1.1}
+              scanlineFrequency={1}
+              warpAmount={5}
+            />
+          </div>
 
           <motion.div
             id="content"
@@ -171,6 +185,7 @@ export default function Portfolio() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
+            className="relative z-50 pointer-events-none"
           >
             <motion.div
               variants={textVariantFromButtom(0.9)}
