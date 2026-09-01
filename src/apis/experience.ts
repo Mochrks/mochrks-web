@@ -15,7 +15,7 @@ export const experiece = [
   },
   {
     title: "Universitas Jenderal Achmad Yani",
-    description: "Computer Lab Assistant",
+    description: "Teaching Assistant – Software Development",
     datePeriode: "Apr 2023 - Jul 2023 · 4 bln",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmfnrNgogTFUXc0mryRomC49rA5bbRP2baszK-gDt39A&s=10",
   },
