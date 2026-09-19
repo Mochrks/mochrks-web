@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
 import { Renderer, Program, Mesh as OglMesh, Triangle, Vec2 } from "ogl";
-import "./DarkVeil.css";
+import "../../styles/DarkVeil.css";
 
 const vertex = `
 attribute vec2 position;

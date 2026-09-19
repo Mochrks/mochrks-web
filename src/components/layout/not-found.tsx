@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import Loading from "@/components/layout/loading";
 import { useNavigate } from "react-router-dom";

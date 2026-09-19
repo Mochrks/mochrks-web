@@ -66,6 +66,83 @@ interface MenuProps {
   origin?: { x: number; y: number };
 }
 
+// Staggered container variants — orchestrates children fade-in
+const staggerContainer = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.35, // wait for clip-path to partially reveal
+    },
+  },
+  exit: {
+    transition: {
+      staggerChildren: 0.04,
+      staggerDirection: -1,
+    },
+  },
+};
+
+// Individual menu item entrance animation
+const menuItemVariants = {
+  initial: {
+    opacity: 0,
+    y: 60,
+    rotate: 3,
+    filter: "blur(6px)",
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    rotate: 0,
+    filter: "blur(0px)",
+    transition: {
+      type: "spring",
+      stiffness: 80,
+      damping: 18,
+      mass: 0.8,
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -30,
+    filter: "blur(4px)",
+    transition: {
+      duration: 0.2,
+      ease: "easeIn",
+    },
+  },
+};
+
+// Dock / features fade-in (appears last)
+const dockVariants = {
+  initial: {
+    opacity: 0,
+    y: 30,
+    scale: 0.92,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 20,
+      delay: 0.35 + MENU_ITEMS.length * 0.08 + 0.1, // after all items
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: 20,
+    scale: 0.95,
+    transition: {
+      duration: 0.15,
+      ease: "easeIn",
+    },
+  },
+};
+
 export default function Menu({ onMenuItemClick, origin }: MenuProps) {
   const navigate = useNavigate();
 
@@ -80,59 +157,128 @@ export default function Menu({ onMenuItemClick, origin }: MenuProps) {
   const cx = origin?.x || window.innerWidth - 60;
   const cy = origin?.y || 40;
 
-  const menuVariants = {
-    initial: {
-      clipPath: `circle(0px at ${cx}px ${cy}px)`,
-    },
+  // Light Gray layer expands first
+  const lightGrayVariants = {
+    initial: { clipPath: `circle(0px at ${cx}px ${cy}px)` },
     animate: {
       clipPath: `circle(150% at ${cx}px ${cy}px)`,
-      transition: {
-        type: "tween",
-        duration: 0.6,
-        ease: [0.76, 0, 0.24, 1],
-      },
+      transition: { type: "tween", duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0 },
     },
     exit: {
       clipPath: `circle(0px at ${cx}px ${cy}px)`,
-      transition: {
-        type: "tween",
-        duration: 0.6,
-        ease: [0.76, 0, 0.24, 1],
-        delay: 0.2, // Small delay to let children exit if they had animations
-      },
+      transition: { type: "tween", duration: 0.6, ease: [0.76, 0, 0.24, 1], delay: 0.1 },
+    },
+  };
+
+  // Dark Gray layer expands second
+  const darkGrayVariants = {
+    initial: { clipPath: `circle(0px at ${cx}px ${cy}px)` },
+    animate: {
+      clipPath: `circle(150% at ${cx}px ${cy}px)`,
+      transition: { type: "tween", duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.05 },
+    },
+    exit: {
+      clipPath: `circle(0px at ${cx}px ${cy}px)`,
+      transition: { type: "tween", duration: 0.6, ease: [0.76, 0, 0.24, 1], delay: 0.05 },
+    },
+  };
+
+  // Main menu (Hitam) expands third
+  const menuVariants = {
+    initial: { clipPath: `circle(0px at ${cx}px ${cy}px)` },
+    animate: {
+      clipPath: `circle(150% at ${cx}px ${cy}px)`,
+      transition: { type: "tween", duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.1 },
+    },
+    exit: {
+      clipPath: `circle(0px at ${cx}px ${cy}px)`,
+      transition: { type: "tween", duration: 0.6, ease: [0.76, 0, 0.24, 1], delay: 0 },
     },
   };
 
   return (
-    <motion.div
-      className="menu"
-      variants={menuVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 1040,
+        pointerEvents: "none",
+      }}
     >
-      <ul className="list-none px-5 md:px-14 2xl:px-[100px] pt-[3rem] 4xl:pt-[15rem]">
-        <li>
-          <section className="w-full">
-            <div className="mx-auto">
-              {MENU_ITEMS.map((item, index) => (
-                <Link
-                  key={index}
-                  heading={item.heading}
-                  subheading={item.subheading}
-                  imgSrc={item.imgSrc}
-                  href={item.href}
-                  onClick={() => handleClick(item)}
-                />
-              ))}
-            </div>
-          </section>
-        </li>
-        <li>
-          <MenuFeatures />
-        </li>
-      </ul>
-    </motion.div>
+      {/* ===== Motion graphic pre-layers (OUTSIDE clip-path) ===== */}
+
+      {/* Light Gray panel */}
+      <motion.div
+        variants={lightGrayVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "#a1a1aa", // zinc-400 (Abu Muda)
+          zIndex: 1,
+          pointerEvents: "none",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Dark Gray panel */}
+      <motion.div
+        variants={darkGrayVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "#3f3f46", // zinc-700 (Abu Tua)
+          zIndex: 2,
+          pointerEvents: "none",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* ===== Main menu with clip-path reveal ===== */}
+      <motion.div
+        className="menu"
+        variants={menuVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        style={{ zIndex: 4, pointerEvents: "auto" }}
+      >
+        <motion.ul
+          className="list-none px-5 md:px-14 2xl:px-[100px] pt-[3rem] 4xl:pt-[15rem]"
+          variants={staggerContainer}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          style={{ position: "relative", zIndex: 2 }}
+        >
+          <li>
+            <section className="w-full">
+              <div className="mx-auto">
+                {MENU_ITEMS.map((item, index) => (
+                  <motion.div key={index} variants={menuItemVariants}>
+                    <Link
+                      heading={item.heading}
+                      subheading={item.subheading}
+                      imgSrc={item.imgSrc}
+                      href={item.href}
+                      onClick={() => handleClick(item)}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+          </li>
+          <motion.li variants={dockVariants}>
+            <MenuFeatures />
+          </motion.li>
+        </motion.ul>
+      </motion.div>
+    </div>
   );
 }
 

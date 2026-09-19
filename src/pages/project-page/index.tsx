@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CardProject } from "@/components/ui/card-project";
 import ScrollToTopButton from "@/components/layout/scroll-to-top-button";
 import { FlipLinkTitle } from "@/components/ui/title";

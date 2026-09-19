@@ -18,7 +18,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import Loading from "@/components/layout/loading";
 import Aurora from "@/components/ui/aurora";
-import DarkVeil from "@/components/DarkVeil";
+import DarkVeil from "@/components/sections/dark-veil";
 import { AnimatedSectionProps } from "@/types/home-page";
 import { Skeleton } from "@/components/ui/skeleton";
 import { skills } from "@/constants/variable";
