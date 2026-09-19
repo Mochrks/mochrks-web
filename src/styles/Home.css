@@ -118,6 +118,7 @@ html {
   padding: 0 5%;
   display: flex;
   align-items: center;
+  background-color: #0f1215;
 }
 
 .hero::after {
@@ -161,6 +162,7 @@ html {
 .MainContent {
   background-color: rgb(15, 18, 21);
   position: relative;
+  z-index: 1;
   height: 100%;
   /* GPU acceleration for smooth scroll compositing */
   will-change: transform;

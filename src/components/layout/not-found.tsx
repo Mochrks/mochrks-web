@@ -19,10 +19,10 @@ export default function ComponentNotFound() {
     }
   }, [isEntering, navigate]);
   return (
-    <div className="relative h-screen w-screen flex overflow-hidden flex-col items-center justify-center bg-gradient-to-br from-gray-800 to-slate-900">
+    <div className="relative h-screen w-screen flex overflow-hidden flex-col items-center justify-center bg-[#0F1215]">
       <div className="absolute inset-0 flex items-center justify-center">
         <motion.div
-          className="w-[300px] h-[300px] rounded-full bg-gradient-to-br from-cyan-600 to-blue-900"
+          className="w-[300px] h-[300px] rounded-full bg-zinc-900"
           animate={{
             scale: isEntering
               ? [1, Math.max(window.innerWidth / 300, window.innerHeight / 300) * 1.2]
@@ -47,7 +47,7 @@ export default function ComponentNotFound() {
           <motion.path
             d="M50,100 C50,72 72,50 100,50 C128,50 150,72 150,100"
             fill="none"
-            stroke="#AC94F4"
+            stroke="#e4e4e7"
             strokeWidth="5"
             strokeLinecap="round"
             initial={{ pathLength: 0 }}
@@ -57,7 +57,7 @@ export default function ComponentNotFound() {
           <motion.path
             d="M50,100 C50,128 72,150 100,150 C128,150 150,128 150,100"
             fill="none"
-            stroke="#A14ED4"
+            stroke="#71717a"
             strokeWidth="5"
             strokeLinecap="round"
             initial={{ pathLength: 0 }}
@@ -80,7 +80,7 @@ export default function ComponentNotFound() {
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          className="text-9xl overflow-hidden font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-purple-600"
+          className="text-9xl overflow-hidden font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500"
           style={{
             WebkitTextStroke: "2px rgba(255,255,255,0.1)",
           }}
@@ -96,7 +96,7 @@ export default function ComponentNotFound() {
           404
         </motion.div>
         <motion.div
-          className="absolute overflow-hidden inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-50 blur-xl"
+          className="absolute overflow-hidden inset-0 bg-gradient-to-r from-zinc-600 to-zinc-800 opacity-30 blur-xl"
           animate={{
             opacity: isHovering ? [0.5, 0.8, 0.5] : 0.5,
           }}

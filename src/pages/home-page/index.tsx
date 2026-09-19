@@ -141,19 +141,19 @@ export default function Portfolio() {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <div className="hero relative">
+        <div className="hero relative bg-[#0F1215]">
           <div className="hidden md:block">
             <Suspense
               fallback={
-                <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+                <div className="absolute inset-0 z-50 flex items-center justify-center bg-[#0F1215] backdrop-blur-sm">
                   <div className="w-full h-full relative">
-                    <Skeleton className="absolute inset-0 w-full h-full bg-gray-800/90 dark:bg-gray-900/90 rounded-none" />
+                    <Skeleton className="absolute inset-0 w-full h-full bg-[#0F1215] rounded-none" />
                     <div className="absolute inset-0 flex items-center justify-start pl-4 md:pl-16 lg:pl-18 xl:pl-20 2xl:pl-40">
                       <div className="flex flex-col items-start gap-6 w-full px-4 sm:px-0">
-                        <Skeleton className="h-4 w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[800px] 2xl:max-w-[1000px] bg-gray-700 dark:bg-gray-600" />
-                        <Skeleton className="h-4 w-full max-w-[225px] sm:max-w-[300px] md:max-w-[375px] lg:max-w-[450px] xl:max-w-[600px] 2xl:max-w-[750px] bg-gray-700 dark:bg-gray-600" />
-                        <Skeleton className="h-4 w-full max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] xl:max-w-[400px] 2xl:max-w-[500px] bg-gray-700 dark:bg-gray-600" />
-                        <Skeleton className="h-4 w-full max-w-[75px] sm:max-w-[100px] md:max-w-[125px] lg:max-w-[150px] xl:max-w-[200px] 2xl:max-w-[250px] bg-gray-700 dark:bg-gray-600" />
+                        <Skeleton className="h-4 w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[800px] 2xl:max-w-[1000px] bg-[#1A1D21]" />
+                        <Skeleton className="h-4 w-full max-w-[225px] sm:max-w-[300px] md:max-w-[375px] lg:max-w-[450px] xl:max-w-[600px] 2xl:max-w-[750px] bg-[#1A1D21]" />
+                        <Skeleton className="h-4 w-full max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] xl:max-w-[400px] 2xl:max-w-[500px] bg-[#1A1D21]" />
+                        <Skeleton className="h-4 w-full max-w-[75px] sm:max-w-[100px] md:max-w-[125px] lg:max-w-[150px] xl:max-w-[200px] 2xl:max-w-[250px] bg-[#1A1D21]" />
                       </div>
                     </div>
                   </div>

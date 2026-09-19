@@ -273,7 +273,7 @@ export default function Menu({ onMenuItemClick, origin }: MenuProps) {
               </div>
             </section>
           </li>
-          <motion.li variants={dockVariants}>
+          <motion.li variants={dockVariants} className="hidden md:block">
             <MenuFeatures />
           </motion.li>
         </motion.ul>
