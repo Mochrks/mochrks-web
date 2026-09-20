@@ -1,13 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-
-interface SEOProps {
-  title: string;
-  description?: string;
-  keywords?: string;
-  path?: string;
-  schema?: object;
-}
+import { SEOProps } from "@/types/seo";
 
 const SEO: React.FC<SEOProps> = ({ title, description, keywords, path = "", schema }) => {
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://www.mochrks.my.id";

@@ -3,21 +3,15 @@ import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useLenis } from "@/components/layout/smooth-scroll";
+import { useLenis } from "@/hooks/use-lenis";
+import {
+  BehanceCard as BehanceCardType,
+  BehanceCardProps,
+  BehanceModalProps,
+} from "@/types/behance";
 
-type CardType = {
-  id: number;
-  title: string;
-  src: string;
-  author: string;
-  likes: number;
-  views: number;
-  category: string;
-  description: string;
-};
-
-export function BehanceCards({ cards }: { cards: CardType[] }) {
-  const [selectedCard, setSelectedCard] = useState<CardType | null>(null);
+export function BehanceCards({ cards }: { cards: BehanceCardType[] }) {
+  const [selectedCard, setSelectedCard] = useState<BehanceCardType | null>(null);
   const [likedCards, setLikedCards] = useState<Set<number>>(new Set());
   const [cardLikes, setCardLikes] = useState<Map<number, number>>(new Map());
   const [activeCategory, setActiveCategory] = useState<string>("All");
@@ -194,14 +188,6 @@ const Cursor = ({ position }: { position: any }) => {
   );
 };
 
-interface BehanceCardProps {
-  card: CardType;
-  onCardClick: () => void;
-  onLike: (cardId: number, e: React.MouseEvent) => void;
-  isLiked: boolean;
-  currentLikes: number;
-}
-
 function BehanceCard({ card, onCardClick, onLike, isLiked, currentLikes }: BehanceCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -239,14 +225,6 @@ function BehanceCard({ card, onCardClick, onLike, isLiked, currentLikes }: Behan
       </motion.div>
     </motion.div>
   );
-}
-
-interface BehanceModalProps {
-  card: CardType;
-  onClose: () => void;
-  onLike: (cardId: number, e: React.MouseEvent) => void;
-  isLiked: boolean;
-  currentLikes: number;
 }
 
 const BehanceModal = ({ card, onClose, onLike, isLiked, currentLikes }: BehanceModalProps) => {

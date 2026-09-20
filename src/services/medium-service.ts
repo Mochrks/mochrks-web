@@ -1,4 +1,4 @@
-import { mediumApiInstance } from "@/utils/axios-config";
+import { mediumApiInstance } from "@/config/axios-config";
 import { RSSData } from "@/types/rss";
 
 export const fetchRSSData = async (rssUrl: string): Promise<RSSData> => {

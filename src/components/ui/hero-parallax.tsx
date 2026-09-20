@@ -5,20 +5,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { Product, ProductCardProps, HeroParallaxProps } from "@/types/hero-parallax";
 
 gsap.registerPlugin(ScrollTrigger);
-
-interface Product {
-  title: string;
-  link: string;
-  thumbnail: string;
-}
-
-interface ProductCardProps {
-  product: Product;
-  rowPosition?: "top" | "middle" | "bottom";
-}
-
 const ProductCard = memo(({ product, rowPosition = "middle" }: ProductCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -187,10 +176,6 @@ const ProductCard = memo(({ product, rowPosition = "middle" }: ProductCardProps)
 });
 
 ProductCard.displayName = "ProductCard";
-
-interface HeroParallaxProps {
-  products: Product[];
-}
 
 export const HeroParallax = memo(({ products }: HeroParallaxProps) => {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
-import { AuroraProps, FRAG, VERT } from "@/types/aurora";
+import { AuroraProps } from "@/types/aurora";
+import { FRAG, VERT } from "@/constants/shaders";
 
 export default React.memo(Aurora);
 function Aurora(props: AuroraProps) {

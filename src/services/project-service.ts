@@ -1,4 +1,4 @@
-import { githubApiInstance } from "@/utils/axios-config";
+import { githubApiInstance } from "@/config/axios-config";
 import { GitHubProject } from "@/types/github";
 
 export const getGithubRepos = async (per_page: number = 10): Promise<GitHubProject[]> => {

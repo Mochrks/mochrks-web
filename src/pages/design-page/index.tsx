@@ -13,16 +13,7 @@ import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-b
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/layout/seo";
 import LazyImage from "@/components/ui/lazy-image";
-
-type Position = {
-  left: number;
-  width: number;
-  opacity: number;
-};
-
-interface TabsMenuProps {
-  setActiveCategory: (category: string) => void;
-}
+import { TabPosition, TabsMenuProps, TabProps } from "@/types/tabs";
 
 const TabsMenu: React.FC<TabsMenuProps> = ({ setActiveCategory }) => {
   return (
@@ -42,7 +33,7 @@ const TabsMenu: React.FC<TabsMenuProps> = ({ setActiveCategory }) => {
 };
 
 const SlideTabs: React.FC<TabsMenuProps> = ({ setActiveCategory }) => {
-  const [position, setPosition] = useState<Position>({
+  const [position, setPosition] = useState<TabPosition>({
     left: 0,
     width: 0,
     opacity: 0,
@@ -75,13 +66,6 @@ const SlideTabs: React.FC<TabsMenuProps> = ({ setActiveCategory }) => {
   );
 };
 
-interface TabProps {
-  children: React.ReactNode;
-  setPosition: React.Dispatch<React.SetStateAction<Position>>;
-  setActiveCategory: (category: string) => void;
-  category: string;
-}
-
 const Tab: React.FC<TabProps> = ({ children, setPosition, setActiveCategory, category }) => {
   const ref = useRef<HTMLLIElement>(null);
 
@@ -105,7 +89,7 @@ const Tab: React.FC<TabProps> = ({ children, setPosition, setActiveCategory, cat
   );
 };
 
-const Cursor: React.FC<{ position: Position }> = ({ position }) => {
+const Cursor: React.FC<{ position: TabPosition }> = ({ position }) => {
   return (
     <motion.li
       animate={{

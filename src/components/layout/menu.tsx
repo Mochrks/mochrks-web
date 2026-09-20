@@ -5,66 +5,9 @@ import { NavigateFunction, useNavigate } from "react-router-dom";
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
-import { about, project, photo, uiux, article, contact, design } from "@/assets";
 import { LinkProps } from "@/types/link";
-
-interface MenuItem {
-  heading: string;
-  subheading: string;
-  imgSrc: string;
-  href?: string;
-  handler?: (onClick: () => void, navigate: NavigateFunction) => void;
-}
-
-const MENU_ITEMS: MenuItem[] = [
-  {
-    heading: "About",
-    subheading: "Learn more about my personality",
-    imgSrc: about,
-    href: "#about",
-  },
-  {
-    heading: "Project",
-    subheading: "Showcasing my latest project",
-    imgSrc: project,
-    handler: (_, navigate) => navigate("/project"),
-  },
-  {
-    heading: "Design Artwork",
-    subheading: "Creative designs that tell a story",
-    imgSrc: design,
-    handler: (_, navigate) => navigate("/design-artwork"),
-  },
-  {
-    heading: "UI/UX",
-    subheading: "Designing intuitive user experiences",
-    imgSrc: uiux,
-    handler: (_, navigate) => navigate("/ui-ux-design"),
-  },
-  {
-    heading: "Photography",
-    subheading: "Visual storytelling through my lens",
-    imgSrc: photo,
-    handler: (_, navigate) => navigate("/photography"),
-  },
-  {
-    heading: "Article",
-    subheading: "Read my thoughts on article",
-    imgSrc: article,
-    handler: (_, navigate) => navigate("/article"),
-  },
-  {
-    heading: "Contact",
-    subheading: "Let's connect and collaborate",
-    imgSrc: contact,
-    href: "#contact",
-  },
-];
-
-interface MenuProps {
-  onMenuItemClick: () => void;
-  origin?: { x: number; y: number };
-}
+import { MenuProps, MenuItem } from "@/types/menu";
+import { MENU_ITEMS } from "@/constants/menu-items";
 
 // Staggered container variants — orchestrates children fade-in
 const staggerContainer = {

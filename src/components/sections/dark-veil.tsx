@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
 import { Renderer, Program, Mesh as OglMesh, Triangle, Vec2 } from "ogl";
 import "../../styles/DarkVeil.css";
+import { DarkVeilProps, LiquidEtherProps, LiquidEtherWebGL, SimOptions } from "@/types/dark-veil";
 
 const vertex = `
 attribute vec2 position;
@@ -85,17 +86,6 @@ void main(){
 }
 `;
 
-type Props = {
-  hueShift?: number;
-  noiseIntensity?: number;
-  scanlineIntensity?: number;
-  speed?: number;
-  scanlineFrequency?: number;
-  warpAmount?: number;
-  resolutionScale?: number;
-  lightMode?: boolean;
-};
-
 function DarkVeilEffect({
   hueShift = 0,
   noiseIntensity = 0,
@@ -105,7 +95,7 @@ function DarkVeilEffect({
   warpAmount = 0,
   resolutionScale = 1,
   lightMode = false,
-}: Props) {
+}: DarkVeilProps) {
   const ref = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const canvas = ref.current as HTMLCanvasElement;
@@ -183,59 +173,6 @@ function DarkVeilEffect({
 // ==========================================
 // Liquid Ether Code
 // ==========================================
-
-export interface LiquidEtherProps {
-  mouseForce?: number;
-  cursorSize?: number;
-  isViscous?: boolean;
-  viscous?: number;
-  iterationsViscous?: number;
-  iterationsPoisson?: number;
-  dt?: number;
-  BFECC?: boolean;
-  resolution?: number;
-  isBounce?: boolean;
-  colors?: string[];
-  style?: React.CSSProperties;
-  className?: string;
-  autoDemo?: boolean;
-  autoSpeed?: number;
-  autoIntensity?: number;
-  takeoverDuration?: number;
-  autoResumeDelay?: number;
-  autoRampDuration?: number;
-  backgroundColor?: string;
-  lightMode?: boolean;
-}
-
-interface SimOptions {
-  iterations_poisson: number;
-  iterations_viscous: number;
-  mouse_force: number;
-  resolution: number;
-  cursor_size: number;
-  viscous: number;
-  isBounce: boolean;
-  dt: number;
-  isViscous: boolean;
-  BFECC: boolean;
-}
-
-interface LiquidEtherWebGL {
-  output?: { simulation?: { options: SimOptions; resize: () => void } };
-  autoDriver?: {
-    enabled: boolean;
-    speed: number;
-    resumeDelay: number;
-    rampDurationMs: number;
-    mouse?: { autoIntensity: number; takeoverDuration: number };
-    forceStop: () => void;
-  };
-  resize: () => void;
-  start: () => void;
-  pause: () => void;
-  dispose: () => void;
-}
 
 const defaultColors = ["#5227FF", "#FF9FFC", "#B497CF"];
 
