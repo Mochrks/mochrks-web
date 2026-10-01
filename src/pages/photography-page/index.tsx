@@ -12,7 +12,7 @@ export default function PhotographyPage() {
         keywords="Moch. Rizki Kurniawan, photography portfolio, landscape photography, street photography, visual arts, mochrks"
         path="/photography"
       />
-      <ParallaxScroll images={images} />
+      <ParallaxScroll images={images.map((img) => img.imageUrl)} />
     </React.Fragment>
   );
 }

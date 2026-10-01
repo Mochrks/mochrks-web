@@ -39,7 +39,7 @@ const SlideTabs: React.FC<TabsMenuProps> = ({ setActiveCategory }) => {
     opacity: 0,
   });
 
-  const categories = ["design t-shirt", "illustration", "artwork", "portrait"];
+  const categories = ["design t-shirt", "artwork"];
 
   return (
     <ul
@@ -102,7 +102,7 @@ const Cursor: React.FC<{ position: TabPosition }> = ({ position }) => {
 
 export default function Index() {
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
-  const [activeCategory, setActiveCategory] = useState("illustration");
+  const [activeCategory, setActiveCategory] = useState("design t-shirt");
   const [displayedArtworks, setDisplayedArtworks] = useState<Artwork[]>([]);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
@@ -113,9 +113,13 @@ export default function Index() {
 
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      const filteredArtworks = artworks.filter(
-        (artwork) => artwork.category.toLowerCase() === activeCategory.toLowerCase()
-      );
+      const filteredArtworks = artworks.filter((artwork) => {
+        const cat =
+          activeCategory.toLowerCase() === "design t-shirt"
+            ? "design"
+            : activeCategory.toLowerCase();
+        return artwork.category.toLowerCase() === cat;
+      });
       const startIndex = (nextPage - 1) * ITEMS_PER_PAGE;
       const endIndex = startIndex + ITEMS_PER_PAGE;
       const newArtworks = filteredArtworks.slice(startIndex, endIndex);
