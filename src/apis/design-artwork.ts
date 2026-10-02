@@ -6,8 +6,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-1.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Captivating concept art focusing on lighting.",
     category: "artwork",
   },
   {
@@ -15,8 +14,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-10.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Otherworldly digital artwork diving into human emotions.",
     category: "artwork",
   },
   {
@@ -24,7 +22,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-100.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Breathtaking pattern enhancing usability.",
     category: "design",
   },
   {
@@ -32,7 +30,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-101.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Expressive visual prioritizing accessibility.",
     category: "design",
   },
   {
@@ -40,7 +38,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-102.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Unique pattern redefining industry standards.",
     category: "design",
   },
   {
@@ -48,7 +46,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-103.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Seamless branding redefining industry standards.",
     category: "design",
   },
   {
@@ -56,7 +54,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-104.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Abstract structure captivating the audience.",
     category: "design",
   },
   {
@@ -64,7 +62,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-105.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Seamless framework pushing boundaries.",
     category: "design",
   },
   {
@@ -72,7 +70,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-106.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Cutting-edge pattern telling a visual story.",
     category: "design",
   },
   {
@@ -80,7 +78,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-107.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Expressive system demonstrating technical excellence.",
     category: "design",
   },
   {
@@ -88,7 +86,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-108.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Modern concept highlighting fluid shapes.",
     category: "design",
   },
   {
@@ -96,7 +94,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-109.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Abstract system telling a visual story.",
     category: "design",
   },
   {
@@ -104,8 +102,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-11.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Hypnotic visual telling a profound story.",
     category: "artwork",
   },
   {
@@ -113,8 +110,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-12.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Cinematic drawing visualizing abstract concepts.",
     category: "artwork",
   },
   {
@@ -122,8 +118,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-13.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Imaginative creation diving into human emotions.",
     category: "artwork",
   },
   {
@@ -131,8 +126,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-14.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Surreal creation capturing the essence of dreams.",
     category: "artwork",
   },
   {
@@ -140,8 +134,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-15.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Dynamic landscape evoking a sense of wonder.",
     category: "artwork",
   },
   {
@@ -149,8 +142,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-16.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Conceptual digital artwork evoking a sense of wonder.",
     category: "artwork",
   },
   {
@@ -158,8 +150,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-17.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Abstract visual challenging conventional perspectives.",
     category: "artwork",
   },
   {
@@ -167,8 +158,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-18.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Mesmerizing landscape celebrating the beauty of imperfection.",
     category: "artwork",
   },
   {
@@ -176,8 +166,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-19.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Dynamic sculpture focusing on lighting.",
     category: "artwork",
   },
   {
@@ -185,8 +174,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-2.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Luminous drawing visualizing abstract concepts.",
     category: "artwork",
   },
   {
@@ -194,8 +182,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-20.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Dynamic piece of art celebrating the beauty of imperfection.",
     category: "artwork",
   },
   {
@@ -203,8 +190,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-21.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Abstract digital artwork diving into human emotions.",
     category: "artwork",
   },
   {
@@ -212,8 +198,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-22.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Beautiful masterpiece blending reality and imagination.",
     category: "artwork",
   },
   {
@@ -221,8 +206,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-23.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Vibrant painting evoking a sense of wonder.",
     category: "artwork",
   },
   {
@@ -230,8 +214,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-24.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Detailed concept art exploring themes of nature.",
     category: "artwork",
   },
   {
@@ -239,8 +222,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-25.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Mesmerizing drawing challenging conventional perspectives.",
     category: "artwork",
   },
   {
@@ -248,8 +230,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-26.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Mysterious creation diving into human emotions.",
     category: "artwork",
   },
   {
@@ -257,8 +238,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-27.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Evocative illustration diving into human emotions.",
     category: "artwork",
   },
   {
@@ -266,8 +246,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-28.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Luminous mosaic reflecting inner thoughts.",
     category: "artwork",
   },
   {
@@ -275,8 +254,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-29.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Dynamic sketch telling a profound story.",
     category: "artwork",
   },
   {
@@ -284,8 +262,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-3.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Otherworldly masterpiece exploring themes of nature.",
     category: "artwork",
   },
   {
@@ -293,8 +270,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-30.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Beautiful design experimenting with bold colors.",
     category: "artwork",
   },
   {
@@ -302,8 +278,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-31.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Atmospheric composition showcasing complex textures.",
     category: "artwork",
   },
   {
@@ -311,8 +286,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-32.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Surreal canvas visualizing abstract concepts.",
     category: "artwork",
   },
   {
@@ -320,8 +294,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-33.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Captivating sketch merging traditional and digital techniques.",
     category: "artwork",
   },
   {
@@ -329,8 +302,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-34.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Dynamic creation inviting the viewer into a new world.",
     category: "artwork",
   },
   {
@@ -338,8 +310,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-35.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Masterful design visualizing abstract concepts.",
     category: "artwork",
   },
   {
@@ -347,7 +318,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-36.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Sleek interface focusing on user experience.",
     category: "design",
   },
   {
@@ -355,7 +326,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-37.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Thoughtful vision prioritizing accessibility.",
     category: "design",
   },
   {
@@ -363,7 +334,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-38.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Meticulous visual communicating a powerful message.",
     category: "design",
   },
   {
@@ -371,7 +342,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-39.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Beautiful UI/UX demonstrating technical excellence.",
     category: "design",
   },
   {
@@ -379,8 +350,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-4.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Mysterious design inviting the viewer into a new world.",
     category: "artwork",
   },
   {
@@ -388,7 +358,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-40.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Refined system enhancing usability.",
     category: "design",
   },
   {
@@ -396,7 +366,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-41.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Expressive aesthetic focusing on user experience.",
     category: "design",
   },
   {
@@ -404,7 +374,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-42.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Geometric aesthetic highlighting fluid shapes.",
     category: "design",
   },
   {
@@ -412,7 +382,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-43.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Textured UI/UX telling a visual story.",
     category: "design",
   },
   {
@@ -420,7 +390,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-44.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Aesthetic color palette creating a memorable identity.",
     category: "design",
   },
   {
@@ -428,7 +398,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-45.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Thoughtful color palette redefining industry standards.",
     category: "design",
   },
   {
@@ -436,7 +406,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-46.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Creative prototype focusing on user experience.",
     category: "design",
   },
   {
@@ -444,7 +414,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-47.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Clean design communicating a powerful message.",
     category: "design",
   },
   {
@@ -452,7 +422,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-48.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Sophisticated piece exploring new visual paradigms.",
     category: "design",
   },
   {
@@ -460,7 +430,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-49.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Sleek framework communicating a powerful message.",
     category: "design",
   },
   {
@@ -468,8 +438,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-5.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Thought-provoking visual diving into human emotions.",
     category: "artwork",
   },
   {
@@ -477,7 +446,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-50.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Aesthetic illustration exploring new visual paradigms.",
     category: "design",
   },
   {
@@ -485,7 +454,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-51.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Refined color palette leaving a lasting impression.",
     category: "design",
   },
   {
@@ -493,7 +462,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-52.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Beautiful framework communicating a powerful message.",
     category: "design",
   },
   {
@@ -501,7 +470,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-53.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Meticulous system enhancing usability.",
     category: "design",
   },
   {
@@ -509,7 +478,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-54.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Innovative piece pushing boundaries.",
     category: "design",
   },
   {
@@ -517,7 +486,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-55.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Bold piece captivating the audience.",
     category: "design",
   },
   {
@@ -525,7 +494,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-56.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Breathtaking system showcasing creativity.",
     category: "design",
   },
   {
@@ -533,7 +502,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-57.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Balanced branding communicating a powerful message.",
     category: "design",
   },
   {
@@ -541,7 +510,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-58.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Sleek piece communicating a powerful message.",
     category: "design",
   },
   {
@@ -549,7 +518,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-59.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Refined aesthetic prioritizing accessibility.",
     category: "design",
   },
   {
@@ -557,8 +526,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-6.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Evocative visual representation reflecting inner thoughts.",
     category: "artwork",
   },
   {
@@ -566,7 +534,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-60.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Thoughtful wireframe communicating a powerful message.",
     category: "design",
   },
   {
@@ -574,7 +542,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-61.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Abstract interface redefining industry standards.",
     category: "design",
   },
   {
@@ -582,7 +550,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-62.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Elegant color palette enhancing usability.",
     category: "design",
   },
   {
@@ -590,7 +558,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-63.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Sleek structure demonstrating technical excellence.",
     category: "design",
   },
   {
@@ -598,7 +566,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-64.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Cutting-edge branding captivating the audience.",
     category: "design",
   },
   {
@@ -606,7 +574,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-65.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Innovative interface exploring new visual paradigms.",
     category: "design",
   },
   {
@@ -614,7 +582,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-66.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Vibrant color palette communicating a powerful message.",
     category: "design",
   },
   {
@@ -622,7 +590,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-67.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Elegant framework showcasing creativity.",
     category: "design",
   },
   {
@@ -630,7 +598,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-68.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Minimalist illustration demonstrating technical excellence.",
     category: "design",
   },
   {
@@ -638,7 +606,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-69.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Harmonious pattern creating a memorable identity.",
     category: "design",
   },
   {
@@ -646,8 +614,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-7.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Stunning mosaic visualizing abstract concepts.",
     category: "artwork",
   },
   {
@@ -655,7 +622,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-70.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Dynamic pattern telling a visual story.",
     category: "design",
   },
   {
@@ -663,7 +630,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-71.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Striking approach prioritizing accessibility.",
     category: "design",
   },
   {
@@ -671,7 +638,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-72.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Beautiful illustration telling a visual story.",
     category: "design",
   },
   {
@@ -679,7 +646,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-73.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Thoughtful layout pushing boundaries.",
     category: "design",
   },
   {
@@ -687,7 +654,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-74.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Unique layout blending typography and space.",
     category: "design",
   },
   {
@@ -695,7 +662,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-75.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Striking color palette creating a memorable identity.",
     category: "design",
   },
   {
@@ -703,7 +670,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-76.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Abstract prototype captivating the audience.",
     category: "design",
   },
   {
@@ -711,7 +678,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-77.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Sophisticated typography pushing boundaries.",
     category: "design",
   },
   {
@@ -719,7 +686,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-78.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Seamless graphic enhancing usability.",
     category: "design",
   },
   {
@@ -727,7 +694,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-79.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Vibrant pattern creating a memorable identity.",
     category: "design",
   },
   {
@@ -735,8 +702,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-8.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Hypnotic design experimenting with bold colors.",
     category: "artwork",
   },
   {
@@ -744,7 +710,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-80.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Striking framework captivating the audience.",
     category: "design",
   },
   {
@@ -752,7 +718,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-81.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Striking execution focusing on user experience.",
     category: "design",
   },
   {
@@ -760,7 +726,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-82.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Clean illustration highlighting fluid shapes.",
     category: "design",
   },
   {
@@ -768,7 +734,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-83.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Striking system prioritizing accessibility.",
     category: "design",
   },
   {
@@ -776,7 +742,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-84.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Innovative pattern highlighting fluid shapes.",
     category: "design",
   },
   {
@@ -784,7 +750,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-85.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Geometric graphic exploring new visual paradigms.",
     category: "design",
   },
   {
@@ -792,7 +758,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-86.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Aesthetic vision pushing boundaries.",
     category: "design",
   },
   {
@@ -800,7 +766,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-87.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Clean structure blending typography and space.",
     category: "design",
   },
   {
@@ -808,7 +774,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-88.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Unique UI/UX focusing on user experience.",
     category: "design",
   },
   {
@@ -816,7 +782,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-89.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Sleek interface enhancing usability.",
     category: "design",
   },
   {
@@ -824,8 +790,7 @@ export const artworks: Artwork[] = [
     title: "Digital Artwork",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-9.webp",
     artist: "@mochrks",
-    description:
-      "A creative digital artwork blending reality and imagination into a unique visual experience.",
+    description: "Ethereal drawing pushing the boundaries of creativity.",
     category: "artwork",
   },
   {
@@ -833,7 +798,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-90.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Textured prototype blending typography and space.",
     category: "design",
   },
   {
@@ -841,7 +806,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-91.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Elegant concept pushing boundaries.",
     category: "design",
   },
   {
@@ -849,7 +814,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-92.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Meticulous UI/UX leaving a lasting impression.",
     category: "design",
   },
   {
@@ -857,7 +822,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-93.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Breathtaking pattern blending typography and space.",
     category: "design",
   },
   {
@@ -865,7 +830,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-94.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Thoughtful approach pushing boundaries.",
     category: "design",
   },
   {
@@ -873,7 +838,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-95.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Striking visual enhancing usability.",
     category: "design",
   },
   {
@@ -881,7 +846,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-96.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Balanced framework focusing on user experience.",
     category: "design",
   },
   {
@@ -889,7 +854,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-97.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Aesthetic layout exploring new visual paradigms.",
     category: "design",
   },
   {
@@ -897,7 +862,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-98.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Sophisticated structure exploring new visual paradigms.",
     category: "design",
   },
   {
@@ -905,7 +870,7 @@ export const artworks: Artwork[] = [
     title: "Design",
     imageUrl: "https://mochrks.github.io/assets/artwork/artwork-99.webp",
     artist: "@mochrks",
-    description: "A meticulously crafted design showcasing creativity and attention to detail.",
+    description: "Elegant visual leaving a lasting impression.",
     category: "design",
   },
 ];

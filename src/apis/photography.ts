@@ -6,7 +6,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-1.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Mesmerizing image revealing hidden details.",
     category: "photo",
   },
   {
@@ -14,7 +14,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-2.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Expressive portrait evoking strong emotions.",
     category: "photo",
   },
   {
@@ -22,7 +22,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-3.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Moody photograph revealing hidden details.",
     category: "photo",
   },
   {
@@ -30,7 +30,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-4.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Serene macro shot freezing a perfect moment.",
     category: "photo",
   },
   {
@@ -38,7 +38,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-5.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Stunning macro shot captured during the golden hour.",
     category: "photo",
   },
   {
@@ -46,7 +46,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-6.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Authentic landscape preserving memories.",
     category: "photo",
   },
   {
@@ -54,7 +54,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-7.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Dramatic macro shot freezing a perfect moment.",
     category: "photo",
   },
   {
@@ -62,7 +62,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-8.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Intimate scene highlighting natural light.",
     category: "photo",
   },
   {
@@ -70,7 +70,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-9.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Expressive macro shot captured during the golden hour.",
     category: "photo",
   },
   {
@@ -78,7 +78,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-10.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Captivating capture revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -86,7 +86,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-11.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Beautifully composed portrait telling a unique story.",
     category: "photo",
   },
   {
@@ -94,7 +94,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-12.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Artistic photographic shot creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -102,7 +102,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-13.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Beautifully composed perspective exploring leading lines.",
     category: "photo",
   },
   {
@@ -110,7 +110,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-14.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Moody image telling a unique story.",
     category: "photo",
   },
   {
@@ -118,7 +118,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-15.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Serene capture captured during the golden hour.",
     category: "photo",
   },
   {
@@ -126,7 +126,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-16.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Candid portrait evoking strong emotions.",
     category: "photo",
   },
   {
@@ -134,7 +134,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-17.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vibrant panorama revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -142,7 +142,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-18.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Poignant visual playing with shadows and contrast.",
     category: "photo",
   },
   {
@@ -150,7 +150,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-19.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Picturesque landscape preserving memories.",
     category: "photo",
   },
   {
@@ -158,7 +158,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-20.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Raw landscape preserving memories.",
     category: "photo",
   },
   {
@@ -166,7 +166,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-21.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Nostalgic perspective creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -174,7 +174,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-22.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Stunning capture highlighting natural light.",
     category: "photo",
   },
   {
@@ -182,7 +182,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-23.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Intimate macro shot revealing hidden details.",
     category: "photo",
   },
   {
@@ -190,7 +190,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-24.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Stunning portrait revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -198,7 +198,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-25.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vivid exposure telling a unique story.",
     category: "photo",
   },
   {
@@ -206,7 +206,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-26.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Timeless snapshot documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -214,7 +214,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-27.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Ethereal portrait focusing on symmetry.",
     category: "photo",
   },
   {
@@ -222,7 +222,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-28.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Nostalgic photograph preserving memories.",
     category: "photo",
   },
   {
@@ -230,7 +230,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-29.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vibrant snapshot showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -238,7 +238,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-30.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Beautifully composed street photography showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -246,7 +246,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-31.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vibrant frame preserving memories.",
     category: "photo",
   },
   {
@@ -254,7 +254,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-32.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Cinematic photograph highlighting natural light.",
     category: "photo",
   },
   {
@@ -262,7 +262,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-33.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Dramatic photographic shot bringing the subject to life.",
     category: "photo",
   },
   {
@@ -270,7 +270,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-34.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Serene photo exploring leading lines.",
     category: "photo",
   },
   {
@@ -278,7 +278,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-35.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Timeless composition highlighting natural light.",
     category: "photo",
   },
   {
@@ -286,7 +286,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-36.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Cinematic visual capturing true personality.",
     category: "photo",
   },
   {
@@ -294,7 +294,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-37.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vivid panorama exploring leading lines.",
     category: "photo",
   },
   {
@@ -302,7 +302,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-38.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Majestic panorama revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -310,7 +310,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-39.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Ethereal capture freezing a perfect moment.",
     category: "photo",
   },
   {
@@ -318,7 +318,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-40.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Candid landscape documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -326,7 +326,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-41.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Cinematic street photography preserving memories.",
     category: "photo",
   },
   {
@@ -334,7 +334,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-42.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Poignant photographic shot documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -342,7 +342,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-43.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Timeless moment telling a unique story.",
     category: "photo",
   },
   {
@@ -350,7 +350,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-44.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Candid composition revealing hidden details.",
     category: "photo",
   },
   {
@@ -358,7 +358,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-45.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Powerful moment creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -366,7 +366,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-46.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Raw moment showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -374,7 +374,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-47.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Powerful visual revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -382,7 +382,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-48.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vivid capture revealing hidden details.",
     category: "photo",
   },
   {
@@ -390,7 +390,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-49.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Poignant frame capturing true personality.",
     category: "photo",
   },
   {
@@ -398,7 +398,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-50.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vivid image documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -406,7 +406,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-51.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Expressive snapshot showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -414,7 +414,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-52.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Raw scene exploring leading lines.",
     category: "photo",
   },
   {
@@ -422,7 +422,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-53.webp",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Dramatic street photography revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -430,7 +430,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-54.webp",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Intimate exposure focusing on symmetry.",
     category: "photo",
   },
   {
@@ -438,7 +438,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-55.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Moody snapshot highlighting natural light.",
     category: "photo",
   },
   {
@@ -446,7 +446,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-56.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Raw perspective showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -454,7 +454,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-57.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Breathtaking visual bringing the subject to life.",
     category: "photo",
   },
   {
@@ -462,7 +462,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-58.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Picturesque street photography preserving memories.",
     category: "photo",
   },
   {
@@ -470,7 +470,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-59.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Raw scene showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -478,7 +478,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-60.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Timeless perspective captured during the golden hour.",
     category: "photo",
   },
   {
@@ -486,7 +486,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-61.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Striking perspective documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -494,7 +494,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-62.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Candid portrait captured during the golden hour.",
     category: "photo",
   },
   {
@@ -502,7 +502,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-63.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Majestic moment showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -510,7 +510,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-64.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Captivating visual showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -518,7 +518,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-65.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Stunning frame revealing hidden details.",
     category: "photo",
   },
   {
@@ -526,7 +526,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-66.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Authentic capture capturing true personality.",
     category: "photo",
   },
   {
@@ -534,7 +534,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-67.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Beautifully composed capture showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -542,7 +542,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-68.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Raw photograph capturing true personality.",
     category: "photo",
   },
   {
@@ -550,7 +550,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-69.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Ethereal portrait bringing the subject to life.",
     category: "photo",
   },
   {
@@ -558,7 +558,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-70.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vibrant photographic shot evoking strong emotions.",
     category: "photo",
   },
   {
@@ -566,7 +566,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-71.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Moody composition revealing hidden details.",
     category: "photo",
   },
   {
@@ -574,7 +574,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-72.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Majestic street photography exploring leading lines.",
     category: "photo",
   },
   {
@@ -582,7 +582,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-73.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Ethereal photograph exploring leading lines.",
     category: "photo",
   },
   {
@@ -590,7 +590,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-74.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Majestic photographic shot captured during the golden hour.",
     category: "photo",
   },
   {
@@ -598,7 +598,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-75.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Energetic frame creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -606,7 +606,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-76.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Intimate portrait bringing the subject to life.",
     category: "photo",
   },
   {
@@ -614,7 +614,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-77.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Striking snapshot captured during the golden hour.",
     category: "photo",
   },
   {
@@ -622,7 +622,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-78.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Expressive photo capturing true personality.",
     category: "photo",
   },
   {
@@ -630,7 +630,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-79.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Dramatic landscape freezing a perfect moment.",
     category: "photo",
   },
   {
@@ -638,7 +638,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-80.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Breathtaking photo telling a unique story.",
     category: "photo",
   },
   {
@@ -646,7 +646,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-81.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Candid visual highlighting natural light.",
     category: "photo",
   },
   {
@@ -654,7 +654,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-82.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Picturesque perspective evoking strong emotions.",
     category: "photo",
   },
   {
@@ -662,7 +662,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-83.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Serene panorama telling a unique story.",
     category: "photo",
   },
   {
@@ -670,7 +670,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-84.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Serene snapshot freezing a perfect moment.",
     category: "photo",
   },
   {
@@ -678,7 +678,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-85.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vibrant macro shot revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -686,7 +686,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-86.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Majestic photograph highlighting natural light.",
     category: "photo",
   },
   {
@@ -694,7 +694,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-87.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Authentic image documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -702,7 +702,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-88.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Dramatic frame revealing hidden details.",
     category: "photo",
   },
   {
@@ -710,7 +710,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-89.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Evocative frame documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -718,7 +718,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-90.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Artistic photo exploring leading lines.",
     category: "photo",
   },
   {
@@ -726,7 +726,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-91.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Energetic frame revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -734,7 +734,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-92.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Dramatic macro shot evoking strong emotions.",
     category: "photo",
   },
   {
@@ -742,7 +742,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-93.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Candid snapshot revealing hidden details.",
     category: "photo",
   },
   {
@@ -750,7 +750,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-94.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Poignant moment showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -758,7 +758,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-95.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Authentic moment telling a unique story.",
     category: "photo",
   },
   {
@@ -766,7 +766,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-96.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Energetic street photography capturing true personality.",
     category: "photo",
   },
   {
@@ -774,7 +774,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-97.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Beautifully composed portrait revealing hidden details.",
     category: "photo",
   },
   {
@@ -782,7 +782,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-98.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Picturesque exposure capturing true personality.",
     category: "photo",
   },
   {
@@ -790,7 +790,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-99.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Intimate composition telling a unique story.",
     category: "photo",
   },
   {
@@ -798,7 +798,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-100.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Timeless landscape showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -806,7 +806,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-101.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Expressive macro shot exploring leading lines.",
     category: "photo",
   },
   {
@@ -814,7 +814,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-102.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Powerful street photography revealing hidden details.",
     category: "photo",
   },
   {
@@ -822,7 +822,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-103.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Beautifully composed street photography creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -830,7 +830,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-104.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Poignant composition playing with shadows and contrast.",
     category: "photo",
   },
   {
@@ -838,7 +838,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-105.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vibrant visual playing with shadows and contrast.",
     category: "photo",
   },
   {
@@ -846,7 +846,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-106.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Stunning scene revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -854,7 +854,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-107.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Striking frame revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -862,7 +862,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-108.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Nostalgic street photography highlighting natural light.",
     category: "photo",
   },
   {
@@ -870,7 +870,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-109.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Majestic exposure exploring leading lines.",
     category: "photo",
   },
   {
@@ -878,7 +878,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-110.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vivid portrait highlighting natural light.",
     category: "photo",
   },
   {
@@ -886,7 +886,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-111.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Captivating perspective showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -894,7 +894,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-112.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Majestic exposure documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -902,7 +902,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-113.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Authentic photograph revealing hidden details.",
     category: "photo",
   },
   {
@@ -910,7 +910,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-114.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Powerful photographic shot creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -918,7 +918,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-115.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Captivating image captured during the golden hour.",
     category: "photo",
   },
   {
@@ -926,7 +926,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-116.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Majestic macro shot captured during the golden hour.",
     category: "photo",
   },
   {
@@ -934,7 +934,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-117.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Beautifully composed scene showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -942,7 +942,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-118.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Raw capture playing with shadows and contrast.",
     category: "photo",
   },
   {
@@ -950,7 +950,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-119.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Authentic image freezing a perfect moment.",
     category: "photo",
   },
   {
@@ -958,7 +958,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-120.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Dramatic photo highlighting natural light.",
     category: "photo",
   },
   {
@@ -966,7 +966,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-121.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Poignant image bringing the subject to life.",
     category: "photo",
   },
   {
@@ -974,7 +974,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-122.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Mesmerizing photographic shot telling a unique story.",
     category: "photo",
   },
   {
@@ -982,7 +982,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-123.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Beautifully composed image telling a unique story.",
     category: "photo",
   },
   {
@@ -990,7 +990,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-124.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Timeless exposure freezing a perfect moment.",
     category: "photo",
   },
   {
@@ -998,7 +998,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-125.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Candid panorama documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -1006,7 +1006,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-126.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Captivating visual documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -1014,7 +1014,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-127.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Majestic photo telling a unique story.",
     category: "photo",
   },
   {
@@ -1022,7 +1022,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-128.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Energetic photo focusing on symmetry.",
     category: "photo",
   },
   {
@@ -1030,7 +1030,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-129.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Striking photographic shot focusing on symmetry.",
     category: "photo",
   },
   {
@@ -1038,7 +1038,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-130.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Expressive macro shot showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -1046,7 +1046,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-131.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Timeless landscape revealing hidden details.",
     category: "photo",
   },
   {
@@ -1054,7 +1054,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-132.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Energetic photographic shot documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -1062,7 +1062,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-133.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Timeless photo telling a unique story.",
     category: "photo",
   },
   {
@@ -1070,7 +1070,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-134.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Poignant capture revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -1078,7 +1078,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-135.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Stunning portrait showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -1086,7 +1086,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-136.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Candid macro shot documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -1094,7 +1094,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-137.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Energetic composition showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -1102,7 +1102,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-138.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Evocative moment revealing hidden details.",
     category: "photo",
   },
   {
@@ -1110,7 +1110,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-139.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Picturesque photo revealing hidden details.",
     category: "photo",
   },
   {
@@ -1118,7 +1118,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-140.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Evocative scene freezing a perfect moment.",
     category: "photo",
   },
   {
@@ -1126,7 +1126,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-141.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Picturesque landscape creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -1134,7 +1134,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-142.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Majestic moment capturing true personality.",
     category: "photo",
   },
   {
@@ -1142,7 +1142,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-143.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Breathtaking image evoking strong emotions.",
     category: "photo",
   },
   {
@@ -1150,7 +1150,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-144.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Expressive landscape exploring leading lines.",
     category: "photo",
   },
   {
@@ -1158,7 +1158,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-145.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Raw snapshot freezing a perfect moment.",
     category: "photo",
   },
   {
@@ -1166,7 +1166,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-146.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Beautifully composed exposure bringing the subject to life.",
     category: "photo",
   },
   {
@@ -1174,7 +1174,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-147.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Dramatic scene showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -1182,7 +1182,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-148.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Picturesque photographic shot bringing the subject to life.",
     category: "photo",
   },
   {
@@ -1190,7 +1190,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-149.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Ethereal photo bringing the subject to life.",
     category: "photo",
   },
   {
@@ -1198,7 +1198,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-150.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Energetic panorama capturing true personality.",
     category: "photo",
   },
   {
@@ -1206,7 +1206,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-151.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Breathtaking frame telling a unique story.",
     category: "photo",
   },
   {
@@ -1214,7 +1214,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-152.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Mesmerizing exposure exploring leading lines.",
     category: "photo",
   },
   {
@@ -1222,7 +1222,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-153.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Authentic perspective documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -1230,7 +1230,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-154.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Authentic capture bringing the subject to life.",
     category: "photo",
   },
   {
@@ -1238,7 +1238,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-155.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Candid landscape bringing the subject to life.",
     category: "photo",
   },
   {
@@ -1246,7 +1246,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/instagram/ig-156.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Captivating panorama revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -1254,7 +1254,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-1.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Candid street photography capturing true personality.",
     category: "photo",
   },
   {
@@ -1262,7 +1262,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-10.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Energetic photograph highlighting natural light.",
     category: "photo",
   },
   {
@@ -1270,7 +1270,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-11.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Evocative perspective playing with shadows and contrast.",
     category: "photo",
   },
   {
@@ -1278,7 +1278,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-12.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Ethereal macro shot documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -1286,7 +1286,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-13.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vibrant scene freezing a perfect moment.",
     category: "photo",
   },
   {
@@ -1294,7 +1294,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-14.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Nostalgic frame showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -1302,7 +1302,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-15.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Poignant portrait captured during the golden hour.",
     category: "photo",
   },
   {
@@ -1310,7 +1310,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-16.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Breathtaking image telling a unique story.",
     category: "photo",
   },
   {
@@ -1318,7 +1318,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-17.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Cinematic photograph freezing a perfect moment.",
     category: "photo",
   },
   {
@@ -1326,7 +1326,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-18.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Timeless photo creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -1334,7 +1334,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-19.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Majestic moment focusing on symmetry.",
     category: "photo",
   },
   {
@@ -1342,7 +1342,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-2.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Expressive visual bringing the subject to life.",
     category: "photo",
   },
   {
@@ -1350,7 +1350,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-20.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Authentic frame telling a unique story.",
     category: "photo",
   },
   {
@@ -1358,7 +1358,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-21.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Captivating visual creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -1366,7 +1366,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-22.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Nostalgic capture telling a unique story.",
     category: "photo",
   },
   {
@@ -1374,7 +1374,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-23.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Intimate panorama revealing hidden details.",
     category: "photo",
   },
   {
@@ -1382,7 +1382,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-24.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Picturesque macro shot preserving memories.",
     category: "photo",
   },
   {
@@ -1390,7 +1390,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-25.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Beautifully composed photographic shot creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -1398,7 +1398,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-26.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Cinematic landscape capturing true personality.",
     category: "photo",
   },
   {
@@ -1406,7 +1406,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-27.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vivid portrait captured during the golden hour.",
     category: "photo",
   },
   {
@@ -1414,7 +1414,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-28.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Stunning moment documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -1422,7 +1422,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-29.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Cinematic macro shot focusing on symmetry.",
     category: "photo",
   },
   {
@@ -1430,7 +1430,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-3.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Picturesque photograph telling a unique story.",
     category: "photo",
   },
   {
@@ -1438,7 +1438,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-30.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Cinematic image revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -1446,7 +1446,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-31.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Dramatic photograph telling a unique story.",
     category: "photo",
   },
   {
@@ -1454,7 +1454,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-32.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Nostalgic landscape telling a unique story.",
     category: "photo",
   },
   {
@@ -1462,7 +1462,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-33.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Picturesque image evoking strong emotions.",
     category: "photo",
   },
   {
@@ -1470,7 +1470,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-34.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Breathtaking photograph exploring leading lines.",
     category: "photo",
   },
   {
@@ -1478,7 +1478,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-35.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Striking frame exploring leading lines.",
     category: "photo",
   },
   {
@@ -1486,7 +1486,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-36.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Nostalgic landscape preserving memories.",
     category: "photo",
   },
   {
@@ -1494,7 +1494,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-37.jpeg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Cinematic portrait preserving memories.",
     category: "photo",
   },
   {
@@ -1502,7 +1502,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-38.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Beautifully composed photo telling a unique story.",
     category: "photo",
   },
   {
@@ -1510,7 +1510,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-39.jpeg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Cinematic snapshot highlighting natural light.",
     category: "photo",
   },
   {
@@ -1518,7 +1518,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-4.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Powerful photograph creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -1526,7 +1526,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-40.png",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Vivid exposure playing with shadows and contrast.",
     category: "photo",
   },
   {
@@ -1534,7 +1534,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-41.png",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Authentic moment creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -1542,7 +1542,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-42.png",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Dramatic image creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -1550,7 +1550,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-43.jpeg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Candid photograph capturing true personality.",
     category: "photo",
   },
   {
@@ -1558,7 +1558,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-44.png",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Artistic perspective focusing on symmetry.",
     category: "photo",
   },
   {
@@ -1566,7 +1566,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-45.png",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Stunning composition exploring leading lines.",
     category: "photo",
   },
   {
@@ -1574,7 +1574,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-46.png",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Intimate photographic shot highlighting natural light.",
     category: "photo",
   },
   {
@@ -1582,7 +1582,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-47.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Captivating photographic shot capturing true personality.",
     category: "photo",
   },
   {
@@ -1590,7 +1590,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-48.png",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Stunning image playing with shadows and contrast.",
     category: "photo",
   },
   {
@@ -1598,7 +1598,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-49.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Dramatic photo playing with shadows and contrast.",
     category: "photo",
   },
   {
@@ -1606,7 +1606,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-5.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Intimate visual creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -1614,7 +1614,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-50.png",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Cinematic photograph preserving memories.",
     category: "photo",
   },
   {
@@ -1622,7 +1622,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-51.png",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Stunning photo focusing on symmetry.",
     category: "photo",
   },
   {
@@ -1630,7 +1630,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-52.png",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Moody composition highlighting natural light.",
     category: "photo",
   },
   {
@@ -1638,7 +1638,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-53.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Candid exposure freezing a perfect moment.",
     category: "photo",
   },
   {
@@ -1646,7 +1646,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-54.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Picturesque visual showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -1654,7 +1654,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-55.jpeg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Dramatic composition showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -1662,7 +1662,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-56.jpeg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Raw photograph revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -1670,7 +1670,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-57.png",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Captivating panorama revealing hidden details.",
     category: "photo",
   },
   {
@@ -1678,7 +1678,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-58.jpeg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Poignant composition showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -1686,7 +1686,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-59.jpeg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Intimate portrait preserving memories.",
     category: "photo",
   },
   {
@@ -1694,7 +1694,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-6.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Majestic perspective captured during the golden hour.",
     category: "photo",
   },
   {
@@ -1702,7 +1702,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-60.jpeg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Serene panorama showcasing the beauty of nature.",
     category: "photo",
   },
   {
@@ -1710,7 +1710,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-61.jpeg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Expressive moment documenting a fleeting second.",
     category: "photo",
   },
   {
@@ -1718,7 +1718,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-62.jpeg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Energetic composition preserving memories.",
     category: "photo",
   },
   {
@@ -1726,7 +1726,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-63.jpeg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Captivating capture creating a cinematic atmosphere.",
     category: "photo",
   },
   {
@@ -1734,7 +1734,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-7.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Stunning street photography revealing hidden details.",
     category: "photo",
   },
   {
@@ -1742,7 +1742,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-8.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Artistic moment revealing the essence of city life.",
     category: "photo",
   },
   {
@@ -1750,7 +1750,7 @@ export const images: Artwork[] = [
     title: "Photography",
     imageUrl: "https://mochrks.github.io/assets/photos/photo-9.jpg",
     artist: "@mochrks",
-    description: "Capturing moments in time through a lens, preserving memories and emotions.",
+    description: "Picturesque exposure evoking strong emotions.",
     category: "photo",
   },
 ];

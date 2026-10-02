@@ -7,7 +7,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
   return (
     <div
       className={cn(
-        "relative flex h-full w-20 min-w-10 cursor-pointer overflow-hidden rounded-md transition-all delay-0 duration-300 ease-in-out",
+        "relative flex h-full w-32 min-w-16 cursor-pointer overflow-hidden rounded-md transition-all delay-0 duration-300 ease-in-out",
         {
           "flex-grow": index === activeItem,
         },
@@ -38,20 +38,20 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
 
 const items = [
   {
-    image: "https://mochrks.github.io/assets/img-photo/ig5.jpg",
-    title: "Beach Bliss",
+    image: "https://mochrks.github.io/assets/instagram/ig-76.jpg",
+    title: "Above the Clouds",
   },
   {
-    image: "https://mochrks.github.io/assets/img-photo/ig24.jpg",
-    title: "Forest Charm",
+    image: "https://mochrks.github.io/assets/instagram/ig-20.jpg",
+    title: "Magic Camera",
   },
   {
-    image: "https://mochrks.github.io/assets/img-photo/11.png",
-    title: "Horse & Landscape",
+    image: "https://mochrks.github.io/assets/instagram/ig-96.jpg",
+    title: "Deer Connection",
   },
   {
-    image: "https://mochrks.github.io/assets/img-instagram/mochrks/mochrks-44.jpg",
-    title: "Deer Sweetness",
+    image: "https://mochrks.github.io/assets/photos/photo-27.jpg",
+    title: "Hidden Vintage",
   },
 ];
 
