@@ -19,12 +19,10 @@ export const SpotifyNowPlaying = () => {
   const [profileUrl, setProfileUrl] = useState("https://open.spotify.com/user/mochrks");
 
   useEffect(() => {
-    // Initial Fetch for data readiness
     const fetchData = async () => {
       try {
         const url = await getSpotifyProfileUrl();
         setProfileUrl(url);
-
         const data = await getNowPlaying();
         if (data) {
           setNowPlaying(data);
@@ -37,25 +35,19 @@ export const SpotifyNowPlaying = () => {
 
     fetchData();
 
-    // Auto-show logic
     if (SPOTIFY_CONFIG.AUTO_SHOW.enabled && canShowToday()) {
       const delay = getRandomShowInterval();
       const showTimer = setTimeout(() => {
         setIsVisible(true);
         incrementShowCount();
-
-        // Auto-hide timer
         const hideTimer = setTimeout(() => {
           setIsVisible(false);
         }, SPOTIFY_CONFIG.AUTO_SHOW.autoHideAfterSeconds * 1000);
-
         return () => clearTimeout(hideTimer);
       }, delay);
-
       return () => clearTimeout(showTimer);
     }
 
-    // Poll for Now Playing updates (background)
     const interval = setInterval(async () => {
       const data = await getNowPlaying();
       if (data) {
@@ -65,7 +57,6 @@ export const SpotifyNowPlaying = () => {
           }
           return prev;
         });
-
         if (Math.abs(currentProgress - data.progress) > 2000) {
           setCurrentProgress(data.progress);
         }
@@ -77,39 +68,99 @@ export const SpotifyNowPlaying = () => {
 
   useEffect(() => {
     if (!nowPlaying.isPlaying) return;
-
     const progressInterval = setInterval(() => {
       setCurrentProgress((prev) => {
         if (prev >= nowPlaying.duration) return prev;
         return prev + 1000;
       });
     }, 1000);
-
     return () => clearInterval(progressInterval);
   }, [nowPlaying]);
 
-  const handleClose = () => {
-    setIsVisible(false);
-  };
-
-  const toggleExpand = () => {
-    setIsExpanded(!isExpanded);
-  };
-
+  const handleClose = () => setIsVisible(false);
+  const toggleExpand = () => setIsExpanded(!isExpanded);
   const progress = Math.min((currentProgress / nowPlaying.duration) * 100, 100);
 
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, y: 100, scale: 0.8 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 100, scale: 0.8 }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed bottom-6 left-6 z-50"
-        >
-          <div className="relative">
-            {/* Main Widget */}
+        <>
+          {/* ── MOBILE: compact pill, centered ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 35 }}
+            className="fixed bottom-5 inset-x-0 flex justify-center px-6 z-50 md:hidden"
+          >
+            <div className="relative overflow-hidden rounded-2xl bg-black/70 backdrop-blur-xl border border-white/10 w-full max-w-xs">
+              {/* Progress bar */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-white/10">
+                <motion.div
+                  className="h-full bg-green-500"
+                  initial={{ width: 0 }}
+                  animate={{ width: `${progress}%` }}
+                  transition={{ duration: 0.5 }}
+                />
+              </div>
+
+              <div className="flex items-center gap-3 px-3 py-2.5">
+                {/* Album Art */}
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden bg-green-900/40 flex items-center justify-center">
+                  {nowPlaying.albumImageUrl ? (
+                    <img
+                      src={nowPlaying.albumImageUrl}
+                      alt={nowPlaying.album}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <Music2 className="w-5 h-5 text-green-400" />
+                  )}
+                </div>
+
+                {/* Title + Artist */}
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs font-semibold text-white truncate leading-tight">
+                    {nowPlaying.title}
+                  </p>
+                  <p className="text-[11px] text-white/50 truncate leading-tight mt-0.5">
+                    {nowPlaying.artist}
+                  </p>
+                </div>
+
+                {/* Controls */}
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <Equalizer isPlaying={nowPlaying.isPlaying} barCount={3} />
+                  <motion.a
+                    href={nowPlaying.songUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-7 h-7 flex items-center justify-center rounded-full bg-green-500 hover:bg-green-400 transition-colors"
+                    whileTap={{ scale: 0.9 }}
+                    title="Open in Spotify"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5 text-white" />
+                  </motion.a>
+                  <button
+                    onClick={handleClose}
+                    className="w-7 h-7 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                    title="Close"
+                  >
+                    <X className="w-3.5 h-3.5 text-white/70" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ── DESKTOP: full widget, bottom-left ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 35 }}
+            className="fixed bottom-6 left-6 z-50 hidden md:block"
+          >
             <motion.div
               layout
               className={`
@@ -117,14 +168,10 @@ export const SpotifyNowPlaying = () => {
                 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10
                 dark:from-green-400/20 dark:via-emerald-400/20 dark:to-teal-400/20
                 backdrop-blur-xl border border-green-500/20 dark:border-green-400/30
-                shadow-2xl shadow-green-500/20 dark:shadow-green-400/30
-                transition-all duration-300
+                shadow-sm transition-all duration-300
                 ${isExpanded ? "w-80" : "w-72"}
               `}
             >
-              {/* Animated Background Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-teal-500/5 animate-pulse" />
-
               {/* Progress Bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-green-900/20 dark:bg-green-100/10">
                 <motion.div
@@ -135,26 +182,14 @@ export const SpotifyNowPlaying = () => {
                 />
               </div>
 
-              {/* Content */}
               <div className="relative p-4">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <div className="relative">
-                      <Music2 className="w-5 h-5 text-green-500 dark:text-green-400" />
-                      <motion.div
-                        className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full"
-                        animate={{ scale: [1, 1.2, 1] }}
-                        transition={{ repeat: Infinity, duration: 2 }}
-                      />
-                    </div>
-                    <span className="text-xs font-semibold text-green-600 dark:text-green-400 uppercase tracking-wider">
-                      Now Playing
-                    </span>
-                  </div>
+                  <span className="text-xs font-semibold text-green-600 dark:text-green-400 uppercase tracking-wider">
+                    Now Playing
+                  </span>
                   <div className="flex items-center gap-2">
                     <Equalizer isPlaying={nowPlaying.isPlaying} barCount={3} />
-                    {/* Close Button */}
                     <button
                       onClick={handleClose}
                       className="p-1 rounded-full bg-black/20 hover:bg-black/40 dark:bg-white/10 dark:hover:bg-white/20 transition-colors group"
@@ -166,13 +201,12 @@ export const SpotifyNowPlaying = () => {
 
                 {/* Album Art & Info */}
                 <div className="flex gap-3 mb-3">
-                  {/* Album Cover */}
                   <motion.div
                     className="relative flex-shrink-0 cursor-pointer"
                     whileHover={{ scale: 1.05 }}
                     onClick={toggleExpand}
                   >
-                    <div className="w-16 h-16 rounded-lg overflow-hidden shadow-lg ring-2 ring-green-500/30">
+                    <div className="w-16 h-16 rounded-lg overflow-hidden border border-green-500/20">
                       {nowPlaying.albumImageUrl ? (
                         <img
                           src={nowPlaying.albumImageUrl}
@@ -181,29 +215,14 @@ export const SpotifyNowPlaying = () => {
                         />
                       ) : (
                         <div className="relative w-full h-full bg-gradient-to-br from-green-500 via-emerald-500 to-teal-500 flex items-center justify-center">
-                          {/* Animated background pulse */}
                           <motion.div
                             className="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-600 opacity-50"
-                            animate={{
-                              scale: [1, 1.1, 1],
-                              opacity: [0.5, 0.7, 0.5],
-                            }}
-                            transition={{
-                              duration: 2,
-                              repeat: Infinity,
-                              ease: "easeInOut",
-                            }}
+                            animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.7, 0.5] }}
+                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                           />
-                          {/* Music icon with pulse */}
                           <motion.div
-                            animate={{
-                              scale: [1, 1.1, 1],
-                            }}
-                            transition={{
-                              duration: 2,
-                              repeat: Infinity,
-                              ease: "easeInOut",
-                            }}
+                            animate={{ scale: [1, 1.1, 1] }}
+                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                           >
                             <Music2 className="w-8 h-8 text-white relative z-10" />
                           </motion.div>
@@ -212,7 +231,6 @@ export const SpotifyNowPlaying = () => {
                     </div>
                   </motion.div>
 
-                  {/* Song Info */}
                   <div className="flex-1 min-w-0">
                     <motion.h3
                       className="font-bold text-sm text-white truncate mb-1"
@@ -237,25 +255,22 @@ export const SpotifyNowPlaying = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-2">
-                  {/* Open Song in Spotify */}
                   <motion.a
                     href={nowPlaying.songUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 text-white text-xs font-semibold transition-all shadow-lg shadow-green-500/30 hover:shadow-green-500/50"
+                    className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 text-white text-xs font-semibold transition-all"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
                     <span>Open Song</span>
                   </motion.a>
-
-                  {/* Open Profile */}
                   <motion.a
                     href={profileUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 text-white text-xs font-semibold transition-all shadow-lg"
+                    className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 text-white text-xs font-semibold transition-all"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -264,7 +279,7 @@ export const SpotifyNowPlaying = () => {
                   </motion.a>
                 </div>
 
-                {/* Spotify Logo */}
+                {/* Spotify Footer */}
                 <div className="mt-3 pt-3 border-t border-green-500/20 dark:border-green-400/20">
                   <div className="flex items-center justify-center gap-2">
                     <svg
@@ -281,11 +296,8 @@ export const SpotifyNowPlaying = () => {
                 </div>
               </div>
             </motion.div>
-
-            {/* Glow Effect */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl opacity-20 blur-xl -z-10 animate-pulse" />
-          </div>
-        </motion.div>
+          </motion.div>
+        </>
       )}
     </AnimatePresence>
   );
