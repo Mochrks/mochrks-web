@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import ScrollToTopButton from "@/components/layout/scroll-to-top-button";
 import { FlipLinkTitle } from "@/components/ui/title";
 import { LoadingContent } from "@/components/layout/loading-content";
 import { InteractiveHoverButton } from "../magicui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
+import LazyImage from "@/components/ui/lazy-image";
 
 export const ParallaxScroll = ({ images, className }: { images: string[]; className?: string }) => {
   const gridRef = useRef<any>(null);
@@ -20,11 +19,16 @@ export const ParallaxScroll = ({ images, className }: { images: string[]; classN
   const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const translateThird = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
-  const third = Math.ceil(images.length / 3);
+  // Distribusi merata ke 3 kolom (round-robin agar jumlah setiap kolom selisih max 1)
+  const firstPart: string[] = [];
+  const secondPart: string[] = [];
+  const thirdPart: string[] = [];
 
-  const firstPart = images.slice(0, third);
-  const secondPart = images.slice(third, 2 * third);
-  const thirdPart = images.slice(2 * third);
+  images.forEach((img, idx) => {
+    if (idx % 3 === 0) firstPart.push(img);
+    else if (idx % 3 === 1) secondPart.push(img);
+    else thirdPart.push(img);
+  });
 
   const [loading, setLoading] = useState(true);
 
@@ -80,12 +84,10 @@ export const ParallaxScroll = ({ images, className }: { images: string[]; classN
                 <div className="grid gap-10">
                   {firstPart.map((el, idx) => (
                     <motion.div style={{ y: translateFirst }} key={"grid-1" + idx}>
-                      <img
+                      <LazyImage
                         src={el}
-                        className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0 z-50"
-                        height="400"
-                        width="400"
-                        alt="thumbnail"
+                        alt={`photography-1-${idx}`}
+                        className="h-190 w-full rounded-lg"
                       />
                     </motion.div>
                   ))}
@@ -93,12 +95,10 @@ export const ParallaxScroll = ({ images, className }: { images: string[]; classN
                 <div className="grid gap-10">
                   {secondPart.map((el, idx) => (
                     <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
-                      <img
+                      <LazyImage
                         src={el}
-                        className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
-                        height="400"
-                        width="400"
-                        alt="thumbnail"
+                        alt={`photography-2-${idx}`}
+                        className="h-190 w-full rounded-lg"
                       />
                     </motion.div>
                   ))}
@@ -106,12 +106,10 @@ export const ParallaxScroll = ({ images, className }: { images: string[]; classN
                 <div className="grid gap-10">
                   {thirdPart.map((el, idx) => (
                     <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
-                      <img
+                      <LazyImage
                         src={el}
-                        className="h-190 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
-                        height="400"
-                        width="400"
-                        alt="thumbnail"
+                        alt={`photography-3-${idx}`}
+                        className="h-190 w-full rounded-lg"
                       />
                     </motion.div>
                   ))}
